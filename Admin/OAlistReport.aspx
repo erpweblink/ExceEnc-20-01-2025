@@ -1,0 +1,286 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="OAlistReport.aspx.cs" Inherits="Admin_OAlistReport" MasterPageFile="~/Admin/AdminMasterPage.master" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <style>
+        .spancls {
+            color: #5d5656 !important;
+            font-size: 13px !important;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .starcls {
+            color: red;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .sortable-handler {
+            touch-action: none;
+        }
+
+        .card .card-header span {
+            color: #060606;
+            display: block;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        .btn {
+            padding: 5px 5px !important;
+        }
+    </style>
+
+    <style>
+        .modelprofile1 {
+            background-color: rgba(0, 0, 0, 0.54);
+            display: block;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            /*top: 10px;*/
+            height: 100%;
+            overflow: auto;
+            width: 100%;
+            margin-bottom: 25px;
+        }
+
+        .profilemodel2 {
+            background-color: #fefefe;
+            margin-top: 25px;
+            /*padding: 17px 5px 18px 22px;*/
+            padding: 0px 0px 15px 0px;
+            width: 100%;
+            top: 40px;
+            color: #000;
+            border-radius: 5px;
+        }
+
+        .lblpopup {
+            text-align: left;
+        }
+
+        .wp-block-separator:not(.is-style-wide):not(.is-style-dots)::before, hr:not(.is-style-wide):not(.is-style-dots)::before {
+            content: '';
+            display: block;
+            height: 1px;
+            width: 100%;
+            background: #cccccc;
+        }
+
+        .btnclose {
+            background-color: #ef1e24;
+            float: right;
+            font-size: 18px !important;
+            /* font-weight: 600; */
+            color: #f7f6f6 !important;
+            border: 0px groove !important;
+            background-color: none !important;
+            /*margin-right: 10px !important;*/
+            cursor: pointer;
+            font-weight: 600;
+            border-radius: 4px;
+            padding: 4px;
+        }
+
+        /*hr {
+            margin-top: 5px !important;
+            margin-bottom: 15px !important;
+            border: 1px solid #eae6e6 !important;
+            width: 100%;
+        }*/
+        hr.new1 {
+            border-top: 1px dashed green !important;
+            border: 0;
+            margin-top: 5px !important;
+            margin-bottom: 5px !important;
+            width: 100%;
+        }
+
+        .errspan {
+            float: right;
+            margin-right: 6px;
+            margin-top: -25px;
+            position: relative;
+            z-index: 2;
+            color: black;
+        }
+
+        .currentlbl {
+            text-align: center !important;
+        }
+
+        .completionList {
+            border: solid 1px Gray;
+            border-radius: 5px;
+            margin: 0px;
+            padding: 3px;
+            height: 120px;
+            overflow: auto;
+            background-color: #FFFFFF;
+        }
+
+        .listItem {
+            color: #191919;
+        }
+
+        .itemHighlighted {
+            background-color: #ADD6FF;
+        }
+
+        .headingcls {
+            background-color: #01a9ac;
+            color: #fff;
+            padding: 15px;
+            border-radius: 5px 5px 0px 0px;
+        }
+
+
+
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 100% !important;
+            }
+        }
+    </style>
+
+    <style type="text/css">
+        .divgrid {
+            height: 200px;
+            width: 370px;
+        }
+
+            .divgrid table {
+                width: 350px;
+            }
+
+                .divgrid table th {
+                    background-color: Green;
+                    color: #fff;
+                }
+    </style>
+
+
+    <script src="../JS/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript">
+
+        function MakeStaticHeader(gridId, height, width, headerHeight, isFooter) {
+
+            $('#btnshowhide').hide();
+
+            var tbl = document.getElementById(gridId);
+            if (tbl) {
+                var DivHR = document.getElementById('DivHeaderRow');
+                var DivMC = document.getElementById('DivMainContent');
+                var DivFR = document.getElementById('DivFooterRow');
+
+                var wid = 100;
+
+                //*** Set divheaderRow Properties ****
+                DivHR.style.height = headerHeight + 'px';
+                DivHR.style.width = wid + "%";
+                DivHR.style.position = 'relative';
+                DivHR.style.top = '0px';
+                DivHR.style.zIndex = '10';
+                DivHR.style.verticalAlign = 'top';
+
+                //*** Set divMainContent Properties ****
+                DivMC.style.width = wid + "%";
+                DivMC.style.height = height + 'px';
+                DivMC.style.position = 'relative';
+                DivMC.style.top = -headerHeight + 'px';
+                DivMC.style.zIndex = '1';
+
+                //*** Set divFooterRow Properties ****
+                DivFR.style.width = wid + "%";
+                DivFR.style.position = 'relative';
+                DivFR.style.top = -headerHeight + '%';
+                DivFR.style.verticalAlign = 'top';
+                DivFR.style.paddingtop = '2px';
+                DivHR.appendChild(tbl.cloneNode(true));
+
+            }
+        }
+
+        function OnScrollDiv(Scrollablediv) {
+            document.getElementById('DivHeaderRow').scrollLeft = Scrollablediv.scrollLeft;
+            document.getElementById('DivFooterRow').scrollLeft = Scrollablediv.scrollLeft;
+        }
+    </script>
+</asp:Content>
+
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
+    <div class="page-wrapper">
+        <div class="page-body">
+
+            <div class="row">
+                <div class="col-md-7">
+                </div>
+                <div class="col-md-5">
+                    <div class="page-header-breadcrumb">
+                        <div style="float: right; margin: 3px; margin-bottom: 5px;">
+                          <%--  <span id="btnAddTaxInvoice" runat="server"><a href="TaxInvoice.aspx" style="font-size: 16px; border: 1px dashed gray; padding: 4px;">&nbsp;Add Tax Invoice</a>&nbsp;&nbsp;
+                            </span>
+                            <span id="btnAddEInvoice" runat="server"><a href="EInvoiceList.aspx" style="font-size: 16px; border: 1px dashed gray; padding: 4px;">&nbsp;Add E-Invoice</a>&nbsp;&nbsp;
+                            </span>--%>
+                               <asp:Button runat="server" ID="BtnExcell" Text="Export Excel" OnClick="BtnExcell_Click"  CssClass="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container py-3">
+                <div class="card">
+                    <div class="card-header bg-primary text-uppercase text-white">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h5>OA List Report</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12 col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div style="overflow: scroll;" class="dt-responsive table-responsive" onscroll="OnScrollDiv(this)" id="DivMainContent">
+                                        <asp:GridView ID="GVReports" EmptyDataText="No pending requests...." runat="server" HeaderStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="White" HeaderStyle-BackColor="#17a2b8" class="table table-bordered table-sm table-hover" AutoGenerateColumns="false" Width="98%">
+                                            <columns>
+                                                <asp:TemplateField HeaderText="Sr.No." HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center">
+                                                    <itemtemplate>
+                                                        <%#Container.DataItemIndex+1 %>
+                                                    </itemtemplate>
+                                                </asp:TemplateField>
+                                                <asp:BoundField DataField="CustomerName" HeaderText="Customer Name" ReadOnly="true" />
+                                                <asp:BoundField DataField="OAno" HeaderText="OA No." ReadOnly="true" />
+                                              <%--  <asp:BoundField DataField="DeliveryDate" HeaderText="DeliveryDate" ReadOnly="true" />--%>
+                                                 <asp:BoundField DataField="DeliveryDate" HeaderText="Delivery Date" ReadOnly="true" DataFormatString="{0:dd-MM-yyyy}" />
+                                                <asp:BoundField DataField="PONo" HeaderText="P.O. No." />
+                                               <asp:BoundField DataField="PODate" HeaderText="PO Date" ReadOnly="true" DataFormatString="{0:dd-MM-yyyy}" />
+                                                <asp:BoundField DataField="SubOANumber" HeaderText="Sub OA No."  ReadOnly="true" DataFormatString="{0:d}" />
+                                                <asp:BoundField DataField="Description" HeaderText="Description" />
+                                                <asp:BoundField DataField="Price" HeaderText="Price" />
+                                                <asp:BoundField DataField="Qty" HeaderText="Qty" />
+                                                <asp:BoundField DataField="BasicTotal" HeaderText="BasicTotal" />
+											         <asp:BoundField DataField="CreationDate" HeaderText="Creation Date" ReadOnly="true" DataFormatString="{0:dd-MM-yyyy}" />
+                                            </columns>
+                                        </asp:GridView>
+                                        <div id="DivFooterRow" style="overflow: hidden">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</asp:Content>
+
