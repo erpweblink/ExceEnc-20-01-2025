@@ -1,237 +1,229 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ReportPDF.aspx.cs" Inherits="Admin_ReportPDF" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-            border: 2px solid;
-            padding: 20px;
-        }
-
-        .auto-style3 {
-            width: 190px;
-        }
-
-        .auto-style15 {
-            width: 566px;
-        }
-
-        .lblclass {
-            font-weight: bold;
-        }
-
-        .trHegight {
-            /*height: 50px;*/
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <style>
-        .btn {
-            background-color: DodgerBlue;
-            border: none;
-            color: white;
-            padding: 12px 16px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-            /* Darker background on mouse-over */
-            .btn:hover {
-                background-color: RoyalBlue;
-            }
-    </style>
-
-    <script>
-        function printDiv() {
-            var divContents = document.getElementById("GFG").innerHTML;
-            var a = window.open('', '', 'height=500, width=500');
-            a.document.write('<html>');
-            a.document.write('<body style="border: 2px solid;width:1000px;"> <br>');
-            a.document.write(divContents);
-            a.document.write('</body></html>');
-            a.document.close();
-            a.print();
-        }
-    </script>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <br />
-        <button class="btn" onclick="printDiv();"><i class="fa fa-print"></i> Print Report or Save as PDF</button>
-        <br />
-         <br />
-        <div id="GFG">
-            <table class="auto-style1">
-
-                <tr>
-                    <%--<td rowspan="3" style="text-align: center; width: 103px;">
-                        <img src="../img/ExcelEncLogo.png" /></td>--%>
-                    <td colspan="5" style="text-align: center;">
-                        <h1>Excel Enclosures</h1>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="1" style="text-align: center; border: 1px solid">
-                        <asp:Label runat="server" Font-Bold="true" ID="spnDate"></asp:Label>
-                    </td>
-                    <td colspan="3" style="text-align: center; border: 1px solid">
-                        <h2 style="color: blue; font-family: system-ui;">
-                            <asp:Label runat="server" Font-Bold="true" ID="lblDeprtment"></asp:Label></h2>
-                    </td>
-                    <td colspan="1" style="text-align: center; border: 1px solid">
-                        <asp:Label runat="server" Font-Bold="true" ID="spnTime"></asp:Label>
-                    </td>
-                </tr>
-
-                <%-- <tr class="trHegight" style="height: 50px;">
-                    <td>&nbsp; Customer Name:</td>
-                    <td class="auto-style3">
-                        <asp:Label ID="lblcustomerName" CssClass="lblclass" runat="server"></asp:Label></td>
-                    <td class="auto-style15" style="text-align: center; font-weight: bold; border-right: 2px solid;" rowspan="4">&nbsp;</td>
-                    <td>&nbsp; Delivery Date:</td>
-                    <td class="auto-style3">
-                        <asp:Label ID="lbldeliverydate" CssClass="lblclass" runat="server"></asp:Label></td>
-                </tr>
-                <tr class="trHegight" style="height: 50px;">
-                    <td>&nbsp; Quotation No:</td>
-                    <td class="auto-style3">
-                        <asp:Label ID="lblQuotationNo" CssClass="lblclass" runat="server"></asp:Label></td>
-                    <td>&nbsp; Total Quantity:</td>
-                    <td class="auto-style3">
-                        <asp:Label ID="lblTotalQuantity" CssClass="lblclass" runat="server"></asp:Label></td>
-                </tr>
-                <tr class="trHegight" style="height: 50px;">
-                    <td>&nbsp; Quotation Date:</td>
-                    <td class="auto-style3">
-                        <asp:Label ID="lblQuotationDate" CssClass="lblclass" runat="server"></asp:Label></td>
-                    <td>&nbsp; PO No:</td>
-                    <td class="auto-style3">
-                        <asp:Label ID="lblPONo" CssClass="lblclass" runat="server"></asp:Label></td>
-                </tr>
-                <tr class="trHegight" style="height: 50px;">
-                    <td></td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp; PO Date:</td>
-                    <td class="auto-style3">
-                        <asp:Label ID="lblPODate" CssClass="lblclass" runat="server"></asp:Label></td>
-                </tr>--%>
-
-                <tr>
-                    <td colspan="5">
-                        <asp:GridView ID="dgvDeptWiseRpt" runat="server" CssClass="table table-striped table-bordered nowrap"
-                            AutoGenerateColumns="false">
-                            <Columns>
-                                <asp:TemplateField HeaderText="Sr.No" ItemStyle-Width="20" ItemStyle-HorizontalAlign="Center">
-                                    <ItemTemplate>
-                                        <asp:Label ID="lblsno" runat="server" Text='<%# Container.DataItemIndex+1 %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="OA Number" ItemStyle-Width="150" ItemStyle-HorizontalAlign="Center">
-                                    <ItemTemplate>
-                                        <asp:Label ID="lblOANumber" runat="server" Text='<%# Eval("OANumber") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Customer Name" ItemStyle-Width="150" ItemStyle-HorizontalAlign="Center">
-                                    <ItemTemplate>
-                                        <asp:Label ID="lblCustomerName" runat="server" Text='<%# Eval("CustomerName") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Description" ItemStyle-Width="600" ItemStyle-HorizontalAlign="Center" Visible="true">
-                                    <ItemTemplate>
-                                         <asp:Label ID="lblSize" runat="server" Text='<%# Eval("Size") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Total Quantity" ItemStyle-Width="130" ItemStyle-HorizontalAlign="Center">
-                                    <ItemTemplate>
-                                        <asp:Label ID="txtTotQty" runat="server" Text='<%# Eval("TotalQty") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Inward Date and Time" ItemStyle-Width="200" ItemStyle-HorizontalAlign="Center">
-                                    <ItemTemplate>
-                                        <asp:Label ID="lblInwardDtTime" runat="server" Text='<%# Eval("InwardDtTime") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Inward Quantity" ItemStyle-Width="130" ItemStyle-HorizontalAlign="Center">
-                                    <ItemTemplate>
-                                        <asp:Label ID="txtInwardQty" runat="server" Text='<%# Eval("TotalQty") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-
-                                <asp:TemplateField HeaderText="Outward Date and Time" ItemStyle-Width="200" ItemStyle-HorizontalAlign="Center">
-                                    <ItemTemplate>
-                                        <asp:Label ID="lblOutwardDtTime" runat="server" Text='<%# Eval("OutwardDtTime") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Outward Quantity" ItemStyle-Width="130" ItemStyle-HorizontalAlign="Center">
-                                    <ItemTemplate>
-                                        <asp:Label ID="txtOutwardQty" runat="server" Text='<%# Eval("OutwardQty") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                            </Columns>
-                        </asp:GridView>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style15">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style15">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style15">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td style="text-align: end">For Excel Enclosures</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style15">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style15">&nbsp;</td>
-                    <td>&nbsp;</td>
-
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style15">&nbsp;</td>
-                    <td>&nbsp;</td>
-
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style15">&nbsp;</td>
-                    <td>&nbsp;</td>
-
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style15">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td rowspan="2" style="text-align: end">Authorised Signature</td>
-                </tr>
-            </table>
-
-        </div>
-
-    </form>
-</body>
-</html>
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Select.HtmlToPdf.NetCore20</name>
+    </assembly>
+    <members>
+        <member name="T:SelectPdf.BeforeCreateNextPageHandler">
+            <summary>
+            BeforeCreateNextPage event handler
+            </summary>
+            <param name="bcnpEventArgs">The BeforeCreateNextPage event handler</param>
+        </member>
+        <member name="T:SelectPdf.BeforeCreateNextPageEventArgs">
+            <summary>
+            BeforeCreateNextPage event arguments
+            </summary>
+        </member>
+        <member name="P:SelectPdf.BeforeCreateNextPageEventArgs.Cancel">
+            <summary>
+            Set this property true to cancel automatic creation of next page. 
+            This will also end the rendering of the next page.
+            </summary>
+        </member>
+        <member name="T:SelectPdf.BeforeRenderNextPageHandler">
+            <summary>
+            BeforeRenderNextPage event handler
+            </summary>
+            <param name="brnpEventArgs">The BeforeRenderNextPage event handler</param>
+        </member>
+        <member name="T:SelectPdf.BeforeRenderNextPageEventArgs">
+            <summary>
+            BeforeRenderNextPage event arguments
+            </summary>
+        </member>
+        <member name="M:SelectPdf.BeforeRenderNextPageEventArgs.#ctor(System.Int32,System.Drawing.RectangleF)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="pageIndex">The next page index</param>
+            <param name="rectangle">The rectangle rendered on the next page</param>
+        </member>
+        <member name="P:SelectPdf.BeforeRenderNextPageEventArgs.Cancel">
+            <summary>
+            Set this property true to cancel rendering on next page
+            </summary>
+        </member>
+        <member name="P:SelectPdf.BeforeRenderNextPageEventArgs.Rectangle">
+            <summary>
+            The rectangle that will be rendered on the next page
+            </summary>
+        </member>
+        <member name="P:SelectPdf.BeforeRenderNextPageEventArgs.PageIndex">
+            <summary>
+            The index of the next page
+            </summary>
+        </member>
+        <member name="T:SelectPdf.GlobalProperties">
+            <summary>
+            Global properties for SelectPdf SDK.
+            </summary>
+        </member>
+        <member name="P:SelectPdf.GlobalProperties.HtmlEngineFullPath">
+            <summary>
+            Gets or sets the full path (including the file name) of the html rendering engine helper file. 
+            </summary>
+        </member>
+        <member name="P:SelectPdf.GlobalProperties.PdfToolsFullPath">
+            <summary>
+            Gets or sets the full path (including the file name) of the pdf tools engine helper file. 
+            </summary>
+        </member>
+        <member name="P:SelectPdf.GlobalProperties.LFN">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="P:SelectPdf.GlobalProperties.ForceDenyLocalFileAccess">
+            <summary>
+            A flag indicating if local files can be loaded during the conversion. The default value is False and local files can be loaded.
+            </summary>
+            <remarks>
+            This global flag takes priority. If it is set, the corresponding per object flag (DenyLocalFileAccess) is ignored.</remarks>
+        </member>
+        <member name="P:SelectPdf.GlobalProperties.EnableRestrictedRenderingEngine">
+            <summary>
+            Enable or disable restricted rendering engine.
+            </summary>
+            <remarks>
+            There are environments, such as Microsoft Azure Web Apps, where GDI calls are restricted and the default rendering engine does not work.
+            To enable an alternative rendering engine (with some restrictions - no web fonts for html to pdf conversions, one page PdfHtmlElement objects) set this property to True. 
+            The default value for this property is False and the restricted rendering engine is not enabled by default.
+            </remarks>
+        </member>
+        <member name="P:SelectPdf.GlobalProperties.EnableFallbackToRestrictedRenderingEngine">
+            <summary>
+            Enable or disable fall-back to restricted rendering engine.
+            </summary>
+            <remarks>
+            There are environments, such as Microsoft Azure Web Apps, where GDI calls are restricted and the default rendering engine does not work.
+            To enable an alternative rendering engine (with some restrictions - no web fonts for html to pdf conversions, one page PdfHtmlElement objects) 
+            set <see cref="P:SelectPdf.GlobalProperties.EnableRestrictedRenderingEngine"/> to True,
+            or set this property to True to automatically enable the restricted rendering engine if the main engine fails.
+            The default value for this property is True and the restricted rendering engine is activated when main engine fails.
+            </remarks>
+        </member>
+        <member name="T:SelectPdf.ConverterUtils">
+            <summary>
+            HTML converter utilities
+            </summary>
+        </member>
+        <member name="M:SelectPdf.ConverterUtils.GetHtmlFromURL(System.String)">
+            <summary>
+            Get the HTML code from the specified URL. Use the autodetermined page encoding
+            to create the resulted string object. The default code page is UTF8 if the page
+            has no encoding specified
+            </summary>
+            <param name="url">The URL from where to get the HTML</param>
+            <returns>The page HTML string</returns>
+        </member>
+        <member name="M:SelectPdf.ConverterUtils.GetHtmlFromURL(System.String,System.Text.Encoding)">
+            <summary>
+            Get the HTML code from the specified URL. Use the specified page encoding
+            to create the resulted string object. 
+            </summary>
+            <param name="url">The URL from where to get the HTML</param>
+            <param name="pageEncoding">The encoding used to build the resulted string object</param>
+            <returns>The page HTML string</returns>
+        </member>
+        <member name="M:SelectPdf.ConverterUtils.GetHtmlFromURL(System.Net.HttpWebRequest,System.Text.Encoding)">
+            <summary>
+            
+            </summary>
+            <param name="request">The HttpWebRequest object to to make the HTTP request</param>
+            <param name="pageEncoding">The encoding used to build the resulted string object</param>
+            <returns>The page HTML string</returns>
+        </member>
+        <member name="T:SelectPdf.HiddenWebElements">
+            <summary>
+            Helps defining a set of html elements that will not be displayed in the generated pdf document.
+            </summary>
+        </member>
+        <member name="P:SelectPdf.HiddenWebElements.CssSelectors">
+            <summary>
+            This property is used to define an array containing the selectors of the html elements that will not be displayed in the final pdf document. 
+            For example, the selector for all the image elements is "img", the selector for all the elements with the CSS class name 'myclass'
+            is "*.myclass" and the selector for the elements with the id 'myid' is "*#myid".
+            </summary>
+        </member>
+        <member name="T:SelectPdf.SecureProtocol">
+            <summary>
+            Protocol used for secure (HTTPS) connections.
+            </summary>
+        </member>
+        <member name="F:SelectPdf.SecureProtocol.Tls11OrNewer">
+            <summary>
+            TLS 1.1 or newer. Recommended value.
+            </summary>
+        </member>
+        <member name="F:SelectPdf.SecureProtocol.Tls10">
+            <summary>
+            TLS 1.0 only.
+            </summary>
+        </member>
+        <member name="F:SelectPdf.SecureProtocol.Ssl3">
+            <summary>
+            SSL v3 only.
+            </summary>
+        </member>
+        <member name="T:SelectPdf.HtmlToImage">
+            <summary>
+            Html to Image Converter. This class offers the API needed to create images in various formats from
+            a specified web page or html string.
+            </summary>
+        </member>
+        <member name="M:SelectPdf.HtmlToImage.#ctor">
+            <summary>
+            Creates an html to image converter. Width and height of the web page are automatically detected.
+            </summary>
+        </member>
+        <member name="M:SelectPdf.HtmlToImage.#ctor(System.Int32)">
+            <summary>
+            Creates an html to image converter. The width of the web page is specified. The height of the web page is automatically detected.
+            </summary>
+            <param name="webPageWidth">The web page width.</param>
+        </member>
+        <member name="M:SelectPdf.HtmlToImage.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Creates an html to image converter for a web page with the specified width and height.
+            </summary>
+            <param name="webPageWidth">The web page width.</param>
+            <param name="webPageHeight">The web page height.</param>
+        </member>
+        <member name="P:SelectPdf.HtmlToImage.LFN">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="P:SelectPdf.HtmlToImage.VisibleWebElementId">
+            <summary>
+            Use this property to convert only a certain section of the web page, specified by the html element ID.
+            </summary>
+        </member>
+        <member name="P:SelectPdf.HtmlToImage.StartupMode">
+            <summary>
+            Use this property to specify how the conversion starts.
+            </summary>
+            <remarks>
+            By default this is set to <see cref="F:SelectPdf.HtmlToPdfStartupMode.Automatic"/> and the conversion is started as soon as the page loads (and <see cref="P:SelectPdf.HtmlToImage.MinPageLoadTime"/> elapses). 
+            If set to <see cref="F:SelectPdf.HtmlToPdfStartupMode.Manual"/>, the conversion is started only by a javascript call to <c>SelectPdf.startConversion()</c> from within the web page.
+            </remarks>
+        </member>
+        <member name="P:SelectPdf.HtmlToImage.StartupScript">
+            <summary>
+            Use this property to specify some JavaScript code that will be injected into the page that is converted. 
+            </summary>
+            <remarks>The JavaScript code specified here will run before any other script on the page.</remarks>
+        </member>
+        <member name="P:SelectPdf.HtmlToImage.WebPageWidth">
+            <summary>
+            Gets or sets the web page width.
+            </summary>
+        </member>
+        <member name="P:SelectPdf.HtmlToImage.WebPageHeight">
+            <summary>
+            Gets or sets the web page height. If the width was not set, this property has no effect.
+            </summary>
+        </member>
+        <member name="P:SelectPdf.HtmlToImage.WebPageFixedSize">
+            <summary>Control

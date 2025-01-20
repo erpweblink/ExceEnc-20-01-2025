@@ -1,235 +1,344 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Data.SqlClient;
-using System.Configuration;
-using System.Data;
-using System.IO;
-using System.Text;
-using System.Security.Cryptography;
-using System.Net.Mail;
-using System.Net;
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMasterPage.master" AutoEventWireup="true" CodeFile="LaserProgramming.aspx.cs" Inherits="Admin_LaserProgramming" %>
 
-public partial class Admin_ProformaInvoiceList : System.Web.UI.Page
-{
-    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
-    protected void Page_Load(object sender, EventArgs e)
-    {
-        if (Session["name"] == null)
-        {
-            Response.Redirect("../Login.aspx");
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <style>
+        .spancls {
+            color: #5d5656 !important;
+            font-size: 13px !important;
+            font-weight: 600;
+            text-align: left;
         }
-        else
-        {
-            if (!IsPostBack)
-            {
-                GVBinddata();
+
+        .starcls {
+            color: red;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .card .card-header span {
+            color: #060606;
+            display: block;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        .btn {
+            padding: 5px 5px !important;
+        }
+    </style>
+
+    <style>
+        .modelprofile1 {
+            background-color: rgba(0, 0, 0, 0.54);
+            display: block;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            /*top: 10px;*/
+            height: 100%;
+            overflow: auto;
+            width: 100%;
+            margin-bottom: 25px;
+        }
+
+        .profilemodel2 {
+            background-color: #fefefe;
+            margin-top: 25px;
+            /*padding: 17px 5px 18px 22px;*/
+            padding: 0px 0px 15px 0px;
+            width: 100%;
+            top: 40px;
+            color: #000;
+            border-radius: 5px;
+        }
+
+        .lblpopup {
+            text-align: left;
+        }
+
+        .wp-block-separator:not(.is-style-wide):not(.is-style-dots)::before, hr:not(.is-style-wide):not(.is-style-dots)::before {
+            content: '';
+            display: block;
+            height: 1px;
+            width: 100%;
+            background: #cccccc;
+        }
+
+        .btnclose {
+            background-color: #ef1e24;
+            float: right;
+            font-size: 18px !important;
+            /* font-weight: 600; */
+            color: #f7f6f6 !important;
+            border: 0px groove !important;
+            background-color: none !important;
+            /*margin-right: 10px !important;*/
+            cursor: pointer;
+            font-weight: 600;
+            border-radius: 4px;
+            padding: 4px;
+        }
+
+        /*hr {
+            margin-top: 5px !important;
+            margin-bottom: 15px !important;
+            border: 1px solid #eae6e6 !important;
+            width: 100%;
+        }*/
+        hr.new1 {
+            border-top: 1px dashed green !important;
+            border: 0;
+            margin-top: 5px !important;
+            margin-bottom: 5px !important;
+            width: 100%;
+        }
+
+        .errspan {
+            float: right;
+            margin-right: 6px;
+            margin-top: -25px;
+            position: relative;
+            z-index: 2;
+            color: black;
+        }
+
+        .currentlbl {
+            text-align: center !important;
+        }
+
+        .completionList {
+            border: solid 1px Gray;
+            border-radius: 5px;
+            margin: 0px;
+            padding: 3px;
+            height: 120px;
+            overflow: auto;
+            background-color: #FFFFFF;
+        }
+
+        .listItem {
+            color: #191919;
+        }
+
+        .itemHighlighted {
+            background-color: #ADD6FF;
+        }
+
+        .headingcls {
+            background-color: #01a9ac;
+            color: #fff;
+            padding: 15px;
+            border-radius: 5px 5px 0px 0px;
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 90%;
             }
         }
-    }
 
-    protected void GVBinddata()
-    {
-        try
-        {
-            DataTable dt = new DataTable();
-            SqlDataAdapter sad = new SqlDataAdapter("select * from tblProformaInvoiceHdr order by CreatedOn DESC", con);
-            sad.Fill(dt);
-            GvInvoiceList.DataSource = dt;
-            GvInvoiceList.DataBind();
-            GvInvoiceList.EmptyDataText = "Record Not Found";
-
+        .selected_row {
+            background-color: #A1DCF2;
         }
-        catch (Exception)
-        {
+    </style>
 
-            throw;
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+
+    <%-- New SweetAlert Script by nikhil  --%>
+    <script>
+        function HideLabel(msg, icon) {
+            Swal.fire({
+                icon: icon,
+                title: "Oops...",
+                text: msg,
+                timer: 3000,
+                showCancelButton: false,
+                showConfirmButton: false
+            }).then(function () {
+                //window.location.href = "../Admin/LaserProgramming.aspx";                      
+            })
+        };
+    </script>
+    <%-- ENd  --%>
+
+
+    <script type="text/javascript">
+        function pageLoad() {
+            $(document).ready(function () {
+                $('.myDate').datepicker({
+                    dateFormat: 'dd-mm-yy',
+                    inline: true,
+                    showOtherMonths: true,
+                    changeMonth: true,
+                    changeYear: true,
+                    constrainInput: true,
+                    firstDay: 1,
+                    navigationAsDateFormat: true,
+                    showAnim: "fold",
+                    yearRange: "c-100:c+10",
+                    dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+                });
+                $('.myDate').datepicker('setDate', new Date());
+                $('.ui-datepicker').hide();
+            });
         }
-    }
+    </script>
 
-    [System.Web.Script.Services.ScriptMethod()]
-    [System.Web.Services.WebMethod]
-    public static List<string> GetCustomerList(string prefixText, int count)
-    {
-        return AutoFillCustomerlist(prefixText);
-    }
+    <script type='text/javascript'>
+        function openModal() {
+            $('[id*=myModal]').modal('show');
+        }
+    </script>
+    <script type="text/javascript">
+        function checkAll(objRef) {
+            var GridView = objRef.parentNode.parentNode.parentNode;
+            var inputList = GridView.getElementsByTagName("input");
+            for (var i = 0; i < inputList.length; i++) {
+                var row = inputList[i].parentNode.parentNode;
+                if (inputList[i].type == "checkbox" && objRef != inputList[i]) {
 
-    public static List<string> AutoFillCustomerlist(string prefixText)
-    {
-        using (SqlConnection con = new SqlConnection())
-        {
-            con.ConnectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
-
-            using (SqlCommand com = new SqlCommand())
-            {
-                com.CommandText = "Select DISTINCT [cname] from Company where " + "cname like @Search + '%'";
-
-                com.Parameters.AddWithValue("@Search", prefixText);
-                com.Connection = con;
-                con.Open();
-                List<string> BillingCustomer = new List<string>();
-                using (SqlDataReader sdr = com.ExecuteReader())
-                {
-                    while (sdr.Read())
-                    {
-                        BillingCustomer.Add(sdr["cname"].ToString());
+                    if (objRef.checked) {
+                        row.style.backgroundColor = "aqua";
+                        inputList[i].checked = true;
+                    }
+                    else {
+                        if (row.rowIndex % 2 == 0) {
+                            row.style.backgroundColor = "#C2D69B";
+                        }
+                        else {
+                            row.style.backgroundColor = "white";
+                        }
+                        inputList[i].checked = false;
                     }
                 }
-                con.Close();
-                return BillingCustomer;
-            }
-
-        }
-    }
-
-    protected void txtCustomerName_TextChanged(object sender, EventArgs e)
-    {
-        try
-        {
-            if (txtCustomerName.Text != "")
-            {
-                DataTable dtt = new DataTable();
-                SqlDataAdapter sad = new SqlDataAdapter("select * from tblProformaInvoiceHdr where BillingCustomer='" + txtCustomerName.Text + "'", con);
-                sad.Fill(dtt);
-                GvInvoiceList.DataSource = dtt;
-                GvInvoiceList.DataBind();
-                GvInvoiceList.EmptyDataText = "Record Not Found";
-            }
-            else
-            {
-                DataTable dt = new DataTable();
-                SqlDataAdapter sad = new SqlDataAdapter("select * from tblProformaInvoiceHdr order by CreatedOn DESC", con);
-                sad.Fill(dt);
-                GvInvoiceList.DataSource = dt;
-                GvInvoiceList.DataBind();
-                GvInvoiceList.EmptyDataText = "Record Not Found";
-            }
-
-        }
-        catch (Exception)
-        {
-
-            throw;
-        }
-    }
-
-    protected void btnresetfilter_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("ProformaInvoiceList.aspx");
-    }
-
-    protected void GvInvoiceList_RowCommand(object sender, GridViewCommandEventArgs e)
-    {
-        if (e.CommandName == "RowEdit")
-        {
-            Response.Redirect("ProformaInvoice.aspx?Id=" + encrypt(e.CommandArgument.ToString()));
-        }
-        if (e.CommandName == "DownloadPDF")
-        {
-            if (!string.IsNullOrEmpty(e.CommandArgument.ToString()))
-            {
-                Session["PDFID"] = e.CommandArgument.ToString();
-                // Response.Write("<script>window.open('PurchaseBillPDF.aspx','_blank');</script>");
-                Response.Write("<script>window.open('ProformaInvoicePDF.aspx?Id=" + encrypt(e.CommandArgument.ToString()) + "','_blank');</script>");
-
-
             }
         }
-        if (e.CommandName == "RowDelete")
-        {
-            con.Open();
-            SqlCommand Cmd = new SqlCommand("delete from tblProformaInvoiceHdr WHERE Id=@Id", con);
-            Cmd.Parameters.AddWithValue("@Id", Convert.ToInt32(e.CommandArgument.ToString()));
-            Cmd.ExecuteNonQuery();
+    </script>
 
-            SqlCommand CmddeleteDtl = new SqlCommand("delete from tblProformaInvoiceDtls where HeaderID=@Id", con);
-            CmddeleteDtl.Parameters.AddWithValue("@Id", Convert.ToInt32(e.CommandArgument.ToString()));
-            CmddeleteDtl.ExecuteNonQuery();
-
-            con.Close();
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Data Deleted Sucessfully');window.location.href='ProformaInvoiceList.aspx';", true);
+    <script type="text/javascript">
+        function Confirm() {
+            var confirm_value = document.createElement("INPUT");
+            confirm_value.type = "hidden";
+            confirm_value.name = "confirm_value";
+            if (confirm("Do you want to Approve?")) {
+                confirm_value.value = "Yes";
+            } else {
+                confirm_value.value = "No";
+            }
+            document.forms[0].appendChild(confirm_value);
         }
-    }
+    </script>
 
-    public string encrypt(string encryptString)
-    {
-        string EncryptionKey = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        byte[] clearBytes = Encoding.Unicode.GetBytes(encryptString);
-        using (Aes encryptor = Aes.Create())
-        {
-            Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] {
-            0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76
+    <script type="text/javascript">   
+        function CheckSingleCheckbox(ob) {
+            var grid = ob.parentNode.parentNode.parentNode;
+            var inputs = grid.getElementsByTagName("input");
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type == "checkbox") {
+                    if (ob.checked && inputs[i] != ob && inputs[i].checked) {
+
+                        //MakeStaticHeader('dgvLaserprogram', 400, 1020, 40, false)
+
+                    }
+                }
+            }
+        }
+
+        function CheckedCheckbox(ob) {
+            var checkboxval = ob.checked;
+            if (checkboxval == true) {
+                $('#btnshowhide').show();
+            }
+            else {
+                $('#btnshowhide').hide();
+            }
+
+            var grid = document.getElementById("<%=dgvLaserprogram.ClientID%>");
+            var checkBoxes = grid.getElementsByTagName("INPUT");
+            for (var i = 0; i < checkBoxes.length; i++) {
+                if (checkBoxes[i].checked) {
+                    $('#btnshowhide').show();
+                }
+            }
+        }
+
+        function Linkclicked(txt) {
+
+            var grid = document.getElementById("<%= dgvLaserprogram.ClientID%>");
+            var row = txt.parentNode.parentNode;
+            var rowIndex = row.rowIndex;
+            //var Userid = row.cells[3].innerHTML;
+            var suboanumber = grid.rows[rowIndex].cells[3].childNodes[1].childNodes[0].data;
+            var InwardQty = grid.rows[rowIndex].cells[7].childNodes[1].value;
+
+            $("#<%=txtReturnInward.ClientID%>").val(InwardQty);
+            $("#<%=hdnInwardQty.ClientID%>").val(InwardQty);
+            $("#<%=hdnSubOANo.ClientID%>").val(suboanumber);
+
+            $('#divReturn').show();
+
+        }
+
+        function Keydown(txt) {
+
+            alert("Inward Quantity will change after sending quantity to Next Stage.");
+        }
+
+
+
+    </script>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $("[src*=plus]").live("click", function () {
+            $(this).closest("tr").after("<tr><td></td><td colspan = '999'>" + $(this).next().html() + "</td></tr>")
+            $(this).attr("src", "../img/minus.png");
         });
-            encryptor.Key = pdb.GetBytes(32);
-            encryptor.IV = pdb.GetBytes(16);
-            using (MemoryStream ms = new MemoryStream())
-            {
-                using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateEncryptor(), CryptoStreamMode.Write))
-                {
-                    cs.Write(clearBytes, 0, clearBytes.Length);
-                    cs.Close();
-                }
-                encryptString = Convert.ToBase64String(ms.ToArray());
-            }
+        $("[src*=minus]").live("click", function () {
+            $(this).attr("src", "../img/plus.png");
+            $(this).closest("tr").next().remove();
+        });
+    </script>
+
+    <script type='text/javascript'>
+        function openModal() {
+            $('[id*=myModal]').modal('show');
         }
-        return encryptString;
-    }
+    </script>
 
-    protected void GvInvoiceList_RowDataBound(object sender, GridViewRowEventArgs e)
-    {
-        try
-        {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                LinkButton btnEdit = e.Row.FindControl("btnEdit") as LinkButton;
-                LinkButton btnDelete = e.Row.FindControl("btnDelete") as LinkButton;
-                LinkButton btnPDF = e.Row.FindControl("btnPDF") as LinkButton;
+    <script language="javascript" type="text/javascript">
 
-                string empcode = Session["empcode"].ToString();
-                DataTable Dt = new DataTable();
-                SqlDataAdapter Sd = new SqlDataAdapter("Select id from [employees] where [empcode]='" + empcode + "'", con);
-                Sd.Fill(Dt);
-                if (Dt.Rows.Count > 0)
-                {
-                    string idd = Dt.Rows[0]["id"].ToString();
-                    DataTable Dtt = new DataTable();
-                    SqlDataAdapter Sdd = new SqlDataAdapter("Select * FROM tblUserRoleAuthorization where UserID = '" + idd + "' AND PageName = 'ProformaInvoiceList.aspx' AND PagesView = '1'", con);
-                    Sdd.Fill(Dtt);
-                    if (Dtt.Rows.Count > 0)
-                    {
-                        btnAddProfInv.Visible = false;
-                        btnEdit.Visible = false;
-                        btnDelete.Visible = false;
-                        btnPDF.Visible = true;
-                    }
-                }
+        function MakeStaticHeader(gridId, height, width, headerHeight, isFooter) {
 
+            $('#btnshowhide').hide();
 
-                con.Open();
-                int id = Convert.ToInt32(GvInvoiceList.DataKeys[e.Row.RowIndex].Values[0]);
-                SqlCommand cmd = new SqlCommand("select COUNT(HeaderID) from tblProformaInvoiceDtls where HeaderID='" + id + "'", con);
-                Object Procnt = cmd.ExecuteScalar();
-                Label grandtotal = (Label)e.Row.FindControl("lblProduct");
-                grandtotal.Text = Procnt == null ? "0" : Procnt.ToString();
-                con.Close();
+            var tbl = document.getElementById(gridId);
+            if (tbl) {
+                var DivHR = document.getElementById('DivHeaderRow');
+                var DivMC = document.getElementById('DivMainContent');
+                var DivFR = document.getElementById('DivFooterRow');
 
+                var wid = 100;
 
-                Label lblGrandTotal = (Label)e.Row.FindControl("lblGrandTotal");
+                //*** Set divheaderRow Properties ****
+                DivHR.style.height = headerHeight + 'px';
+                DivHR.style.width = wid + "%";
+                DivHR.style.position = 'relative';
+                DivHR.style.top = '0px';
+                DivHR.style.zIndex = '10';
+                DivHR.style.verticalAlign = 'top';
 
-                var gtot = Math.Round(Convert.ToDouble(lblGrandTotal.Text));
+                //*** Set divMainContent Properties ****
+                DivMC.style.width = wid + "%";
+                DivMC.style.height = height + 'px';
+                DivMC.style.position = 'relative';
+                DivMC.style.top = -headerHeight + 'px';
+                DivMC.style.zIndex = '1';
 
-                lblGrandTotal.Text = gtot.ToString("#0.00");
-
-            }
-        }
-        catch (Exception)
-        {
-
-            throw;
-        }
-    }
-}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                //*** Set divFooterRow Properties ****
+                DivFR.style.width = wid + "%";
+                DivFR.style.position = 'relative';
+                DivFR.style.to

@@ -1,64 +1,22 @@
-<html>
-	<head>
-		<script language="javascript" src="../dom.js"></script>
-		<script language="javascript" src="../bolist.js"></script>
-		<script language="javascript">
-			var skin=parent._skin?parent._skin:"skin_standard";
-			var lang=parent._lang?parent._lang:"en";
-			
-			initDom("../images/"+skin+"/",lang)
-			styleSheet()
-		</script>
-			
-		<script language="javascript">
+(BaseFont.CreateFont(@"C:\Windows\Fonts\Calibrib.ttf", "Identity-H", BaseFont.EMBEDDED), 10);
+            cbbb.ShowTextAligned(PdfContentByte.ALIGN_LEFT, "GSTIN :27ATFPS1959J1Z4" + "", 48, 765, 0);
+            cbbb.SetFontAndSize(BaseFont.CreateFont(@"C:\Windows\Fonts\Calibrib.ttf", "Identity-H", BaseFont.EMBEDDED), 10);
+            cbbb.ShowTextAligned(PdfContentByte.ALIGN_LEFT, "PAN NO: ATFPS1959J" + "", 170, 765, 0);
+            cbbb.SetFontAndSize(BaseFont.CreateFont(@"C:\Windows\Fonts\Calibrib.ttf", "Identity-H", BaseFont.EMBEDDED), 10);
+            cbbb.ShowTextAligned(PdfContentByte.ALIGN_LEFT, "MAHARASHTRA STATE GST CODE : 27" + "", 280, 765, 0);
+            cbbb.SetFontAndSize(BaseFont.CreateFont(@"C:\Windows\Fonts\Calibrib.ttf", "Identity-H", BaseFont.EMBEDDED), 10);
+            cbbb.ShowTextAligned(PdfContentByte.ALIGN_LEFT, "CONTACT : 9225658662", 455, 765, 0);
+            cbbb.EndText();
 
-			theThing = newBlockWhileWaitWidget("")
+            PdfContentByte cd = writer.DirectContent;
+            cd.Rectangle(28f, 731f, 560f, 25f);
+            cd.Stroke();
+            // Header 
+            cd.BeginText();
 
-			_show = true
-			
-			function loadCB()
-			{
-				theThing.show(_show)
-				//document.write("sdf,יי")
-				
-			}
-
-
-			function switchThing()
-			{
-				theThing.show(_show)
-				//document.write("sdf,יי")
-				_show = !_show
-				window.status= theThing.css.zIndex
-			}
-						
-		</script>
-	</head>
-	<body onload="loadCB()">
-	
-			<div style="position:absolute;z-index=10000;top:10px;left:10px;width:100px" class="insetBorder"><div class="dialogzone" style="padding:15px">
-			<a href="javascript:void(0);" onClick="javascript:switchThing()">
-			Switch HERE
-			</a>
-			</div></div>		
-			
-			<table width="100%">
-			<tr><td align="center" valign="middle">
-			<div class="insetBorder"><div class="dialogzone" style="padding:15px">
-		
-			<a href="javascript:void(0);" onClick="alert('doTheAlert')">
-			Cliquer ICI
-			</a>
-
-			</div>
-			</td></tr>
-
-			<tr><td align="center" valign="middle">
-</div>
-			</td></tr>
-						
-		</table>
-		
-	</body>
-	
-</html>
+            if (flg == "Original")
+            {
+                //cb.SetFontAndSize(BaseFont.CreateFont(@"C:\Windows\Fonts\Calibrib.ttf", "Identity-H", BaseFont.EMBEDDED), 10);
+                //cb.ShowTextAligned(PdfContentByte.ALIGN_LEFT, "ORIGINAL FOR BUYER", 480, 739, 0);
+            }
+            e

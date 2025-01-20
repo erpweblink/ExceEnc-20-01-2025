@@ -1,359 +1,315 @@
-/* Copyright (c) Business Objects 2006. All rights reserved. */
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMasterPage.master" AutoEventWireup="true" CodeFile="EWayBillList.aspx.cs" Inherits="Admin_TaxInvoiceList" %>
 
-var L_bobj_crv_MainReport = "Hovedrapport";
-// Viewer Toolbar tooltips
-var L_bobj_crv_FirstPage = "G\u00E5 til f\u00F8rste side";
-var L_bobj_crv_PrevPage = "G\u00E5 til forrige side";
-var L_bobj_crv_NextPage = "G\u00E5 til n\u00E6ste side";
-var L_bobj_crv_LastPage = "G\u00E5 til sidste side";
-var L_bobj_crv_ParamPanel = "Parameterpanel";
-var L_bobj_crv_Parameters = "Parametre";
-var L_bobj_crv_GroupTree = "Gruppetr\u00E6";
-var L_bobj_crv_DrillUp = "Analyser stigende";
-var L_bobj_crv_Refresh = "Opdater rapport";
-var L_bobj_crv_Zoom = "Zoom";
-var L_bobj_crv_PageNav = "Sidenavigation";
-var L_bobj_crv_SelectPage = "G\u00E5 til side";
-var L_bobj_crv_SearchText = "S\u00F8g efter tekst";
-var L_bobj_crv_Export = "Eksporter denne rapport";
-var L_bobj_crv_Print = "Udskriv denne rapport";
-var L_bobj_crv_TabList = "Faneliste";
-var L_bobj_crv_Close = "Luk";
-var L_bobj_crv_Logo=  "Business Objects-logo";
-var L_bobj_crv_FileMenu = "Menuen Filer";
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
-var L_bobj_crv_File = "Filer";
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <style>
+        .spancls {
+            color: #5d5656 !important;
+            font-size: 13px !important;
+            font-weight: 600;
+            text-align: left;
+        }
+        .starcls {
+            color: red;
+            font-size: 18px;
+            font-weight: 700;
+        }
 
-var L_bobj_crv_Show = "Vis";
-var L_bobj_crv_Hide = "Skjul";
+        .sortable-handler {
+            touch-action: none;
+        }
 
-var L_bobj_crv_Find = "S\u00F8g...";
-var L_bobj_crv_of = "%1 af %2"; // Example: Page "1 of 3"
+        .card .card-header span {
+            color: #060606;
+            display: block;
+            font-size: 13px;
+            margin-top: 5px;
+        }
 
-var L_bobj_crv_submitBtnLbl = "Eksporter";
-var L_bobj_crv_ActiveXPrintDialogTitle = "Udskriv";
-var L_bobj_crv_PDFPrintDialogTitle = "Udskriv som PDF";
-var L_bobj_crv_PrintRangeLbl = "Sideomr\u00E5de:";
-var L_bobj_crv_PrintAllLbl = "Alle sider";
-var L_bobj_crv_PrintPagesLbl = "V\u00E6lg sider";
-var L_bobj_crv_PrintFromLbl = "Fra:";
-var L_bobj_crv_PrintToLbl = "Til:";
-var L_bobj_crv_PrintInfoTitle = "Udskriv som PDF:";
-var L_bobj_crv_PrintInfo1 = 'Fremviseren skal eksportere til PDF for at udskrive. V\u00E6lg indstillingen Udskriv i PDF-l\u00E6serprogrammet, n\u00E5r dokumentet er \u00E5bnet.';
-var L_bobj_crv_PrintInfo2 = 'Bem\u00E6rk: Du skal have en PDF-l\u00E6ser installeret. (f.eks. Adobe Reader)';
-var L_bobj_crv_PrintPageRangeError = "Indtast et gyldigt sideomr\u00E5de.";
+        .btn {
+            padding: 5px 5px !important;
+        }
+    </style>
 
-var L_bobj_crv_ExportBtnLbl = "Eksporter";
-var L_bobj_crv_ExportDialogTitle = "Eksporter";
-var L_bobj_crv_ExportFormatLbl = "Filformat:";
-var L_bobj_crv_ExportInfoTitle = "Til eksport:";
+    <style>
+        .modelprofile1 {
+            background-color: rgba(0, 0, 0, 0.54);
+            display: block;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            /*top: 10px;*/
+            height: 100%;
+            overflow: auto;
+            width: 100%;
+            margin-bottom: 25px;
+        }
 
-var L_bobj_crv_ParamsApply = "Anvend";
-var L_bobj_crv_ParamsAdvDlg = "Rediger parameterv\u00E6rdi";
-var L_bobj_crv_ParamsDeleteTooltip = "Slet parameterv\u00E6rdi";
-var L_bobj_crv_ParamsAddValue = "Klik for at tilf\u00F8je...";
-var L_bobj_crv_ParamsApplyTip = "Knappen Anvend (aktiveret)";
-var L_bobj_crv_ParamsApplyDisabledTip = "Knappen Anvend (deaktiveret)";
-var L_bobj_crv_ParamsDlgTitle = "Indtast v\u00E6rdier";
-var L_bobj_crv_ParamsCalBtn = "Knappen Kalender";
-var L_bobj_crv_Reset= "Nulstil";
-var L_bobj_crv_ResetTip = "Knappen Nulstil (aktiveret)";
-var L_bobj_crv_ResetDisabledTip = "Knappen Nulstil (deaktiveret)";
-var L_bobj_crv_ParamsDirtyTip = "Parameterv\u00E6rdi er \u00E6ndret. Klik p\u00E5 knappen Anvend for at anvende \u00E6ndringer.";
-var L_bobj_crv_ParamsDataTip = "Dette er en parameter til datahentning";
-var L_bobj_crv_ParamsMaxNumDefaultValues = "Klik her for at f\u00E5 flere elementer...";
-var L_bobj_crv_paramsOpenAdvance = "Avanceret foresp\u00F8rgselsknap til \'%1\'";
+        .profilemodel2 {
+            background-color: #fefefe;
+            margin-top: 25px;
+            /*padding: 17px 5px 18px 22px;*/
+            padding: 0px 0px 15px 0px;
+            width: 100%;
+            top: 40px;
+            color: #000;
+            border-radius: 5px;
+        }
 
-var L_bobj_crv_ParamsInvalidTitle = "Parameterv\u00E6rdien er ikke gyldig";
-var L_bobj_crv_ParamsTooLong = "Parameterv\u00E6rdien m\u00E5 ikke v\u00E6re mere end %1 tegn lang";
-var L_bobj_crv_ParamsTooShort = "Parameterv\u00E6rdien skal v\u00E6re mindst %1 tegn lang";
-var L_bobj_crv_ParamsBadNumber = "Denne parameter er af typen \"Tal\" and can only contain a negative sign symbol, digits (\"0-9\"), digit grouping symbols or a decimal symbol.";
-var L_bobj_crv_ParamsBadCurrency = "Denne parameter er af typen \"Valuta\" og m\u00E5 kun indeholde symbolet for negative tal, cifrene (\"0-9\"), ciffergruppeseparatorer eller et decimaltegn. Ret den indtastede parameterv\u00E6rdi.";
-var L_bobj_crv_ParamsBadDate = "Denne parameter er af typen \"Dato\", og det korrekte format er \"%1\", hvor \"yyyy\" er det fircifrede \u00E5rstal, \"mm\" er m\u00E5neden (f.eks. januar = 1), og \"dd\" er dagen i m\u00E5neden.";
-var L_bobj_crv_ParamsBadTime = "Denne parameter er af typen \"Klokkesl\u00E6t\" og skal v\u00E6re i formatet \"hh:mm:ss\", hvor \"hh\" er timer i et 24-timers ur, \"mm\" er minutter, og \"ss\" er sekunder.";
-var L_bobj_crv_ParamsBadDateTime = "Denne parameter er af typen \"Dato/klokkesl\u00E6t\", og det aktuelle format er \"%1 hh:mm:ss\". \"yyyy\" er det fircifrede \u00E5rstal, \"mm\" er m\u00E5neden (f.eks. januar = 1), \"dd\" er dagen i m\u00E5neden, \"hh\" er timer i et 24-timers ur, \"mm\" er minutter, og \"ss\" er sekunder.";
-var L_bobj_crv_ParamsMinTooltip = "Angiv en %1-v\u00E6rdi, der er st\u00F8rre end eller lig med %2.";
-var L_bobj_crv_ParamsMaxTooltip = "Angiv en %1-v\u00E6rdi, der er mindre end eller lig med %2.";
-var L_bobj_crv_ParamsMinAndMaxTooltip = "Angiv en %1-v\u00E6rdi mellem %2 og %3.";
-var L_bobj_crv_ParamsStringMinOrMaxTooltip = "%1-l\u00E6ngden for dette felt er %2.";
-var L_bobj_crv_ParamsStringMinAndMaxTooltip = "V\u00E6rdien skal v\u00E6re mellem %1 og %2 tegn lang.";
-var L_bobj_crv_ParamsYearToken = "\u00E5\u00E5\u00E5\u00E5";
-var L_bobj_crv_ParamsMonthToken = "mm";
-var L_bobj_crv_ParamsDayToken = "dd";
-var L_bobj_crv_ParamsReadOnly = "Denne parameter er af typen \"Skrivebeskyttet\".";
-var L_bobj_crv_ParamsNoValue = "Ingen v\u00E6rdi";
-var L_bobj_crv_ParamsDuplicateValue = "Duplikerede v\u00E6rdier er ikke tilladt.";
-var L_bobj_crv_ParamsEnterOptional = "Indtast %1 (valgfrit)";
-var L_bobj_crv_ParamsNoneSelected= "(Ingen valgte)";
-var L_bobj_crv_ParamsClearValues= "Slet v\u00E6rdier";
-var L_bobj_crv_ParamsMoreValues= "%1 flere v\u00E6rdier...";
-var L_bobj_crv_ParamsMoreValue= "%1 mere v\u00E6rdi...";
-var L_bobj_crv_Error = "Fejl";
-var L_bobj_crv_OK = "OK";
-var L_bobj_crv_Cancel = "Annuller";
-var L_bobj_crv_showDetails = "Vis detaljer";
-var L_bobj_crv_hideDetails = "Skjul detaljer";
-var L_bobj_crv_RequestError = "Det var ikke muligt at behandle din anmodning";
-var L_bobj_crv_ServletMissing = "Fremviseren kunne ikke oprette forbindelse til CrystalReportViewerServlet, der h\u00E5ndterer asynkrone anmodninger.\nKontroller, at Servlet\'en og Servlet-Mapping er defineret i programmets web.xml-fil.";
-var L_bobj_crv_FlashRequired = "Dette indhold kr\u00E6ver Adobe Flash Player 9 eller h\u00F8jere. {0}Klik her for at installere";
-var L_bobj_crv_ReadOnlyInPanel= "Denne parameter kan ikke redigeres i dette panel. \u00C5bn den avancerede foresp\u00F8rgselsdialog for at \u00E6ndre dens v\u00E6rdi";
+        .lblpopup {
+            text-align: left;
+        }
 
-var L_bobj_crv_Tree_Drilldown_Node = "Detaljeudledningsnode %1";
+        .wp-block-separator:not(.is-style-wide):not(.is-style-dots)::before, hr:not(.is-style-wide):not(.is-style-dots)::before {
+            content: '';
+            display: block;
+            height: 1px;
+            width: 100%;
+            background: #cccccc;
+        }
 
-var L_bobj_crv_ReportProcessingMessage = "Vent, mens dokumentet behandles.";
-var L_bobj_crv_PrintControlProcessingMessage = "Vent mens Crystal Reports-udskriftskontrol indl\u00E6ses.";
+        .btnclose {
+            background-color: #ef1e24;
+            float: right;
+            font-size: 18px !important;
+            /* font-weight: 600; */
+            color: #f7f6f6 !important;
+            border: 0px groove !important;
+            background-color: none !important;
+            /*margin-right: 10px !important;*/
+            cursor: pointer;
+            font-weight: 600;
+            border-radius: 4px;
+            padding: 4px;
+        }
 
-var L_bobj_crv_SundayShort = "S";
-var L_bobj_crv_MondayShort = "M";
-var L_bobj_crv_TuesdayShort = "T";
-var L_bobj_crv_WednesdayShort = "O";
-var L_bobj_crv_ThursdayShort = "T";
-var L_bobj_crv_FridayShort = "F";
-var L_bobj_crv_SaturdayShort = "S";
+        /*hr {
+            margin-top: 5px !important;
+            margin-bottom: 15px !important;
+            border: 1px solid #eae6e6 !important;
+            width: 100%;
+        }*/
+        hr.new1 {
+            border-top: 1px dashed green !important;
+            border: 0;
+            margin-top: 5px !important;
+            margin-bottom: 5px !important;
+            width: 100%;
+        }
 
-var L_bobj_crv_Minimum = "minimum";
-var L_bobj_crv_Maximum = "maksimum";
+        .errspan {
+            float: right;
+            margin-right: 6px;
+            margin-top: -25px;
+            position: relative;
+            z-index: 2;
+            color: black;
+        }
 
-var L_bobj_crv_Date = "Dato";
-var L_bobj_crv_Time = "Klokkesl\u00E6t";
-var L_bobj_crv_DateTime = "Dato/klokkesl\u00E6t";
-var L_bobj_crv_Boolean = "Boolesk";
-var L_bobj_crv_Number = "Tal";
-var L_bobj_crv_Text = "Tekst";
+        .currentlbl {
+            text-align: center !important;
+        }
 
-var L_bobj_crv_InteractiveParam_NoAjax = "Webbrowseren, du anvender, er ikke konfigureret til at vise parameterpanelet.";
-var L_bobj_crv_AdvancedDialog_NoAjax= "Fremviseren kan ikke \u00E5bne en avanceret foresp\u00F8rgselsdialog.";
+        .completionList {
+            border: solid 1px Gray;
+            border-radius: 5px;
+            margin: 0px;
+            padding: 3px;
+            height: 120px;
+            overflow: auto;
+            background-color: #FFFFFF;
+        }
 
-var L_bobj_crv_EnableAjax= "Kontakt din administrator for at aktivere asynkrone anmodninger.";
+        .listItem {
+            color: #191919;
+        }
 
-var L_bobj_crv_LastRefreshed = "Senest opdateret";
+        .itemHighlighted {
+            background-color: #ADD6FF;
+        }
 
-var L_bobj_crv_Collapse = "Skjul";
-
-var L_bobj_crv_CatalystTip = "Online-ressourcer";
-// <script>
-/*
-=============================================================
-WebIntelligence(r) Report Panel
-Copyright(c) 2001-2003 Business Objects S.A.
-All rights reserved
-
-Use and support of this software is governed by the terms
-and conditions of the software license agreement and support
-policy of Business Objects S.A. and/or its subsidiaries. 
-The Business Objects products and technology are protected
-by the US patent number 5,555,403 and 6,247,008
-
-File: labels.js
+        .headingcls {
+            background-color: #01a9ac;
+            color: #fff;
+            padding: 15px;
+            border-radius: 5px 5px 0px 0px;
+        }
 
 
-=============================================================
-*/
 
-_default="Standard"
-_black="Sort"
-_brown="Brun"
-_oliveGreen="Olivengrøn"
-_darkGreen="Mørkegrøn"
-_darkTeal="Dybblå"
-_navyBlue="Marineblå"
-_indigo="Indigo"
-_darkGray="Mørkegrå"
-_darkRed="Mørkerød"
-_orange="Orange"
-_darkYellow="Mørkegul"
-_green="Grøn"
-_teal="Blågrøn"
-_blue="Blå"
-_blueGray="Blågrå"
-_mediumGray="Mellemgrå"
-_red="Rød"
-_lightOrange="Lys orange"
-_lime="Lime"
-_seaGreen="Havgrøn"
-_aqua="Akvamarin"
-_lightBlue="Lyseblå"
-_violet="Violet"
-_gray="Grå"
-_magenta="Magenta"
-_gold="Guld"
-_yellow="Gul"
-_brightGreen="Knaldgrøn"
-_cyan="Cyan"
-_skyBlue="Himmelblå"
-_plum="Blomme"
-_lightGray="Lysegrå"
-_pink="Pink"
-_tan="Tan"
-_lightYellow="Lysegul"
-_lightGreen="Lysegrøn"
-_lightTurquoise="Blegturkis"
-_paleBlue="Blegblå"
-_lavender="Lavendel"
-_white="Hvid"
-_lastUsed="Sidst anvendt:"
-_moreColors="Flere farver..."
 
-_month=new Array
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 100% !important;
+            }
+        }
+    </style>
 
-_month[0]="JANUAR"
-_month[1]="FEBRUAR"
-_month[2]="MARTS"
-_month[3]="APRIL"
-_month[4]="MAJ"
-_month[5]="JUNI"
-_month[6]="JULI"
-_month[7]="AUGUST"
-_month[8]="SEPTEMBER"
-_month[9]="OKTOBER"
-_month[10]="NOVEMBER"
-_month[11]="DECEMBER"
+    <style type="text/css">
+        .divgrid {
+            height: 200px;
+            width: 370px;
+        }
 
-_day=new Array
-_day[0]="S"
-_day[1]="M"
-_day[2]="T"
-_day[3]="O"
-_day[4]="T"
-_day[5]="F"
-_day[6]="L"
+            .divgrid table {
+                width: 350px;
+            }
 
-_today="I dag"
+                .divgrid table th {
+                    background-color: Green;
+                    color: #fff;
+                }
+                .Widthhdr{
+                    width:300px;
+                }
+    </style>
 
-_AM="AM"
-_PM="PM"
 
-_closeDialog="Luk vindue"
+    <script src="../JS/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript">
 
-_lstMoveUpLab="Flyt op"
-_lstMoveDownLab="Flyt ned"
-_lstMoveLeftLab="Flyt til venstre" 
-_lstMoveRightLab="Flyt til højre"
-_lstNewNodeLab="Tilføj indlejret filter"
-_lstAndLabel="OG"
-_lstOrLabel="ELLER"
-_lstSelectedLabel="Valgt"
-_lstQuickFilterLab="Tilføj hurtigfilter"
+        function MakeStaticHeader(gridId, height, width, headerHeight, isFooter) {
 
-_openMenu="Klik her for at åbne {0}-indstillinger"
-_openCalendarLab="Åbn kalender"
+            $('#btnshowhide').hide();
 
-_scroll_first_tab="Rul til første fane"
-_scroll_previous_tab="Rul til forrige fane"
-_scroll_next_tab="Rul til næste fane"
-_scroll_last_tab="Rul til sidste fane"
+            var tbl = document.getElementById(gridId);
+            if (tbl) {
+                var DivHR = document.getElementById('DivHeaderRow');
+                var DivMC = document.getElementById('DivMainContent');
+                var DivFR = document.getElementById('DivFooterRow');
 
-_expandedLab="Udvidet"
-_collapsedLab="Skjult"
-_selectedLab="Valgt"
+                var wid = 100;
 
-_expandNode="Udvid node %1"
-_collapseNode="Skjul node %1"
+                //*** Set divheaderRow Properties ****
+                DivHR.style.height = headerHeight + 'px';
+                DivHR.style.width = wid + "%";
+                DivHR.style.position = 'relative';
+                DivHR.style.top = '0px';
+                DivHR.style.zIndex = '10';
+                DivHR.style.verticalAlign = 'top';
 
-_checkedPromptLab="Angivet"
-_nocheckedPromptLab="Ikke angivet"
-_selectionPromptLab="værdier er lig med"
-_noselectionPromptLab="ingen værdier"
+                //*** Set divMainContent Properties ****
+                DivMC.style.width = wid + "%";
+                DivMC.style.height = height + 'px';
+                DivMC.style.position = 'relative';
+                DivMC.style.top = -headerHeight + 'px';
+                DivMC.style.zIndex = '1';
 
-_lovTextFieldLab="Indtast værdier her"
-_lovCalendarLab="Indtast dato her"
-_lovPrevChunkLab="Gå til forrige segment"
-_lovNextChunkLab="Gå til næste segment"
-_lovComboChunkLab="Segment"
-_lovRefreshLab="Opdater"
-_lovSearchFieldLab="Indtast tekst, der søges efter, her"
-_lovSearchLab="Søg"
-_lovNormalLab="Normal"
-_lovMatchCase="Forskel på store og små bogstaver"
-_lovRefreshValuesLab="Opdater værdier"
+                //*** Set divFooterRow Properties ****
+                DivFR.style.width = wid + "%";
+                DivFR.style.position = 'relative';
+                DivFR.style.top = -headerHeight + '%';
+                DivFR.style.verticalAlign = 'top';
+                DivFR.style.paddingtop = '2px';
+                DivHR.appendChild(tbl.cloneNode(true));
 
-_calendarNextMonthLab="Gå til næste måned"
-_calendarPrevMonthLab="Gå til forrige måned"
-_calendarNextYearLab="Gå til næste år"
-_calendarPrevYearLab="Gå til forrige år"
-_calendarSelectionLab="Valgt dag "
+            }
+        }
 
-_menuCheckLab="Markeret"
-_menuDisableLab="Deaktiveret"
-	
-_level="Niveau"
-_closeTab="Luk fane"
-_of="af"
+        function OnScrollDiv(Scrollablediv) {
+            document.getElementById('DivHeaderRow').scrollLeft = Scrollablediv.scrollLeft;
+            document.getElementById('DivFooterRow').scrollLeft = Scrollablediv.scrollLeft;
+        }
+    </script>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
 
-_RGBTxtBegin= "RGB("
-_RGBTxtEnd= ")"
+    <div class="page-wrapper">
+        <div class="page-body">
 
-_helpLab="Hjælp"
+            <div class="row">
+                <div class="col-md-7">
+                </div>
+                <div class="col-md-5">
+                    <div class="page-header-breadcrumb">
+                        <div style="float: right; margin: 3px; margin-bottom: 5px;">
+                            <%--<span id="btnAddEwayBill" runat="server"><a href="EWayBillList.aspx" style="font-size: 16px; border: 1px dashed gray; padding: 4px;">&nbsp;Add E-Way Bill</a>&nbsp;&nbsp;
+                            </span>--%>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-_waitTitleLab="Vent venligst"
-_cancelButtonLab="Annuller"
+            <div class="container py-3">
+                <div class="card">
+                    <div class="card-header bg-primary text-uppercase text-white">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h5>E-WAY BILL List</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12 col-md-12">
+                            <div class="card">
+                                <div class="card-header">
 
-_modifiers= new Array
-_modifiers[0]="Ctrl+"
-_modifiers[1]="Shift+"
-_modifiers[2]="Alt+"
+                                    <div class="row">
+                                        <div class="col-xl-3 col-md-3">
+                                            <asp:TextBox ID="txtCustomerName" runat="server" CssClass="form-control" placeholder="Customer Name" Width="100%" AutoPostBack="true" OnTextChanged="txtCustomerName_TextChanged"></asp:TextBox>
+                                            <asp:AutoCompleteExtender ID="AutoCompleteExtender1" runat="server" CompletionListCssClass="completionList"
+                                                CompletionListHighlightedItemCssClass="itemHighlighted" CompletionListItemCssClass="listItem"
+                                                CompletionInterval="10" MinimumPrefixLength="1" ServiceMethod="GetCustomerList"
+                                                TargetControlID="txtCustomerName">
+                                            </asp:AutoCompleteExtender>
+                                        </div>
+                                        <div class="col-xl-1 col-md-1">
+                                            <asp:Button ID="btnresetfilter" CssClass="btn btn-danger" runat="server" Text="Reset" Style="padding: 8px;" OnClick="btnresetfilter_Click" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12" style="padding: 0px; margin-top: 10px;">
+                                        <div id="DivRoot" align="left">
+                                            <div style="overflow: hidden;" id="DivHeaderRow">
+                                            </div>
+                                            <div style="overflow: scroll;" class="dt-responsive table-responsive" onscroll="OnScrollDiv(this)" id="DivMainContent">
+                                                <asp:GridView ID="GvInvoiceList" runat="server"
+                                                    CssClass="table table-striped table-bordered nowrap" AutoGenerateColumns="false"
+                                                    AllowPaging="false" ShowHeader="true" PageSize="50" OnRowDataBound="GvInvoiceList_RowDataBound" OnRowCommand="GvInvoiceList_RowCommand" DataKeyNames="Id">
+                                                    <Columns>
+                                                        <asp:TemplateField HeaderText="SNo." HeaderStyle-Width="50px" ItemStyle-HorizontalAlign="Center">
+                                                            <ItemTemplate>
+                                                                <asp:Label ID="lblsno" runat="server" Text='<%# Container.DataItemIndex+1 %>'></asp:Label>
+                                                            </ItemTemplate>
+                                                        </asp:TemplateField>
+                                                        <asp:TemplateField HeaderText="Invoice No" ItemStyle-HorizontalAlign="Center">
+                                                            <ItemTemplate>
+                                                                <asp:Label ID="lblInvoiceNo" runat="server" Text='<%# Eval("InvoiceNo") != null ? Eval("InvoiceNo") : Eval("FinalBasic") %>'></asp:Label>
+                                                                <asp:Label ID="lblFinalBasic" runat="server" Text='<%# Eval("FinalBasic") %>'  Visible="false"></asp:Label>
+                                                            </ItemTemplate>
+                                                        </asp:TemplateField>
+                                                             <asp:TemplateField HeaderText="Ack. No" ItemStyle-HorizontalAlign="Center">
+                                                            <ItemTemplate>
+                                                                <asp:Label ID="lblAckNo" runat="server" Text='<%# Eval("AckNo") %>'></asp:Label>
+                                                            </ItemTemplate>
+                                                        </asp:TemplateField>
+                                                        <asp:TemplateField HeaderText="Customer Name" HeaderStyle-CssClass="Widthhdr" ItemStyle-HorizontalAlign="Center">
+                                                            <ItemTemplate>
+                                                                <asp:Label ID="lblcustomername" runat="server" Text='<%# Eval("BillingCustomer") %>'></asp:Label>
+                                                            </ItemTemplate>
+                                                        </asp:TemplateField>
+                                                        <asp:TemplateField HeaderText="Invoice Date" ItemStyle-HorizontalAlign="Center">
+                                                            <ItemTemplate>
+                                                                <asp:Label ID="lblInvoicedate" runat="server" Text='<%# Eval("Invoicedate","{0:d}") %>'></asp:Label>
+                                                            </ItemTemplate>
+                                                        </asp:TemplateField>     
 
-_bordersMoreColorsLabel="Flere rammer..."
-_bordersTooltip=new Array
-_bordersTooltip[0]="Ingen ramme"
-_bordersTooltip[1]="Venstre ramme"
-_bordersTooltip[2]="Højre ramme"
-_bordersTooltip[3]="Nederste ramme"
-_bordersTooltip[4]="Medium nederste ramme"
-_bordersTooltip[5]="Tyk nederste ramme"
-_bordersTooltip[6]="Øverste og nederste ramme"
-_bordersTooltip[7]="Øverste og medium nederste ramme"
-_bordersTooltip[8]="Øverste og tyk nederste ramme"
-_bordersTooltip[9]="Alle rammer"
-_bordersTooltip[10]="Alle rammer medium"
-_bordersTooltip[11]="Alle rammer tykke"/* Copyright (c) Business Objects 2006. All rights reserved. */
+                                                        <asp:TemplateField HeaderText="Grand Total" ItemStyle-HorizontalAlign="Center">
+                                                            <ItemTemplate>
+                                                                <asp:Label ID="lblGrandTotal" runat="server" Text='<%# Eval("GrandTotalFinal") %>'></asp:Label>
+                                                            </ItemTemplate>
+                                                        </asp:TemplateField>
 
-// LOCALIZATION STRING
+                                                        <asp:TemplateField HeaderText="Prepared By" ItemStyle-HorizontalAlign="Center">
+                                                            <ItemTemplate>
+                                                                <asp:Label ID="lblPrepared" runat="server" Text='<%# Eval("CreatedBy") %>'></asp:Label>
+                                                            </ItemTemplate>
+                                                        </asp:TemplateField>
 
-// Strings for calendar.js and calendar_param.js
-var L_Today     = "I dag";
-var L_January   = "Januar";
-var L_February  = "Februar";
-var L_March     = "Marts";
-var L_April     = "April";
-var L_May       = "Maj";
-var L_June      = "Juni";
-var L_July      = "Juli";
-var L_August    = "August";
-var L_September = "September";
-var L_October   = "Oktober";
-var L_November  = "November";
-var L_December  = "December";
-var L_Su        = "S\u00F8";
-var L_Mo        = "Ma";
-var L_Tu        = "Ti";
-var L_We        = "On";
-var L_Th        = "To";
-var L_Fr        = "Fr";
-var L_Sa        = "L\u00F8";
-
-// Strings for prompts.js and prompts_param.js
-var L_YYYY          = "\u00E5\u00E5\u00E5\u00E5";
-var L_MM            = "mm";
-var L_DD            = "dd";
-var L_BadNumber     = "Denne parameter er af typen \"Tal\" og m\u00E5 kun indeholde symbolet for negative tal, cifrene (\"0-9\"), ciffergruppeseparatorer eller et decimaltegn. Ret den indtastede parameterv\u00E6rdi.";
-var L_BadCurrency   = "Denne parameter er af typen \"Valuta\" og m\u00E5 kun indeholde symbolet for negative tal, cifrene (\"0-9\"), ciffergruppeseparatorer eller et decimaltegn. Ret den indtastede parameterv\u00E6rdi.";
-var L_BadDate       = "Denne parameter er af typen \"Dato\" og skal v\u00E6re i formatet \"%1\", hvor \"yyyy\" er det fircifrede \u00E5rstal, \"mm\" er m\u00E5neden (f.eks. januar = 1), og \"dd\" er dagen i m\u00E5neden.";
-var L_BadDateTime   = "Denne parameter er af typen \"Dato/klokkesl\u00E6t \", og det aktuelle format er \"%1 hh:mm:ss\". \"yyyy\" er det fircifrede \u00E5rstal, \"mm\" er m\u00E5neden (f.eks. januar = 1), \"dd\" er dagen i m\u00E5neden, \"hh\" er timer i et 24-timers ur, \"mm\" er minutter, og \"ss\" er sekunder.";
-var L_BadTime       = "Denne parameter er af typen \"Klokkesl\u00E6t\" og skal v\u00E6re i formatet \"hh:mm:ss\", hvor \"hh\" er timer i et 24-timers ur, \"mm\" er minutter, og \"ss\" er sekunder.";
-var L_NoValue       = "Ingen v\u00E6rdi";
-var L_BadValue      = "Hvis du vil angive \"Ingen v\u00E6rdi\", skal du angive b\u00E5de v\u00E6rdien Fra og v\u00E6rdien Til til \"Ingen v\u00E6rdi\".";
-var L_BadBound      = "Du kan ikke angive \"Ingen nedre gr\u00E6nse\" sammen med \"Ingen \u00F8vre gr\u00E6nse\".";
-var L_NoValueAlready = "Denne parameter er allerede angivet til \"Ingen v\u00E6rdi\". Fjern \"Ingen v\u00E6rdi\", f\u00F8r du tilf\u00F8jer andre v\u00E6rdier.";
-var L_RangeError    = "Starten p\u00E5 omr\u00E5det m\u00E5 ikke v\u00E6re st\u00F8rre end slutningen p\u00E5 omr\u00E5det.";
-var L_NoDateEntered = "Du skal indtaste en dato.";
-var L_Empty         = "Indtast en v\u00E6rdi.";
-
-// Strings for filter dialog
-var L_closeDialog="Luk vindue";
-
-var L_SetFilter = "Angiv filter";
-var L_OK        = "OK";
-var L_Cancel    = "Annuller";
-
- /* Crystal Decisions Confidential Proprietary Information */
+                                                        <asp:TemplateField HeaderText="Action" ItemStyle-HorizontalAlign="Center">
+                                                            <ItemTemplate>
+                                                                <asp:LinkButton runat="server" ID="lnkCreateInv" CommandName="RowCreate" CommandArgument='<%# Eval("Id") %>' ToolTip="Create E-Way Bill" OnClientClick="Javascript:return confirm('Do you want to Create E-Way Bill?')"><i class="fa fa-file-text" style="font-size:24px;color:green;"></i></asp:LinkButton>
+                                                                &nbsp;                                                               
+                                                                <asp:LinkButton ID="lnkPDF" Visible="false" runat="server" CommandName="DownloadPDF" CommandArgument='<%# Eval("Id") %>' ToolTip="Download"><i class="fa fa-file-pdf-o" style="font-size:24px;color:red;"></i></asp:LinkButton>
+                                                                &nbsp;                                                    

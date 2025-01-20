@@ -568,45 +568,65 @@
                                                             <%--  Row 1--%>
                                                             <tr>
                                                                 <td>
-                                                                    <center><asp:TextBox ID="txtsr1" CssClass="srtxt" runat="server" Text="1"></asp:TextBox></center>
+                                                                    <center>
+                                                                        <asp:TextBox ID="txtsr1" CssClass="srtxt" runat="server" Text="1"></asp:TextBox>
+                                                                    </center>
                                                                     <asp:RequiredFieldValidator ID="RFieldV4" runat="server" Display="Dynamic" ErrorMessage="*"
                                                                         ControlToValidate="txtsr1" ValidationGroup="form1" ForeColor="Red" SetFocusOnError="true"></asp:RequiredFieldValidator>
                                                                 </td>
                                                                 <td>
-                                                                    <center><asp:Button ID="btnaddperticular" runat="server" Text="Add" OnClick="btnaddperticular_Click" /></center>
+                                                                    <center>
+                                                                        <asp:Button ID="btnaddperticular" runat="server" Text="Add" OnClick="btnaddperticular_Click" OnClientClick="showPopup()" />
+                                                                    </center>
                                                                 </td>
                                                                 <td>
-                                                                    <center><asp:TextBox ID="txtHsn1" CssClass="Hsntxt" runat="server"></asp:TextBox></center>
+                                                                    <center>
+                                                                        <asp:TextBox ID="txtHsn1" CssClass="Hsntxt" runat="server"></asp:TextBox>
+                                                                    </center>
                                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" Display="Dynamic" ErrorMessage="*"
                                                                         ControlToValidate="txtHsn1" ValidationGroup="form1" ForeColor="Red" SetFocusOnError="true"></asp:RequiredFieldValidator>
                                                                 </td>
                                                                 <td>
-                                                                    <center><asp:TextBox ID="txtQty1" onkeyup="sum()" onfocus="select()" CssClass="Qtytxt" runat="server"></asp:TextBox></center>
+                                                                    <center>
+                                                                        <asp:TextBox ID="txtQty1" onkeyup="sum()" onfocus="select()" CssClass="Qtytxt" runat="server"></asp:TextBox>
+                                                                    </center>
                                                                 </td>
                                                                 <td>
-                                                                    <center><asp:TextBox ID="txtRate1" onkeyup="sum()" onfocus="select()" CssClass="Ratetxt" runat="server"></asp:TextBox></center>
+                                                                    <center>
+                                                                        <asp:TextBox ID="txtRate1" onkeyup="sum()" onfocus="select()" CssClass="Ratetxt" runat="server"></asp:TextBox>
+                                                                    </center>
 
                                                                 </td>
 
                                                                 <td>
-                                                                    <center><asp:TextBox ID="txtCGST" CssClass="srtxt" placeholder="%" onkeyup="sum()" onfocus="select()" runat="server"></asp:TextBox>
-                                                                        <asp:TextBox ID="txtCGSTamt" onkeyup="sum()" onfocus="select()" CssClass="Qtytxt" runat="server"></asp:TextBox></center>
+                                                                    <center>
+                                                                        <asp:TextBox ID="txtCGST" CssClass="srtxt" placeholder="%" onkeyup="sum()" onfocus="select()" runat="server"></asp:TextBox>
+                                                                        <asp:TextBox ID="txtCGSTamt" onkeyup="sum()" onfocus="select()" CssClass="Qtytxt" runat="server"></asp:TextBox>
+                                                                    </center>
                                                                 </td>
                                                                 <td>
-                                                                    <center><asp:TextBox ID="txtSGST" CssClass="srtxt" placeholder="%" onkeyup="sum()" onfocus="select()" runat="server"></asp:TextBox>
-                                                                        <asp:TextBox ID="txtSGSTamt" onkeyup="sum()" onfocus="select()" CssClass="Qtytxt" runat="server"></asp:TextBox></center>
+                                                                    <center>
+                                                                        <asp:TextBox ID="txtSGST" CssClass="srtxt" placeholder="%" onkeyup="sum()" onfocus="select()" runat="server"></asp:TextBox>
+                                                                        <asp:TextBox ID="txtSGSTamt" onkeyup="sum()" onfocus="select()" CssClass="Qtytxt" runat="server"></asp:TextBox>
+                                                                    </center>
                                                                 </td>
                                                                 <td>
-                                                                    <center><asp:TextBox ID="txtIGST" CssClass="srtxt" placeholder="%" onkeyup="sum()" onfocus="select()" runat="server"></asp:TextBox>
-                                                                        <asp:TextBox ID="txtIGSTamt" onkeyup="sum()" onfocus="select()" CssClass="Qtytxt" runat="server"></asp:TextBox></center>
+                                                                    <center>
+                                                                        <asp:TextBox ID="txtIGST" CssClass="srtxt" placeholder="%" onkeyup="sum()" onfocus="select()" runat="server"></asp:TextBox>
+                                                                        <asp:TextBox ID="txtIGSTamt" onkeyup="sum()" onfocus="select()" CssClass="Qtytxt" runat="server"></asp:TextBox>
+                                                                    </center>
                                                                 </td>
 
                                                                 <td>
-                                                                    <center><asp:TextBox ID="txtdisc1" onkeyup="sum()" onfocus="select()" CssClass="disc" runat="server"></asp:TextBox></center>
+                                                                    <center>
+                                                                        <asp:TextBox ID="txtdisc1" onkeyup="sum()" onfocus="select()" CssClass="disc" runat="server"></asp:TextBox>
+                                                                    </center>
                                                                 </td>
 
                                                                 <td>
-                                                                    <center><asp:TextBox ID="txtAmt1" CssClass="Amttxt" runat="server"></asp:TextBox></center>
+                                                                    <center>
+                                                                        <asp:TextBox ID="txtAmt1" CssClass="Amttxt" runat="server"></asp:TextBox>
+                                                                    </center>
                                                                 </td>
                                                             </tr>
                                                         </table>
@@ -818,10 +838,14 @@
                                                 <div class="col-md-1">
                                                 </div>
                                                 <div class="col-md-2">
-                                                    <center> <asp:Button ID="btnsubmit" runat="server" ValidationGroup="form1" CssClass="btn btn-primary" Width="100%" Text="Send/Save" OnClick="btnsubmit_Click"/></center>
+                                                    <center>
+                                                        <asp:Button ID="btnsubmit" runat="server" ValidationGroup="form1" CssClass="btn btn-primary" Width="100%" Text="Send/Save" OnClick="btnsubmit_Click" />
+                                                    </center>
                                                 </div>
                                                 <div class="col-md-2">
-                                                    <center> <asp:Button ID="btnreset" runat="server" CssClass="btn btn-danger" Width="100%" Text="Reset" OnClick="btnreset_Click"/></center>
+                                                    <center>
+                                                        <asp:Button ID="btnreset" runat="server" CssClass="btn btn-danger" Width="100%" Text="Reset" OnClick="btnreset_Click" />
+                                                    </center>
                                                 </div>
                                                 <div class="col-md-6"></div>
 
@@ -973,6 +997,7 @@
                         </asp:UpdatePanel>--%>
                     </asp:Panel>
                     <asp:AsyncFileUpload ID="AsyncFileUpload1" Visible="false" runat="server" />
+
                     <%--1 JB Box--%>
                     <asp:Panel ID="PanelType1" runat="server" Visible="false">
                         <br />
@@ -985,13 +1010,13 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">1.&nbsp;</h5>
-                                                <asp:CheckBox ID="chkJbweldedmainbody" Text="Welded Main Body" CssClass="myClass" runat="server" />
-                                                <asp:DropDownList ID="ddlJbweldedmainbodycat1" runat="server">
+                                                <asp:CheckBox ID="chkJbweldedmainbody" Text="Welded Main Body" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:DropDownList ID="ddlJbweldedmainbodycat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>with Top and bottom</asp:ListItem>
                                                     <asp:ListItem>with Sides</asp:ListItem>
                                                 </asp:DropDownList>
-                                                <asp:DropDownList ID="ddlJbweldedmainbodycat2" runat="server">
+                                                <asp:DropDownList ID="ddlJbweldedmainbodycat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.2mm</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
@@ -999,18 +1024,21 @@
                                                 </asp:DropDownList>
                                             </div>
                                         </div>
+
+
+
                                         <%--2--%>
                                         <br />
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">2.&nbsp;</h5>
-                                                <asp:CheckBox ID="chkjbGlandplat" Text="Gland Plate" CssClass="myClass" runat="server" />
-                                                <asp:DropDownList ID="ddljbGlandplatcat1" runat="server">
+                                                <asp:CheckBox ID="chkjbGlandplat" Text="Gland Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:DropDownList ID="ddljbGlandplatcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Bottom Side</asp:ListItem>
                                                     <asp:ListItem>Top Side</asp:ListItem>
                                                 </asp:DropDownList>
-                                                <asp:DropDownList ID="ddljbGlandplatcat2" runat="server">
+                                                <asp:DropDownList ID="ddljbGlandplatcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.2mm</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
@@ -1023,18 +1051,19 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">3.&nbsp;</h5>
-                                                <asp:DropDownList ID="ddljbComponetmtgplt" runat="server">
+                                                <asp:CheckBox ID="Checckboxfor3DD" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:DropDownList ID="ddljbComponetmtgplt" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Component Mtg Plate</asp:ListItem>
                                                     <asp:ListItem>M4 Tapped Z welded </asp:ListItem>
                                                     <asp:ListItem>DIN Channel</asp:ListItem>
                                                 </asp:DropDownList>
-                                                <asp:DropDownList ID="ddljbComponetmtgpltcat1" runat="server">
+                                                <asp:DropDownList ID="ddljbComponetmtgpltcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
-                                                <asp:DropDownList ID="ddljbComponetmtgpltcat2" runat="server">
+                                                <asp:DropDownList ID="ddljbComponetmtgpltcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>7032</asp:ListItem>
                                                     <asp:ListItem>7035</asp:ListItem>
@@ -1048,8 +1077,8 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">4.&nbsp;</h5>
-                                                <asp:CheckBox ID="chkjbfrontscrewcover" Text="Front Screwed Cover" CssClass="myClass" runat="server" />
-                                                <asp:DropDownList ID="ddljbfrontscrewcovercat1" runat="server">
+                                                <asp:CheckBox ID="chkjbfrontscrewcover" Text="Front Screwed Cover" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:DropDownList ID="ddljbfrontscrewcovercat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.2mm</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
@@ -1062,8 +1091,8 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">5.&nbsp;</h5>
-                                                <asp:CheckBox ID="Chkjblock" Text="Lock" CssClass="myClass" runat="server" />
-                                                <asp:DropDownList ID="ddljbLockcat1" runat="server">
+                                                <asp:CheckBox ID="Chkjblock" Text="Lock" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:DropDownList ID="ddljbLockcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Thumbscrew</asp:ListItem>
                                                     <asp:ListItem>Coin Lock</asp:ListItem>
@@ -1078,20 +1107,20 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">6.&nbsp;</h5>
-                                                <asp:CheckBox ID="chkjbTransparentdoor" Text="Transperent Door" CssClass="myClass" runat="server" />
-                                                <asp:DropDownList ID="ddljbTransparentdoorcat1" runat="server">
+                                                <asp:CheckBox ID="chkjbTransparentdoor" Text="Transperent Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:DropDownList ID="ddljbTransparentdoorcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Glass</asp:ListItem>
                                                     <asp:ListItem>Acrylic</asp:ListItem>
                                                     <asp:ListItem>Polycarbonate Sheet</asp:ListItem>
                                                 </asp:DropDownList>
-                                                <asp:DropDownList ID="ddljbTransparentdoorcat2" AutoPostBack="true" OnSelectedIndexChanged="ddljbTransparentdoorcat2_SelectedIndexChanged" runat="server">
+                                                <asp:DropDownList ID="ddljbTransparentdoorcat2" AutoPostBack="true" OnSelectedIndexChanged="ddljbTransparentdoorcat2_SelectedIndexChanged" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Door</asp:ListItem>
                                                     <asp:ListItem>Specify</asp:ListItem>
                                                 </asp:DropDownList>
                                                 <asp:TextBox ID="txtjbTransparentdoorcat4" placeholder="Specify" Visible="false" runat="server"></asp:TextBox>
-                                                <asp:DropDownList ID="ddljbTransparentdoorcat3" runat="server">
+                                                <asp:DropDownList ID="ddljbTransparentdoorcat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>With bidding</asp:ListItem>
                                                     <asp:ListItem>biddingless technique</asp:ListItem>
@@ -1112,8 +1141,8 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">8.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkjbPowercoatingshade" Text="Powder Coating Shade" CssClass="myClass" runat="server" />
-                                                <asp:DropDownList ID="ddljbPowercoatingshadecat1" runat="server" OnSelectedIndexChanged="ddljbPowercoatingshadecat1_SelectedIndexChanged" AutoPostBack="true">
+                                                <asp:CheckBox ID="ChkjbPowercoatingshade" Text="Powder Coating Shade" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:DropDownList ID="ddljbPowercoatingshadecat1" runat="server" OnSelectedIndexChanged="ddljbPowercoatingshadecat1_SelectedIndexChanged" AutoPostBack="true" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>RAL-7032</asp:ListItem>
                                                     <asp:ListItem>RAL-7035</asp:ListItem>
@@ -1128,8 +1157,8 @@
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">9.&nbsp;</h5>
                                                 <%--<asp:CheckBox ID="ChkjbFan" Text="Fan" CssClass="myClass" runat="server" />--%>
-                                                <asp:CheckBox ID="ChkjbFan" Text="Filter" CssClass="myClass" runat="server" />
-                                                <asp:DropDownList ID="ddljbfancat1" runat="server">
+                                                <asp:CheckBox ID="ChkjbFan" Text="Filter" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:DropDownList ID="ddljbfancat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Size</asp:ListItem>
                                                     <asp:ListItem>4</asp:ListItem>
                                                     <asp:ListItem>6</asp:ListItem>
@@ -1162,7 +1191,9 @@
                         </asp:UpdatePanel>
                         <div class="row">
                             <div class="col-md-12" style="display: inline;">
-                                <center><asp:Button ID="btnSubmitjbbox" ValidationGroup="form2" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSubmitjbbox_Click" />&nbsp;<asp:Button ID="btnCanceljbbox" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btnCanceljbbox_Click" /></center>
+                                <center>
+                                    <asp:Button ID="btnSubmitjbbox" ValidationGroup="form2" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSubmitjbbox_Click" />
+                                    &nbsp;<asp:Button ID="btnCanceljbbox" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btnCanceljbbox_Click" /></center>
                             </div>
                         </div>
                     </asp:Panel>
@@ -1170,374 +1201,378 @@
                     <%--2 WMM-23.5 (AE Box)--%>
                     <asp:Panel ID="PanelType2" runat="server" Visible="false">
                         <br />
-                        <div class="row" style="margin-right: 10px!important; margin-left: 10px; padding: 3px; border: 1px solid #ccc; border-radius: 3px;">
-                            <div class="col-md-12">
-                                <%--1--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">1.&nbsp;</h5>
-                                        <asp:CheckBox ID="chkWMM23WeldedMainBody" Text="Welded Main Body" CssClass="myClass" runat="server" />
-                                        <asp:DropDownList ID="ddlWMM23WeldedMainBodycat1" runat="server">
-                                            <asp:ListItem>Select</asp:ListItem>
-                                            <asp:ListItem>with Top and bottom</asp:ListItem>
-                                            <asp:ListItem>with Sides</asp:ListItem>
-                                        </asp:DropDownList>
-                                        <asp:DropDownList ID="ddlWMM23WeldedMainBodycat2" runat="server">
-                                            <asp:ListItem>Select Thickness</asp:ListItem>
-                                            <asp:ListItem>1.2mm</asp:ListItem>
-                                            <asp:ListItem>1.5mm</asp:ListItem>
-                                            <asp:ListItem>2.00mm</asp:ListItem>
-                                        </asp:DropDownList>
-                                    </div>
-                                </div>
-                                <%--2--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">2.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkWMM23GlandPlate" Text="Gland Plate" CssClass="myClass" runat="server" />
-                                        <asp:DropDownList ID="ddlWMM23GlandPlatecat1" runat="server">
-                                            <asp:ListItem>Select</asp:ListItem>
-                                            <asp:ListItem>Bottom Side</asp:ListItem>
-                                            <asp:ListItem>Top Side</asp:ListItem>
-                                        </asp:DropDownList>
-                                        <asp:DropDownList ID="ddlWMM23GlandPlatecat2" runat="server">
-                                            <asp:ListItem>Select Thickness</asp:ListItem>
-                                            <asp:ListItem>1.2mm</asp:ListItem>
-                                            <asp:ListItem>1.5mm</asp:ListItem>
-                                            <asp:ListItem>2.00mm</asp:ListItem>
-                                        </asp:DropDownList>
-                                    </div>
-                                </div>
-                                <%--3--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">3.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkWMM23Canopy" Text="Canopy" CssClass="myClass" runat="server" />
-                                        <asp:DropDownList ID="ddlWMM23Canopycat1" runat="server">
-                                            <asp:ListItem>Select Size</asp:ListItem>
-                                            <asp:ListItem>Full size</asp:ListItem>
-                                            <asp:ListItem>Part size</asp:ListItem>
-                                        </asp:DropDownList>
+                        <asp:UpdatePanel ID="UpdatePanel02" runat="server">
+                            <ContentTemplate>
+                                <div class="row" style="margin-right: 10px!important; margin-left: 10px; padding: 3px; border: 1px solid #ccc; border-radius: 3px;">
+                                    <div class="col-md-12">
+                                        <%--1--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">1.&nbsp;</h5>
+                                                <asp:CheckBox ID="chkWMM23WeldedMainBody" Text="Welded Main Body" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:DropDownList ID="ddlWMM23WeldedMainBodycat1" runat="server" Enabled="false">
+                                                    <asp:ListItem>Select</asp:ListItem>
+                                                    <asp:ListItem>with Top and bottom</asp:ListItem>
+                                                    <asp:ListItem>with Sides</asp:ListItem>
+                                                </asp:DropDownList>
+                                                <asp:DropDownList ID="ddlWMM23WeldedMainBodycat2" runat="server" Enabled="false">
+                                                    <asp:ListItem>Select Thickness</asp:ListItem>
+                                                    <asp:ListItem>1.2mm</asp:ListItem>
+                                                    <asp:ListItem>1.5mm</asp:ListItem>
+                                                    <asp:ListItem>2.00mm</asp:ListItem>
+                                                </asp:DropDownList>
+                                            </div>
+                                        </div>
+                                        <%--2--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">2.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkWMM23GlandPlate" Text="Gland Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:DropDownList ID="ddlWMM23GlandPlatecat1" runat="server" Enabled="false">
+                                                    <asp:ListItem>Select</asp:ListItem>
+                                                    <asp:ListItem>Bottom Side</asp:ListItem>
+                                                    <asp:ListItem>Top Side</asp:ListItem>
+                                                </asp:DropDownList>
+                                                <asp:DropDownList ID="ddlWMM23GlandPlatecat2" runat="server" Enabled="false">
+                                                    <asp:ListItem>Select Thickness</asp:ListItem>
+                                                    <asp:ListItem>1.2mm</asp:ListItem>
+                                                    <asp:ListItem>1.5mm</asp:ListItem>
+                                                    <asp:ListItem>2.00mm</asp:ListItem>
+                                                </asp:DropDownList>
+                                            </div>
+                                        </div>
+                                        <%--3--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">3.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkWMM23Canopy" Text="Canopy" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:DropDownList ID="ddlWMM23Canopycat1" runat="server" Enabled="false">
+                                                    <asp:ListItem>Select Size</asp:ListItem>
+                                                    <asp:ListItem>Full size</asp:ListItem>
+                                                    <asp:ListItem>Part size</asp:ListItem>
+                                                </asp:DropDownList>
 
-                                        <asp:DropDownList ID="ddlWMM23Canopycat2" runat="server">
-                                            <asp:ListItem>Select Thickness</asp:ListItem>
-                                            <asp:ListItem>1.2mm</asp:ListItem>
-                                            <asp:ListItem>1.5mm</asp:ListItem>
-                                            <asp:ListItem>2.00mm</asp:ListItem>
-                                        </asp:DropDownList>
-                                        <%--                                        <asp:TextBox ID="txtthikness2" runat="server" Height="23px" Placeholder="Thickness"></asp:TextBox>--%>
-                                    </div>
+                                                <asp:DropDownList ID="ddlWMM23Canopycat2" runat="server" Enabled="false">
+                                                    <asp:ListItem>Select Thickness</asp:ListItem>
+                                                    <asp:ListItem>1.2mm</asp:ListItem>
+                                                    <asp:ListItem>1.5mm</asp:ListItem>
+                                                    <asp:ListItem>2.00mm</asp:ListItem>
+                                                </asp:DropDownList>
+                                                <%--                                        <asp:TextBox ID="txtthikness2" runat="server" Height="23px" Placeholder="Thickness"></asp:TextBox>--%>
+                                            </div>
 
-                                </div>
-                                <%--4--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">4.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkWMM23ComponentMtgPlate" Text="Component Mtg. Plate" CssClass="myClass" runat="server" />
-                                        <asp:DropDownList ID="ddlWMM23ComponentMtgPlatecat1" runat="server">
-                                            <asp:ListItem>Select Size</asp:ListItem>
-                                            <asp:ListItem>GPSP</asp:ListItem>
-                                            <asp:ListItem>CRCA</asp:ListItem>
-                                        </asp:DropDownList>
+                                        </div>
+                                        <%--4--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">4.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkWMM23ComponentMtgPlate" Text="Component Mtg. Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:DropDownList ID="ddlWMM23ComponentMtgPlatecat1" runat="server" Enabled="false">
+                                                    <asp:ListItem>Select Size</asp:ListItem>
+                                                    <asp:ListItem>GPSP</asp:ListItem>
+                                                    <asp:ListItem>CRCA</asp:ListItem>
+                                                </asp:DropDownList>
 
-                                        <asp:DropDownList ID="ddlWMM23ComponentMtgPlatecat2" runat="server">
-                                            <asp:ListItem>Select Colour</asp:ListItem>
-                                            <asp:ListItem>7032</asp:ListItem>
-                                            <asp:ListItem>7035</asp:ListItem>
-                                            <asp:ListItem>orange</asp:ListItem>
-                                        </asp:DropDownList>
+                                                <asp:DropDownList ID="ddlWMM23ComponentMtgPlatecat2" runat="server" Enabled="false">
+                                                    <asp:ListItem>Select Colour</asp:ListItem>
+                                                    <asp:ListItem>7032</asp:ListItem>
+                                                    <asp:ListItem>7035</asp:ListItem>
+                                                    <asp:ListItem>orange</asp:ListItem>
+                                                </asp:DropDownList>
 
-                                        <asp:DropDownList ID="ddlWMM23ComponentMtgPlatecat3" runat="server">
-                                            <asp:ListItem>Select Thickness</asp:ListItem>
-                                            <asp:ListItem>1.2mm</asp:ListItem>
-                                            <asp:ListItem>1.5mm</asp:ListItem>
-                                            <asp:ListItem>2.00mm</asp:ListItem>
-                                            <asp:ListItem>3.00mm</asp:ListItem>
-                                        </asp:DropDownList>
-                                    </div>
+                                                <asp:DropDownList ID="ddlWMM23ComponentMtgPlatecat3" runat="server" Enabled="false">
+                                                    <asp:ListItem>Select Thickness</asp:ListItem>
+                                                    <asp:ListItem>1.2mm</asp:ListItem>
+                                                    <asp:ListItem>1.5mm</asp:ListItem>
+                                                    <asp:ListItem>2.00mm</asp:ListItem>
+                                                    <asp:ListItem>3.00mm</asp:ListItem>
+                                                </asp:DropDownList>
+                                            </div>
 
-                                </div>
-                                <%--5--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">5.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkWMM23SideCPlate" Text="Side C Plate" CssClass="myClass" runat="server" />
-                                        <asp:DropDownList ID="ddlWMM23SideCPlatecat1" runat="server">
-                                            <asp:ListItem>Select Size</asp:ListItem>
-                                            <asp:ListItem>GPSP</asp:ListItem>
-                                            <asp:ListItem>CRCA</asp:ListItem>
-                                        </asp:DropDownList>
+                                        </div>
+                                        <%--5--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">5.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkWMM23SideCPlate" Text="Side C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:DropDownList ID="ddlWMM23SideCPlatecat1" runat="server" Enabled="false">
+                                                    <asp:ListItem>Select Size</asp:ListItem>
+                                                    <asp:ListItem>GPSP</asp:ListItem>
+                                                    <asp:ListItem>CRCA</asp:ListItem>
+                                                </asp:DropDownList>
 
-                                        <asp:DropDownList ID="ddlWMM23SideCPlatecat2" runat="server">
-                                            <asp:ListItem>Select Colour</asp:ListItem>
-                                            <asp:ListItem>7032</asp:ListItem>
-                                            <asp:ListItem>7035</asp:ListItem>
-                                            <asp:ListItem>orange</asp:ListItem>
-                                        </asp:DropDownList>
+                                                <asp:DropDownList ID="ddlWMM23SideCPlatecat2" runat="server" Enabled="false">
+                                                    <asp:ListItem>Select Colour</asp:ListItem>
+                                                    <asp:ListItem>7032</asp:ListItem>
+                                                    <asp:ListItem>7035</asp:ListItem>
+                                                    <asp:ListItem>orange</asp:ListItem>
+                                                </asp:DropDownList>
 
-                                        <asp:DropDownList ID="ddlWMM23SideCPlatecat3" runat="server">
-                                            <asp:ListItem>Select Thickness</asp:ListItem>
-                                            <asp:ListItem>1.5mm</asp:ListItem>
-                                            <asp:ListItem>2.00mm</asp:ListItem>
-                                            <asp:ListItem>3.00mm</asp:ListItem>
-                                        </asp:DropDownList>
+                                                <asp:DropDownList ID="ddlWMM23SideCPlatecat3" runat="server" Enabled="false">
+                                                    <asp:ListItem>Select Thickness</asp:ListItem>
+                                                    <asp:ListItem>1.5mm</asp:ListItem>
+                                                    <asp:ListItem>2.00mm</asp:ListItem>
+                                                    <asp:ListItem>3.00mm</asp:ListItem>
+                                                </asp:DropDownList>
 
-                                    </div>
+                                            </div>
 
-                                </div>
-                                <%--6--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">6.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkWMM23DoorCPlate" Text="Door C Plate" CssClass="myClass" runat="server" />
-                                        <asp:DropDownList ID="ddlWMM23DoorCPlatecat1" runat="server">
-                                            <asp:ListItem>Select Size</asp:ListItem>
-                                            <asp:ListItem>GPSP</asp:ListItem>
-                                            <asp:ListItem>CRCA</asp:ListItem>
-                                        </asp:DropDownList>
+                                        </div>
+                                        <%--6--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">6.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkWMM23DoorCPlate" Text="Door C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:DropDownList ID="ddlWMM23DoorCPlatecat1" runat="server" Enabled="false">
+                                                    <asp:ListItem>Select Size</asp:ListItem>
+                                                    <asp:ListItem>GPSP</asp:ListItem>
+                                                    <asp:ListItem>CRCA</asp:ListItem>
+                                                </asp:DropDownList>
 
-                                        <asp:DropDownList ID="ddlWMM23DoorCPlatecat2" runat="server">
-                                            <asp:ListItem>Select Colour</asp:ListItem>
-                                            <asp:ListItem>7032</asp:ListItem>
-                                            <asp:ListItem>7035</asp:ListItem>
-                                            <asp:ListItem>orange</asp:ListItem>
-                                        </asp:DropDownList>
+                                                <asp:DropDownList ID="ddlWMM23DoorCPlatecat2" runat="server" Enabled="false">
+                                                    <asp:ListItem>Select Colour</asp:ListItem>
+                                                    <asp:ListItem>7032</asp:ListItem>
+                                                    <asp:ListItem>7035</asp:ListItem>
+                                                    <asp:ListItem>orange</asp:ListItem>
+                                                </asp:DropDownList>
 
-                                        <asp:DropDownList ID="ddlWMM23DoorCPlatecat3" runat="server">
-                                            <asp:ListItem>Select Thickness</asp:ListItem>
-                                            <asp:ListItem>1.5mm</asp:ListItem>
-                                            <asp:ListItem>2.00mm</asp:ListItem>
-                                            <asp:ListItem>3.00mm</asp:ListItem>
-                                        </asp:DropDownList>
-                                    </div>
-                                </div>
-                                <%--7--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">7.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkWMM23WallMtgBracket" Text="Wall Mtg. Bracket" CssClass="myClass" runat="server" />
-                                        <asp:DropDownList ID="ddlWMM23WallMtgBracketcat1" runat="server">
-                                            <asp:ListItem>Select Size</asp:ListItem>
-                                            <asp:ListItem>Small</asp:ListItem>
-                                            <asp:ListItem>Big</asp:ListItem>
-                                        </asp:DropDownList>
-                                    </div>
-                                </div>
-                                <%--8--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">8.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkWMM23FrontDoor" Text="Front Door" CssClass="myClass" runat="server" />
-                                        <asp:DropDownList ID="ddlWMM23FrontDoorcat1" runat="server">
-                                            <asp:ListItem>Select</asp:ListItem>
-                                            <asp:ListItem>Single</asp:ListItem>
-                                            <asp:ListItem>Split</asp:ListItem>
-                                        </asp:DropDownList>
+                                                <asp:DropDownList ID="ddlWMM23DoorCPlatecat3" runat="server" Enabled="false">
+                                                    <asp:ListItem>Select Thickness</asp:ListItem>
+                                                    <asp:ListItem>1.5mm</asp:ListItem>
+                                                    <asp:ListItem>2.00mm</asp:ListItem>
+                                                    <asp:ListItem>3.00mm</asp:ListItem>
+                                                </asp:DropDownList>
+                                            </div>
+                                        </div>
+                                        <%--7--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">7.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkWMM23WallMtgBracket" Text="Wall Mtg. Bracket" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:DropDownList ID="ddlWMM23WallMtgBracketcat1" runat="server" Enabled="false">
+                                                    <asp:ListItem>Select Size</asp:ListItem>
+                                                    <asp:ListItem>Small</asp:ListItem>
+                                                    <asp:ListItem>Big</asp:ListItem>
+                                                </asp:DropDownList>
+                                            </div>
+                                        </div>
+                                        <%--8--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">8.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkWMM23FrontDoor" Text="Front Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:DropDownList ID="ddlWMM23FrontDoorcat1" runat="server" Enabled="false">
+                                                    <asp:ListItem>Select</asp:ListItem>
+                                                    <asp:ListItem>Single</asp:ListItem>
+                                                    <asp:ListItem>Split</asp:ListItem>
+                                                </asp:DropDownList>
 
-                                        <asp:DropDownList ID="ddlWMM23FrontDoorcat2" runat="server">
-                                            <asp:ListItem>Select Thickness</asp:ListItem>
-                                            <asp:ListItem>1.2mm</asp:ListItem>
-                                            <asp:ListItem>1.5mm</asp:ListItem>
-                                            <asp:ListItem>2.00mm</asp:ListItem>
-                                        </asp:DropDownList>
-                                    </div>
-                                </div>
-                                <%--9--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">9.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkWMM23RearDoor" Text="Rear Door" CssClass="myClass" runat="server" />
-                                        <asp:DropDownList ID="ddlWMM23RearDoorcat1" runat="server">
-                                            <asp:ListItem>Select</asp:ListItem>
-                                            <asp:ListItem>Single</asp:ListItem>
-                                            <asp:ListItem>Split</asp:ListItem>
-                                        </asp:DropDownList>
+                                                <asp:DropDownList ID="ddlWMM23FrontDoorcat2" runat="server" Enabled="false">
+                                                    <asp:ListItem>Select Thickness</asp:ListItem>
+                                                    <asp:ListItem>1.2mm</asp:ListItem>
+                                                    <asp:ListItem>1.5mm</asp:ListItem>
+                                                    <asp:ListItem>2.00mm</asp:ListItem>
+                                                </asp:DropDownList>
+                                            </div>
+                                        </div>
+                                        <%--9--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">9.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkWMM23RearDoor" Text="Rear Door" CssClass="myClass" runat="server" />
+                                                <asp:DropDownList ID="ddlWMM23RearDoorcat1" runat="server">
+                                                    <asp:ListItem>Select</asp:ListItem>
+                                                    <asp:ListItem>Single</asp:ListItem>
+                                                    <asp:ListItem>Split</asp:ListItem>
+                                                </asp:DropDownList>
 
-                                        <asp:DropDownList ID="ddlWMM23RearDoorcat2" runat="server">
-                                            <asp:ListItem>Select Thickness</asp:ListItem>
-                                            <asp:ListItem>1.2mm</asp:ListItem>
-                                            <asp:ListItem>1.5mm</asp:ListItem>
-                                            <asp:ListItem>2.00mm</asp:ListItem>
-                                        </asp:DropDownList>
-                                    </div>
-                                </div>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">10.&nbsp;</h5>
-                                        <asp:CheckBox ID="CheckboxinnerDoor" Text="Inner Door" CssClass="myClass" runat="server" />
-                                        <asp:DropDownList ID="ddlinnerdoor" runat="server">
-                                            <asp:ListItem>Select</asp:ListItem>
-                                            <asp:ListItem>Single</asp:ListItem>
-                                            <asp:ListItem>Split</asp:ListItem>
-                                        </asp:DropDownList>
+                                                <asp:DropDownList ID="ddlWMM23RearDoorcat2" runat="server">
+                                                    <asp:ListItem>Select Thickness</asp:ListItem>
+                                                    <asp:ListItem>1.2mm</asp:ListItem>
+                                                    <asp:ListItem>1.5mm</asp:ListItem>
+                                                    <asp:ListItem>2.00mm</asp:ListItem>
+                                                </asp:DropDownList>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">10.&nbsp;</h5>
+                                                <asp:CheckBox ID="CheckboxinnerDoor" Text="Inner Door" CssClass="myClass" runat="server" />
+                                                <asp:DropDownList ID="ddlinnerdoor" runat="server">
+                                                    <asp:ListItem>Select</asp:ListItem>
+                                                    <asp:ListItem>Single</asp:ListItem>
+                                                    <asp:ListItem>Split</asp:ListItem>
+                                                </asp:DropDownList>
 
-                                        <asp:DropDownList ID="ddlthickness" runat="server">
-                                            <asp:ListItem>Select Thickness</asp:ListItem>
-                                            <asp:ListItem>1.2mm</asp:ListItem>
-                                            <asp:ListItem>1.5mm</asp:ListItem>
-                                            <asp:ListItem>2.00mm</asp:ListItem>
-                                        </asp:DropDownList>
+                                                <asp:DropDownList ID="ddlthickness" runat="server">
+                                                    <asp:ListItem>Select Thickness</asp:ListItem>
+                                                    <asp:ListItem>1.2mm</asp:ListItem>
+                                                    <asp:ListItem>1.5mm</asp:ListItem>
+                                                    <asp:ListItem>2.00mm</asp:ListItem>
+                                                </asp:DropDownList>
+                                            </div>
+                                        </div>
+                                        <%--10--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">11.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkWMM23DoorStiffener" Text="Door Stiffener" CssClass="myClass" runat="server" />
+                                            </div>
+                                        </div>
+                                        <%--11--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">12.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkWMM23Lock" Text="Lock" CssClass="myClass" runat="server" />
+                                                <asp:DropDownList ID="ddlWMM23Lockcat1" runat="server">
+                                                    <asp:ListItem>Select</asp:ListItem>
+                                                    <asp:ListItem>Thumbscrew</asp:ListItem>
+                                                    <asp:ListItem>Coin Lock</asp:ListItem>
+                                                    <asp:ListItem>Cam Lock</asp:ListItem>
+                                                    <asp:ListItem>3-point Handle Lock</asp:ListItem>
+                                                    <asp:ListItem>Mini Lock</asp:ListItem>
+                                                </asp:DropDownList>
+                                                <asp:TextBox ID="txtWMM23Lockcat2" runat="server" placeholder="Qty"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <%--12--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">13.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkWMM23CableSupportAngle" Text="Cable Support Angle" CssClass="myClass" runat="server" />
+                                                <asp:TextBox ID="txtWMM23CableSupportAnglecat1" runat="server" placeholder="Qty"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <%-- 13--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">14.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkWMM23PowerCoatingShade" Text="Powder Coating Shade" CssClass="myClass" runat="server" />
+                                                <asp:DropDownList ID="ddlWMM23PowerCoatingShadecat1" runat="server">
+                                                    <asp:ListItem>Select Colour</asp:ListItem>
+                                                    <asp:ListItem>RAL-7032</asp:ListItem>
+                                                    <asp:ListItem>RAL-7035</asp:ListItem>
+                                                </asp:DropDownList>
+                                                <asp:TextBox ID="txtddlWMM23PowerCoatingShadecat2" runat="server" placeholder="Specify"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <%-- 14--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">15.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkWMM23LiftingIBolt" Text="Lifting I-Bolt" CssClass="myClass" runat="server" />
+                                                <asp:TextBox ID="txtWMM23LiftingIBoltcat1" runat="server" placeholder="Qty"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <%-- 15--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">16.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkWMM23Base" Text="Base" CssClass="myClass" runat="server" />
+                                                <asp:DropDownList ID="ddlWMM23Basecat1" runat="server">
+                                                    <asp:ListItem>Select</asp:ListItem>
+                                                    <asp:ListItem>Standard</asp:ListItem>
+                                                    <asp:ListItem>50mm Angle frame</asp:ListItem>
+                                                    <asp:ListItem>ISMC</asp:ListItem>
+                                                </asp:DropDownList>
+                                                <asp:DropDownList ID="ddlWMM23Basecat2" runat="server">
+                                                    <asp:ListItem>Select Thickness</asp:ListItem>
+                                                    <asp:ListItem>2.00mm</asp:ListItem>
+                                                    <asp:ListItem>3.00mm</asp:ListItem>
+                                                </asp:DropDownList>
+                                                <asp:TextBox ID="txtWMM23Basecat3" runat="server" placeholder="Specify"></asp:TextBox>
+                                                <asp:DropDownList ID="ddlheight" runat="server">
+                                                    <asp:ListItem>Select Height</asp:ListItem>
+                                                    <asp:ListItem>75.00mm</asp:ListItem>
+                                                    <asp:ListItem>100.00mm</asp:ListItem>
+                                                    <asp:ListItem>150.00mm</asp:ListItem>
+                                                    <asp:ListItem>200.00mm</asp:ListItem>
+                                                </asp:DropDownList>
+                                            </div>
+                                        </div>
+                                        <%-- 16--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">17.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkWMM23TransparentDoor" Text="Transparent Door" CssClass="myClass" runat="server" />
+                                                <asp:DropDownList ID="ddlWMM23TransparentDoorcat1" runat="server">
+                                                    <asp:ListItem>Select</asp:ListItem>
+                                                    <asp:ListItem>Glass</asp:ListItem>
+                                                    <asp:ListItem>Acrylic</asp:ListItem>
+                                                    <asp:ListItem>Polycarbonate</asp:ListItem>
+                                                </asp:DropDownList>
+                                                <asp:DropDownList ID="ddlWMM23TransparentDoorcat2" runat="server">
+                                                    <asp:ListItem>Select Thickness</asp:ListItem>
+                                                    <asp:ListItem>3.00mm</asp:ListItem>
+                                                    <asp:ListItem>4.00mm</asp:ListItem>
+                                                    <asp:ListItem>5.00mm</asp:ListItem>
+                                                </asp:DropDownList>
+                                                <asp:DropDownList ID="ddlWMM23TransparentDoorcat3" runat="server">
+                                                    <asp:ListItem>Select</asp:ListItem>
+                                                    <asp:ListItem>With bidding</asp:ListItem>
+                                                    <asp:ListItem>biddingless technique</asp:ListItem>
+                                                </asp:DropDownList>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <%-- 17--%>
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">18.&nbsp;</h5>
+                                                <%--<asp:CheckBox ID="chkWMM23fan" Text="Fan" CssClass="myClass" runat="server" />--%>
+                                                <asp:CheckBox ID="chkWMM23fan" Text="Filter" CssClass="myClass" runat="server" />
+                                                <asp:DropDownList ID="ddlWMM23fancat1" runat="server">
+                                                    <asp:ListItem>Select Size</asp:ListItem>
+                                                    <asp:ListItem>4</asp:ListItem>
+                                                    <asp:ListItem>6</asp:ListItem>
+                                                </asp:DropDownList>
+                                                <asp:TextBox ID="txtWMM23fancat2" runat="server" placeholder="Qty"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <%-- 18--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">19.&nbsp;</h5>
+                                                <asp:CheckBox ID="chkWMM23Jointlesspolyurethanefoamedinplacegasketing" Text="Jointless polyurethane foamed in place gasketing" CssClass="myClass" runat="server" />
+                                            </div>
+                                        </div>
+                                        <%-- 19--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">20.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkWMM23Anyadditionalcomponent" Text="Any additional component" CssClass="myClass" runat="server" />
+                                                <asp:TextBox ID="txtWMM23Anyadditionalcomponentcat1" runat="server" placeholder="Specify"></asp:TextBox>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-
-
-                                <%--10--%>
                                 <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">11.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkWMM23DoorStiffener" Text="Door Stiffener" CssClass="myClass" runat="server" />
-                                    </div>
-                                </div>
-                                <%--11--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">12.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkWMM23Lock" Text="Lock" CssClass="myClass" runat="server" />
-                                        <asp:DropDownList ID="ddlWMM23Lockcat1" runat="server">
-                                            <asp:ListItem>Select</asp:ListItem>
-                                            <asp:ListItem>Thumbscrew</asp:ListItem>
-                                            <asp:ListItem>Coin Lock</asp:ListItem>
-                                            <asp:ListItem>Cam Lock</asp:ListItem>
-                                            <asp:ListItem>3-point Handle Lock</asp:ListItem>
-                                            <asp:ListItem>Mini Lock</asp:ListItem>
-                                        </asp:DropDownList>
-                                        <asp:TextBox ID="txtWMM23Lockcat2" runat="server" placeholder="Qty"></asp:TextBox>
-                                    </div>
-                                </div>
-                                <%--12--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">13.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkWMM23CableSupportAngle" Text="Cable Support Angle" CssClass="myClass" runat="server" />
-                                        <asp:TextBox ID="txtWMM23CableSupportAnglecat1" runat="server" placeholder="Qty"></asp:TextBox>
-                                    </div>
-                                </div>
-                                <%-- 13--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">14.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkWMM23PowerCoatingShade" Text="Powder Coating Shade" CssClass="myClass" runat="server" />
-                                        <asp:DropDownList ID="ddlWMM23PowerCoatingShadecat1" runat="server">
-                                            <asp:ListItem>Select Colour</asp:ListItem>
-                                            <asp:ListItem>RAL-7032</asp:ListItem>
-                                            <asp:ListItem>RAL-7035</asp:ListItem>
-                                        </asp:DropDownList>
-                                        <asp:TextBox ID="txtddlWMM23PowerCoatingShadecat2" runat="server" placeholder="Specify"></asp:TextBox>
-                                    </div>
-                                </div>
-                                <%-- 14--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">15.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkWMM23LiftingIBolt" Text="Lifting I-Bolt" CssClass="myClass" runat="server" />
-                                        <asp:TextBox ID="txtWMM23LiftingIBoltcat1" runat="server" placeholder="Qty"></asp:TextBox>
-                                    </div>
-                                </div>
-                                <%-- 15--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">16.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkWMM23Base" Text="Base" CssClass="myClass" runat="server" />
-                                        <asp:DropDownList ID="ddlWMM23Basecat1" runat="server">
-                                            <asp:ListItem>Select</asp:ListItem>
-                                            <asp:ListItem>Standard</asp:ListItem>
-                                            <asp:ListItem>50mm Angle frame</asp:ListItem>
-                                            <asp:ListItem>ISMC</asp:ListItem>
-                                        </asp:DropDownList>
-                                        <asp:DropDownList ID="ddlWMM23Basecat2" runat="server">
-                                            <asp:ListItem>Select Thickness</asp:ListItem>
-                                            <asp:ListItem>2.00mm</asp:ListItem>
-                                            <asp:ListItem>3.00mm</asp:ListItem>
-                                        </asp:DropDownList>
-                                        <asp:TextBox ID="txtWMM23Basecat3" runat="server" placeholder="Specify"></asp:TextBox>
-                                        <asp:DropDownList ID="ddlheight" runat="server">
-                                            <asp:ListItem>Select Height</asp:ListItem>
-                                            <asp:ListItem>75.00mm</asp:ListItem>
-                                            <asp:ListItem>100.00mm</asp:ListItem>
-                                            <asp:ListItem>150.00mm</asp:ListItem>
-                                            <asp:ListItem>200.00mm</asp:ListItem>
-                                        </asp:DropDownList>
-                                    </div>
-                                </div>
-                                <%-- 16--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">17.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkWMM23TransparentDoor" Text="Transparent Door" CssClass="myClass" runat="server" />
-                                        <asp:DropDownList ID="ddlWMM23TransparentDoorcat1" runat="server">
-                                            <asp:ListItem>Select</asp:ListItem>
-                                            <asp:ListItem>Glass</asp:ListItem>
-                                            <asp:ListItem>Acrylic</asp:ListItem>
-                                            <asp:ListItem>Polycarbonate</asp:ListItem>
-                                        </asp:DropDownList>
-                                        <asp:DropDownList ID="ddlWMM23TransparentDoorcat2" runat="server">
-                                            <asp:ListItem>Select Thickness</asp:ListItem>
-                                            <asp:ListItem>3.00mm</asp:ListItem>
-                                            <asp:ListItem>4.00mm</asp:ListItem>
-                                            <asp:ListItem>5.00mm</asp:ListItem>
-                                        </asp:DropDownList>
-                                        <asp:DropDownList ID="ddlWMM23TransparentDoorcat3" runat="server">
-                                            <asp:ListItem>Select</asp:ListItem>
-                                            <asp:ListItem>With bidding</asp:ListItem>
-                                            <asp:ListItem>biddingless technique</asp:ListItem>
-                                        </asp:DropDownList>
-                                    </div>
-                                </div>
-                                <br />
-                                <%-- 17--%>
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">18.&nbsp;</h5>
-                                        <%--<asp:CheckBox ID="chkWMM23fan" Text="Fan" CssClass="myClass" runat="server" />--%>
-                                        <asp:CheckBox ID="chkWMM23fan" Text="Filter" CssClass="myClass" runat="server" />
-                                        <asp:DropDownList ID="ddlWMM23fancat1" runat="server">
-                                            <asp:ListItem>Select Size</asp:ListItem>
-                                            <asp:ListItem>4</asp:ListItem>
-                                            <asp:ListItem>6</asp:ListItem>
-                                        </asp:DropDownList>
-                                        <asp:TextBox ID="txtWMM23fancat2" runat="server" placeholder="Qty"></asp:TextBox>
-                                    </div>
-                                </div>
-                                <%-- 18--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">19.&nbsp;</h5>
-                                        <asp:CheckBox ID="chkWMM23Jointlesspolyurethanefoamedinplacegasketing" Text="Jointless polyurethane foamed in place gasketing" CssClass="myClass" runat="server" />
-                                    </div>
-                                </div>
-                                <%-- 19--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">20.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkWMM23Anyadditionalcomponent" Text="Any additional component" CssClass="myClass" runat="server" />
-                                        <asp:TextBox ID="txtWMM23Anyadditionalcomponentcat1" runat="server" placeholder="Specify"></asp:TextBox>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br />
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
                         <div class="row">
                             <div class="col-md-12" style="display: inline;">
-                                <center><asp:Button ID="btnSubmitWMM23" ValidationGroup="form2" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSubmitWMM23_Click" />&nbsp;<asp:Button ID="btnCancelWMM23" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btnCancelWMM23_Click" /></center>
+                                <center>
+                                    <asp:Button ID="btnSubmitWMM23" ValidationGroup="form2" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSubmitWMM23_Click" />
+                                    &nbsp;<asp:Button ID="btnCancelWMM23" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btnCancelWMM23_Click" /></center>
                             </div>
                         </div>
                     </asp:Panel>
@@ -1925,7 +1960,9 @@
                         </asp:UpdatePanel>
                         <div class="row">
                             <div class="col-md-12" style="display: inline;">
-                                <center><asp:Button ID="btnSumbitWMM30" ValidationGroup="form2" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSumbitWMM30_Click" />&nbsp;<asp:Button ID="btnCancelWMM30" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btnCancelWMM30_Click" /></center>
+                                <center>
+                                    <asp:Button ID="btnSumbitWMM30" ValidationGroup="form2" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSumbitWMM30_Click" />
+                                    &nbsp;<asp:Button ID="btnCancelWMM30" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btnCancelWMM30_Click" /></center>
                             </div>
                         </div>
                     </asp:Panel>
@@ -2454,7 +2491,9 @@
                         <br />
                         <div class="row">
                             <div class="col-md-12" style="display: inline;">
-                                <center><asp:Button ID="btnSubmitMFS" ValidationGroup="form2" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSubmitMFS_Click" />&nbsp;<asp:Button ID="BtnCancelMFS" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="BtnCancelMFS_Click" /></center>
+                                <center>
+                                    <asp:Button ID="btnSubmitMFS" ValidationGroup="form2" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSubmitMFS_Click" />
+                                    &nbsp;<asp:Button ID="BtnCancelMFS" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="BtnCancelMFS_Click" /></center>
                             </div>
                         </div>
                     </asp:Panel>
@@ -2909,7 +2948,9 @@
                         <br />
                         <div class="row">
                             <div class="col-md-12" style="display: inline;">
-                                <center> <asp:Button ID="btnSubmitEcoMCC" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSubmitEcoMCC_Click"/>&nbsp;<asp:Button ID="btnCancelEcoMCC" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btnCancelEcoMCC_Click" /></center>
+                                <center>
+                                    <asp:Button ID="btnSubmitEcoMCC" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSubmitEcoMCC_Click" />
+                                    &nbsp;<asp:Button ID="btnCancelEcoMCC" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btnCancelEcoMCC_Click" /></center>
                             </div>
                         </div>
                     </asp:Panel>
@@ -3317,7 +3358,9 @@
                         </asp:UpdatePanel>
                         <div class="row">
                             <div class="col-md-12" style="display: inline;">
-                                <center><asp:Button ID="btnSubmitModular" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSubmitModular_Click" />&nbsp;<asp:Button ID="btnCancelModular" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btnCancelModular_Click" /></center>
+                                <center>
+                                    <asp:Button ID="btnSubmitModular" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSubmitModular_Click" />
+                                    &nbsp;<asp:Button ID="btnCancelModular" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btnCancelModular_Click" /></center>
                             </div>
                         </div>
 
@@ -3661,7 +3704,9 @@
                         <br />
                         <div class="row">
                             <div class="col-md-12" style="display: inline;">
-                                <center><asp:Button ID="btnEcoFrame" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnEcoFrame_Click" />&nbsp;<asp:Button ID="btnCancelEcoFrame" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btnCancelEcoFrame_Click" /></center>
+                                <center>
+                                    <asp:Button ID="btnEcoFrame" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnEcoFrame_Click" />
+                                    &nbsp;<asp:Button ID="btnCancelEcoFrame" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btnCancelEcoFrame_Click" /></center>
                             </div>
                         </div>
                     </asp:Panel>
@@ -4779,7 +4824,9 @@
                         </asp:UpdatePanel>
                         <div class="row">
                             <div class="col-md-12" style="display: inline;">
-                                <center><asp:Button ID="btnSubmitPCEncShopFloorStanding" ValidationGroup="form2" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSubmitPCEncShopFloorStanding_Click" />&nbsp;<asp:Button ID="btnCancelPCEncShopFloorStanding" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btnCancelPCEncShopFloorStanding_Click" /></center>
+                                <center>
+                                    <asp:Button ID="btnSubmitPCEncShopFloorStanding" ValidationGroup="form2" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSubmitPCEncShopFloorStanding_Click" />
+                                    &nbsp;<asp:Button ID="btnCancelPCEncShopFloorStanding" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btnCancelPCEncShopFloorStanding_Click" /></center>
                             </div>
                         </div>
                     </asp:Panel>
@@ -5200,7 +5247,9 @@
                         <br />
                         <div class="row">
                             <div class="col-md-12" style="display: inline;">
-                                <center><asp:Button ID="Button1" ValidationGroup="form2" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSubmitMFS_Click" />&nbsp;<asp:Button ID="Button2" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="BtnCancelMFS_Click" /></center>
+                                <center>
+                                    <asp:Button ID="Button1" ValidationGroup="form2" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSubmitMFS_Click" />
+                                    &nbsp;<asp:Button ID="Button2" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="BtnCancelMFS_Click" /></center>
                             </div>
                         </div>
                     </asp:Panel>
@@ -5592,7 +5641,9 @@
                         <br />
                         <div class="row">
                             <div class="col-md-12" style="display: inline;">
-                                <center><asp:Button ID="Button3" ValidationGroup="form2" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSubmitMFS_Click" />&nbsp;<asp:Button ID="Button4" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="BtnCancelMFS_Click" /></center>
+                                <center>
+                                    <asp:Button ID="Button3" ValidationGroup="form2" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSubmitMFS_Click" />
+                                    &nbsp;<asp:Button ID="Button4" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="BtnCancelMFS_Click" /></center>
                             </div>
                         </div>
                     </asp:Panel>
@@ -5982,7 +6033,9 @@
                         <br />
                         <div class="row">
                             <div class="col-md-12" style="display: inline;">
-                                <center><asp:Button ID="Button5" ValidationGroup="form2" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSubmitMFS_Click" />&nbsp;<asp:Button ID="Button6" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="BtnCancelMFS_Click" /></center>
+                                <center>
+                                    <asp:Button ID="Button5" ValidationGroup="form2" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSubmitMFS_Click" />
+                                    &nbsp;<asp:Button ID="Button6" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="BtnCancelMFS_Click" /></center>
                             </div>
                         </div>
                     </asp:Panel>
@@ -6361,7 +6414,9 @@
                         <br />
                         <div class="row">
                             <div class="col-md-12" style="display: inline;">
-                                <center><asp:Button ID="Button7" ValidationGroup="form2" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSubmitMFS_Click" />&nbsp;<asp:Button ID="Button8" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="BtnCancelMFS_Click" /></center>
+                                <center>
+                                    <asp:Button ID="Button7" ValidationGroup="form2" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSubmitMFS_Click" />
+                                    &nbsp;<asp:Button ID="Button8" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="BtnCancelMFS_Click" /></center>
                             </div>
                         </div>
                     </asp:Panel>
@@ -6541,11 +6596,12 @@
                         <br />
                         <div class="row">
                             <div class="col-md-12" style="display: inline;">
-                                <center> <asp:Button ID="btnSubmitSpecify" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSubmitSpecify_Click"/>&nbsp;<asp:Button ID="btnCancelSpecify" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btnCancelSpecify_Click" /></center>
+                                <center>
+                                    <asp:Button ID="btnSubmitSpecify" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSubmitSpecify_Click" />
+                                    &nbsp;<asp:Button ID="btnCancelSpecify" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btnCancelSpecify_Click" /></center>
                             </div>
                         </div>
                     </asp:Panel>
-
                 </div>
             </div>
         </div>
@@ -6690,73 +6746,10 @@
 
             $('.myDate').datepicker('setDate', new Date());
         }
-
-
-        //    //2nd Row Calculation 
-        //    var txtqty2 = document.getElementById('ContentPlaceHolder1_txtQty2').value;
-        //    var txtrate2 = document.getElementById('ContentPlaceHolder1_txtRate2').value;
-        //    var txtdisc2 = document.getElementById('ContentPlaceHolder1_txtdisc2').value;
-        //    var txtAmt2 = document.getElementById('ContentPlaceHolder1_txtAmt2').value;
-
-        //    if (isNaN(txtqty2) || txtqty2 == "") { txtqty2 = 0; }
-        //    if (isNaN(txtrate2) || txtrate2 == "") { txtrate2 = 0; }
-        //    if (isNaN(txtdisc2) || txtdisc2 == "") { txtdisc2 = 0; }
-        //    if (isNaN(txtAmt2) || txtAmt2 == "") { txtAmt2 = 0; }
-
-        //    var result2 = parseInt(txtqty2) * parseFloat(txtrate2);
-        //    var discAmt = (result2 * txtdisc2) / 100;
-        //    var total2 = result2 - discAmt;
-        //    if (!isNaN(result2)) { document.getElementById('ContentPlaceHolder1_txtAmt2').value = total2.toFixed(2); }
-
-        //    //3 Row Calculation 
-        //    var txtqty3 = document.getElementById('ContentPlaceHolder1_txtQty3').value;
-        //    var txtrate3 = document.getElementById('ContentPlaceHolder1_txtRate3').value;
-        //    var txtdisc3 = document.getElementById('ContentPlaceHolder1_txtdisc3').value;
-        //    var txtAmt3 = document.getElementById('ContentPlaceHolder1_txtAmt3').value;
-
-        //    if (isNaN(txtqty3) || txtqty3 == "") { txtqty3 = 0; }
-        //    if (isNaN(txtrate3) || txtrate3 == "") { txtrate3 = 0; }
-        //    if (isNaN(txtdisc3) || txtdisc3 == "") { txtdisc3 = 0; }
-        //    if (isNaN(txtAmt3) || txtAmt3 == "") { txtAmt3 = 0; }
-
-        //    var result3 = parseInt(txtqty3) * parseFloat(txtrate3);
-        //    var discAmt = (result3 * txtdisc3) / 100;
-        //    var total3 = result3 - discAmt;
-        //    if (!isNaN(result3)) { document.getElementById('ContentPlaceHolder1_txtAmt3').value = total3.toFixed(2); }
-
-        //    //4 Row Calculation 
-        //    var txtqty4 = document.getElementById('ContentPlaceHolder1_txtQty4').value;
-        //    var txtrate4 = document.getElementById('ContentPlaceHolder1_txtRate4').value;
-        //    var txtdisc4 = document.getElementById('ContentPlaceHolder1_txtdisc4').value;
-        //    var txtAmt4 = document.getElementById('ContentPlaceHolder1_txtAmt4').value;
-
-        //    if (isNaN(txtqty4) || txtqty4 == "") { txtqty4 = 0; }
-        //    if (isNaN(txtrate4) || txtrate4 == "") { txtrate4 = 0; }
-        //    if (isNaN(txtdisc4) || txtdisc4 == "") { txtdisc4 = 0; }
-        //    if (isNaN(txtAmt4) || txtAmt4 == "") { txtAmt4 = 0; }
-
-        //    var result4 = parseInt(txtqty4) * parseFloat(txtrate4);
-        //    var discAmt = (result4 * txtdisc4) / 100;
-        //    var total4 = result4 - discAmt;
-        //    if (!isNaN(result4)) { document.getElementById('ContentPlaceHolder1_txtAmt4').value = total4.toFixed(2); }
-
-        //    //5 Row Calculation 
-        //    var txtqty5 = document.getElementById('ContentPlaceHolder1_txtQty5').value;
-        //    var txtrate5 = document.getElementById('ContentPlaceHolder1_txtRate5').value;
-        //    var txtdisc5 = document.getElementById('ContentPlaceHolder1_txtdisc5').value;
-        //    var txtAmt5 = document.getElementById('ContentPlaceHolder1_txtAmt5').value;
-
-        //    if (isNaN(txtqty5) || txtqty5 == "") { txtqty5 = 0; }
-        //    if (isNaN(txtrate5) || txtrate5 == "") { txtrate5 = 0; }
-        //    if (isNaN(txtdisc5) || txtdisc5 == "") { txtdisc5 = 0; }
-        //    if (isNaN(txtAmt5) || txtAmt5 == "") { txtAmt5 = 0; }
-
-        //    var result5 = parseInt(txtqty5) * parseFloat(txtrate5);
-        //    var discAmt = (result5 * txtdisc5) / 100;
-        //    var total5 = result5 - discAmt;
-        //    if (!isNaN(result5)) { document.getElementById('ContentPlaceHolder1_txtAmt5').value = total5.toFixed(2); }
-        //}
     </script>
+
+
+
 
     <script type="text/javascript">
         function DisableButton() {
@@ -6766,6 +6759,7 @@
             document.getElementById("<%=btnsubmit.ClientID %>").classList.add("dissablebtn");
         }
         window.onbeforeunload = DisableButton;
+    </script>
     </script>
 
 </asp:Content>

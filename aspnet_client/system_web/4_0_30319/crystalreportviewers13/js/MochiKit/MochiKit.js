@@ -1,149 +1,124 @@
-/***
+﻿using ERPTMT;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.IO;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
-MochiKit.MochiKit 1.4
+public partial class Admin_QuotationList : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            FillGrid(); FillddlQuotationno(); FillddlCompany();
+            if (Session["Username"] == null)
+            {
+                Response.Redirect("../Login.aspx");
+            }
+            else
+            {
+                //string curdate = DateTime.Now.ToString("dd/MM/yyyy");
+                //DateTime ffff1 = Convert.ToDateTime(curdate);
+                //txtquotationdate.Text = ffff1.ToString("yyyy-MM-dd");
 
-See <http://mochikit.com/> for documentation, downloads, license, etc.
-
-(c) 2005 Bob Ippolito.  All rights Reserved.
-
-***/
-
-if (typeof(MochiKit) == 'undefined') {
-    MochiKit = {};
-}
-
-if (typeof(MochiKit.MochiKit) == 'undefined') {
-    MochiKit.MochiKit = {};
-}
-
-MochiKit.MochiKit.NAME = "MochiKit.MochiKit";
-MochiKit.MochiKit.VERSION = "1.4";
-MochiKit.MochiKit.__repr__ = function () {
-    return "[" + this.NAME + " " + this.VERSION + "]";
-};
-
-MochiKit.MochiKit.toString = function () {
-    return this.__repr__();
-};
-
-MochiKit.MochiKit.SUBMODULES = [
-    "Base",
-    "Iter",
-    "Logging",
-    "DateTime",
-    "Format",
-    "Async",
-    "DOM",
-    "Style",
-    "LoggingPane",
-    "Color",
-    "Signal",
-    "Visual"
-];
-
-if (typeof(JSAN) != 'undefined' || typeof(dojo) != 'undefined') {
-    if (typeof(dojo) != 'undefined') {
-        dojo.provide('MochiKit.MochiKit');
-        dojo.require("MochiKit.*");
+                //string Validtilldate = DateTime.Now.ToString("dd/MM/yyyy");
+                //DateTime ffff2 = Convert.ToDateTime(curdate).AddDays(30); ;
+                //txtvalidtill.Text = ffff2.ToString("yyyy-MM-dd");
+            }
+        }
     }
-    if (typeof(JSAN) != 'undefined') {
-        (function (lst) {
-            for (var i = 0; i < lst.length; i++) {
-                JSAN.use("MochiKit." + lst[i], []);
-            }
-        })(MochiKit.MochiKit.SUBMODULES);
-    }
-    (function () {
-        var extend = MochiKit.Base.extend;
-        var self = MochiKit.MochiKit;
-        var modules = self.SUBMODULES;
-        var EXPORT = [];
-        var EXPORT_OK = [];
-        var EXPORT_TAGS = {};
-        var i, k, m, all;
-        for (i = 0; i < modules.length; i++) {
-            m = MochiKit[modules[i]];
-            extend(EXPORT, m.EXPORT);
-            extend(EXPORT_OK, m.EXPORT_OK);
-            for (k in m.EXPORT_TAGS) {
-                EXPORT_TAGS[k] = extend(EXPORT_TAGS[k], m.EXPORT_TAGS[k]);
-            }
-            all = m.EXPORT_TAGS[":all"];
-            if (!all) {
-                all = extend(null, m.EXPORT, m.EXPORT_OK);
-            }
-            var j;
-            for (j = 0; j < all.length; j++) {
-                k = all[j];
-                self[k] = m[k];
-            }
-        }
-        self.EXPORT = EXPORT;
-        self.EXPORT_OK = EXPORT_OK;
-        self.EXPORT_TAGS = EXPORT_TAGS;
-    }());
-    
-} else {
-    if (typeof(MochiKit.__compat__) == 'undefined') {
-        MochiKit.__compat__ = true;
-    }
-    (function () {
-        if (typeof(document) == "undefined") {
-            return;
-        }
-        var scripts = document.getElementsByTagName("script");
-        var kXULNSURI = "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
-        var base = null;
-        var baseElem = null;
-        var allScripts = {};
-        var i;
-        for (i = 0; i < scripts.length; i++) {
-            var src = scripts[i].getAttribute("src");
-            if (!src) {
-                continue;
-            }
-            allScripts[src] = true;
-            if (src.match(/MochiKit.js$/)) {
-                base = src.substring(0, src.lastIndexOf('MochiKit.js'));
-                baseElem = scripts[i];
-            }
-        }
-        if (base === null) {
-            return;
-        }
-        var modules = MochiKit.MochiKit.SUBMODULES;
-        for (var i = 0; i < modules.length; i++) {
-            if (MochiKit[modules[i]]) {
-                continue;
-            }
-            var uri = base + modules[i] + '.js';
-            if (uri in allScripts) {
-                continue;
-            }
-            if (document.documentElement &&
-                document.documentElement.namespaceURI == kXULNSURI) {
-                // XUL
-                var s = document.createElementNS(kXULNSURI, 'script');
-                s.setAttribute("id", "MochiKit_" + base + modules[i]);
-                s.setAttribute("src", uri);
-                s.setAttribute("type", "application/x-javascript");
-                baseElem.parentNode.appendChild(s);
-            } else {
-                // HTML
-                /*
-                    DOM can not be used here because Safari does
-                    deferred loading of scripts unless they are
-                    in the document or inserted with document.write
 
-                    This is not XHTML compliant.  If you want XHTML
-                    compliance then you must use the packed version of MochiKit
-                    or include each script individually (basically unroll
-                    these document.write calls into your XHTML source)
+    //Fill GridView
+    private void FillGrid()
+    {
+        DataTable Dt = Cls_Main.Read_Table("SELECT * FROM [tbl_QuotationHdr] WHERE IsDeleted = 0 ORDER BY [CreatedOn] Desc");
+        GVQuotation.DataSource = Dt;
+        GVQuotation.DataBind();
+    }
 
-                */
-                document.write('<script src="' + uri +
-                    '" type="text/javascript"></script>');
+    private void FillddlQuotationno()
+    {
+        SqlDataAdapter ad = new SqlDataAdapter("SELECT [ID],[Quotationno] FROM [tbl_QuotationHdr] WHERE IsDeleted = 0", Cls_Main.Conn);
+        DataTable dt = new DataTable();
+        ad.Fill(dt);
+        if (dt.Rows.Count > 0)
+        {
+            ddlquotationno.DataSource = dt;
+            ddlquotationno.DataValueField = "ID";
+            ddlquotationno.DataTextField = "Quotationno";
+            ddlquotationno.DataBind();
+            ddlquotationno.Items.Insert(0, " --  Select Quotation No. -- ");
+        }
+    }
+
+    private void FillddlCompany()
+    {
+        SqlDataAdapter ad = new SqlDataAdapter("SELECT DISTINCT [Companyname] FROM [tbl_QuotationHdr] WHERE IsDeleted = 0", Cls_Main.Conn);
+        DataTable dt = new DataTable();
+        ad.Fill(dt);
+        if (dt.Rows.Count > 0)
+        {
+            ddlcompnay.DataSource = dt;
+           // ddlcompnay.DataValueField = "ID";
+            ddlcompnay.DataTextField = "Companyname";
+            ddlcompnay.DataBind();
+            ddlcompnay.Items.Insert(0, " --  Select Company -- ");
+        }
+    }
+
+    //Encrypt
+    public string encrypt(string encryptString)
+    {
+        string EncryptionKey = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        byte[] clearBytes = Encoding.Unicode.GetBytes(encryptString);
+        using (Aes encryptor = Aes.Create())
+        {
+            Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] {
+            0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76
+        });
+            encryptor.Key = pdb.GetBytes(32);
+            encryptor.IV = pdb.GetBytes(16);
+            using (MemoryStream ms = new MemoryStream())
+            {
+                using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateEncryptor(), CryptoStreamMode.Write))
+                {
+                    cs.Write(clearBytes, 0, clearBytes.Length);
+                    cs.Close();
+                }
+                encryptString = Convert.ToBase64String(ms.ToArray());
             }
-        };
-    })();
-}
+        }
+        return encryptString;
+    }
+
+    protected void btnCreate_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Quotation_Master.aspx");
+    }
+
+    protected void GVQuotation_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+
+        if (e.CommandName == "RowEdit")
+        {
+            Response.Redirect("Quotation_Master.aspx?Id=" + encrypt(e.CommandArgument.ToString()) + "");
+        }
+
+        if (e.CommandName == "RowDelete")
+        {
+            Cls_Main.Conn_Open();
+            SqlCommand Cmd = new SqlCommand("UPDATE [tbl_QuotationHdr] SET IsDeleted=@IsDeleted,DeletedBy=@DeletedBy,DeletedOn=@DeletedOn WHERE ID=@ID", Cls_Main.Conn);
+            Cmd.Parameters.AddWithValue("@ID", Convert.ToInt32(e.CommandArgument.ToString()));
+            Cmd.Parameters.AddWithValue("@IsDeleted", '1');
+            Cmd.Parameters.AddWithValue("@DeletedBy", Session["Username"].ToString());
+            Cmd.Parameters.AddWithValue("@DeletedOn", DateTime.Now);
+            Cmd.ExecuteNonQuery();
+            Cls_Main.Conn_Close();
+            Scri

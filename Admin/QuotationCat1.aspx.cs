@@ -15,6 +15,7 @@ using System.Net.Mail;
 using iTextSharp.text.pdf;
 using System.Globalization;
 using System.Threading.Tasks;
+using DocumentFormat.OpenXml.Office.CustomUI;
 
 public partial class Admin_Quotation : System.Web.UI.Page
 {
@@ -4850,7 +4851,7 @@ public partial class Admin_Quotation : System.Web.UI.Page
     {
         if (Request.QueryString["cdd"] != null)
         {
-            Button btn = e.Item.FindControl("btnupload") as Button;
+            System.Web.UI.WebControls.Button btn = e.Item.FindControl("btnupload") as System.Web.UI.WebControls.Button;
             btn.Enabled = true;
         }
     }
@@ -11013,7 +11014,7 @@ public partial class Admin_Quotation : System.Web.UI.Page
         string previousyear = (Convert.ToDecimal(FinFullYear) - 1).ToString();
         string strQuotationNumber = "";
         string fY = previousyear.ToString() + "-" + FinYear;
-         //string strSelect = @"select ISNULL(MAX(quotationno), '') AS maxno from QuotationMain where quotationno like '%" + fY + "%'";
+        //string strSelect = @"select ISNULL(MAX(quotationno), '') AS maxno from QuotationMain where quotationno like '%" + fY + "%'";
         string strSelect = @"SELECT CASE WHEN ISNULL(MAX(TRY_CAST(SUBSTRING(quotationno, 9, CASE WHEN CHARINDEX('-0', quotationno) > 0 THEN CHARINDEX('-0', quotationno) - 9 ELSE LEN(quotationno) - 8 END) AS INT)), 0) = 0 THEN '2024-25/01000-0' ELSE '2024-25/' + RIGHT('00000' + CAST(ISNULL(MAX(TRY_CAST(SUBSTRING(quotationno, 9, CASE WHEN CHARINDEX('-0', quotationno) > 0 THEN CHARINDEX('-0', quotationno) - 9 ELSE LEN(quotationno) - 8 END) AS INT)), 0) AS VARCHAR(5)), 5) + '-0' END AS maxno FROM QuotationMain where quotationno like '%" + fY + "%'";
 
         // string strSelect = @"select TOP 1 quotationno AS maxno from QuotationMain where quotationno like '%" + fY + "%' ORDER BY ID DESC";
@@ -11108,6 +11109,113 @@ public partial class Admin_Quotation : System.Web.UI.Page
         //    txQutno.Text = strQuotationNumber;
         //}
         return strQuotationNumber;
-	}
+    }
+
+
+    // code by Nikhil 20-01-2025
+    protected void chkJbweldedmainbody_CheckedChanged(object sender, EventArgs e)
+    {
+        System.Web.UI.WebControls.CheckBox chkBox = sender as System.Web.UI.WebControls.CheckBox;
+
+        switch (chkBox.ID)
+        {
+            // 1. JB Box 
+            case "chkJbweldedmainbody":
+                HandleDropDownListVisibility(ddlJbweldedmainbodycat1, ddlJbweldedmainbodycat2, null, chkBox.Checked);
+                break;
+
+            case "chkjbGlandplat":
+                HandleDropDownListVisibility(ddljbGlandplatcat1, ddljbGlandplatcat2, null, chkBox.Checked);
+                break;
+
+            case "Checckboxfor3DD":
+                HandleDropDownListVisibility(ddljbComponetmtgplt, ddljbComponetmtgpltcat1, ddljbComponetmtgpltcat2, chkBox.Checked);
+                break;
+
+            case "chkjbfrontscrewcover":
+                HandleDropDownListVisibility(ddljbfrontscrewcovercat1, null, null, chkBox.Checked);
+                break;
+
+            case "Chkjblock":
+                HandleDropDownListVisibility(ddljbLockcat1, null, null, chkBox.Checked);
+                break;
+
+            case "chkjbTransparentdoor":
+                HandleDropDownListVisibility(ddljbTransparentdoorcat1, ddljbTransparentdoorcat2, ddljbTransparentdoorcat3, chkBox.Checked);
+                break;
+
+            case "ChkjbPowercoatingshade":
+                HandleDropDownListVisibility(ddljbPowercoatingshadecat1, null, null, chkBox.Checked);
+                break;
+
+            case "ChkjbFan":
+                HandleDropDownListVisibility(ddljbfancat1, null, null, chkBox.Checked);
+                break;
+
+            case "ChkjbAnyadditionalcomponent":
+                txtjbAnyadditionalcomponentcat1.Enabled = chkBox.Checked;
+                break;
+            // End Jb Box
+
+
+            //  2. WMM-23.5 (AE Box)
+            case "chkWMM23WeldedMainBody":
+                HandleDropDownListVisibility(ddlWMM23WeldedMainBodycat1, ddlWMM23WeldedMainBodycat2, null, chkBox.Checked);
+                break;
+
+            case "ChkWMM23GlandPlate":
+                HandleDropDownListVisibility(ddlWMM23GlandPlatecat1, ddlWMM23GlandPlatecat2, null, chkBox.Checked);
+                break;
+
+            case "ChkWMM23Canopy":
+                HandleDropDownListVisibility(ddlWMM23Canopycat1, ddlWMM23Canopycat2, null, chkBox.Checked);
+                break;
+
+            case "ChkWMM23ComponentMtgPlate":
+                HandleDropDownListVisibility(ddlWMM23ComponentMtgPlatecat1, ddlWMM23ComponentMtgPlatecat2, ddlWMM23ComponentMtgPlatecat3, chkBox.Checked);
+                break;
+
+            case "ChkWMM23SideCPlate":
+                HandleDropDownListVisibility(ddlWMM23SideCPlatecat1, ddlWMM23SideCPlatecat2, ddlWMM23SideCPlatecat3, chkBox.Checked);
+                break;
+
+            case "ChkWMM23DoorCPlate":
+                HandleDropDownListVisibility(ddlWMM23DoorCPlatecat1, ddlWMM23DoorCPlatecat2, ddlWMM23DoorCPlatecat3, chkBox.Checked);
+                break;
+
+            case "ChkWMM23WallMtgBracket":
+                HandleDropDownListVisibility(ddlWMM23WallMtgBracketcat1, null, null, chkBox.Checked);
+                break;
+
+            case "ChkWMM23FrontDoor":
+                HandleDropDownListVisibility(ddlWMM23FrontDoorcat1, ddlWMM23FrontDoorcat2, null, chkBox.Checked);
+                break;
+
+
+
+
+        }
+        this.modelprofile.Show();
+
+    }
+
+
+    // Helper method to enable/disable dropdown lists based on checkbox checked state
+    private void HandleDropDownListVisibility(DropDownList ddl1, DropDownList ddl2, DropDownList ddl3, bool isChecked)
+    {
+        if (ddl1 != null)
+        {
+            ddl1.Enabled = isChecked;
+        }
+        if (ddl2 != null)
+        {
+            ddl2.Enabled = isChecked;
+        }
+        if (ddl3 != null)
+        {
+            ddl3.Enabled = isChecked;
+        }
+    }
+
 }
 
