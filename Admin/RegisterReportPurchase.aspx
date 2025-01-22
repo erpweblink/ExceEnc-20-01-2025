@@ -1,10 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMasterPage.master" AutoEventWireup="true" CodeFile="RegisterReportPurchase.aspx.cs" Inherits="Admin_RegisterReportPurchase" %>
 
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>                                                            
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 
-        <style>
+    <style>
         .completionList {
             border: solid 1px Gray;
             border-radius: 5px;
@@ -22,8 +22,9 @@
         .itemHighlighted {
             background-color: #ADD6FF;
         }
-			td{
-            text-align:center !important;
+
+        td {
+            text-align: center !important;
         }
     </style>
     <style type="text/css">
@@ -289,18 +290,7 @@
             width: 210px;
         }
     </style>
-    <%--   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script type="text/javascript">
-        $("[src*=plus]").live("click", function () {
-            $(this).closest("tr").after("<tr><td></td><td colspan = '999'>" + $(this).next().html() + "</td></tr>")
-            $(this).attr("src", "../img/minus.png");
-        });
-        $("[src*=minus]").live("click", function () {
-            $(this).attr("src", "../img/plus.png");
-            $(this).closest("tr").next().remove();
-        });
-    </script>
-    --%>
+
 
     <script src="../JS/jquery.min.js"></script>
     <script language="javascript" type="text/javascript">
@@ -394,8 +384,8 @@
     </script>
 
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-       <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
     <%--<asp:UpdatePanel ID="updatepnl" runat="server">
         <ContentTemplate>--%>
     <div class="page-wrapper">
@@ -415,24 +405,9 @@
                                 <div class="card-header">
                                     <div class="row">
                                         <div class="col-xl-3 col-md-3">
-                                            <div class="spancls">Type<i class="reqcls">&nbsp;</i> :</div>
-                                                <asp:TextBox ID="ddltype" Text="PURCHASE" runat="server" CssClass="form-control" Width="100%" Enabled="false" OnTextChanged="ddltype_TextChanged" AutoPostBack="true"></asp:TextBox>
-                                            <%--  <asp:DropDownList runat="server" CssClass="form-control" ID="ddltype" OnTextChanged="ddltype_TextChanged" ReadOnly="True" AutoPostBack="true">
-                                                 <asp:ListItem>PURCHASE</asp:ListItem>
-                                                <asp:ListItem Value="0">--SELECT--</asp:ListItem>
-                                                <asp:ListItem>SALE</asp:ListItem>                                              
-                                            </asp:DropDownList>--%>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" Display="Dynamic" ErrorMessage="Please Select Type"
-                                                ControlToValidate="ddltype" ValidationGroup="form1" InitialValue="0" ForeColor="Red" SetFocusOnError="true"></asp:RequiredFieldValidator>
-                                        </div>
-                                        <div class="col-xl-3 col-md-3">
                                             <div class="spancls">Party Name<i class="reqcls">&nbsp;</i> :</div>
-                                            <asp:TextBox ID="txtPartyName" runat="server" CssClass="form-control" placeholder="Party Name" Width="100%" AutoPostBack="true"></asp:TextBox>
-                                            <asp:AutoCompleteExtender ID="AutoCompleteExtender1" runat="server" CompletionListCssClass="completionList"
-                                                CompletionListHighlightedItemCssClass="itemHighlighted" CompletionListItemCssClass="listItem"
-                                                CompletionInterval="10" MinimumPrefixLength="1" ServiceMethod="GetCustomerList"
-                                                TargetControlID="txtPartyName">
-                                            </asp:AutoCompleteExtender>
+                                            <asp:TextBox ID="txtPartyName" runat="server" CssClass="form-control" AutoPostBack="true" OnTextChanged="txtPartyName_TextChanged" placeholder="Party Name" Width="100%"></asp:TextBox>
+
                                             <asp:AutoCompleteExtender ID="AutoCompleteExtender2" runat="server" CompletionListCssClass="completionList"
                                                 CompletionListHighlightedItemCssClass="itemHighlighted" CompletionListItemCssClass="listItem"
                                                 CompletionInterval="10" MinimumPrefixLength="1" ServiceMethod="GetSupplierList"
@@ -449,162 +424,17 @@
                                             <asp:TextBox ID="txttodate" runat="server" CssClass="form-control" placeholder="To Date" Width="100%" AutoComplete="off"></asp:TextBox>
                                             <asp:CalendarExtender ID="CalendarExtender2" TargetControlID="txttodate" Format="dd-MM-yyyy" CssClass="cal_Theme1" runat="server"></asp:CalendarExtender>
                                         </div>
-                                    </div>
-                                    <br />
-                                    <div class="row">
-                                        <div class="col-xl-3 col-md-3">
-                                            <asp:Button ID="btnsearch" runat="server" ValidationGroup="form1" CssClass="btn btn-primary" Text="Search" OnClick="btnsearch_Click"/>
+                                        <div class="col-xl-3 col-md-3" style="margin-top: 20px">
+                                            <asp:Button ID="btnsearch" runat="server" ValidationGroup="form1" CssClass="btn btn-primary" Text="Search" OnClick="btnsearch_Click" />
                                         </div>
                                     </div>
-
                                     <div class="row" id="btn" runat="server" style="margin-top: 10px;">
                                         <div class="col-xl-6 col-md-6">
-                                             <asp:Button ID="btnexcel" runat="server" ValidationGroup="form1" CssClass="btn btn-primary" Text="Export Excel" OnClick="ExportToExcel" />
+                                            <asp:Button ID="btnexcel" runat="server" ValidationGroup="form1" CssClass="btn btn-primary" Text="Export Excel" OnClick="ExportToExcel" />
                                             <asp:Button ID="btnresetfilter" CssClass="btn btn-danger" runat="server" Text="Reset" OnClick="btnresetfilter_Click" />
                                         </div>
                                         <div class="col-xl-4 col-md-4"></div>
                                     </div>
-                                </div>
-                                <div class="col-md-12" style="padding: 20px; margin-top: 0px;">
-                                    <div id="DivRoot" align="left" runat="server">
-                                        <div style="overflow: hidden;" id="DivHeaderRow">
-                                        </div>
-                                        <div style="overflow: scroll;" class="dt-responsive table-responsive" onscroll="OnScrollDiv(this)" id="DivMainContent">
-                                            <asp:GridView ID="dgvRegisterReport" runat="server"
-                                                CssClass="table table-striped table-bordered nowrap" AutoGenerateColumns="false"
-                                                AllowPaging="false" ShowHeader="true" PageSize="50" DataKeyNames="Id" OnRowDataBound="OnRowDataBound">
-                                                <Columns>
-                                                    <asp:BoundField ItemStyle-Width="100px" HeaderText="Party" DataField="BillingCustomer" />
-
-                                                    <asp:BoundField ItemStyle-Width="100px" HeaderText="Type" DataField="Type" />
-                                                    <asp:TemplateField HeaderText="GSTNumber" ItemStyle-HorizontalAlign="Center">
-                                                        <ItemTemplate>
-                                                            <asp:Label ID="lblGSTNumber" runat="server"></asp:Label>
-                                                        </ItemTemplate>
-                                                    </asp:TemplateField>
-                                                    <asp:BoundField ItemStyle-Width="100px" HeaderText="VoucherType" DataField="VoucherType" />
-                                                    <asp:BoundField ItemStyle-Width="100px" HeaderText="Date" DataField="Invoicedate" />
-                                                    <asp:BoundField ItemStyle-Width="100px" HeaderText="RefNo" DataField="RefNo" />
-
-                                                    <asp:TemplateField HeaderText="InvoiceNo" ItemStyle-HorizontalAlign="Center">
-                                                        <ItemTemplate>
-                                                            <asp:Label ID="lblInvoiceNo" Text='<%#Eval("InvoiceNo") %>' runat="server"></asp:Label>
-                                                        </ItemTemplate>
-                                                    </asp:TemplateField>
-
-                                                    <asp:BoundField ItemStyle-Width="100px" HeaderText="RefDate" DataField="RefDate" />
-                                                    <asp:BoundField ItemStyle-Width="100px" HeaderText="TCS" DataField="TCSAmt" />
-                                                    <asp:TemplateField HeaderText="Qty" ItemStyle-HorizontalAlign="Center">
-                                                        <ItemTemplate>
-                                                            <asp:Label ID="lblQty" runat="server"></asp:Label>
-                                                        </ItemTemplate>
-                                                    </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="BasicTotal" ItemStyle-HorizontalAlign="Center">
-                                                        <ItemTemplate>
-                                                            <asp:Label ID="lblBasicTotal" runat="server"></asp:Label>
-                                                        </ItemTemplate>
-                                                    </asp:TemplateField>
-
-                                                    <asp:TemplateField HeaderText="CGST" ItemStyle-HorizontalAlign="Center">
-                                                        <ItemTemplate>
-                                                            <asp:Label ID="lblCGST" runat="server"></asp:Label>
-                                                        </ItemTemplate>
-                                                    </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="SGST" ItemStyle-HorizontalAlign="Center">
-                                                        <ItemTemplate>
-                                                            <asp:Label ID="lblSGST" runat="server"></asp:Label>
-                                                        </ItemTemplate>
-                                                    </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="IGST" ItemStyle-HorizontalAlign="Center">
-                                                        <ItemTemplate>
-                                                            <asp:Label ID="lblIGST" runat="server"></asp:Label>
-                                                        </ItemTemplate>
-                                                    </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="GSTAmount" ItemStyle-HorizontalAlign="Center">
-                                                        <ItemTemplate>
-                                                            <asp:Label ID="lblGSTAmount" runat="server"></asp:Label>
-                                                        </ItemTemplate>
-                                                    </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="GrandTotal" ItemStyle-HorizontalAlign="Center">
-                                                        <ItemTemplate>
-                                                            <asp:Label ID="lblGrandTotal" runat="server" Text='<%# Math.Round(Convert.ToDouble(Eval("GrandTotal"))).ToString() %>'></asp:Label>
-                                                        </ItemTemplate>
-                                                    </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="Status" ItemStyle-HorizontalAlign="Center">
-                                                        <ItemTemplate>
-                                                            <asp:Label ID="lblStatus" runat="server" Text='<%#Eval("IsPaid") %>'></asp:Label>
-                                                            <asp:Label ID="lblDocNo" runat="server" Text='<%#Eval("DocNo") %>' Visible="false"></asp:Label>
-                                                        </ItemTemplate>
-                                                    </asp:TemplateField>
-                                                </Columns>
-                                            </asp:GridView>
-                                            <div id="DivFooterRow" style="overflow: hidden">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <asp:GridView ID="dgvHSNSummary" ShowFooter="true" runat="server" OnRowDataBound="dgvHSNSummary_RowDataBound"
-                                        CssClass="table table-striped table-bordered nowrap" AutoGenerateColumns="false"
-                                        AllowPaging="false" ShowHeader="true" PageSize="50">
-                                        <Columns>
-                                            <asp:TemplateField HeaderText="HSN Code" HeaderStyle-CssClass="gvhead">
-                                                <ItemTemplate>
-                                                    <asp:Label Text='<%# Eval("HSN") %>' ID="lblHSN" runat="server"></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Qty" HeaderStyle-CssClass="gvhead">
-                                                <ItemTemplate>
-                                                    <asp:Label Text='<%# Eval("Qty") %>' ID="lblQty" runat="server"></asp:Label>
-                                                </ItemTemplate>
-                                                <FooterTemplate>
-                                                    <asp:Label ID="totalQty" ForeColor="Green" runat="server"></asp:Label>
-                                                </FooterTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="UOM" HeaderStyle-CssClass="gvhead">
-                                                <ItemTemplate>
-                                                    <asp:Label Text='<%# Eval("UOM") %>' ID="lblUOM" runat="server"></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="BasicTotal" HeaderStyle-CssClass="gvhead">
-                                                <ItemTemplate>
-                                                    <asp:Label Text='<%# Eval("BasicTotal") %>' ID="lblBasicTotal" runat="server"></asp:Label>
-                                                </ItemTemplate>
-                                                <FooterTemplate>
-                                                    <asp:Label ID="totalBasicTotal" ForeColor="Green" runat="server"></asp:Label>
-                                                </FooterTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="CGST" HeaderStyle-CssClass="gvhead">
-                                                <ItemTemplate>
-                                                    <asp:Label Text='<%# Eval("CGST") %>' ID="lblCGST" runat="server"></asp:Label>
-                                                </ItemTemplate>
-                                                <FooterTemplate>
-                                                    <asp:Label ID="totalCGST" ForeColor="Green" runat="server"></asp:Label>
-                                                </FooterTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="SGST" HeaderStyle-CssClass="gvhead">
-                                                <ItemTemplate>
-                                                    <asp:Label Text='<%# Eval("SGST") %>' ID="lblSGST" runat="server"></asp:Label>
-                                                </ItemTemplate>
-                                                <FooterTemplate>
-                                                    <asp:Label ID="totalSGST" ForeColor="Green" runat="server"></asp:Label>
-                                                </FooterTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="IGST" HeaderStyle-CssClass="gvhead">
-                                                <ItemTemplate>
-                                                    <asp:Label Text='<%# Eval("IGST") %>' ID="lblIGST" runat="server"></asp:Label>
-                                                </ItemTemplate>
-                                                <FooterTemplate>
-                                                    <asp:Label ID="totalIGST" ForeColor="Green" runat="server"></asp:Label>
-                                                </FooterTemplate>
-                                            </asp:TemplateField>
-                                            <%--<asp:BoundField ItemStyle-Width="100px" HeaderText="Qty" DataField="Qty" />--%>
-                                            <%--  <asp:BoundField ItemStyle-Width="100px" HeaderText="BasicTotal" DataField="BasicTotal" />
-                                            <asp:BoundField ItemStyle-Width="100px" HeaderText="HSN Code" DataField="HSN" />
-                                            <asp:BoundField ItemStyle-Width="100px" HeaderText="UOM" DataField="UOM" />
-                                            <asp:BoundField ItemStyle-Width="100px" HeaderText="CGST" DataField="CGST" />
-                                            <asp:BoundField ItemStyle-Width="100px" HeaderText="SGST" DataField="SGST" />
-                                            <asp:BoundField ItemStyle-Width="100px" HeaderText="IGST" DataField="IGST" />--%>
-                                        </Columns>
-                                    </asp:GridView>
                                 </div>
 
                                 <div class="col-md-12" style="padding: 20px; margin-top: 0px;">
@@ -614,7 +444,7 @@
                                         <div style="overflow: scroll;" class="dt-responsive table-responsive" onscroll="OnScrollDivPurchase(this)" id="DivMainContentPurchase">
                                             <asp:GridView ID="dgvPurchaseRegisterReport" runat="server"
                                                 CssClass="table table-striped table-bordered nowrap" AutoGenerateColumns="false"
-                                                AllowPaging="false" ShowHeader="true" PageSize="50" DataKeyNames="Id" OnRowDataBound="dgvPurchaseRegisterReport_RowDataBound">
+                                                AllowPaging="false" ShowHeader="true" DataKeyNames="Id" OnRowDataBound="dgvPurchaseRegisterReport_RowDataBound">
                                                 <Columns>
                                                     <asp:BoundField ItemStyle-Width="100px" HeaderText="Party" DataField="SupplierName" />
                                                     <asp:TemplateField HeaderText="Type" ItemStyle-HorizontalAlign="Center">
@@ -689,8 +519,8 @@
                                     </div>
                                     <asp:GridView ID="dgvHSNSummaryPurchase" runat="server"
                                         CssClass="table table-striped table-bordered nowrap" AutoGenerateColumns="false"
-                                        AllowPaging="false" ShowHeader="true" ShowFooter="true" PageSize="50"  OnRowDataBound="dgvHSNSummaryPurchase_RowDataBound">
-                                         <Columns>
+                                        AllowPaging="false" ShowHeader="true" ShowFooter="true" PageSize="50" OnRowDataBound="dgvHSNSummaryPurchase_RowDataBound">
+                                        <Columns>
                                             <%--                                            <asp:BoundField ItemStyle-Width="100px" HeaderText="Qty" DataField="Qty" />--%>
                                             <asp:TemplateField HeaderText="Qty" ItemStyle-Width="50px" ItemStyle-HorizontalAlign="Center">
                                                 <ItemTemplate>
@@ -704,14 +534,28 @@
                                             <%--                                            <asp:BoundField ItemStyle-Width="100px" HeaderText="BasicTotal" DataField="BasicTotal" />--%>
                                             <asp:TemplateField HeaderText="BasicTotal" ItemStyle-HorizontalAlign="Center">
                                                 <ItemTemplate>
-                                                    <asp:Label ID="lblBasicTotal" CssClass="text-center" runat="server"></asp:Label>
+                                                    <asp:Label ID="lblBasicTotal" CssClass="text-center" Text='<%#Eval("BasicTotal")%>' runat="server"></asp:Label>
                                                 </ItemTemplate>
                                                 <FooterTemplate>
                                                     <asp:Label ID="lblBasicTotalamt" ForeColor="Red" runat="server"></asp:Label>
                                                 </FooterTemplate>
                                             </asp:TemplateField>
-                                            <asp:BoundField ItemStyle-Width="100px" HeaderText="HSN Code" DataField="HSN" />
-                                            <asp:BoundField ItemStyle-Width="100px" HeaderText="UOM" DataField="UOM" />
+                                            <asp:TemplateField HeaderText="HSN" ItemStyle-HorizontalAlign="Center">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="lblHSN" Text='<%#Eval("HSN")%>' runat="server"></asp:Label>
+                                                </ItemTemplate>
+                                                <FooterTemplate>
+                                                   
+                                                </FooterTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="UOM" ItemStyle-HorizontalAlign="Center">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="lblUOM" Text='<%#Eval("UOM")%>' runat="server"></asp:Label>
+                                                </ItemTemplate>
+                                                <FooterTemplate>
+                                                   
+                                                </FooterTemplate>
+                                            </asp:TemplateField>                                   
                                             <asp:TemplateField HeaderText="CGST" ItemStyle-HorizontalAlign="Center">
                                                 <ItemTemplate>
                                                     <asp:Label ID="lblCGSTAmt" runat="server"></asp:Label>
@@ -730,7 +574,7 @@
                                             </asp:TemplateField>
                                             <asp:TemplateField HeaderText="IGST" ItemStyle-HorizontalAlign="Center">
                                                 <ItemTemplate>
-                                                    <asp:Label ID="lblIGSTAmt"  runat="server"></asp:Label>
+                                                    <asp:Label ID="lblIGSTAmt" runat="server"></asp:Label>
                                                 </ItemTemplate>
                                                 <FooterTemplate>
                                                     <asp:Label ID="lblIGSTTotalamt" ForeColor="Red" runat="server"></asp:Label>
