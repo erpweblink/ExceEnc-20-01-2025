@@ -1018,17 +1018,18 @@
                                                     <asp:ListItem>with Top and bottom</asp:ListItem>
                                                     <asp:ListItem>with Sides</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorJB1" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlJbweldedmainbodycat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
                                                 <asp:DropDownList ID="ddlJbweldedmainbodycat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.2mm</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorJB2" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlJbweldedmainbodycat2" ValidationGroup="form2" ForeColor="Red" InitialValue="Select Thickness" SetFocusOnError="true" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
-
-
-
                                         <%--2--%>
                                         <br />
                                         <div class="row">
@@ -1040,12 +1041,16 @@
                                                     <asp:ListItem>Bottom Side</asp:ListItem>
                                                     <asp:ListItem>Top Side</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorJB3" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddljbGlandplatcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
                                                 <asp:DropDownList ID="ddljbGlandplatcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.2mm</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorJB4" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddljbGlandplatcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--3--%>
@@ -1060,18 +1065,25 @@
                                                     <asp:ListItem>M4 Tapped Z welded </asp:ListItem>
                                                     <asp:ListItem>DIN Channel</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorJB5" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddljbComponetmtgplt" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
                                                 <asp:DropDownList ID="ddljbComponetmtgpltcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorJB6" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddljbComponetmtgpltcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
                                                 <asp:DropDownList ID="ddljbComponetmtgpltcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>7032</asp:ListItem>
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>orange</asp:ListItem>
                                                 </asp:DropDownList>
-                                                <asp:TextBox ID="txtJbweldedmainbodycat" runat="server" Height="23px" Placeholder="Thickness"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorJB7" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddljbComponetmtgpltcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
+                                                <asp:TextBox ID="txtJbweldedmainbodycat" runat="server" Height="23px" Placeholder="Thickness" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
                                         <%--4--%>
@@ -1086,6 +1098,8 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorJB8" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddljbfrontscrewcovercat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--5--%>
@@ -1101,7 +1115,9 @@
                                                     <asp:ListItem>Cam Lock</asp:ListItem>
                                                     <asp:ListItem>3-point Handle Lock</asp:ListItem>
                                                 </asp:DropDownList>
-                                                <asp:TextBox ID="txtQty" runat="server" Height="23px" Placeholder="Qty"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorJB9" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddljbLockcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+                                                <asp:TextBox ID="txtQty" runat="server" Height="23px" Placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
                                         <%--6--%>
@@ -1116,18 +1132,27 @@
                                                     <asp:ListItem>Acrylic</asp:ListItem>
                                                     <asp:ListItem>Polycarbonate Sheet</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorJB10" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddljbTransparentdoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddljbTransparentdoorcat2" AutoPostBack="true" OnSelectedIndexChanged="ddljbTransparentdoorcat2_SelectedIndexChanged" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Door</asp:ListItem>
                                                     <asp:ListItem>Specify</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorJB11" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddljbTransparentdoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtjbTransparentdoorcat4" placeholder="Specify" Visible="false" runat="server"></asp:TextBox>
                                                 <asp:DropDownList ID="ddljbTransparentdoorcat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>With bidding</asp:ListItem>
                                                     <asp:ListItem>biddingless technique</asp:ListItem>
                                                 </asp:DropDownList>
-                                                <asp:CheckBox ID="ddljbTransparentdoorcat" Text="Size & Thickness" CssClass="myClass" runat="server" />
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorJB12" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddljbTransparentdoorcat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
+                                                <asp:CheckBox ID="ddljbTransparentdoorcat" Text="Size & Thickness" CssClass="myClass" runat="server" Enabled="false" />
                                             </div>
                                         </div>
                                         <%--7--%>
@@ -1150,6 +1175,9 @@
                                                     <asp:ListItem>RAL-7035</asp:ListItem>
                                                     <asp:ListItem>Specify</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorJB13" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddljbPowercoatingshadecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtjbPowercoatingshadecat2" runat="server" Visible="false" placeholder="Specify"></asp:TextBox>
                                             </div>
                                         </div>
@@ -1165,7 +1193,10 @@
                                                     <asp:ListItem>4</asp:ListItem>
                                                     <asp:ListItem>6</asp:ListItem>
                                                 </asp:DropDownList>
-                                                <asp:TextBox ID="txtjbfanqtycat2" runat="server" placeholder="Qty"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorJB14" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddljbfancat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
+
+                                                <asp:TextBox ID="txtjbfanqtycat2" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
                                         <%--10--%>
@@ -1181,8 +1212,8 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">11.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkjbAnyadditionalcomponent" Text="Any additional component" CssClass="myClass" runat="server" />
-                                                <asp:TextBox ID="txtjbAnyadditionalcomponentcat1" runat="server" placeholder="Specify"></asp:TextBox>
+                                                <asp:CheckBox ID="ChkjbAnyadditionalcomponent" Text="Any additional component" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:TextBox ID="txtjbAnyadditionalcomponentcat1" runat="server" placeholder="Specify" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
 
@@ -1218,12 +1249,17 @@
                                                     <asp:ListItem>with Top and bottom</asp:ListItem>
                                                     <asp:ListItem>with Sides</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM1" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23WeldedMainBodycat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlWMM23WeldedMainBodycat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.2mm</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM2" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23WeldedMainBodycat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--2--%>
@@ -1237,12 +1273,17 @@
                                                     <asp:ListItem>Bottom Side</asp:ListItem>
                                                     <asp:ListItem>Top Side</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM3" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23GlandPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlWMM23GlandPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.2mm</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM4" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23GlandPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--3--%>
@@ -1256,6 +1297,8 @@
                                                     <asp:ListItem>Full size</asp:ListItem>
                                                     <asp:ListItem>Part size</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM5" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23Canopycat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlWMM23Canopycat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -1263,6 +1306,9 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM6" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23Canopycat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <%--                                        <asp:TextBox ID="txtthikness2" runat="server" Height="23px" Placeholder="Thickness"></asp:TextBox>--%>
                                             </div>
 
@@ -1278,6 +1324,8 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM7" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23ComponentMtgPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlWMM23ComponentMtgPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
@@ -1285,6 +1333,8 @@
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM8" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23ComponentMtgPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlWMM23ComponentMtgPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -1293,6 +1343,9 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM9" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23ComponentMtgPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
 
                                         </div>
@@ -1307,6 +1360,8 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM10" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23SideCPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlWMM23SideCPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
@@ -1314,6 +1369,8 @@
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM11" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23SideCPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlWMM23SideCPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -1321,6 +1378,8 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM12" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23SideCPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
 
                                             </div>
 
@@ -1336,6 +1395,8 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM13" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23DoorCPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlWMM23DoorCPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
@@ -1343,6 +1404,8 @@
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM14" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23DoorCPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlWMM23DoorCPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -1350,6 +1413,8 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM15" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23DoorCPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--7--%>
@@ -1363,6 +1428,8 @@
                                                     <asp:ListItem>Small</asp:ListItem>
                                                     <asp:ListItem>Big</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM16" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23WallMtgBracketcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--8--%>
@@ -1376,6 +1443,8 @@
                                                     <asp:ListItem>Single</asp:ListItem>
                                                     <asp:ListItem>Split</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM17" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23FrontDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select " Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlWMM23FrontDoorcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -1383,6 +1452,8 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM18" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23FrontDoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--9--%>
@@ -1396,6 +1467,8 @@
                                                     <asp:ListItem>Single</asp:ListItem>
                                                     <asp:ListItem>Split</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM19" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23RearDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlWMM23RearDoorcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -1403,6 +1476,8 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM20" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23RearDoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <br />
@@ -1415,6 +1490,8 @@
                                                     <asp:ListItem>Single</asp:ListItem>
                                                     <asp:ListItem>Split</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM21" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlinnerdoor" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlthickness" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -1422,6 +1499,8 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM22" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlthickness" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--10--%>
@@ -1446,7 +1525,10 @@
                                                     <asp:ListItem>3-point Handle Lock</asp:ListItem>
                                                     <asp:ListItem>Mini Lock</asp:ListItem>
                                                 </asp:DropDownList>
-                                                <asp:TextBox ID="txtWMM23Lockcat2" runat="server" placeholder="Qty"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM23" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23Lockcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
+                                                <asp:TextBox ID="txtWMM23Lockcat2" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
                                         <%--12--%>
@@ -1454,8 +1536,8 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">13.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkWMM23CableSupportAngle" Text="Cable Support Angle" CssClass="myClass" runat="server" />
-                                                <asp:TextBox ID="txtWMM23CableSupportAnglecat1" runat="server" placeholder="Qty"></asp:TextBox>
+                                                <asp:CheckBox ID="ChkWMM23CableSupportAngle" Text="Cable Support Angle" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:TextBox ID="txtWMM23CableSupportAnglecat1" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
                                         <%-- 13--%>
@@ -1469,7 +1551,10 @@
                                                     <asp:ListItem>RAL-7032</asp:ListItem>
                                                     <asp:ListItem>RAL-7035</asp:ListItem>
                                                 </asp:DropDownList>
-                                                <asp:TextBox ID="txtddlWMM23PowerCoatingShadecat2" runat="server" placeholder="Specify"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM24" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23PowerCoatingShadecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
+                                                <asp:TextBox ID="txtddlWMM23PowerCoatingShadecat2" runat="server" placeholder="Specify" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
                                         <%-- 14--%>
@@ -1477,8 +1562,8 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">15.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkWMM23LiftingIBolt" Text="Lifting I-Bolt" CssClass="myClass" runat="server" />
-                                                <asp:TextBox ID="txtWMM23LiftingIBoltcat1" runat="server" placeholder="Qty"></asp:TextBox>
+                                                <asp:CheckBox ID="ChkWMM23LiftingIBolt" Text="Lifting I-Bolt" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:TextBox ID="txtWMM23LiftingIBoltcat1" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
                                         <%-- 15--%>
@@ -1493,12 +1578,18 @@
                                                     <asp:ListItem>50mm Angle frame</asp:ListItem>
                                                     <asp:ListItem>ISMC</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM25" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23Basecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlWMM23Basecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
-                                                <asp:TextBox ID="txtWMM23Basecat3" runat="server" placeholder="Specify"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM26" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23Basecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
+                                                <asp:TextBox ID="txtWMM23Basecat3" runat="server" placeholder="Specify" Enabled="false"></asp:TextBox>
                                                 <asp:DropDownList ID="ddlheight" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Height</asp:ListItem>
                                                     <asp:ListItem>75.00mm</asp:ListItem>
@@ -1506,6 +1597,8 @@
                                                     <asp:ListItem>150.00mm</asp:ListItem>
                                                     <asp:ListItem>200.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM27" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="txtWMM23Basecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Height" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%-- 16--%>
@@ -1520,17 +1613,26 @@
                                                     <asp:ListItem>Acrylic</asp:ListItem>
                                                     <asp:ListItem>Polycarbonate</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM28" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23TransparentDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlWMM23TransparentDoorcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                     <asp:ListItem>4.00mm</asp:ListItem>
                                                     <asp:ListItem>5.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM29" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23TransparentDoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlWMM23TransparentDoorcat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>With bidding</asp:ListItem>
                                                     <asp:ListItem>biddingless technique</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM30" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23TransparentDoorcat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <br />
@@ -1545,7 +1647,10 @@
                                                     <asp:ListItem>4</asp:ListItem>
                                                     <asp:ListItem>6</asp:ListItem>
                                                 </asp:DropDownList>
-                                                <asp:TextBox ID="txtWMM23fancat2" runat="server" placeholder="Qty"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM31" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23fancat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
+
+                                                <asp:TextBox ID="txtWMM23fancat2" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
                                         <%-- 18--%>
@@ -1561,8 +1666,8 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">20.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkWMM23Anyadditionalcomponent" Text="Any additional component" CssClass="myClass" runat="server" />
-                                                <asp:TextBox ID="txtWMM23Anyadditionalcomponentcat1" runat="server" placeholder="Specify"></asp:TextBox>
+                                                <asp:CheckBox ID="ChkWMM23Anyadditionalcomponent" Text="Any additional component" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:TextBox ID="txtWMM23Anyadditionalcomponentcat1" runat="server" placeholder="Specify" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
@@ -1597,12 +1702,17 @@
                                                     <asp:ListItem>with Top and bottom</asp:ListItem>
                                                     <asp:ListItem>with Sides</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM1" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30WeldedMainBodycat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlWMM30WeldedMainBodycat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.2mm</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM2" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30WeldedMainBodycat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--2--%>
@@ -1616,6 +1726,9 @@
                                                     <asp:ListItem>Bottom Side</asp:ListItem>
                                                     <asp:ListItem>Top Side</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM3" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30GlandPlatcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlWMM30GlandPlatcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.2mm</asp:ListItem>
@@ -1623,6 +1736,8 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM4" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30GlandPlatcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--3--%>
@@ -1637,6 +1752,8 @@
                                                     <asp:ListItem>Full size</asp:ListItem>
                                                     <asp:ListItem>Part size</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM5" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30Canopycat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlWMM30Canopycat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -1644,6 +1761,9 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM6" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30Canopycat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <%--                                                <asp:TextBox ID="txtthickness3" runat="server" Height="23px" Placeholder="Thickness"></asp:TextBox>--%>
                                             </div>
                                         </div>
@@ -1659,6 +1779,8 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM7" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30ComponentMtgPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlWMM30ComponentMtgPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
@@ -1666,6 +1788,8 @@
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM8" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30ComponentMtgPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlWMM30ComponentMtgPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -1673,6 +1797,8 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM9" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30ComponentMtgPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--5--%>
@@ -1687,6 +1813,8 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM10" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30SideCPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlWMM30SideCPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
@@ -1694,6 +1822,8 @@
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM11" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30SideCPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlWMM30SideCPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -1701,6 +1831,8 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM12" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30SideCPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
 
                                             </div>
                                         </div>
@@ -1716,6 +1848,8 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM13" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30DoorCPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlWMM30DoorCPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
@@ -1723,6 +1857,8 @@
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM14" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30DoorCPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlWMM30DoorCPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -1730,6 +1866,8 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM15" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30DoorCPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--7--%>
@@ -1743,6 +1881,8 @@
                                                     <asp:ListItem>Small</asp:ListItem>
                                                     <asp:ListItem>Big</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM16" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30WallMtgBracketcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--8--%>
@@ -1757,12 +1897,16 @@
                                                     <asp:ListItem>Single</asp:ListItem>
                                                     <asp:ListItem>Split</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM17" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30FrontDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlWMM30FrontDoorcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM18" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30FrontDoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--9--%>
@@ -1777,6 +1921,8 @@
                                                     <asp:ListItem>Single</asp:ListItem>
                                                     <asp:ListItem>Split</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM19" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30RearDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlWMM30RearDoorcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -1784,6 +1930,8 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM20" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30RearDoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
 
@@ -1798,6 +1946,8 @@
                                                     <asp:ListItem>Single</asp:ListItem>
                                                     <asp:ListItem>Split</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM21" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlInnerdoor1forMCBOX30" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlInnerdoorThicknessforMCBOX30" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -1805,6 +1955,8 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM22" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlInnerdoorThicknessforMCBOX30" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
 
@@ -1833,7 +1985,10 @@
                                                     <asp:ListItem>Mini Lock</asp:ListItem>
                                                     <asp:ListItem>IMP Lock</asp:ListItem>
                                                 </asp:DropDownList>
-                                                <asp:TextBox ID="txtWMM30Lockcat2" runat="server" placeholder="Qty"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM23" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30Lockcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
+                                                <asp:TextBox ID="txtWMM30Lockcat2" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
                                         <%--13--%>
@@ -1841,8 +1996,8 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">13.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkWMM30CableSupportAngle" Text="Cable Support Angle" CssClass="myClass" runat="server" />
-                                                <asp:TextBox ID="txtWMM30CableSupportAnglecat1" runat="server" placeholder="Qty"></asp:TextBox>
+                                                <asp:CheckBox ID="ChkWMM30CableSupportAngle" Text="Cable Support Angle" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:TextBox ID="txtWMM30CableSupportAnglecat1" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
                                         <%-- 14--%>
@@ -1856,7 +2011,10 @@
                                                     <asp:ListItem>RAL-7032</asp:ListItem>
                                                     <asp:ListItem>RAL-7035</asp:ListItem>
                                                 </asp:DropDownList>
-                                                <asp:TextBox ID="txtWMM30PowerCoatingShadecat2" runat="server" placeholder="Specify"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM24" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30PowerCoatingShadecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
+                                                <asp:TextBox ID="txtWMM30PowerCoatingShadecat2" runat="server" placeholder="Specify" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
                                         <%-- 15--%>
@@ -1864,8 +2022,8 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">15.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkWMM30LiftingIBolt" Text="Lifting I-Bolt" CssClass="myClass" runat="server" />
-                                                <asp:TextBox ID="txtWMM30LiftingIBoltcat1" runat="server" placeholder="Qty"></asp:TextBox>
+                                                <asp:CheckBox ID="ChkWMM30LiftingIBolt" Text="Lifting I-Bolt" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:TextBox ID="txtWMM30LiftingIBoltcat1" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
                                         <%-- 16--%>
@@ -1880,12 +2038,18 @@
                                                     <asp:ListItem>50mm Angle frame</asp:ListItem>
                                                     <asp:ListItem>ISMC</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM25" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30Basecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlWMM30Basecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                     <asp:ListItem>5.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM26" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30Basecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlWMM30Basecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Height</asp:ListItem>
                                                     <asp:ListItem>75 mm</asp:ListItem>
@@ -1895,6 +2059,9 @@
                                                     <asp:ListItem>300mm</asp:ListItem>
                                                     <asp:ListItem>400mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM27" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30Basecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Height" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%-- 17--%>
@@ -1909,18 +2076,27 @@
                                                     <asp:ListItem>Acrylic</asp:ListItem>
                                                     <asp:ListItem>Polycarbonate</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM28" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30TransparentDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlWMM30TransparentDoorcat2" OnSelectedIndexChanged="ddlWMM30TransparentDoorcat2_SelectedIndexChanged" AutoPostBack="true" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Door</asp:ListItem>
                                                     <asp:ListItem>Specify</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM29" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30TransparentDoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtWMM30TransparentDoorcat5" Visible="false" placeholder="Specify" runat="server"></asp:TextBox>
                                                 <asp:DropDownList ID="ddlWMM30TransparentDoorcat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>With bidding</asp:ListItem>
                                                     <asp:ListItem>biddingless technique</asp:ListItem>
                                                 </asp:DropDownList>
-                                                <asp:TextBox ID="txtWMM30TransparentDoorcat4" runat="server" placeholder="Size & Thickness"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM30" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30TransparentDoorcat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
+                                                <asp:TextBox ID="txtWMM30TransparentDoorcat4" runat="server" placeholder="Size & Thickness" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
                                         <%-- 18--%>
@@ -1934,7 +2110,10 @@
                                                     <asp:ListItem>4</asp:ListItem>
                                                     <asp:ListItem>6</asp:ListItem>
                                                 </asp:DropDownList>
-                                                <asp:TextBox ID="txtWMM30fancat2" runat="server" placeholder="Qty"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWMM31" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM30fancat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
+
+                                                <asp:TextBox ID="txtWMM30fancat2" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
                                         <%-- 19--%>
@@ -1950,8 +2129,8 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">20.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkWMM30Anyadditionalcomponent" Text="Any additional component" CssClass="myClass" runat="server" />
-                                                <asp:TextBox ID="txtWMM30Anyadditionalcomponentcat1" runat="server" placeholder="Specify"></asp:TextBox>
+                                                <asp:CheckBox ID="ChkWMM30Anyadditionalcomponent" Text="Any additional component" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:TextBox ID="txtWMM30Anyadditionalcomponentcat1" runat="server" placeholder="Specify" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
 
@@ -1987,6 +2166,8 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS1" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSMainframeStructureWeldedcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--2--%>
@@ -2000,11 +2181,16 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS2" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSBottomCovercat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlMFSBottomCovercat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS3" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSBottomCovercat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--3--%>
@@ -2020,12 +2206,16 @@
                                                     <asp:ListItem>Top</asp:ListItem>
                                                     <asp:ListItem>Bottom Under LH,RH & Top</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS4" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSGlandPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlMFSGlandPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS5" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSGlandPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlMFSGlandPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -2033,6 +2223,9 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS6" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSGlandPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <%--          <asp:TextBox ID="txtthickness4" runat="server" Height="23px" Placeholder="Thickness"></asp:TextBox>--%>
                                             </div>
                                         </div>
@@ -2048,6 +2241,8 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS7" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSComponentMtgPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlMFSComponentMtgPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
@@ -2055,6 +2250,8 @@
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>Orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS8" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSComponentMtgPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlMFSComponentMtgPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -2062,7 +2259,10 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
-                                                <asp:TextBox ID="txtMFSComponentMtgPlatecat4" runat="server" placeholder="Qty"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS9" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSComponentMtgPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
+                                                <asp:TextBox ID="txtMFSComponentMtgPlatecat4" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
 
                                             </div>
                                         </div>
@@ -2092,7 +2292,7 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
-                                                <asp:TextBox ID="txtMFSSideCPlatecat4" runat="server" placeholder="Qty"></asp:TextBox>
+                                                <asp:TextBox ID="txtMFSSideCPlatecat4" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
                                         <%--6--%>
@@ -2121,7 +2321,7 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
-                                                <asp:TextBox ID="txtMFSDoorCPlatecat4" runat="server" placeholder="Qty"></asp:TextBox>
+                                                <asp:TextBox ID="txtMFSDoorCPlatecat4" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
                                         <%--7--%>
@@ -2150,7 +2350,7 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
-                                                <asp:TextBox ID="txtMFSPartialMountingPlatecat4" runat="server" placeholder="Qty"></asp:TextBox>
+                                                <asp:TextBox ID="txtMFSPartialMountingPlatecat4" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
                                         <%--8--%>
@@ -2178,7 +2378,7 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
-                                                <asp:TextBox ID="txtMFSFillerTraycat4" runat="server" placeholder="Qty"></asp:TextBox>
+                                                <asp:TextBox ID="txtMFSFillerTraycat4" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
                                         <%--9--%>
@@ -2236,7 +2436,7 @@
                                                     <asp:ListItem>IMP Lock</asp:ListItem>
                                                 </asp:DropDownList>
 
-                                                <asp:TextBox ID="txtmsfqty" runat="server" Height="23px" Placeholder="Qty"></asp:TextBox>
+                                                <asp:TextBox ID="txtmsfqty" runat="server" Height="23px" Placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
                                         <%--12--%>
@@ -2291,7 +2491,7 @@
                                                     <asp:ListItem>RAL-7032</asp:ListItem>
                                                     <asp:ListItem>RAL-7035</asp:ListItem>
                                                 </asp:DropDownList>
-                                                <asp:TextBox ID="txtMFSPowerCoatingShadecat2" runat="server" placeholder="Specify"></asp:TextBox>
+                                                <asp:TextBox ID="txtMFSPowerCoatingShadecat2" runat="server" placeholder="Specify" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
                                         <%-- 16--%>
@@ -2468,7 +2668,7 @@
                                                     <asp:ListItem>4</asp:ListItem>
                                                     <asp:ListItem>6</asp:ListItem>
                                                 </asp:DropDownList>
-                                                <asp:TextBox ID="txtMFSfancat2" runat="server" placeholder="Qty"></asp:TextBox>
+                                                <asp:TextBox ID="txtMFSfancat2" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
                                         <%-- 25--%>
@@ -2516,7 +2716,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">1.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoMCCMainframeStructureWelded" Text="Main frame Structure Welded" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoMCCMainframeStructureWelded" Text="Main frame Structure Welded" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlEcoMCCMainframeStructureWeldedcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
@@ -2608,7 +2808,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">5.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoMCCDoorCPlate" Text="Door C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoMCCDoorCPlate" Text="Door C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
 
                                                 <asp:DropDownList ID="ddlEcoMCCDoorCPlatecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Size</asp:ListItem>
@@ -2638,7 +2838,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">6.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoMCCFrontDoor" Text="Front Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoMCCFrontDoor" Text="Front Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
 
                                                 <asp:DropDownList ID="ddlEcoMCCFrontDoorca1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
@@ -2658,7 +2858,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">7.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoMCCRearDoor" Text="Rear Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoMCCRearDoor" Text="Rear Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
 
                                                 <asp:DropDownList ID="ddlEcoMCCRearDoorcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
@@ -2678,7 +2878,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">8.&nbsp;</h5>
-                                                <asp:CheckBox ID="checkboxinnerdoorEcomc" Text="Inner Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="checkboxinnerdoorEcomc" Text="Inner Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
 
                                                 <asp:DropDownList ID="ddlmat" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
@@ -2700,7 +2900,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">9.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoMCCRearCover" Text="Rear Cover" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoMCCRearCover" Text="Rear Cover" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
 
                                                 <asp:DropDownList ID="ddlEcoMCCRearCovercat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -2714,7 +2914,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">10.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoMCCSideCover" Text="Side Cover" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoMCCSideCover" Text="Side Cover" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
 
                                                 <asp:DropDownList ID="ddlEcoMCCSideCovercat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -2728,7 +2928,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">11.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoMCCLock" Text="Lock" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoMCCLock" Text="Lock" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlEcoMCCLockcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Thumbscrew</asp:ListItem>
@@ -2745,7 +2945,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">12.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoMCCPowerCoatingShade" Text="Powder Coating Shade" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoMCCPowerCoatingShade" Text="Powder Coating Shade" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlEcoMCCPowerCoatingShadecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>RAL-7032</asp:ListItem>
@@ -2759,7 +2959,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">13.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoMCCLiftingArrangement" Text="Lifting Arrangement" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoMCCLiftingArrangement" Text="Lifting Arrangement" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlEcoMCCLiftingArrangementcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Eye Bolt</asp:ListItem>
@@ -2781,7 +2981,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">14.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoMCCBase" Text="Base" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoMCCBase" Text="Base" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
 
                                                 <asp:DropDownList ID="ddlEcoMCCBasecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
@@ -2818,7 +3018,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">15.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkWMM23TransparentDoorEcoframe" Text="Transparent Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkWMM23TransparentDoorEcoframe" Text="Transparent Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlWMM23TransparentDoorcat1Ecoframe" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Glass</asp:ListItem>
@@ -2845,7 +3045,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">16.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoMCCAntivibrationpad" Text="Anti-vibration pad" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoMCCAntivibrationpad" Text="Anti-vibration pad" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
 
                                                 <asp:DropDownList ID="ddlEcoMCCAntivibrationpadcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -2860,7 +3060,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">17.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoMCCDrawingPocket" Text="Drawing Pocket" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoMCCDrawingPocket" Text="Drawing Pocket" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
 
                                                 <asp:DropDownList ID="ddlEcoMCCDrawingPocketcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
@@ -2898,7 +3098,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">20.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoMCCCanopy" Text="Canopy" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoMCCCanopy" Text="Canopy" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlEcoMCCCanopycat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Full Size</asp:ListItem>
@@ -2924,7 +3124,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">21.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoMCCfan" Text="Filter" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoMCCfan" Text="Filter" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlEcoMCCfancat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Size</asp:ListItem>
                                                     <asp:ListItem>4</asp:ListItem>
@@ -2946,7 +3146,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">23.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoMCCAnyadditionalcomponent" Text="Any additional component" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoMCCAnyadditionalcomponent" Text="Any additional component" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:TextBox ID="txtEcoMCCAnyadditionalcomponentcat1" runat="server" placeholder="Specify" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -2977,7 +3177,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">1.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkModularWeldedMainBody" Text="Welded Main Body" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkModularWeldedMainBody" Text="Welded Main Body" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlModularWeldedMainBodycat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>With Top and Bottom</asp:ListItem>
@@ -2996,7 +3196,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">2.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkModularGlandPlate" Text="Gland Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkModularGlandPlate" Text="Gland Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlModularGlandPlatecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Bottom Side</asp:ListItem>
@@ -3018,7 +3218,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">3.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkModularComponentMtgPlate" Text="Component Mtg. Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkModularComponentMtgPlate" Text="Component Mtg. Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlModularComponentMtgPlatecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Size</asp:ListItem>
                                                     <asp:ListItem>GPSP</asp:ListItem>
@@ -3045,7 +3245,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">4.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkModularSideCPlate" Text="Side C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkModularSideCPlate" Text="Side C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlModularSideCPlatecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Size</asp:ListItem>
                                                     <asp:ListItem>GPSP</asp:ListItem>
@@ -3072,7 +3272,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">5.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkModularDoorCPlate" Text="Door C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkModularDoorCPlate" Text="Door C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
 
                                                 <asp:DropDownList ID="ddlModularDoorCPlatecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Size</asp:ListItem>
@@ -3102,7 +3302,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">6.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkModularWallMtgBracket" Text="Wall Mtg. Bracket" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkModularWallMtgBracket" Text="Wall Mtg. Bracket" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlModularWallMtgBracketcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
@@ -3116,7 +3316,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">7.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkModularFrontDoor" Text="Front Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkModularFrontDoor" Text="Front Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlModularFrontDoorcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Single</asp:ListItem>
@@ -3135,7 +3335,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">8.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkModularRearDoor" Text="Rear Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkModularRearDoor" Text="Rear Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlModularRearDoorcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Single</asp:ListItem>
@@ -3154,7 +3354,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">9.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkModularRearCover" Text="Rear Cover" CssClass="myClass" runat="server"  OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkModularRearCover" Text="Rear Cover" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlModularRearCovercat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
@@ -3167,7 +3367,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">10.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkModularCableSupportAngle" Text="Cable Support Angle" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkModularCableSupportAngle" Text="Cable Support Angle" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:TextBox ID="txtModularCableSupportAnglecat1" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -3176,7 +3376,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">11.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkModularLock" Text="Lock" CssClass="myClass" runat="server"  OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkModularLock" Text="Lock" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlModularLockcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Thumbscrew</asp:ListItem>
@@ -3194,7 +3394,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">12.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkModularPowerCoatingShade" Text="Powder Coating Shade" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkModularPowerCoatingShade" Text="Powder Coating Shade" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlModularPowerCoatingShadecat1" AutoPostBack="true" OnSelectedIndexChanged="ddlModularPowerCoatingShadecat1_SelectedIndexChanged" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>RAL-7032</asp:ListItem>
@@ -3214,7 +3414,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">13.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkModularLiftingArrangement" Text="Lifting Arrangement" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkModularLiftingArrangement" Text="Lifting Arrangement" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlModularLiftingArrangementcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Eye Bolt</asp:ListItem>
@@ -3235,7 +3435,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">14.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkModularBase" Text="Base" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkModularBase" Text="Base" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlModularBasecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Standard</asp:ListItem>
@@ -3267,7 +3467,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">15.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkWMM23TransparentDoorModular" Text="Transparent Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkWMM23TransparentDoorModular" Text="Transparent Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlWMM23TransparentDoorcat1modular" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Glass</asp:ListItem>
@@ -3293,9 +3493,9 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">16.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkModularAntivibrationpad" Text="Anti-vibration pad" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkModularAntivibrationpad" Text="Anti-vibration pad" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlModularAntivibrationpadcat1" runat="server" Enabled="false">
-                                                    <asp:ListItem>Select Thickness</asp:ListItem> 
+                                                    <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>12.00 mm</asp:ListItem>
                                                     <asp:ListItem>15.00 mm</asp:ListItem>
                                                     <asp:ListItem>25.00 mm</asp:ListItem>
@@ -3307,7 +3507,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">17.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkModularCanopy" Text="Canopy" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkModularCanopy" Text="Canopy" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlModularCanopycat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Full Size</asp:ListItem>
@@ -3334,7 +3534,7 @@
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">18.&nbsp;</h5>
                                                 <%--<asp:CheckBox ID="ChkModularfan" Text="Fan" CssClass="myClass" runat="server" />--%>
-                                                <asp:CheckBox ID="ChkModularfan" Text="Filter" CssClass="myClass" runat="server"  OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkModularfan" Text="Filter" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlModularfancat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Size</asp:ListItem>
                                                     <asp:ListItem>4</asp:ListItem>
@@ -3356,7 +3556,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">20.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkModularAnyadditionalcomponent" Text="Any additional component" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkModularAnyadditionalcomponent" Text="Any additional component" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:TextBox ID="txtModularAnyadditionalcomponentcat1" runat="server" placeholder="Specify" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -3388,7 +3588,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">1.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoFrameMainFrameTopBottomWeldedStructure" Text="Main Frame Top Bottom Welded Structure" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoFrameMainFrameTopBottomWeldedStructure" Text="Main Frame Top Bottom Welded Structure" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlEcoFrameMainFrameTopBottomWeldedStructurecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
@@ -3401,7 +3601,7 @@
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">2.&nbsp;</h5>
                                                 <%--<asp:CheckBox ID="ChkEcoFrameTopBottomGlandPlate" Text="Top/Bottom Gland Plate" CssClass="myClass" runat="server" />--%>
-                                                <asp:CheckBox ID="ChkEcoFrameTopBottomGlandPlate" Text="Top & Bottom Gland Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoFrameTopBottomGlandPlate" Text="Top & Bottom Gland Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlEcoFrameTopBottomGlandPlatecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.2mm</asp:ListItem>
@@ -3416,7 +3616,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">3.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoFrameComponentMtgPlate" Text="Component Mtg. Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoFrameComponentMtgPlate" Text="Component Mtg. Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlEcoFrameComponentMtgPlatecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Size</asp:ListItem>
                                                     <asp:ListItem>GPSP</asp:ListItem>
@@ -3441,7 +3641,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">4.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoFrameSideCPlate" Text="Side C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoFrameSideCPlate" Text="Side C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlEcoFrameSideCPlatecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Size</asp:ListItem>
                                                     <asp:ListItem>GPSP</asp:ListItem>
@@ -3466,7 +3666,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">5.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoFrameDoorCPlate" Text="Door C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoFrameDoorCPlate" Text="Door C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlEcoFrameDoorCPlatecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Size</asp:ListItem>
                                                     <asp:ListItem>GPSP</asp:ListItem>
@@ -3492,7 +3692,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">6.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoFrameFrontDoor" Text="Front Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoFrameFrontDoor" Text="Front Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlEcoFrameFrontDoorcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Single</asp:ListItem>
@@ -3510,7 +3710,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">7.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoFrameRearDoor" Text="Rear Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoFrameRearDoor" Text="Rear Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlEcoFrameRearDoorcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Single</asp:ListItem>
@@ -3528,7 +3728,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">8.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoFrameRearCover" Text="Rear Cover" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoFrameRearCover" Text="Rear Cover" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlEcoFrameRearCovercat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
@@ -3541,7 +3741,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">8.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoFrameSideCover" Text="Side Cover" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoFrameSideCover" Text="Side Cover" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlEcoFrameSideCovercat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
@@ -3554,7 +3754,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">10.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoFrameLock" Text="Lock" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoFrameLock" Text="Lock" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlEcoFrameLockcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Thumbscrew</asp:ListItem>
@@ -3572,7 +3772,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">11.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoFramePowerCoatingShade" Text="Powder Coating Shade" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoFramePowerCoatingShade" Text="Powder Coating Shade" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlEcoFramePowerCoatingShadecat1" AutoPostBack="true" OnSelectedIndexChanged="ddlEcoFramePowerCoatingShadecat1_SelectedIndexChanged" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>RAL-7032</asp:ListItem>
@@ -3587,7 +3787,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">12.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoFrameLiftingArrangement" Text="Lifting Arrangement" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoFrameLiftingArrangement" Text="Lifting Arrangement" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlEcoFrameLiftingArrangementcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Eye Bolt</asp:ListItem>
@@ -3608,7 +3808,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">13.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoFrameBase" Text="Base" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoFrameBase" Text="Base" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlEcoFrameBasecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Standard</asp:ListItem>
@@ -3638,7 +3838,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">19.&nbsp;</h5>
-                                                <asp:CheckBox ID="checkfibration" Text="Anti-Fibration pad" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="checkfibration" Text="Anti-Fibration pad" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
 
                                                 <asp:DropDownList ID="ddlfibration" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -3653,7 +3853,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">15.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoFrameCanopy" Text="Canopy" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoFrameCanopy" Text="Canopy" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlEcoFrameCanopycat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Full Size</asp:ListItem>
@@ -3680,7 +3880,7 @@
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">16.&nbsp;</h5>
                                                 <%--<asp:CheckBox ID="ChkEcoFramefan" Text="Fan" CssClass="myClass" runat="server" />--%>
-                                                <asp:CheckBox ID="ChkEcoFramefan" Text="Filter" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoFramefan" Text="Filter" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlEcoFramefancat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Size</asp:ListItem>
                                                     <asp:ListItem>4</asp:ListItem>
@@ -3702,7 +3902,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">18.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkEcoFrameAnyadditionalcomponent" Text="Any additional component" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkEcoFrameAnyadditionalcomponent" Text="Any additional component" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:TextBox ID="txtEcoFrameAnyadditionalcomponentcat1" runat="server" placeholder="Specify" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -3748,7 +3948,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">1.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingMainframestructure" Text="Main Frame Structure Welded" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingMainframestructure" Text="Main Frame Structure Welded" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingMainframestructurecat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Thickness</asp:ListItem>
                                                                 <asp:ListItem>2.00mm</asp:ListItem>
@@ -3761,7 +3961,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">2.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingBottomCover" Text="Bottom Cover" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingBottomCover" Text="Bottom Cover" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingBottomCovercat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select</asp:ListItem>
                                                                 <asp:ListItem>GPSP</asp:ListItem>
@@ -3779,7 +3979,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">3.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingComponentMtgPlate" Text="Component Mtg Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingComponentMtgPlate" Text="Component Mtg Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:TextBox ID="txtPCEncShopFloorStandingComponentMtgPlatecat1" placeholder="Height" runat="server" Enabled="false"></asp:TextBox>
                                                             <asp:TextBox ID="txtPCEncShopFloorStandingComponentMtgPlatecat2" placeholder="Qty" runat="server" Enabled="false"></asp:TextBox>
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingComponentMtgPlatecat3" runat="server" Enabled="false">
@@ -3800,7 +4000,7 @@
                                                                 <asp:ListItem>3.00mm</asp:ListItem>
                                                             </asp:DropDownList>
 
-                                                            <asp:Button ID="btnAddStandingComponentMtgPlate1" runat="server" Text="+Add" OnClick="btnAddStandingComponentMtgPlate1_Click" Enabled="false"/>
+                                                            <asp:Button ID="btnAddStandingComponentMtgPlate1" runat="server" Text="+Add" OnClick="btnAddStandingComponentMtgPlate1_Click" Enabled="false" />
                                                         </div>
                                                     </div>
                                                     <%--32--%>
@@ -3896,7 +4096,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">4.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingSidecPlate" Text="Side C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingSidecPlate" Text="Side C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingSidecPlatecat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select</asp:ListItem>
                                                                 <asp:ListItem>CRCA</asp:ListItem>
@@ -3914,7 +4114,7 @@
                                                                 <asp:ListItem>2.00mm</asp:ListItem>
                                                                 <asp:ListItem>3.00mm</asp:ListItem>
                                                             </asp:DropDownList>
-                                                            <asp:Button ID="btnPCEncShopFloorStandingSidecPlate1" runat="server" Text="+Add" OnClick="btnPCEncShopFloorStandingSidecPlate1_Click" Enabled="false"/>
+                                                            <asp:Button ID="btnPCEncShopFloorStandingSidecPlate1" runat="server" Text="+Add" OnClick="btnPCEncShopFloorStandingSidecPlate1_Click" Enabled="false" />
                                                         </div>
                                                     </div>
                                                     <%-- 42--%>
@@ -4005,7 +4205,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">5.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingDoorCPlate" Text="Door C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingDoorCPlate" Text="Door C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingDoorCPlatecat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select</asp:ListItem>
                                                                 <asp:ListItem>CRCA</asp:ListItem>
@@ -4023,7 +4223,7 @@
                                                                 <asp:ListItem>2.00mm</asp:ListItem>
                                                                 <asp:ListItem>3.00mm</asp:ListItem>
                                                             </asp:DropDownList>
-                                                            <asp:Button ID="btnPCEncShopFloorStandingDoorCPlate1" runat="server" Text="+Add" OnClick="btnPCEncShopFloorStandingDoorCPlate1_Click" Enabled="false"/>
+                                                            <asp:Button ID="btnPCEncShopFloorStandingDoorCPlate1" runat="server" Text="+Add" OnClick="btnPCEncShopFloorStandingDoorCPlate1_Click" Enabled="false" />
                                                         </div>
                                                     </div>
 
@@ -4115,7 +4315,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">6.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingFrontDoor" Text="Front Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingFrontDoor" Text="Front Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingFrontDoorcat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select</asp:ListItem>
                                                                 <asp:ListItem>Single</asp:ListItem>
@@ -4134,7 +4334,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">7.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingRearDoor" Text="Rear Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingRearDoor" Text="Rear Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingRearDoorcat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select</asp:ListItem>
                                                                 <asp:ListItem>Single</asp:ListItem>
@@ -4154,7 +4354,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">8.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingLock" Text="Lock" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingLock" Text="Lock" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingLockcat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Cam Lock</asp:ListItem>
                                                                 <asp:ListItem>Mini lock</asp:ListItem>
@@ -4169,7 +4369,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">9.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingRearCover" Text="Rear Cover" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingRearCover" Text="Rear Cover" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingRearCovercat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Thickness</asp:ListItem>
                                                                 <asp:ListItem>1.5mm</asp:ListItem>
@@ -4183,7 +4383,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">10.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingSideCover" Text="Side Cover" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingSideCover" Text="Side Cover" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingSideCovercat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Thickness</asp:ListItem>
                                                                 <asp:ListItem>1.5mm</asp:ListItem>
@@ -4197,7 +4397,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">11.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingTopCover" Text="Top Cover" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingTopCover" Text="Top Cover" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingTopCovercat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Thickness</asp:ListItem>
                                                                 <asp:ListItem>1.5mm</asp:ListItem>
@@ -4211,7 +4411,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">12.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingHorizontalPartition" Text="Horizontal Partition" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingHorizontalPartition" Text="Horizontal Partition" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingHorizontalPartitioncat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Thickness</asp:ListItem>
                                                                 <asp:ListItem>1.5mm</asp:ListItem>
@@ -4230,7 +4430,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">13.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingSlidingKeyboarddrawer" Text="Sliding Keyboard drawer with Telescopic Rails" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingSlidingKeyboarddrawer" Text="Sliding Keyboard drawer with Telescopic Rails" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingSlidingKeyboarddrawercat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Thickness</asp:ListItem>
                                                                 <asp:ListItem>1.5mm</asp:ListItem>
@@ -4249,7 +4449,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">14.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingPowderCoatingShade" Text="Powder Coating Shade" CssClass="myClass" runat="server"  OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingPowderCoatingShade" Text="Powder Coating Shade" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingPowderCoatingShadecat1" runat="server" OnSelectedIndexChanged="ddlPCEncShopFloorStandingPowderCoatingShadecat1_SelectedIndexChanged" AutoPostBack="true" Enabled="false">
                                                                 <asp:ListItem>Select Colour</asp:ListItem>
                                                                 <asp:ListItem>RAL-7032</asp:ListItem>
@@ -4264,7 +4464,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">15.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingLiftingArrangement" Text="Lifting Arrangement" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingLiftingArrangement" Text="Lifting Arrangement" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingLiftingArrangementcat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select</asp:ListItem>
                                                                 <asp:ListItem>Eye Bolt</asp:ListItem>
@@ -4281,7 +4481,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">16.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingBase" Text="Base" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingBase" Text="Base" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingBasecat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select</asp:ListItem>
                                                                 <asp:ListItem>Standard</asp:ListItem>
@@ -4300,7 +4500,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">17.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingAntivibrationpad" Text="Anti-vibration pad" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingAntivibrationpad" Text="Anti-vibration pad" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingAntivibrationpadcat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Thickness</asp:ListItem>
                                                                 <asp:ListItem>12.00mm</asp:ListItem>
@@ -4314,7 +4514,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">18.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingAntivibrationCasterWheel" Text="Caster Wheel" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingAntivibrationCasterWheel" Text="Caster Wheel" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:TextBox ID="txtPCEncShopFloorStandingAntivibrationCasterWheelcat1" runat="server" placeholder="Size" Enabled="false"></asp:TextBox>
                                                             <asp:TextBox ID="txtPCEncShopFloorStandingAntivibrationCasterWheelcat2" runat="server" placeholder="Revolving Qty" Enabled="false"></asp:TextBox>
                                                             <asp:TextBox ID="txtPCEncShopFloorStandingAntivibrationCasterWheelcat3" runat="server" placeholder="Fixed Qty" Enabled="false"></asp:TextBox>
@@ -4326,7 +4526,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">19.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingDrawingPocket" Text="Drawing Pocket" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingDrawingPocket" Text="Drawing Pocket" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlChkPCEncShopFloorStandingDrawingPocketcat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select</asp:ListItem>
                                                                 <asp:ListItem>Flat</asp:ListItem>
@@ -4362,7 +4562,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">22.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingTransparentDoor" Text="Transparent Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingTransparentDoor" Text="Transparent Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingTransparentDoorcat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select</asp:ListItem>
                                                                 <asp:ListItem>Glass</asp:ListItem>
@@ -4388,7 +4588,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">23.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingFilters" Text="Filters" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingFilters" Text="Filters" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingFilterscat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Inches</asp:ListItem>
                                                                 <asp:ListItem>4</asp:ListItem>
@@ -4427,7 +4627,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">27.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingfan" Text="Fan" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingfan" Text="Fan" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingfancat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Size</asp:ListItem>
                                                                 <asp:ListItem>4</asp:ListItem>
@@ -4441,7 +4641,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">28.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingAnyadditional" Text="Any additional component" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEncShopFloorStandingAnyadditional" Text="Any additional component" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:TextBox ID="txtPCEncShopFloorStandingAnyadditionalcat1" runat="server" placeholder="Specify" Enabled="false"></asp:TextBox>
                                                         </div>
                                                     </div>
@@ -4459,7 +4659,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">1.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingWeldedMainBody" Text="Welded Main Body" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingWeldedMainBody" Text="Welded Main Body" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingWeldedMainBodycat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select</asp:ListItem>
                                                                 <asp:ListItem>with Top and bottom</asp:ListItem>
@@ -4478,7 +4678,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">2.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingGlandPlate" Text="Gland Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingGlandPlate" Text="Gland Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingGlandPlatecat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select</asp:ListItem>
                                                                 <asp:ListItem>Bottom</asp:ListItem>
@@ -4499,7 +4699,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">3.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingComponentMtgPlate" Text="Component Mtg Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingComponentMtgPlate" Text="Component Mtg Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:TextBox ID="txtPCEnclosureECOStandingComponentMtgPlatecat1" runat="server" placeholder="size:" Enabled="false"></asp:TextBox>
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingComponentMtgPlatecat2" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select</asp:ListItem>
@@ -4526,7 +4726,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">4.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingSideCPlate" Text="Side C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingSideCPlate" Text="Side C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:TextBox ID="txtPCEnclosureECOStandingSideCPlatecat1" runat="server" placeholder="size:" Enabled="false"></asp:TextBox>
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingSideCPlatecat2" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select</asp:ListItem>
@@ -4552,7 +4752,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">5.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingDoorCPlate" Text="Door C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingDoorCPlate" Text="Door C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:TextBox ID="txtPCEnclosureECOStandingDoorCPlatecat1" runat="server" placeholder="size:" Enabled="false"></asp:TextBox>
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingDoorCPlatecat2" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select</asp:ListItem>
@@ -4578,8 +4778,8 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">6.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingFrontDoorwithstiffeners" Text="Front Door with stiffeners" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
-                                                            <asp:DropDownList ID="ddlPCEnclosureECOStandingFrontDoorwithstiffenerscat1" runat="server" Enabled="false"> 
+                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingFrontDoorwithstiffeners" Text="Front Door with stiffeners" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                            <asp:DropDownList ID="ddlPCEnclosureECOStandingFrontDoorwithstiffenerscat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select</asp:ListItem>
                                                                 <asp:ListItem>Single</asp:ListItem>
                                                                 <asp:ListItem>Split</asp:ListItem>
@@ -4597,7 +4797,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">7.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingCableSupportAngle" Text="Cable Support Angle" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingCableSupportAngle" Text="Cable Support Angle" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:TextBox ID="txtPCEnclosureECOStandingCableSupportAnglecat1" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                                         </div>
                                                     </div>
@@ -4606,7 +4806,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">8.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingLock" Text="Lock" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingLock" Text="Lock" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingLockcat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select</asp:ListItem>
                                                                 <asp:ListItem>Cam Lock</asp:ListItem>
@@ -4619,7 +4819,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">9.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingHorizontalPartition" Text="Horizontal Partition" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingHorizontalPartition" Text="Horizontal Partition" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingHorizontalPartitioncat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Thickness</asp:ListItem>
                                                                 <asp:ListItem>1.2mm</asp:ListItem>
@@ -4638,7 +4838,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">10.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingSlidingKeyboarddrawer" Text="Sliding Keyboard drawer with telescopic rails" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingSlidingKeyboarddrawer" Text="Sliding Keyboard drawer with telescopic rails" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingSlidingKeyboarddrawercat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Thickness</asp:ListItem>
                                                                 <asp:ListItem>1.2mm</asp:ListItem>
@@ -4658,7 +4858,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">11.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingLiftingIBolt" Text="Lifting I-Bolt" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingLiftingIBolt" Text="Lifting I-Bolt" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:TextBox ID="txtPCEnclosureECOStandingLiftingIBoltcat1" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                                         </div>
                                                     </div>
@@ -4668,7 +4868,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">12.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingBase" Text="Base" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingBase" Text="Base" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingBasecat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select</asp:ListItem>
                                                                 <asp:ListItem>Standard</asp:ListItem>
@@ -4697,7 +4897,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">13.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingAntivibrationpad" Text="Anti-vibration pad" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingAntivibrationpad" Text="Anti-vibration pad" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingAntivibrationpadcat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Thickness</asp:ListItem>
                                                                 <asp:ListItem>12mm</asp:ListItem>
@@ -4712,7 +4912,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">14.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingTransparentDoor" Text="Transparent Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingTransparentDoor" Text="Transparent Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingTransparentDoorcat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select</asp:ListItem>
                                                                 <asp:ListItem>Glass</asp:ListItem>
@@ -4739,7 +4939,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">15.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingCasterWheel" Text="Caster Wheel" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingCasterWheel" Text="Caster Wheel" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:TextBox ID="txtPCEnclosureECOStandingCasterWheelcat1" runat="server" placeholder="Size:" Enabled="false"></asp:TextBox>
                                                             <asp:TextBox ID="txtPCEnclosureECOStandingCasterWheelcat2" runat="server" placeholder="Revolving Qty:" Enabled="false"></asp:TextBox>
                                                             <asp:TextBox ID="txtPCEnclosureECOStandingCasterWheelcat3" runat="server" placeholder="Fixed Qty:" Enabled="false"></asp:TextBox>
@@ -4752,7 +4952,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">16.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingFilters" Text="Filters" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingFilters" Text="Filters" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingFilterscat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Inch</asp:ListItem>
                                                                 <asp:ListItem>4</asp:ListItem>
@@ -4786,7 +4986,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">19.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingPowderCoating" Text="Powder Coating Shade" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingPowderCoating" Text="Powder Coating Shade" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingPowderCoatingcat1" AutoPostBack="true" OnSelectedIndexChanged="ddlPCEnclosureECOStandingPowderCoatingcat1_SelectedIndexChanged" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Colour</asp:ListItem>
                                                                 <asp:ListItem>RAL-7032</asp:ListItem>
@@ -4801,7 +5001,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">20.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingfan" Text="Fan" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingfan" Text="Fan" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingfancat1" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Size</asp:ListItem>
                                                                 <asp:ListItem>4</asp:ListItem>
@@ -4815,7 +5015,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12" style="display: inline;">
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">21.&nbsp;</h5>
-                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingAnyadditional" Text="Any additional component" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                            <asp:CheckBox ID="ChkPCEnclosureECOStandingAnyadditional" Text="Any additional component" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:TextBox ID="txtPCEnclosureECOStandingAnyadditionalcat1" runat="server" placeholder="Specify" Enabled="false"></asp:TextBox>
                                                         </div>
                                                     </div>
@@ -4853,7 +5053,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">1.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPcTableWeldedMainbody" Text="Welded Main Body" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPcTableWeldedMainbody" Text="Welded Main Body" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPcTableWeldedMainbodycat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>with Top and bottom</asp:ListItem>
@@ -4871,7 +5071,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">2.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPcTableGlandPlate" Text="Gland Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPcTableGlandPlate" Text="Gland Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPcTableGlandPlatecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Bottom</asp:ListItem>
@@ -4889,7 +5089,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">3.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPcTableComponentMtgPlate" Text="Component Mtg. Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPcTableComponentMtgPlate" Text="Component Mtg. Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPcTableComponentMtgPlatecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>GPSP</asp:ListItem>
@@ -4917,7 +5117,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">4.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPcTableSideCPlate" Text="Side C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPcTableSideCPlate" Text="Side C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPcTableSideCPlatecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>GPSP</asp:ListItem>
@@ -4944,7 +5144,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">5.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPcTableDoorCPlate" Text="Door C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPcTableDoorCPlate" Text="Door C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPcTableDoorCPlatecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>GPSP</asp:ListItem>
@@ -4972,7 +5172,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">6.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPcTableFrontDoor" Text="Front Door with stiffeners" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPcTableFrontDoor" Text="Front Door with stiffeners" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPcTableFrontDoorcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Single</asp:ListItem>
@@ -4991,7 +5191,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">7.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPcTableRearDoor" Text="Rear Door with stiffeners" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPcTableRearDoor" Text="Rear Door with stiffeners" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPcTableRearDoorcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Single</asp:ListItem>
@@ -5010,7 +5210,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">8.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPcTableLock" Text="Lock" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPcTableLock" Text="Lock" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPcTableLockcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Cam Lock</asp:ListItem>
@@ -5023,7 +5223,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">9.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPcTableCableSupportAngle" Text="Cable Support Angle" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPcTableCableSupportAngle" Text="Cable Support Angle" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:TextBox ID="txtPcTableCableSupportAnglecat1" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
 
                                             </div>
@@ -5033,7 +5233,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">10.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPcTableHorizontalPartition" Text="Horizontal Partition" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPcTableHorizontalPartition" Text="Horizontal Partition" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPcTableHorizontalPartitioncat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
@@ -5051,7 +5251,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">11.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPcTableSlidingKeyboarddrawer" Text="Sliding Keyboard drawer with telescopic rails" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPcTableSlidingKeyboarddrawer" Text="Sliding Keyboard drawer with telescopic rails" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPcTableSlidingKeyboarddrawercat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
@@ -5069,7 +5269,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">12.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPcTableSlidingCPUdrawer" Text="Sliding CPU drawer with telescopic rails" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPcTableSlidingCPUdrawer" Text="Sliding CPU drawer with telescopic rails" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPcTableSlidingCPUdrawercat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
@@ -5087,7 +5287,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">13.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPcTableMonitomountingbracket" Text="Monitor mounting bracket with tilt adjustment" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPcTableMonitomountingbracket" Text="Monitor mounting bracket with tilt adjustment" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPcTableMonitomountingbracketcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Single</asp:ListItem>
@@ -5105,7 +5305,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">14.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPcTableLiftingIBolt" Text="Lifting I-Bolt" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPcTableLiftingIBolt" Text="Lifting I-Bolt" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:TextBox ID="txtPcTableLiftingIBoltcat1" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -5114,7 +5314,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">15.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPcTableBase" Text="Base" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPcTableBase" Text="Base" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPcTableBasecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Standard</asp:ListItem>
@@ -5142,7 +5342,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">16.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPcTableAntivibrationpad" Text="Anti-vibration pad" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPcTableAntivibrationpad" Text="Anti-vibration pad" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPcTableAntivibrationpadcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>12mm</asp:ListItem>
@@ -5156,7 +5356,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">17.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPcTableTransparentDoor" Text="Transparent Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPcTableTransparentDoor" Text="Transparent Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPcTableTransparentDoorcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Glass</asp:ListItem>
@@ -5181,7 +5381,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">18.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPcTableCasterWheel" Text="Caster Wheel" CssClass="myClass" runat="server"  OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPcTableCasterWheel" Text="Caster Wheel" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:TextBox ID="txtPcTableCasterWheelcat1" runat="server" placeholder="Size:" Enabled="false"></asp:TextBox>
                                                 <asp:TextBox ID="txtPcTableCasterWheelcat2" runat="server" placeholder="Revolving Qty:" Enabled="false"></asp:TextBox>
                                                 <asp:TextBox ID="txtPcTableCasterWheelcat3" runat="server" placeholder="Fixed Qty:" Enabled="false"></asp:TextBox>
@@ -5193,7 +5393,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">19.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPcTableFilters" Text="Filters" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPcTableFilters" Text="Filters" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPcTableFilterscat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Inch</asp:ListItem>
                                                     <asp:ListItem>4</asp:ListItem>
@@ -5208,7 +5408,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">20.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPcTablePowderCoatingShade" Text="Powder Coating Shade" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPcTablePowderCoatingShade" Text="Powder Coating Shade" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPcTablePowderCoatingShadecat1" AutoPostBack="true" OnSelectedIndexChanged="ddlPcTablePowderCoatingShadecat1_SelectedIndexChanged" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>RAL-7032</asp:ListItem>
@@ -5223,7 +5423,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">21.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPcTablefan" Text="Fan" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPcTablefan" Text="Fan" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPcTablefancat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Size</asp:ListItem>
                                                     <asp:ListItem>4</asp:ListItem>
@@ -5245,7 +5445,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">23.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPcTableAnyadditionalcomponent" Text="Any additional component" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPcTableAnyadditionalcomponent" Text="Any additional component" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:TextBox ID="txtPcTableAnyadditionalcomponentcat1" runat="server" placeholder="Specify" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -5276,7 +5476,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">1.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPrinterTableWeldedMainBody" Text="Welded Main Body" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPrinterTableWeldedMainBody" Text="Welded Main Body" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPrinterTableWeldedMainBodycat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>with Top and bottom</asp:ListItem>
@@ -5294,7 +5494,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">2.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPrinterGlandPlate" Text="Gland Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPrinterGlandPlate" Text="Gland Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPrinterGlandPlatecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <%--<asp:ListItem>Bottom Side</asp:ListItem>--%>
@@ -5314,7 +5514,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">3.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPrinterTableComponentMtgPlate" Text="Component Mtg. Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPrinterTableComponentMtgPlate" Text="Component Mtg. Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPrinterTableComponentMtgPlatecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>GPSP</asp:ListItem>
@@ -5343,7 +5543,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">4.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPrinterTableSideCPlate" Text="Side C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPrinterTableSideCPlate" Text="Side C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPrinterTableSideCPlatecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>GPSP</asp:ListItem>
@@ -5370,7 +5570,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">5.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPrinterTableDoorCPlate" Text="Door C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPrinterTableDoorCPlate" Text="Door C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPrinterTableDoorCPlatecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>GPSP</asp:ListItem>
@@ -5396,7 +5596,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">6.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPrinterTableFrontDoor" Text="Front Door with stiffeners" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPrinterTableFrontDoor" Text="Front Door with stiffeners" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPrinterTableFrontDoorcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Single</asp:ListItem>
@@ -5415,7 +5615,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">7.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPrinterTableRearDoor" Text="Rear Door with stiffeners" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPrinterTableRearDoor" Text="Rear Door with stiffeners" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPrinterTableRearDoorcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Single</asp:ListItem>
@@ -5442,7 +5642,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">9.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPrinterTableLock" Text="Lock" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPrinterTableLock" Text="Lock" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPrinterTableLockcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Cam Lock</asp:ListItem>
@@ -5455,7 +5655,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">10.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPrinterTableCableSupportAngle" Text="Cable Support Angle" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPrinterTableCableSupportAngle" Text="Cable Support Angle" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:TextBox ID="txtPrinterTableCableSupportAnglecat1" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
 
                                             </div>
@@ -5465,7 +5665,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">11.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPrinterTableHorizontalPartition" Text="Horizontal Partition" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPrinterTableHorizontalPartition" Text="Horizontal Partition" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPrinterTableHorizontalPartitioncat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
@@ -5483,7 +5683,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">12.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPrinterTableSlidingdrawer" Text="Sliding drawer with telescopic rails" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPrinterTableSlidingdrawer" Text="Sliding drawer with telescopic rails" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPrinterTableSlidingdrawercat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
@@ -5501,7 +5701,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">13.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPrinterTableLiftingIBolt" Text="Lifting I-Bolt" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPrinterTableLiftingIBolt" Text="Lifting I-Bolt" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:TextBox ID="txtPrinterTableLiftingIBoltcat1" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -5510,7 +5710,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">14.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPrinterTableBase" Text="Base" CssClass="myClass" runat="server"  OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPrinterTableBase" Text="Base" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPrinterTableBasecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Standard</asp:ListItem>
@@ -5536,7 +5736,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">15.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPrinterTableAntivibrationpad" Text="Anti-vibration pad" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPrinterTableAntivibrationpad" Text="Anti-vibration pad" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPrinterTableAntivibrationpadcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>12mm</asp:ListItem>
@@ -5550,7 +5750,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">16.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPrinterTableTransparentDoor" Text="Transparent Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPrinterTableTransparentDoor" Text="Transparent Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPrinterTableTransparentDoorcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Glass</asp:ListItem>
@@ -5575,7 +5775,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">17.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPrinterTableCasterWheel" Text="Caster Wheel" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPrinterTableCasterWheel" Text="Caster Wheel" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:TextBox ID="txtPrinterTableCasterWheelcat1" runat="server" placeholder="Size:" Enabled="false"></asp:TextBox>
                                                 <asp:TextBox ID="txtPrinterTableCasterWheelcat2" runat="server" placeholder="Revolving Qty:" Enabled="false"></asp:TextBox>
                                                 <asp:TextBox ID="txtPrinterTableCasterWheelcat3" runat="server" placeholder="Fixed Qty:" Enabled="false"></asp:TextBox>
@@ -5587,7 +5787,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">18.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPrinterTableFilters" Text="Filters" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPrinterTableFilters" Text="Filters" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPrinterTableFilterscat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Inch</asp:ListItem>
                                                     <asp:ListItem>4</asp:ListItem>
@@ -5602,7 +5802,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">19.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPrinterTablePowderCoatingShade" Text="Powder Coating Shade" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPrinterTablePowderCoatingShade" Text="Powder Coating Shade" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPrinterTablePowderCoatingShadecat1" AutoPostBack="true" OnSelectedIndexChanged="ddlPrinterTablePowderCoatingShadecat1_SelectedIndexChanged" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>RAL-7032</asp:ListItem>
@@ -5617,7 +5817,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">23.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPrinterTablefan" Text="Fan" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPrinterTablefan" Text="Fan" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlPrinterTablefancat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Size</asp:ListItem>
                                                     <asp:ListItem>4</asp:ListItem>
@@ -5639,7 +5839,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">21.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkPrinterTableAnyadditionalcomponent" Text="Any additional component" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkPrinterTableAnyadditionalcomponent" Text="Any additional component" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:TextBox ID="txtPrinterTableAnyadditionalcomponentcat1" runat="server" placeholder="Specify" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -5670,7 +5870,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">1.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkSinglePieceWeldedMainBody" Text="Welded Main Body" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkSinglePieceWeldedMainBody" Text="Welded Main Body" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlSinglePieceWeldedMainBodycat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
@@ -5683,7 +5883,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">2.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkSinglePieceGlandPlate" Text="Gland Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkSinglePieceGlandPlate" Text="Gland Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlSinglePieceGlandPlatecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Bottom Side</asp:ListItem>
@@ -5703,7 +5903,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">3.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkSinglePieceComponentMtgPlate" Text="Component Mtg. Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkSinglePieceComponentMtgPlate" Text="Component Mtg. Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlSinglePieceComponentMtgPlatecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>GPSP</asp:ListItem>
@@ -5730,7 +5930,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">4.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkSinglePieceSideCPlate" Text="Side C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkSinglePieceSideCPlate" Text="Side C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlSinglePieceSideCPlatecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>GPSP</asp:ListItem>
@@ -5755,7 +5955,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">5.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkSinglePieceDoorCPlate" Text="Door C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkSinglePieceDoorCPlate" Text="Door C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlSinglePieceDoorCPlatecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>GPSP</asp:ListItem>
@@ -5780,7 +5980,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">6.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkSinglePieceFrontDoor" Text="Front Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkSinglePieceFrontDoor" Text="Front Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlSinglePieceFrontDoorcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Single</asp:ListItem>
@@ -5799,7 +5999,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">7.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkSinglePieceRearDoor" Text="Rear Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkSinglePieceRearDoor" Text="Rear Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlSinglePieceRearDoorcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Single</asp:ListItem>
@@ -5826,7 +6026,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">9.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkSinglePieceLock" Text="Lock" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkSinglePieceLock" Text="Lock" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlSinglePieceLockcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Cam Lock</asp:ListItem>
@@ -5839,7 +6039,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">10.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkSinglePieceCableSupportAngle" Text="Cable Support Angle" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkSinglePieceCableSupportAngle" Text="Cable Support Angle" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:TextBox ID="txtSinglePieceCableSupportAnglecat1" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -5848,7 +6048,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">11.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkSinglePieceSlidingKeyboarddrawertelescopicrails" Text="Sliding Keyboard drawer with telescopic rails" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkSinglePieceSlidingKeyboarddrawertelescopicrails" Text="Sliding Keyboard drawer with telescopic rails" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlSinglePieceSlidingKeyboarddrawertelescopicrailscat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
@@ -5866,7 +6066,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">12.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkSinglePieceSlidingdrawerwithtelescopicrails" Text="Sliding drawer with telescopic rails" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkSinglePieceSlidingdrawerwithtelescopicrails" Text="Sliding drawer with telescopic rails" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlSinglePieceSlidingdrawerwithtelescopicrailscat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
@@ -5884,7 +6084,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">13.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkSinglePieceMonitormountingarrangement" Text="Monitor mounting arrangement" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkSinglePieceMonitormountingarrangement" Text="Monitor mounting arrangement" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlSinglePieceMonitormountingarrangementcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
@@ -5902,7 +6102,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">14.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkSinglePieceBase" Text="Base" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkSinglePieceBase" Text="Base" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlSinglePieceBasecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Standard</asp:ListItem>
@@ -5928,7 +6128,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">15.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkSinglePieceAntivibrationpad" Text="Anti-vibration pad" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkSinglePieceAntivibrationpad" Text="Anti-vibration pad" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlSinglePieceAntivibrationpadcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>12mm</asp:ListItem>
@@ -5942,7 +6142,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">16.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkSinglePieceTransparentDoor" Text="Transparent Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkSinglePieceTransparentDoor" Text="Transparent Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlSinglePieceTransparentDoorcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Glass</asp:ListItem>
@@ -5967,7 +6167,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">17.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkSinglePieceCasterWheel" Text="Caster Wheel" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkSinglePieceCasterWheel" Text="Caster Wheel" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:TextBox ID="txtSinglePieceCasterWheelcat1" runat="server" placeholder="Size:" Enabled="false"></asp:TextBox>
                                                 <asp:TextBox ID="txtSinglePieceCasterWheelcat2" runat="server" placeholder="Revolving Qty:" Enabled="false"></asp:TextBox>
                                                 <asp:TextBox ID="txtSinglePieceCasterWheelcat3" runat="server" placeholder="Fixed Qty:" Enabled="false"></asp:TextBox>
@@ -5979,7 +6179,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">18.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkSinglePieceFilters" Text="Filters" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkSinglePieceFilters" Text="Filters" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlSinglePieceFilterscat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Inch</asp:ListItem>
                                                     <asp:ListItem>4</asp:ListItem>
@@ -5994,7 +6194,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">19.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkSinglePiecefan" Text="Fan" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkSinglePiecefan" Text="Fan" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlSinglePiecefancat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Size</asp:ListItem>
                                                     <asp:ListItem>4</asp:ListItem>
@@ -6008,7 +6208,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">20.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkSinglePiecePowderCoatingShade" Text="Powder Coating Shade" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkSinglePiecePowderCoatingShade" Text="Powder Coating Shade" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlSinglePiecePowderCoatingShadecat1" AutoPostBack="true" OnSelectedIndexChanged="ddlSinglePiecePowderCoatingShadecat1_SelectedIndexChanged" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>RAL-7032</asp:ListItem>
@@ -6031,7 +6231,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">22.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkSinglePieceAnyadditionalcomponent" Text="Any additional component" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkSinglePieceAnyadditionalcomponent" Text="Any additional component" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:TextBox ID="txtSinglePieceAnyadditionalcomponentcat1" runat="server" placeholder="Specify" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -6062,7 +6262,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">1.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkThreePieceWeldedMainBody" Text="Welded Main Body" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkThreePieceWeldedMainBody" Text="Welded Main Body" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlThreePieceWeldedMainBodycat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
@@ -6075,7 +6275,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">2.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkThreePieceGlandPlate" Text="Gland Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkThreePieceGlandPlate" Text="Gland Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlThreePieceGlandPlatecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Bottom Side</asp:ListItem>
@@ -6092,7 +6292,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">3.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkThreePieceComponentMtgPlate" Text="Component Mtg.Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkThreePieceComponentMtgPlate" Text="Component Mtg.Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlThreePieceComponentMtgPlatecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>GPSP</asp:ListItem>
@@ -6118,7 +6318,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">4.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkThreePieceSideCPlate" Text="Side C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkThreePieceSideCPlate" Text="Side C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlThreePieceSideCPlatecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>GPSP</asp:ListItem>
@@ -6145,7 +6345,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">5.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkThreePieceDoorCPlate" Text="Door C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkThreePieceDoorCPlate" Text="Door C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlThreePieceDoorCPlatecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>GPSP</asp:ListItem>
@@ -6170,7 +6370,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">6.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkThreePieceFrontDoor" Text="Front Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkThreePieceFrontDoor" Text="Front Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlThreePieceFrontDoorcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Single</asp:ListItem>
@@ -6189,7 +6389,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">7.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkThreePieceRearDoor" Text="Rear Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkThreePieceRearDoor" Text="Rear Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlThreePieceRearDoorcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Single</asp:ListItem>
@@ -6216,7 +6416,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">9.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkThreePieceLock" Text="Lock" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkThreePieceLock" Text="Lock" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlThreePieceLockcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Cam Lock</asp:ListItem>
@@ -6229,7 +6429,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">10.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkThreePieceCableSupportAngle" Text="Cable Support Angle" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkThreePieceCableSupportAngle" Text="Cable Support Angle" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:TextBox ID="txtThreePieceCableSupportAnglecat1" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -6238,7 +6438,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">11.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkThreePieceHorizontalPartition" Text="Horizontal Partition" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkThreePieceHorizontalPartition" Text="Horizontal Partition" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlThreePieceHorizontalPartitioncat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
@@ -6256,7 +6456,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">12.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkThreePieceSlidingdrawerwithtelescopic" Text="Sliding drawer with telescopic rails" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkThreePieceSlidingdrawerwithtelescopic" Text="Sliding drawer with telescopic rails" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlThreePieceSlidingdrawerwithtelescopiccat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
@@ -6274,7 +6474,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">12.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkThreePieceLiftingIBolt" Text="Lifting I-Bolt" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkThreePieceLiftingIBolt" Text="Lifting I-Bolt" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:TextBox ID="txtThreePieceLiftingIBoltcat1" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -6283,7 +6483,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">14.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkThreePieceBase" Text="Base" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkThreePieceBase" Text="Base" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlThreePieceBasecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Standard</asp:ListItem>
@@ -6309,7 +6509,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">15.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkThreePieceAntivibrationpad" Text="Anti-vibration pad" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkThreePieceAntivibrationpad" Text="Anti-vibration pad" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlThreePieceAntivibrationpadcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>12mm</asp:ListItem>
@@ -6323,7 +6523,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">16.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkThreePieceTransparentDoor" Text="Transparent Door" CssClass="myClass" runat="server"  OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkThreePieceTransparentDoor" Text="Transparent Door" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlThreePieceTransparentDoorcat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Glass</asp:ListItem>
@@ -6348,7 +6548,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">17.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkThreePieceCasterWheel" Text="Caster Wheel" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkThreePieceCasterWheel" Text="Caster Wheel" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:TextBox ID="txtThreePieceCasterWheelcat1" runat="server" placeholder="Size:" Enabled="false"></asp:TextBox>
                                                 <asp:TextBox ID="txtThreePieceCasterWheelcat2" runat="server" placeholder="Revolving Qty:" Enabled="false"></asp:TextBox>
                                                 <asp:TextBox ID="txtThreePieceCasterWheelcat3" runat="server" placeholder="Fixed Qty:" Enabled="false"></asp:TextBox>
@@ -6360,7 +6560,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">18.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkThreePieceFilters" Text="Filters" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkThreePieceFilters" Text="Filters" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlThreePieceFilterscat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Inch</asp:ListItem>
                                                     <asp:ListItem>4</asp:ListItem>
@@ -6375,7 +6575,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">19.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkThreePiecefan" Text="Fan" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkThreePiecefan" Text="Fan" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlThreePiecefancat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Size</asp:ListItem>
                                                     <asp:ListItem>4</asp:ListItem>
@@ -6389,7 +6589,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">20.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkThreePiecePowderCoatingShade" Text="Powder Coating Shade" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkThreePiecePowderCoatingShade" Text="Powder Coating Shade" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:DropDownList ID="ddlThreePiecePowderCoatingShadecat1" AutoPostBack="true" OnSelectedIndexChanged="ddlThreePiecePowderCoatingShadecat1_SelectedIndexChanged" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>RAL-7032</asp:ListItem>
@@ -6412,7 +6612,7 @@
                                         <div class="row">
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">22.&nbsp;</h5>
-                                                <asp:CheckBox ID="ChkThreePieceAnyadditionalcomponent" Text="Any additional component" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true"/>
+                                                <asp:CheckBox ID="ChkThreePieceAnyadditionalcomponent" Text="Any additional component" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                 <asp:TextBox ID="txtThreePieceAnyadditionalcomponentcat1" runat="server" placeholder="Specify" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -6434,175 +6634,179 @@
                     <%--13 Specify--%>
                     <asp:Panel ID="PanelType13" runat="server" Visible="false">
                         <br />
-                        <div class="row" style="margin-right: 10px!important; margin-left: 10px; padding: 3px; border: 1px solid #ccc; border-radius: 3px;">
-                            <div class="col-md-12">
-                                <%--1--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">1.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkSpecify1" Text="" CssClass="myClass" runat="server" />
-                                        <asp:TextBox ID="txtspecify1cat1" placeholder="Category" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify1cat2" placeholder="Specify" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify1cat3" placeholder="Specify" runat="server"></asp:TextBox>
+                        <asp:UpdatePanel ID="UpdatePanel14" runat="server">
+                            <ContentTemplate>
+                                <div class="row" style="margin-right: 10px!important; margin-left: 10px; padding: 3px; border: 1px solid #ccc; border-radius: 3px;">
+                                    <div class="col-md-12">
+                                        <%--1--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">1.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkSpecify1" Text="" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:TextBox ID="txtspecify1cat1" placeholder="Category" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify1cat2" placeholder="Specify" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify1cat3" placeholder="Specify" runat="server" Enabled="false"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <%--2--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">2.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkSpecify2" Text="" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:TextBox ID="txtspecify2cat1" placeholder="Category" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify2cat2" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify2cat3" runat="server" Enabled="false"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <%--3--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">3.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkSpecify3" Text="" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:TextBox ID="txtspecify3cat1" placeholder="Category" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify3cat2" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify3cat3" runat="server" Enabled="false"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <%--4--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">4.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkSpecify4" Text="" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:TextBox ID="txtspecify4cat1" placeholder="Category" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify4cat2" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify4cat3" runat="server" Enabled="false"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <%--5--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">5.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkSpecify5" Text="" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:TextBox ID="txtspecify5cat1" placeholder="Category" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify5cat2" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify5cat3" runat="server" Enabled="false"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <%--6--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">6.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkSpecify6" Text="" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:TextBox ID="txtspecify6cat1" placeholder="Category" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify6cat2" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify6cat3" runat="server" Enabled="false"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <%--7--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">7.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkSpecify7" Text="" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:TextBox ID="txtspecify7cat1" placeholder="Category" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify7cat2" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify7cat3" runat="server" Enabled="false"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <%--8--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">8.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkSpecify8" Text="" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:TextBox ID="txtspecify8cat1" placeholder="Category" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify8cat2" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify8cat3" runat="server" Enabled="false"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <%--9--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">9.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkSpecify9" Text="" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:TextBox ID="txtspecify9cat1" placeholder="Category" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify9cat2" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify9cat3" runat="server" Enabled="false"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <%--10--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">10.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkSpecify10" Text="" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:TextBox ID="txtspecify10cat1" placeholder="Category" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify10cat2" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify10cat3" runat="server" Enabled="false"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <%--11--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">11.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkSpecify11" Text="" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:TextBox ID="txtspecify11cat1" placeholder="Category" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify11cat2" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify11cat3" runat="server" Enabled="false"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <%-- 12--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">12.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkSpecify12" Text="" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:TextBox ID="txtspecify12cat1" placeholder="Category" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify12cat2" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify12cat3" runat="server" Enabled="false"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <%-- 13--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">13.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkSpecify13" Text="" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:TextBox ID="txtspecify13cat1" placeholder="Category" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify13cat2" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify13cat3" runat="server" Enabled="false"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <%-- 14--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">14.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkSpecify14" Text="" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:TextBox ID="txtspecify14cat1" placeholder="Category" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify14cat2" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify14cat3" runat="server" Enabled="false"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <%-- 15--%>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12" style="display: inline;">
+                                                <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">15.&nbsp;</h5>
+                                                <asp:CheckBox ID="ChkSpecify15" Text="" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
+                                                <asp:TextBox ID="txtspecify15cat1" placeholder="Category" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify15cat2" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="txtspecify15cat3" runat="server" Enabled="false"></asp:TextBox>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <%--2--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">2.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkSpecify2" Text="" CssClass="myClass" runat="server" />
-                                        <asp:TextBox ID="txtspecify2cat1" placeholder="Category" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify2cat2" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify2cat3" runat="server"></asp:TextBox>
-                                    </div>
-                                </div>
-                                <%--3--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">3.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkSpecify3" Text="" CssClass="myClass" runat="server" />
-                                        <asp:TextBox ID="txtspecify3cat1" placeholder="Category" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify3cat2" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify3cat3" runat="server"></asp:TextBox>
-                                    </div>
-                                </div>
-                                <%--4--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">4.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkSpecify4" Text="" CssClass="myClass" runat="server" />
-                                        <asp:TextBox ID="txtspecify4cat1" placeholder="Category" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify4cat2" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify4cat3" runat="server"></asp:TextBox>
-                                    </div>
-                                </div>
-                                <%--5--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">5.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkSpecify5" Text="" CssClass="myClass" runat="server" />
-                                        <asp:TextBox ID="txtspecify5cat1" placeholder="Category" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify5cat2" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify5cat3" runat="server"></asp:TextBox>
-                                    </div>
-                                </div>
-                                <%--6--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">6.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkSpecify6" Text="" CssClass="myClass" runat="server" />
-                                        <asp:TextBox ID="txtspecify6cat1" placeholder="Category" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify6cat2" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify6cat3" runat="server"></asp:TextBox>
-                                    </div>
-                                </div>
-                                <%--7--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">7.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkSpecify7" Text="" CssClass="myClass" runat="server" />
-                                        <asp:TextBox ID="txtspecify7cat1" placeholder="Category" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify7cat2" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify7cat3" runat="server"></asp:TextBox>
-                                    </div>
-                                </div>
-                                <%--8--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">8.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkSpecify8" Text="" CssClass="myClass" runat="server" />
-                                        <asp:TextBox ID="txtspecify8cat1" placeholder="Category" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify8cat2" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify8cat3" runat="server"></asp:TextBox>
-                                    </div>
-                                </div>
-                                <%--9--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">9.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkSpecify9" Text="" CssClass="myClass" runat="server" />
-                                        <asp:TextBox ID="txtspecify9cat1" placeholder="Category" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify9cat2" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify9cat3" runat="server"></asp:TextBox>
-                                    </div>
-                                </div>
-                                <%--10--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">10.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkSpecify10" Text="" CssClass="myClass" runat="server" />
-                                        <asp:TextBox ID="txtspecify10cat1" placeholder="Category" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify10cat2" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify10cat3" runat="server"></asp:TextBox>
-                                    </div>
-                                </div>
-                                <%--11--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">11.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkSpecify11" Text="" CssClass="myClass" runat="server" />
-                                        <asp:TextBox ID="txtspecify11cat1" placeholder="Category" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify11cat2" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify11cat3" runat="server"></asp:TextBox>
-                                    </div>
-                                </div>
-                                <%-- 12--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">12.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkSpecify12" Text="" CssClass="myClass" runat="server" />
-                                        <asp:TextBox ID="txtspecify12cat1" placeholder="Category" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify12cat2" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify12cat3" runat="server"></asp:TextBox>
-                                    </div>
-                                </div>
-                                <%-- 13--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">13.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkSpecify13" Text="" CssClass="myClass" runat="server" />
-                                        <asp:TextBox ID="txtspecify13cat1" placeholder="Category" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify13cat2" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify13cat3" runat="server"></asp:TextBox>
-                                    </div>
-                                </div>
-                                <%-- 14--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">14.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkSpecify14" Text="" CssClass="myClass" runat="server" />
-                                        <asp:TextBox ID="txtspecify14cat1" placeholder="Category" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify14cat2" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify14cat3" runat="server"></asp:TextBox>
-                                    </div>
-                                </div>
-                                <%-- 15--%>
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-12" style="display: inline;">
-                                        <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">15.&nbsp;</h5>
-                                        <asp:CheckBox ID="ChkSpecify15" Text="" CssClass="myClass" runat="server" />
-                                        <asp:TextBox ID="txtspecify15cat1" placeholder="Category" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify15cat2" runat="server"></asp:TextBox>
-                                        <asp:TextBox ID="txtspecify15cat3" runat="server"></asp:TextBox>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
                         <br />
                         <div class="row">
                             <div class="col-md-12" style="display: inline;">

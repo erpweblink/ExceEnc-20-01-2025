@@ -11117,202 +11117,232 @@ public partial class Admin_Quotation : System.Web.UI.Page
     {
         System.Web.UI.WebControls.CheckBox chkBox = sender as System.Web.UI.WebControls.CheckBox;
 
+
         switch (chkBox.ID)
         {
             // 1. JB Box 
             case "chkJbweldedmainbody":
-                HandleDropDownListVisibility(ddlJbweldedmainbodycat1, ddlJbweldedmainbodycat2, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlJbweldedmainbodycat1, ddlJbweldedmainbodycat2, null, null, null, RequiredFieldValidatorJB1, RequiredFieldValidatorJB2, null, null, chkBox.Checked);
                 break;
 
             case "chkjbGlandplat":
-                HandleDropDownListVisibility(ddljbGlandplatcat1, ddljbGlandplatcat2, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddljbGlandplatcat1, ddljbGlandplatcat2, null, null, null, RequiredFieldValidatorJB3, RequiredFieldValidatorJB4, null, null, chkBox.Checked);
+
                 break;
 
             case "Checckboxfor3DD":
-                HandleDropDownListVisibility(ddljbComponetmtgplt, ddljbComponetmtgpltcat1, ddljbComponetmtgpltcat2, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddljbComponetmtgplt, ddljbComponetmtgpltcat1, ddljbComponetmtgpltcat2, null, txtJbweldedmainbodycat, RequiredFieldValidatorJB5, RequiredFieldValidatorJB6, RequiredFieldValidatorJB7, null, chkBox.Checked);
                 break;
 
             case "chkjbfrontscrewcover":
-                HandleDropDownListVisibility(ddljbfrontscrewcovercat1, null, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddljbfrontscrewcovercat1, null, null, null, null, RequiredFieldValidatorJB8, null, null, null, chkBox.Checked);
                 break;
 
             case "Chkjblock":
-                HandleDropDownListVisibility(ddljbLockcat1, null, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddljbLockcat1, null, null, null, txtQty, RequiredFieldValidatorJB9, null, null, null, chkBox.Checked);
                 break;
 
             case "chkjbTransparentdoor":
-                HandleDropDownListVisibility(ddljbTransparentdoorcat1, ddljbTransparentdoorcat2, ddljbTransparentdoorcat3, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddljbTransparentdoorcat1, ddljbTransparentdoorcat2, ddljbTransparentdoorcat3, null, null, RequiredFieldValidatorJB10, RequiredFieldValidatorJB11, RequiredFieldValidatorJB12, null, chkBox.Checked);
+                ddljbTransparentdoorcat.Enabled = chkBox.Checked;
                 break;
 
             case "ChkjbPowercoatingshade":
-                HandleDropDownListVisibility(ddljbPowercoatingshadecat1, null, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddljbPowercoatingshadecat1, null, null, null, null, RequiredFieldValidatorJB13, null, null, null, chkBox.Checked);
                 break;
 
             case "ChkjbFan":
-                HandleDropDownListVisibility(ddljbfancat1, null, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddljbfancat1, null, null, null, txtjbfanqtycat2, RequiredFieldValidatorJB14, null, null, null, chkBox.Checked);
                 break;
 
             case "ChkjbAnyadditionalcomponent":
-                txtjbAnyadditionalcomponentcat1.Enabled = chkBox.Checked;
+                HandleDropDownListVisibility(null, null, null, null, txtjbAnyadditionalcomponentcat1, chkBox.Checked);
                 break;
+
+
             // End Jb Box
 
 
             //  2. WMM-23.5 (AE Box)
             case "chkWMM23WeldedMainBody":
-                HandleDropDownListVisibility(ddlWMM23WeldedMainBodycat1, ddlWMM23WeldedMainBodycat2, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM23WeldedMainBodycat1, ddlWMM23WeldedMainBodycat2, null, null, null, RequiredFieldValidatorWM1, RequiredFieldValidatorWM2, null, null, chkBox.Checked);
                 break;
 
             case "ChkWMM23GlandPlate":
-                HandleDropDownListVisibility(ddlWMM23GlandPlatecat1, ddlWMM23GlandPlatecat2, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM23GlandPlatecat1, ddlWMM23GlandPlatecat2, null, null, null, RequiredFieldValidatorWM3, RequiredFieldValidatorWM4, null, null, chkBox.Checked);
                 break;
 
             case "ChkWMM23Canopy":
-                HandleDropDownListVisibility(ddlWMM23Canopycat1, ddlWMM23Canopycat2, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM23Canopycat1, ddlWMM23Canopycat2, null, null, null, RequiredFieldValidatorWM5, RequiredFieldValidatorWM6, null, null, chkBox.Checked);
                 break;
 
             case "ChkWMM23ComponentMtgPlate":
-                HandleDropDownListVisibility(ddlWMM23ComponentMtgPlatecat1, ddlWMM23ComponentMtgPlatecat2, ddlWMM23ComponentMtgPlatecat3, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM23ComponentMtgPlatecat1, ddlWMM23ComponentMtgPlatecat2, ddlWMM23ComponentMtgPlatecat3, null, null, RequiredFieldValidatorWM7, RequiredFieldValidatorWM8, RequiredFieldValidatorWM9, null, chkBox.Checked);
                 break;
 
             case "ChkWMM23SideCPlate":
-                HandleDropDownListVisibility(ddlWMM23SideCPlatecat1, ddlWMM23SideCPlatecat2, ddlWMM23SideCPlatecat3, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM23SideCPlatecat1, ddlWMM23SideCPlatecat2, ddlWMM23SideCPlatecat3, null, null, RequiredFieldValidatorWM10, RequiredFieldValidatorWM11, RequiredFieldValidatorWM12, null, chkBox.Checked);
                 break;
 
             case "ChkWMM23DoorCPlate":
-                HandleDropDownListVisibility(ddlWMM23DoorCPlatecat1, ddlWMM23DoorCPlatecat2, ddlWMM23DoorCPlatecat3, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM23DoorCPlatecat1, ddlWMM23DoorCPlatecat2, ddlWMM23DoorCPlatecat3, null, null, RequiredFieldValidatorWM13, RequiredFieldValidatorWM14, RequiredFieldValidatorWM15, null, chkBox.Checked);
                 break;
 
             case "ChkWMM23WallMtgBracket":
-                HandleDropDownListVisibility(ddlWMM23WallMtgBracketcat1, null, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM23WallMtgBracketcat1, null, null, null, null, RequiredFieldValidatorWM16, null, null, null, chkBox.Checked);
                 break;
 
             case "ChkWMM23FrontDoor":
-                HandleDropDownListVisibility(ddlWMM23FrontDoorcat1, ddlWMM23FrontDoorcat2, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM23FrontDoorcat1, ddlWMM23FrontDoorcat2, null, null, null, RequiredFieldValidatorWM17, RequiredFieldValidatorWM18, null, null, chkBox.Checked);
                 break;
 
             case "ChkWMM23RearDoor":
-                HandleDropDownListVisibility(ddlWMM23RearDoorcat1, ddlWMM23RearDoorcat2, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM23RearDoorcat1, ddlWMM23RearDoorcat2, null, null, null, RequiredFieldValidatorWM19, RequiredFieldValidatorWM20, null, null, chkBox.Checked);
                 break;
 
             case "CheckboxinnerDoor":
-                HandleDropDownListVisibility(ddlinnerdoor, ddlthickness, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlinnerdoor, ddlthickness, null, null, null, RequiredFieldValidatorWM21, RequiredFieldValidatorWM22, null, null, chkBox.Checked);
                 break;
 
             case "ChkWMM23Lock":
-                HandleDropDownListVisibility(ddlWMM23Lockcat1, null, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM23Lockcat1, null, null, null, txtWMM23Lockcat2, RequiredFieldValidatorWM23, null, null, null, chkBox.Checked);
+                break;
+
+            case "ChkWMM23CableSupportAngle":
+                HandleDropDownListVisibility(null, null, null, null, txtWMM23CableSupportAnglecat1, chkBox.Checked);
                 break;
 
             case "ChkWMM23PowerCoatingShade":
-                HandleDropDownListVisibility(ddlWMM23PowerCoatingShadecat1, null, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM23PowerCoatingShadecat1, null, null, null, txtddlWMM23PowerCoatingShadecat2, RequiredFieldValidatorWM24, null, null, null, chkBox.Checked);
+                break;
+
+            case "ChkWMM23LiftingIBolt":
+                HandleDropDownListVisibility(null, null, null, null, txtWMM23LiftingIBoltcat1, chkBox.Checked);
                 break;
 
             case "ChkWMM23Base":
-                HandleDropDownListVisibility(ddlWMM23Basecat1, ddlWMM23Basecat2, ddlheight, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM23Basecat1, ddlWMM23Basecat2, ddlheight, null, txtWMM23Basecat3, RequiredFieldValidatorWM25, RequiredFieldValidatorWM26, RequiredFieldValidatorWM27, null, chkBox.Checked);
                 break;
 
             case "ChkWMM23TransparentDoor":
-                HandleDropDownListVisibility(ddlWMM23TransparentDoorcat1, ddlWMM23TransparentDoorcat2, ddlWMM23TransparentDoorcat3, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM23TransparentDoorcat1, ddlWMM23TransparentDoorcat2, ddlWMM23TransparentDoorcat3, null, null, RequiredFieldValidatorWM28, RequiredFieldValidatorWM29, RequiredFieldValidatorWM30, null, chkBox.Checked);
                 break;
 
             case "chkWMM23fan":
-                HandleDropDownListVisibility(ddlWMM23fancat1, null, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM23fancat1, null, null, null, txtWMM23fancat2, RequiredFieldValidatorWM10, RequiredFieldValidatorWM31, null, null, chkBox.Checked);
+                break;
+
+            case "ChkWMM23Anyadditionalcomponent":
+                HandleDropDownListVisibility(null, null, null, null, txtWMM23Anyadditionalcomponentcat1, chkBox.Checked);
                 break;
             //End  WMM - 23.5(AE Box)
 
+
             //3.WMM-30 (MCC Box)
             case "ChkWMM30WeldedMainBody":
-                HandleDropDownListVisibility(ddlWMM30WeldedMainBodycat1, ddlWMM30WeldedMainBodycat2, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM30WeldedMainBodycat1, ddlWMM30WeldedMainBodycat2, null, null, null, RequiredFieldValidatorWMM1, RequiredFieldValidatorWMM2, null, null, chkBox.Checked);
                 break;
 
             case "ChkWMM30GlandPlat":
-                HandleDropDownListVisibility(ddlWMM30GlandPlatcat1, ddlWMM30GlandPlatcat2, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM30GlandPlatcat1, ddlWMM30GlandPlatcat2, null, null, null, RequiredFieldValidatorWMM3, RequiredFieldValidatorWMM4, null, null, chkBox.Checked);
                 break;
 
             case "ChkWMM30Canopy":
-                HandleDropDownListVisibility(ddlWMM30Canopycat1, ddlWMM30Canopycat2, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM30Canopycat1, ddlWMM30Canopycat2, null, null, null, RequiredFieldValidatorWMM5, RequiredFieldValidatorWMM6, null, null, chkBox.Checked);
                 break;
 
             case "ChkWMM30ComponentMtgPlate":
-                HandleDropDownListVisibility(ddlWMM30ComponentMtgPlatecat1, ddlWMM30ComponentMtgPlatecat2, ddlWMM30ComponentMtgPlatecat3, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM30ComponentMtgPlatecat1, ddlWMM30ComponentMtgPlatecat2, ddlWMM30ComponentMtgPlatecat3, null, null, RequiredFieldValidatorWMM7, RequiredFieldValidatorWMM8, RequiredFieldValidatorWMM9, null, chkBox.Checked);
                 break;
 
             case "ChkWMM30SideCPlate":
-                HandleDropDownListVisibility(ddlWMM30SideCPlatecat1, ddlWMM30SideCPlatecat2, ddlWMM30SideCPlatecat3, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM30SideCPlatecat1, ddlWMM30SideCPlatecat2, ddlWMM30SideCPlatecat3, null, null, RequiredFieldValidatorWMM10, RequiredFieldValidatorWMM11, RequiredFieldValidatorWMM12, null, chkBox.Checked);
                 break;
 
             case "ChkWMM30DoorCPlate":
-                HandleDropDownListVisibility(ddlWMM30DoorCPlatecat1, ddlWMM30DoorCPlatecat2, ddlWMM30DoorCPlatecat3, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM30DoorCPlatecat1, ddlWMM30DoorCPlatecat2, ddlWMM30DoorCPlatecat3, null, null, RequiredFieldValidatorWMM13, RequiredFieldValidatorWMM14, RequiredFieldValidatorWMM15, null, chkBox.Checked);
                 break;
 
             case "ChkWMM30WallMtgBracket":
-                HandleDropDownListVisibility(ddlWMM30WallMtgBracketcat1, null, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM30WallMtgBracketcat1, null, null, null, null, RequiredFieldValidatorWMM16, null, null, null, chkBox.Checked);
                 break;
 
             case "ChkWMM30FrontDoor":
-                HandleDropDownListVisibility(ddlWMM30FrontDoorcat1, ddlWMM30FrontDoorcat2, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM30FrontDoorcat1, ddlWMM30FrontDoorcat2, null, null, null, RequiredFieldValidatorWMM17, RequiredFieldValidatorWMM18, null, null, chkBox.Checked);
                 break;
 
             case "ChkWMM30RearDoor":
-                HandleDropDownListVisibility(ddlWMM30RearDoorcat1, ddlWMM30RearDoorcat2, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM30RearDoorcat1, ddlWMM30RearDoorcat2, null, null, null, RequiredFieldValidatorWMM19, RequiredFieldValidatorWMM20, null, null, chkBox.Checked);
                 break;
 
             case "checkboxInnerdoorforMCBOX30":
-                HandleDropDownListVisibility(ddlInnerdoor1forMCBOX30, ddlInnerdoorThicknessforMCBOX30, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlInnerdoor1forMCBOX30, ddlInnerdoorThicknessforMCBOX30, null, null, null, RequiredFieldValidatorWMM21, RequiredFieldValidatorWMM22, null, null, chkBox.Checked);
                 break;
 
             case "ChkWMM30Lock":
-                HandleDropDownListVisibility(ddlWMM30Lockcat1, null, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM30Lockcat1, null, null, null, txtWMM30Lockcat2, RequiredFieldValidatorWMM23, null, null, null, chkBox.Checked);
+                break;
+
+            case "ChkWMM30CableSupportAngle":
+                HandleDropDownListVisibility(null, null, null, null, txtWMM30CableSupportAnglecat1, chkBox.Checked);
+                break;
+
+            case "ChkWMM30LiftingIBolt":
+                HandleDropDownListVisibility(null, null, null, null, txtWMM30LiftingIBoltcat1, chkBox.Checked);
                 break;
 
             case "ChkWMM30PowerCoatingShade":
-                HandleDropDownListVisibility(ddlWMM30PowerCoatingShadecat1, null, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM30PowerCoatingShadecat1, null, null, null, txtWMM30PowerCoatingShadecat2, RequiredFieldValidatorWMM24, null, null, null, chkBox.Checked);
                 break;
 
             case "ChkWMM30Base":
-                HandleDropDownListVisibility(ddlWMM30Basecat1, ddlWMM30Basecat2, ddlWMM30Basecat3, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM30Basecat1, ddlWMM30Basecat2, ddlWMM30Basecat3, null, null, RequiredFieldValidatorWMM25, RequiredFieldValidatorWMM26, RequiredFieldValidatorWMM27, null, chkBox.Checked);
                 break;
 
             case "ChkWMM30TransparentDoor":
-                HandleDropDownListVisibility(ddlWMM30TransparentDoorcat1, ddlWMM30TransparentDoorcat2, ddlWMM30TransparentDoorcat3, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM30TransparentDoorcat1, ddlWMM30TransparentDoorcat2, ddlWMM30TransparentDoorcat3, null, txtWMM30TransparentDoorcat4, RequiredFieldValidatorWMM28, RequiredFieldValidatorWMM29, RequiredFieldValidatorWMM30, null, chkBox.Checked);
                 break;
 
             case "ChkWMM30fan":
-                HandleDropDownListVisibility(ddlWMM30fancat1, null, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlWMM30fancat1, null, null, null, txtWMM30fancat2, RequiredFieldValidatorWMM31, null, null, null, chkBox.Checked);
+                break;
+
+            case "ChkWMM30Anyadditionalcomponent":
+                HandleDropDownListVisibility(null, null, null, null, txtWMM30Anyadditionalcomponentcat1, chkBox.Checked);
                 break;
             //End WMM-30 (MCC Box)
 
             // 4.MFS (Modular Floor Standing Enclosure)
             case "ChkMFSMainframeStructureWelded":
-                HandleDropDownListVisibility(ddlMFSMainframeStructureWeldedcat1, null, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlMFSMainframeStructureWeldedcat1, null, null, null, null, RequiredFieldValidatorMFS1, null, null, null, chkBox.Checked);
                 break;
 
             case "ChkMFSBottomCover":
-                HandleDropDownListVisibility(ddlMFSBottomCovercat1, ddlMFSBottomCovercat2, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlMFSBottomCovercat1, ddlMFSBottomCovercat2, null, null, null, RequiredFieldValidatorMFS2, RequiredFieldValidatorMFS3, null, null, chkBox.Checked);
                 break;
 
             case "ChkMFSGlandPlate":
-                HandleDropDownListVisibility(ddlMFSGlandPlatecat1, ddlMFSGlandPlatecat2, ddlMFSGlandPlatecat3, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlMFSGlandPlatecat1, ddlMFSGlandPlatecat2, ddlMFSGlandPlatecat3, null, null, RequiredFieldValidatorMFS4, RequiredFieldValidatorMFS5, RequiredFieldValidatorMFS6, null, chkBox.Checked);
                 break;
 
             case "ChkMFSComponentMtgPlate":
-                HandleDropDownListVisibility(ddlMFSComponentMtgPlatecat1, ddlMFSComponentMtgPlatecat2, ddlMFSComponentMtgPlatecat3, null, null, chkBox.Checked);
+                HandleDropDownListVisibility1(ddlMFSComponentMtgPlatecat1, ddlMFSComponentMtgPlatecat2, ddlMFSComponentMtgPlatecat3, null, txtMFSComponentMtgPlatecat4, RequiredFieldValidatorMFS7, RequiredFieldValidatorMFS8, RequiredFieldValidatorMFS9, null, chkBox.Checked);
                 break;
 
             case "ChkMFSSideCPlate":
-                HandleDropDownListVisibility(ddlMFSSideCPlatecat1, ddlMFSSideCPlatecat2, ddlMFSSideCPlatecat3, null, null, chkBox.Checked);
+                HandleDropDownListVisibility(ddlMFSSideCPlatecat1, ddlMFSSideCPlatecat2, ddlMFSSideCPlatecat3, null, txtMFSSideCPlatecat4, chkBox.Checked);
                 break;
 
             case "ChkMFSDoorCPlate":
-                HandleDropDownListVisibility(ddlMFSDoorCPlatecat1, ddlMFSDoorCPlatecat2, ddlMFSDoorCPlatecat3, null, null, chkBox.Checked);
+                HandleDropDownListVisibility(ddlMFSDoorCPlatecat1, ddlMFSDoorCPlatecat2, ddlMFSDoorCPlatecat3, null, txtMFSDoorCPlatecat4, chkBox.Checked);
                 break;
 
             case "ChkMFSPartialMountingPlate":
-                HandleDropDownListVisibility(ddlMFSPartialMountingPlatecat1, ddlMFSPartialMountingPlatecat2, ddlMFSPartialMountingPlatecat3, null, null, chkBox.Checked);
+                HandleDropDownListVisibility(ddlMFSPartialMountingPlatecat1, ddlMFSPartialMountingPlatecat2, ddlMFSPartialMountingPlatecat3, null, txtMFSPartialMountingPlatecat4, chkBox.Checked);
                 break;
 
             case "ChkMFSFillerTray":
-                HandleDropDownListVisibility(ddlMFSFillerTraycat1, ddlMFSFillerTraycat2, ddlMFSFillerTraycat3, null, null, chkBox.Checked);
+                HandleDropDownListVisibility(ddlMFSFillerTraycat1, ddlMFSFillerTraycat2, ddlMFSFillerTraycat3, null, txtMFSFillerTraycat4, chkBox.Checked);
                 break;
 
             case "ChkMFSFrontDoor":
@@ -11324,7 +11354,7 @@ public partial class Admin_Quotation : System.Web.UI.Page
                 break;
 
             case "ChkMFSLock":
-                HandleDropDownListVisibility(ddlMFSLockcat1, null, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility(ddlMFSLockcat1, null, null, null, txtmsfqty, chkBox.Checked);
                 break;
 
             case "ChkMFSRearCover":
@@ -11340,7 +11370,7 @@ public partial class Admin_Quotation : System.Web.UI.Page
                 break;
 
             case "ChkMFSPowerCoatingShade":
-                HandleDropDownListVisibility(ddlMFSPowerCoatingShadecat1, null, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility(ddlMFSPowerCoatingShadecat1, null, null, null, txtMFSPowerCoatingShadecat2, chkBox.Checked);
                 break;
 
             case "ChkMFSLiftingArrangement":
@@ -11368,7 +11398,7 @@ public partial class Admin_Quotation : System.Web.UI.Page
                 break;
 
             case "ChkMFSfan":
-                HandleDropDownListVisibility(ddlMFSfancat1, null, null, null, null, chkBox.Checked);
+                HandleDropDownListVisibility(ddlMFSfancat1, null, null, null, txtMFSfancat2, chkBox.Checked);
                 break;
 
             case "ChkMFSAnyadditionalcomponent":
@@ -12230,10 +12260,236 @@ public partial class Admin_Quotation : System.Web.UI.Page
             //End Three Piece Desk
 
             // 13. Specify
+            case "ChkSpecify1":
+                HandleDropDownListVisibility(null, null, null, null, null, chkBox.Checked);
+                bool check11 = chkBox.Checked;
+                txtspecify1cat1.Enabled = check11;
+                txtspecify1cat2.Enabled = check11;
+                txtspecify1cat3.Enabled = check11;
+
+                if (check11 != true)
+                {
+                    txtspecify1cat1.Text = "";
+                    txtspecify1cat2.Text = "";
+                    txtspecify1cat3.Text = "";
+                }
+                break;
+
+            case "ChkSpecify2":
+                HandleDropDownListVisibility(null, null, null, null, null, chkBox.Checked);
+                bool check12 = chkBox.Checked;
+                txtspecify2cat1.Enabled = check12;
+                txtspecify2cat2.Enabled = check12;
+                txtspecify2cat3.Enabled = check12;
+
+                if (check12 != true)
+                {
+                    txtspecify2cat1.Text = "";
+                    txtspecify2cat2.Text = "";
+                    txtspecify2cat3.Text = "";
+                }
+                break;
+
+            case "ChkSpecify3":
+                HandleDropDownListVisibility(null, null, null, null, null, chkBox.Checked);
+                bool check13 = chkBox.Checked;
+                txtspecify3cat1.Enabled = check13;
+                txtspecify3cat2.Enabled = check13;
+                txtspecify3cat3.Enabled = check13;
+
+                if (check13 != true)
+                {
+                    txtspecify3cat1.Text = "";
+                    txtspecify3cat2.Text = "";
+                    txtspecify3cat3.Text = "";
+                }
+                break;
+
+            case "ChkSpecify4":
+                HandleDropDownListVisibility(null, null, null, null, null, chkBox.Checked);
+                bool check14 = chkBox.Checked;
+                txtspecify4cat1.Enabled = check14;
+                txtspecify4cat2.Enabled = check14;
+                txtspecify4cat3.Enabled = check14;
+
+                if (check14 != true)
+                {
+                    txtspecify4cat1.Text = "";
+                    txtspecify4cat2.Text = "";
+                    txtspecify4cat3.Text = "";
+                }
+                break;
+
+            case "ChkSpecify5":
+                HandleDropDownListVisibility(null, null, null, null, null, chkBox.Checked);
+                bool check15 = chkBox.Checked;
+                txtspecify5cat1.Enabled = check15;
+                txtspecify5cat2.Enabled = check15;
+                txtspecify5cat3.Enabled = check15;
+
+                if (check15 != true)
+                {
+                    txtspecify5cat1.Text = "";
+                    txtspecify5cat2.Text = "";
+                    txtspecify5cat3.Text = "";
+                }
+                break;
+
+            case "ChkSpecify6":
+                HandleDropDownListVisibility(null, null, null, null, null, chkBox.Checked);
+                bool check16 = chkBox.Checked;
+                txtspecify6cat1.Enabled = check16;
+                txtspecify6cat2.Enabled = check16;
+                txtspecify6cat3.Enabled = check16;
+
+                if (check16 != true)
+                {
+                    txtspecify6cat1.Text = "";
+                    txtspecify6cat2.Text = "";
+                    txtspecify6cat3.Text = "";
+                }
+                break;
+
+            case "ChkSpecify7":
+                HandleDropDownListVisibility(null, null, null, null, null, chkBox.Checked);
+                bool check17 = chkBox.Checked;
+                txtspecify7cat1.Enabled = check17;
+                txtspecify7cat2.Enabled = check17;
+                txtspecify7cat3.Enabled = check17;
+
+                if (check17 != true)
+                {
+                    txtspecify7cat1.Text = "";
+                    txtspecify7cat2.Text = "";
+                    txtspecify7cat3.Text = "";
+                }
+                break;
+
+            case "ChkSpecify8":
+                HandleDropDownListVisibility(null, null, null, null, null, chkBox.Checked);
+                bool check18 = chkBox.Checked;
+                txtspecify8cat1.Enabled = check18;
+                txtspecify8cat2.Enabled = check18;
+                txtspecify8cat3.Enabled = check18;
+
+                if (check18 != true)
+                {
+                    txtspecify7cat1.Text = "";
+                    txtspecify7cat2.Text = "";
+                    txtspecify7cat3.Text = "";
+                }
+                break;
+
+            case "ChkSpecify9":
+                HandleDropDownListVisibility(null, null, null, null, null, chkBox.Checked);
+                bool check19 = chkBox.Checked;
+                txtspecify9cat1.Enabled = check19;
+                txtspecify9cat2.Enabled = check19;
+                txtspecify9cat3.Enabled = check19;
+
+                if (check19 != true)
+                {
+                    txtspecify9cat1.Text = "";
+                    txtspecify9cat2.Text = "";
+                    txtspecify9cat3.Text = "";
+                }
+                break;
+
+            case "ChkSpecify10":
+                HandleDropDownListVisibility(null, null, null, null, null, chkBox.Checked);
+                bool check20 = chkBox.Checked;
+                txtspecify10cat1.Enabled = check20;
+                txtspecify10cat2.Enabled = check20;
+                txtspecify10cat3.Enabled = check20;
+
+                if (check20 != true)
+                {
+                    txtspecify10cat1.Text = "";
+                    txtspecify10cat2.Text = "";
+                    txtspecify10cat3.Text = "";
+                }
+                break;
+
+            case "ChkSpecify11":
+                HandleDropDownListVisibility(null, null, null, null, null, chkBox.Checked);
+                bool check21 = chkBox.Checked;
+                txtspecify11cat1.Enabled = check21;
+                txtspecify11cat2.Enabled = check21;
+                txtspecify11cat3.Enabled = check21;
+
+                if (check21 != true)
+                {
+                    txtspecify11cat1.Text = "";
+                    txtspecify11cat2.Text = "";
+                    txtspecify11cat3.Text = "";
+                }
+                break;
+
+            case "ChkSpecify12":
+                HandleDropDownListVisibility(null, null, null, null, null, chkBox.Checked);
+                bool check22 = chkBox.Checked;
+                txtspecify12cat1.Enabled = check22;
+                txtspecify12cat2.Enabled = check22;
+                txtspecify12cat3.Enabled = check22;
+
+                if (check22 != true)
+                {
+                    txtspecify12cat1.Text = "";
+                    txtspecify12cat2.Text = "";
+                    txtspecify12cat3.Text = "";
+                }
+                break;
+
+            case "ChkSpecify13":
+                HandleDropDownListVisibility(null, null, null, null, null, chkBox.Checked);
+                bool check23 = chkBox.Checked;
+                txtspecify13cat1.Enabled = check23;
+                txtspecify13cat2.Enabled = check23;
+                txtspecify13cat3.Enabled = check23;
+
+                if (check23 != true)
+                {
+                    txtspecify13cat1.Text = "";
+                    txtspecify13cat2.Text = "";
+                    txtspecify13cat3.Text = "";
+                }
+                break;
+
+            case "ChkSpecify14":
+                HandleDropDownListVisibility(null, null, null, null, null, chkBox.Checked);
+                bool check24 = chkBox.Checked;
+                txtspecify14cat1.Enabled = check24;
+                txtspecify14cat2.Enabled = check24;
+                txtspecify14cat3.Enabled = check24;
+
+                if (check24 != true)
+                {
+                    txtspecify14cat1.Text = "";
+                    txtspecify14cat2.Text = "";
+                    txtspecify14cat3.Text = "";
+                }
+                break;
+
+            case "ChkSpecify15":
+                HandleDropDownListVisibility(null, null, null, null, null, chkBox.Checked);
+                bool check25 = chkBox.Checked;
+                txtspecify15cat1.Enabled = check25;
+                txtspecify15cat2.Enabled = check25;
+                txtspecify15cat3.Enabled = check25;
+
+                if (check25 != true)
+                {
+                    txtspecify15cat1.Text = "";
+                    txtspecify15cat2.Text = "";
+                    txtspecify15cat3.Text = "";
+                }
+                break;
+                // End Specify
 
 
 
         }
+
         this.modelprofile.Show();
 
     }
@@ -12267,6 +12523,52 @@ public partial class Admin_Quotation : System.Web.UI.Page
         {
             ttb1.Enabled = isChecked;
             ttb1.Text = "";
+        }
+
+    }
+
+    private void HandleDropDownListVisibility1(DropDownList ddl1, DropDownList ddl2, DropDownList ddl3, DropDownList ddl4, TextBox ttb1, RequiredFieldValidator req1, RequiredFieldValidator req2, RequiredFieldValidator req3, RequiredFieldValidator req4, bool isChecked)
+    {
+        if (ddl1 != null)
+        {
+            ddl1.Enabled = isChecked;
+            ddl1.SelectedIndex = 0;
+        }
+        if (ddl2 != null)
+        {
+            ddl2.Enabled = isChecked;
+            ddl2.SelectedIndex = 0;
+        }
+        if (ddl3 != null)
+        {
+            ddl3.Enabled = isChecked;
+            ddl3.SelectedIndex = 0;
+        }
+        if (ddl4 != null)
+        {
+            ddl4.Enabled = isChecked;
+            ddl4.SelectedIndex = 0;
+        }
+        if (ttb1 != null)
+        {
+            ttb1.Enabled = isChecked;
+            ttb1.Text = "";
+        }
+        if (req1 != null)
+        {
+            req1.Enabled = isChecked;
+        }
+        if (req2 != null)
+        {
+            req2.Enabled = isChecked;
+        }
+        if (req3 != null)
+        {
+            req3.Enabled = isChecked;
+        }
+        if (req4 != null)
+        {
+            req4.Enabled = isChecked;
         }
 
     }
