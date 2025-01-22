@@ -64,10 +64,30 @@ public partial class Admin_LaserProgramming : System.Web.UI.Page
         {
             string query = string.Empty;
 
-            query = @"SELECT [LaserProgId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
-                [DeliveryDate],[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],[UpdatedDate] 
-                FROM [dbo].[tblLaserPrograming]
-                where IsApprove=1 and IsComplete is null order by CONVERT(DateTime, DeliveryDate,103) asc";
+            query = @"SELECT [LaserProgId],
+       [OANumber],
+       [SubOA],
+        LP.[CustomerName],
+       [Size],
+       [TotalQty],
+       [InwardDtTime],
+       [InwardQty],
+       [OutwardDtTime],
+       [OutwardQty],
+       [DeliveryDate],
+       [IsApprove],
+       [IsPending],
+       [IsCancel],
+       LP.[CreatedBy],
+       [CreatedDate],
+       LP.[UpdatedBy],
+       [UpdatedDate],
+	   o.CreatedOn AS OACreationDate
+FROM [dbo].[tblLaserPrograming] AS LP
+left join orderaccept AS O ON LP.oanumber=o.oano
+where IsApprove = 1
+      and IsComplete is null
+order by CONVERT(DateTime, DeliveryDate, 103) asc";
 
 
             SqlDataAdapter ad = new SqlDataAdapter(query, con);
@@ -927,13 +947,30 @@ public partial class Admin_LaserProgramming : System.Web.UI.Page
         {
             string query = string.Empty;
 
-            query = @"SELECT [LaserProgId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
-                [DeliveryDate],[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],[UpdatedDate] 
-                FROM [dbo].[tblLaserPrograming]
-                WHERE IsApprove = 1
-                AND CustomerName LIKE '" + txtCustName.Text.Trim() + @"%'
-                AND IsComplete IS NULL 
-                ORDER BY CONVERT(DateTime, DeliveryDate, 103) ASC";
+            query = @"SELECT [LaserProgId],
+       [OANumber],
+       [SubOA],
+        LP.[CustomerName],
+       [Size],
+       [TotalQty],
+       [InwardDtTime],
+       [InwardQty],
+       [OutwardDtTime],
+       [OutwardQty],
+       [DeliveryDate],
+       [IsApprove],
+       [IsPending],
+       [IsCancel],
+       LP.[CreatedBy],
+       [CreatedDate],
+       LP.[UpdatedBy],
+       [UpdatedDate],
+	   o.CreatedOn AS OACreationDate
+FROM [dbo].[tblLaserPrograming] AS LP
+left join orderaccept AS O ON LP.oanumber=o.oano
+where IsApprove = 1
+      and IsComplete is null
+AND LP.[CustomerName] LIKE '" + txtCustName.Text.Trim() + @"%' order by CONVERT(DateTime, DeliveryDate, 103) asc";
 
 
 

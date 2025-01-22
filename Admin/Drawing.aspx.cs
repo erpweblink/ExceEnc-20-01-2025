@@ -72,7 +72,7 @@ public partial class Admin_Drawing : System.Web.UI.Page
             //            query = @"SELECT [VWID],[id] as mainID, [OAno],[currentdate],[customername],[deliverydatereqbycust],[IsDrawingcomplete],[Description],[Qty],[Price],[Discount]
             //,[TotalAmount],[CGST],[SGST],[IGST],[SubOANumber] FROM vwOrderAccept where IsComplete is null order by deliverydatereqbycust asc";
 
-            query = @"SELECT [pono],[id] as mainID,[OANumber],[Size],[TotalQty],[InwardDtTime],[InwardQty],[deliverydatereqbycust],[customername],SubOA
+            query = @"SELECT [pono],[id] as mainID,[OANumber],[Size],[TotalQty],OACreationDate,[InwardDtTime],[InwardQty],[deliverydatereqbycust],[customername],SubOA
                FROM [ExcelEncLive].[vwDrawerCreation] where IsComplete is null order by deliverydatereqbycust asc";
 
             SqlDataAdapter ad = new SqlDataAdapter(query, con);
@@ -765,7 +765,7 @@ public partial class Admin_Drawing : System.Web.UI.Page
             //            query = @"SELECT [VWID],[id] as mainID, [OAno],[currentdate],[customername],[deliverydatereqbycust],[IsDrawingcomplete],[Description],[Qty],[Price],[Discount]
             //,[TotalAmount],[CGST],[SGST],[IGST],[SubOANumber] FROM vwOrderAccept where IsComplete is null order by deliverydatereqbycust asc";
 
-            query = @"SELECT [pono],[id] as mainID,[OANumber],[Size],[TotalQty],[InwardDtTime],[InwardQty],[deliverydatereqbycust],[customername],SubOA
+            query = @"SELECT [pono],[id] as mainID,[OANumber],[Size],[TotalQty],OACreationDate,[InwardDtTime],[InwardQty],[deliverydatereqbycust],[customername],SubOA
                FROM [ExcelEncLive].[vwDrawerCreation] where IsComplete is null and customername like '" + txtCustomerName.Text.Trim() + "%'   order by deliverydatereqbycust asc";
 
             SqlDataAdapter ad = new SqlDataAdapter(query, con);

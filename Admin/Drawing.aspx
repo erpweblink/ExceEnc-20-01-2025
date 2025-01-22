@@ -419,7 +419,7 @@
                                     <asp:LinkButton ID="btnexcel" runat="server" CssClass="btn btn-small   btn-success " OnClick="btnexcel_Click" OnClientClick="aspnetForm.target ='_blank';"><i class="fa fa-download" aria-hidden="true"></i>&nbsp;Export Excel</asp:LinkButton>
                                 </div>
 
-                                
+
 
                                 <div class="col-md-2" id="btnshowhide">
                                     <asp:LinkButton ID="btnGetSelected" runat="server" CssClass="btn btn-small btn-primary" OnClick="GetSelectedRecords" OnClientClick="this.Enable=true; this.innerHTML='Processing...';"><i class="fa fa-angle-double-right"></i>&nbsp;Approve & Send</asp:LinkButton>
@@ -525,6 +525,11 @@
                                                             <asp:Label ID="lblSubOANumber" runat="server" Text='<%# Eval("SubOA") %>' Visible="false"></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="OA Creation Date" ItemStyle-Width="150" ItemStyle-HorizontalAlign="Center" Visible="true">
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="lblOAcreationDate" runat="server" Text='<%# Eval("OACreationDate","{0:dd/MM/yyyy}")%>'></asp:Label>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="Customer Name" ItemStyle-Width="150" ItemStyle-HorizontalAlign="Center" Visible="true">
                                                         <ItemTemplate>
                                                             <asp:TextBox runat="server" ID="lblCustName" ReadOnly="true" TextMode="MultiLine" Rows="4" Width="130" CssClass="form-control" Text='<%# Eval("customername") %>'></asp:TextBox>
@@ -568,7 +573,7 @@
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="OutQty" ItemStyle-Width="150" ItemStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
-                                                            <asp:TextBox runat="server" ID="txtOutwardQty" Width="60"  AutoPostBack="false" CssClass="form-control" Text='<%# Eval("InwardQty") %>'></asp:TextBox>
+                                                            <asp:TextBox runat="server" ID="txtOutwardQty" Width="60" AutoPostBack="false" CssClass="form-control" Text='<%# Eval("InwardQty") %>'></asp:TextBox>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
 
@@ -647,7 +652,9 @@
                                     </Columns>
                                 </asp:GridView>
 
-                                <center><asp:Label ID="lblnodatafoundComp" runat="server" Text="" Visible="false" CssClass="lblboldred"></asp:Label></center>
+                                <center>
+                                    <asp:Label ID="lblnodatafoundComp" runat="server" Text="" Visible="false" CssClass="lblboldred"></asp:Label>
+                                </center>
 
                             </div>
                         </div>

@@ -17,7 +17,7 @@ using System.Web;
 using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Globalization; 
+using System.Globalization;
 
 
 public partial class Admin_Stock : System.Web.UI.Page
@@ -65,9 +65,11 @@ public partial class Admin_Stock : System.Web.UI.Page
         {
             string query = string.Empty;
 
-            query = @"SELECT [StockId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],
-            [OutwardDtTime],[OutwardQty],[DeliveryDate],[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],
-            [UpdatedDate],[IsComplete] FROM tblStock where IsComplete is null order by CONVERT(DateTime, DeliveryDate,103) asc";
+            query = @"SELECT [StockId],[OANumber],[SubOA],LP.[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],
+            [OutwardDtTime],[OutwardQty],[DeliveryDate],[IsApprove],[IsPending],[IsCancel],LP.[CreatedBy],[CreatedDate],LP.[UpdatedBy],
+            [UpdatedDate],[IsComplete], o.CreatedOn AS OACreationDate FROM tblStock AS LP
+left join orderaccept AS O ON LP.oanumber=o.oano
+where IsComplete is null order by CONVERT(DateTime, DeliveryDate,103) asc";
 
             DataTable dt = GetData(query);
             if (dt.Rows.Count > 0)
@@ -251,7 +253,7 @@ public partial class Admin_Stock : System.Web.UI.Page
                                    row["size"].ToString(),
                                    row["totalinward"].ToString(),
                                    DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture),
-												//DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"),
+                                   //DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"),
                                    row["outwardqty"].ToString(),
                                    //DateTime.Now,
                                    //row["outwardqty"].ToString(),
@@ -559,8 +561,8 @@ public partial class Admin_Stock : System.Web.UI.Page
 
                 if (OutwardQty == 0)
                 {
-                   // GetRecords();
-					String SubOa = hdnSubOANo.Value;
+                    // GetRecords();
+                    String SubOa = hdnSubOANo.Value;
                     GetRecords(SubOa);
                 }
 
@@ -656,9 +658,12 @@ public partial class Admin_Stock : System.Web.UI.Page
         {
             string query = string.Empty;
 
-            query = @"SELECT [StockId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],
-            [OutwardDtTime],[OutwardQty],[DeliveryDate],[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],
-            [UpdatedDate],[IsComplete] FROM tblStock where IsComplete is null and CustomerName like '" + txtCustomerNameNew.Text.Trim() + "%' order by CONVERT(DateTime, DeliveryDate,103) asc";
+            query = @"SELECT [StockId],[OANumber],[SubOA],LP.[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],
+            [OutwardDtTime],[OutwardQty],[DeliveryDate],[IsApprove],[IsPending],[IsCancel],LP.[CreatedBy],[CreatedDate],LP.[UpdatedBy],
+            [UpdatedDate],[IsComplete], o.CreatedOn AS OACreationDate FROM tblStock AS LP
+               left join orderaccept AS O ON LP.oanumber=o.oano
+                 where IsComplete is null
+          and LP.CustomerName like '" + txtCustomerNameNew.Text.Trim() + "%' order by CONVERT(DateTime, DeliveryDate,103) asc";
 
             DataTable dt = GetData(query);
             if (dt.Rows.Count > 0)
@@ -891,7 +896,7 @@ public partial class Admin_Stock : System.Web.UI.Page
             cmd.Parameters.AddWithValue("@Action", "Insert");
             cmd.Parameters.AddWithValue("@Currentstages", "tblStock");
             cmd.Parameters.AddWithValue("@prevousStage", "tblFinalAssembly");
-			cmd.Parameters.AddWithValue("@SubOa", SubOa);
+            cmd.Parameters.AddWithValue("@SubOa", SubOa);
             cmd.ExecuteNonQuery();
         }
         catch (Exception Ex)

@@ -376,7 +376,7 @@
 
                                 </div>
 
-                                
+
 
                                 <div class="col-md-6">
                                     <div class="row" runat="server" visible="false">
@@ -471,6 +471,11 @@
                                                         <ItemTemplate>
                                                             <asp:Label ID="lblOANumber" runat="server" Text='<%# Eval("OANumber") %>'></asp:Label>
                                                             <asp:Label ID="lblSubOANumberr" runat="server" Text='<%# Eval("SubOA") %>' Visible="false"></asp:Label>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="OA Creation Date" ItemStyle-Width="150" ItemStyle-HorizontalAlign="Center" Visible="true">
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="lblOAcreationDate" runat="server" Text='<%# Eval("OACreationDate","{0:dd/MM/yyyy}")%>'></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="Customer Name" ItemStyle-Width="150" ItemStyle-HorizontalAlign="Center" Visible="true">

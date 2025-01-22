@@ -62,9 +62,10 @@ public partial class Admin_LaserCutting : System.Web.UI.Page
         {
             string query = string.Empty;
 
-            query = @"SELECT [LaserCutId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
-                [DeliveryDate],[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],[UpdatedDate] 
-                FROM tblLaserCutting
+            query = @"SELECT [LaserCutId],[OANumber],[SubOA],LC.[CustomerName],o.CreatedOn AS OACreationDate,[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
+                [DeliveryDate],[IsApprove],[IsPending],[IsCancel],LC.[CreatedBy],[CreatedDate],LC.[UpdatedBy],[UpdatedDate] 
+                FROM tblLaserCutting AS LC
+				left join orderaccept AS O ON LC.oanumber=o.oano
                 where IsComplete is null order by CONVERT(DateTime, DeliveryDate,103) asc";
 
 
@@ -682,12 +683,13 @@ public partial class Admin_LaserCutting : System.Web.UI.Page
         try
         {
             string query = string.Empty;
-            query = @"SELECT [LaserCutId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
-                [DeliveryDate],[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],[UpdatedDate] 
-                FROM tblLaserCutting
-                WHERE IsComplete IS NULL
-                AND CustomerName LIKE '" + txtcustomernew.Text.Trim() + @"%'
-                ORDER BY CONVERT(DateTime, DeliveryDate, 103) ASC";
+            query = @"SELECT [LaserCutId],[OANumber],[SubOA],LC.[CustomerName],o.CreatedOn AS OACreationDate,[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
+                [DeliveryDate],[IsApprove],[IsPending],[IsCancel],LC.[CreatedBy],[CreatedDate],LC.[UpdatedBy],[UpdatedDate] 
+                FROM tblLaserCutting AS LC
+				left join orderaccept AS O ON LC.oanumber=o.oano
+                where IsComplete is null  AND LC.CustomerName LIKE '" + txtcustomernew.Text.Trim() + @"%'
+order by CONVERT(DateTime, DeliveryDate,103) asc";
+               
 
 
 

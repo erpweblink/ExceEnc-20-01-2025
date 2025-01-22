@@ -62,10 +62,13 @@ public partial class Admin_PowderCoating : System.Web.UI.Page
         {
             string query = string.Empty;
 
-            query = @"SELECT [PowdercoatId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
-                [DeliveryDate],[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],[UpdatedDate] 
-                FROM tblPowderCoating
-                where IsComplete is null order by CONVERT(DateTime, DeliveryDate,103) asc";
+            query = @"SELECT [PowdercoatId],[OANumber],[SubOA],LP.[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
+                [DeliveryDate],[IsApprove],[IsPending],[IsCancel],LP.[CreatedBy],[CreatedDate],LP.[UpdatedBy],[UpdatedDate] 
+              , o.CreatedOn AS OACreationDate  FROM tblPowderCoating AS LP
+left join orderaccept AS O ON LP.oanumber=o.oano
+                where IsComplete is null 
+				
+				order by CONVERT(DateTime, DeliveryDate,103) asc";
 
 
             SqlDataAdapter ad = new SqlDataAdapter(query, con);
@@ -754,10 +757,11 @@ public partial class Admin_PowderCoating : System.Web.UI.Page
         {
             string query = string.Empty;
 
-            query = @"SELECT [PowdercoatId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
-                [DeliveryDate],[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],[UpdatedDate] 
-                FROM tblPowderCoating
-                where IsComplete is null and customername like '" + txtCustomerNameNew.Text.Trim() + "%'  order by CONVERT(DateTime, DeliveryDate,103) asc";
+            query = @"SELECT [PowdercoatId],[OANumber],[SubOA],LP.[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
+                [DeliveryDate],[IsApprove],[IsPending],[IsCancel],LP.[CreatedBy],[CreatedDate],LP.[UpdatedBy],[UpdatedDate] 
+              , o.CreatedOn AS OACreationDate  FROM tblPowderCoating AS LP
+left join orderaccept AS O ON LP.oanumber=o.oano
+                where IsComplete is null AND LP.customername like '" + txtCustomerNameNew.Text.Trim() + "%'  order by CONVERT(DateTime, DeliveryDate,103) asc";
 
 
             SqlDataAdapter ad = new SqlDataAdapter(query, con);
