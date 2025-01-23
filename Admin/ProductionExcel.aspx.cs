@@ -14,7 +14,7 @@ public partial class Admin_ProductionExcel : System.Web.UI.Page
     SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString);
 
     protected void Page_Load(object sender, EventArgs e)
-     {
+    {
         if (Session["name"] == null)
         {
             Response.Redirect("../Login.aspx");
@@ -23,28 +23,28 @@ public partial class Admin_ProductionExcel : System.Web.UI.Page
         {
             if (!IsPostBack)
             {
-                
+
                 if (Request.QueryString["Dep"] != null)
                 {
                     string Dep = Server.UrlDecode(Request.QueryString["Dep"]);
                     string Customer = Server.UrlDecode(Request.QueryString["Customer"]);
                     if (Customer == null && Dep == "Drawaing")
                     {
-                        
+
                         GetDrawingData();
                     }
                     else if (Customer != null && Dep == "Drawaing")
                     {
                         ViewState["Customer"] = Customer.ToString();
                         GetDrawingDataCustomerwise();
-                        
+
                     }
-                    else if(Customer == null && Dep == "Laser")
+                    else if (Customer == null && Dep == "Laser")
                     {
 
                         GetLaserData();
                     }
-                    else if(Customer != null && Dep == "Laser")
+                    else if (Customer != null && Dep == "Laser")
                     {
                         ViewState["Customer"] = Customer.ToString();
                         GetLaserDataCustomerwise();
@@ -143,7 +143,7 @@ public partial class Admin_ProductionExcel : System.Web.UI.Page
             //            query = @"SELECT [VWID],[id] as mainID, [OAno],[currentdate],[customername],[deliverydatereqbycust],[IsDrawingcomplete],[Description],[Qty],[Price],[Discount]
             //,[TotalAmount],[CGST],[SGST],[IGST],[SubOANumber] FROM vwOrderAccept where IsComplete is null order by deliverydatereqbycust asc";
 
-            query = @"SELECT [pono],[id] as mainID,[OANumber],[Size],[TotalQty],[InwardDtTime],[InwardQty], [InwardQty] As OutwardQty ,[deliverydatereqbycust],[customername],SubOA
+            query = @"SELECT [pono],[id] as mainID,[OANumber],[Size],Basic,OACreationDate,[TotalQty],[InwardDtTime],[InwardQty], [InwardQty] As OutwardQty ,[deliverydatereqbycust],[customername],SubOA
                FROM [ExcelEncLive].[vwDrawerCreation] where IsComplete is null order by deliverydatereqbycust asc";
 
             SqlDataAdapter ad = new SqlDataAdapter(query, con);
@@ -179,10 +179,35 @@ public partial class Admin_ProductionExcel : System.Web.UI.Page
         try
         {
             string query = string.Empty;
-            query = @"SELECT [LaserProgId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
-                [DeliveryDate] As deliverydatereqbycust,[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],[UpdatedDate] 
-                FROM [dbo].[tblLaserPrograming]
-                where IsApprove=1 and IsComplete is null order by CONVERT(DateTime, DeliveryDate,103) asc";
+            query = @"
+
+SELECT [LaserProgId],
+       [OANumber],
+       [SubOA],
+        LP.[CustomerName],
+       [Size],
+       [TotalQty],
+       [InwardDtTime],
+       [InwardQty],
+       [OutwardDtTime],
+       [OutwardQty],
+       [DeliveryDate]  As deliverydatereqbycust,
+       [IsApprove],
+       [IsPending],
+       [IsCancel],
+       LP.[CreatedBy],
+       [CreatedDate],
+       LP.[UpdatedBy],
+       [UpdatedDate],
+	   o.CreatedOn AS OACreationDate,
+	    (Try_CAST(OA.Qty AS DECIMAL(10, 2)) * Try_CAST(OA.Price AS DECIMAL(10, 2))) AS Basic
+
+FROM [dbo].[tblLaserPrograming] AS LP
+left join orderaccept AS O ON LP.oanumber=o.oano
+left join ExcelEncLive.OrderAcceptDtls AS OA ON  LP.SubOA=OA.SubOANumber
+where IsApprove = 1
+      and LP.IsComplete is null
+order by CONVERT(DateTime, DeliveryDate, 103) asc";
 
             SqlDataAdapter ad = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
@@ -217,10 +242,33 @@ public partial class Admin_ProductionExcel : System.Web.UI.Page
         try
         {
             string query = string.Empty;
-            query = @"SELECT [LaserCutId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
-                [DeliveryDate]  As deliverydatereqbycust,[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],[UpdatedDate] 
-                FROM tblLaserCutting
-                where IsComplete is null order by CONVERT(DateTime, DeliveryDate,103) asc";
+            query = @"SELECT LaserCutId,
+       [OANumber],
+       [SubOA],
+        LP.[CustomerName],
+       [Size],
+       [TotalQty],
+       [InwardDtTime],
+       [InwardQty],
+       [OutwardDtTime],
+       [OutwardQty],
+       [DeliveryDate]  As deliverydatereqbycust,
+       [IsApprove],
+       [IsPending],
+       [IsCancel],
+       LP.[CreatedBy],
+       [CreatedDate],
+       LP.[UpdatedBy],
+       [UpdatedDate],
+	   o.CreatedOn AS OACreationDate,
+	    (Try_CAST(OA.Qty AS DECIMAL(10, 2)) * Try_CAST(OA.Price AS DECIMAL(10, 2))) AS Basic
+
+FROM [dbo].tblLaserCutting AS LP
+left join orderaccept AS O ON LP.oanumber=o.oano
+left join ExcelEncLive.OrderAcceptDtls AS OA ON  LP.SubOA=OA.SubOANumber
+where IsApprove = 1
+      and LP.IsComplete is null 
+order by CONVERT(DateTime, DeliveryDate, 103) asc";
 
             SqlDataAdapter ad = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
@@ -255,10 +303,18 @@ public partial class Admin_ProductionExcel : System.Web.UI.Page
         try
         {
             string query = string.Empty;
-            query = @"SELECT [CNCBendingId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
-                [DeliveryDate] As deliverydatereqbycust,[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],[UpdatedDate] 
-                FROM tblCNCBending
-                where IsComplete is null order by CONVERT(DateTime, DeliveryDate,103) asc";
+            query = @"SELECT [CNCBendingId],[OANumber],[SubOA],LP.[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
+                [DeliveryDate] As deliverydatereqbycust,[IsApprove],[IsPending],[IsCancel],LP.[CreatedBy],[CreatedDate],LP.[UpdatedBy],[UpdatedDate] ,
+             
+                 o.CreatedOn AS OACreationDate,
+	    (Try_CAST(OA.Qty AS DECIMAL(10, 2)) * Try_CAST(OA.Price AS DECIMAL(10, 2))) AS Basic
+
+FROM [dbo].tblCNCBending AS LP
+left join orderaccept AS O ON LP.oanumber=o.oano
+left join ExcelEncLive.OrderAcceptDtls AS OA ON  LP.SubOA=OA.SubOANumber
+where IsApprove = 1
+      and LP.IsComplete is null 
+order by CONVERT(DateTime, DeliveryDate, 103) asc";
 
             SqlDataAdapter ad = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
@@ -293,10 +349,17 @@ public partial class Admin_ProductionExcel : System.Web.UI.Page
         try
         {
             string query = string.Empty;
-            query = @"SELECT [WeldingId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
-                [DeliveryDate] As deliverydatereqbycust,[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],[UpdatedDate] 
-                FROM tblWelding where IsComplete is null
-                order by CONVERT(DateTime, DeliveryDate,103) asc";
+            query = @"SELECT [WeldingId],[OANumber],[SubOA], LP.[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
+                [DeliveryDate] As deliverydatereqbycust,[IsApprove],[IsPending],[IsCancel], LP.[CreatedBy],[CreatedDate], LP.[UpdatedBy],[UpdatedDate] ,
+                  o.CreatedOn AS OACreationDate,
+	    (Try_CAST(OA.Qty AS DECIMAL(10, 2)) * Try_CAST(OA.Price AS DECIMAL(10, 2))) AS Basic
+
+FROM [dbo].tblWelding AS LP
+left join orderaccept AS O ON LP.oanumber=o.oano
+left join ExcelEncLive.OrderAcceptDtls AS OA ON  LP.SubOA=OA.SubOANumber
+where IsApprove = 1
+      and LP.IsComplete is null 
+order by CONVERT(DateTime, DeliveryDate, 103) asc";
 
             SqlDataAdapter ad = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
@@ -332,10 +395,18 @@ public partial class Admin_ProductionExcel : System.Web.UI.Page
         {
             string query = string.Empty;
 
-            query = @"SELECT [PowdercoatId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
-                [DeliveryDate] As deliverydatereqbycust,[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],[UpdatedDate] 
-                FROM tblPowderCoating
-                where IsComplete is null order by CONVERT(DateTime, DeliveryDate,103) asc";
+            query = @"SELECT PowdercoatId,[OANumber],[SubOA],LP.[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
+                [DeliveryDate] As deliverydatereqbycust,[IsApprove],[IsPending],[IsCancel],LP.[CreatedBy],[CreatedDate],LP.[UpdatedBy],[UpdatedDate] ,
+             
+                 o.CreatedOn AS OACreationDate,
+	    (Try_CAST(OA.Qty AS DECIMAL(10, 2)) * Try_CAST(OA.Price AS DECIMAL(10, 2))) AS Basic
+
+FROM [dbo].tblPowderCoating AS LP
+left join orderaccept AS O ON LP.oanumber=o.oano
+left join ExcelEncLive.OrderAcceptDtls AS OA ON  LP.SubOA=OA.SubOANumber
+where IsApprove = 1
+      and LP.IsComplete is null 
+order by CONVERT(DateTime, DeliveryDate, 103) asc";
 
             SqlDataAdapter ad = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
@@ -371,10 +442,18 @@ public partial class Admin_ProductionExcel : System.Web.UI.Page
         {
             string query = string.Empty;
 
-            query = @"SELECT [FinalAssemblyId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
-                [DeliveryDate] As deliverydatereqbycust,[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],[UpdatedDate] 
-                FROM tblfinalassembly
-                where IsComplete is null order by CONVERT(DateTime, DeliveryDate,103) asc";
+            query = @"SELECT FinalAssemblyId,[OANumber],[SubOA],LP.[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
+                [DeliveryDate] As deliverydatereqbycust,[IsApprove],[IsPending],[IsCancel],LP.[CreatedBy],[CreatedDate],LP.[UpdatedBy],[UpdatedDate] ,
+             
+                 o.CreatedOn AS OACreationDate,
+	    (Try_CAST(OA.Qty AS DECIMAL(10, 2)) * Try_CAST(OA.Price AS DECIMAL(10, 2))) AS Basic
+
+FROM [dbo].tblfinalassembly AS LP
+left join orderaccept AS O ON LP.oanumber=o.oano
+left join ExcelEncLive.OrderAcceptDtls AS OA ON  LP.SubOA=OA.SubOANumber
+where IsApprove = 1
+      and LP.IsComplete is null 
+order by CONVERT(DateTime, DeliveryDate, 103) asc";
 
             SqlDataAdapter ad = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
@@ -410,9 +489,18 @@ public partial class Admin_ProductionExcel : System.Web.UI.Page
         {
             string query = string.Empty;
 
-            query = @"SELECT [StockId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],
-            [OutwardDtTime],[OutwardQty],[DeliveryDate] As deliverydatereqbycust,[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],
-            [UpdatedDate],[IsComplete] FROM tblStock where IsComplete is null order by CONVERT(DateTime, DeliveryDate,103) asc";
+            query = @"SELECT StockId,[OANumber],[SubOA],LP.[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
+                [DeliveryDate] As deliverydatereqbycust,[IsApprove],[IsPending],[IsCancel],LP.[CreatedBy],[CreatedDate],LP.[UpdatedBy],[UpdatedDate] ,
+             
+                 o.CreatedOn AS OACreationDate,
+	    (Try_CAST(OA.Qty AS DECIMAL(10, 2)) * Try_CAST(OA.Price AS DECIMAL(10, 2))) AS Basic
+
+FROM [dbo].tblStock AS LP
+left join orderaccept AS O ON LP.oanumber=o.oano
+left join ExcelEncLive.OrderAcceptDtls AS OA ON  LP.SubOA=OA.SubOANumber
+where IsApprove = 1
+      and LP.IsComplete is null 
+order by CONVERT(DateTime, DeliveryDate, 103) asc";
 
             SqlDataAdapter ad = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
@@ -453,7 +541,7 @@ public partial class Admin_ProductionExcel : System.Web.UI.Page
             //            query = @"SELECT [VWID],[id] as mainID, [OAno],[currentdate],[customername],[deliverydatereqbycust],[IsDrawingcomplete],[Description],[Qty],[Price],[Discount]
             //,[TotalAmount],[CGST],[SGST],[IGST],[SubOANumber] FROM vwOrderAccept where IsComplete is null order by deliverydatereqbycust asc";
 
-            query = @"SELECT [pono],[id] as mainID,[OANumber],[Size],[TotalQty],[InwardDtTime],[InwardQty],[deliverydatereqbycust],[customername],SubOA
+            query = @"SELECT [pono],[id] as mainID,[OANumber],[Size],[TotalQty],[InwardDtTime],Basic,OACreationDate,[InwardQty],[deliverydatereqbycust],[customername],SubOA
                FROM [ExcelEncLive].[vwDrawerCreation] where IsComplete is null and customername like '" + Customer + "%'   order by deliverydatereqbycust asc";
 
             SqlDataAdapter ad = new SqlDataAdapter(query, con);
@@ -491,13 +579,34 @@ public partial class Admin_ProductionExcel : System.Web.UI.Page
         {
             string query = string.Empty;
             String Customer = ViewState["Customer"].ToString();
-            query = @"SELECT [LaserProgId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
-                [DeliveryDate] As deliverydatereqbycust,[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],[UpdatedDate] 
-                FROM [dbo].[tblLaserPrograming]
-                WHERE IsApprove = 1
-                AND CustomerName LIKE '" + Customer + @"%'
-                AND IsComplete IS NULL 
-                ORDER BY CONVERT(DateTime, DeliveryDate, 103) ASC";
+            query = @"SELECT [LaserProgId],
+       [OANumber],
+       [SubOA],
+        LP.[CustomerName],
+       [Size],
+       [TotalQty],
+       [InwardDtTime],
+       [InwardQty],
+       [OutwardDtTime],
+       [OutwardQty],
+       [DeliveryDate]  As deliverydatereqbycust,
+       [IsApprove],
+       [IsPending],
+       [IsCancel],
+       LP.[CreatedBy],
+       [CreatedDate],
+       LP.[UpdatedBy],
+       [UpdatedDate],
+	   o.CreatedOn AS OACreationDate,
+	    (Try_CAST(OA.Qty AS DECIMAL(10, 2)) * Try_CAST(OA.Price AS DECIMAL(10, 2))) AS Basic
+
+FROM [dbo].[tblLaserPrograming] AS LP
+left join orderaccept AS O ON LP.oanumber=o.oano
+left join ExcelEncLive.OrderAcceptDtls AS OA ON  LP.SubOA=OA.SubOANumber
+                WHERE LP.IsApprove = 1
+                AND LP.CustomerName LIKE '" + Customer + @"%'
+                AND LP.IsComplete IS NULL 
+                ORDER BY CONVERT(DateTime, LP.DeliveryDate, 103) ASC";
 
             SqlDataAdapter ad = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
@@ -534,11 +643,32 @@ public partial class Admin_ProductionExcel : System.Web.UI.Page
         {
             string query = string.Empty;
             String Customer = ViewState["Customer"].ToString();
-            query = @"SELECT [LaserCutId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
-                [DeliveryDate] As deliverydatereqbycust,[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],[UpdatedDate] 
-                FROM tblLaserCutting
-                WHERE IsComplete IS NULL
-                AND CustomerName LIKE '" + Customer + @"%'
+            query = @"SELECT LaserCutId,
+       [OANumber],
+       [SubOA],
+        LP.[CustomerName],
+       [Size],
+       [TotalQty],
+       [InwardDtTime],
+       [InwardQty],
+       [OutwardDtTime],
+       [OutwardQty],
+       [DeliveryDate]  As deliverydatereqbycust,
+       [IsApprove],
+       [IsPending],
+       [IsCancel],
+       LP.[CreatedBy],
+       [CreatedDate],
+       LP.[UpdatedBy],
+       [UpdatedDate],
+	   o.CreatedOn AS OACreationDate,
+	    (Try_CAST(OA.Qty AS DECIMAL(10, 2)) * Try_CAST(OA.Price AS DECIMAL(10, 2))) AS Basic
+
+FROM [dbo].tblLaserCutting AS LP
+left join orderaccept AS O ON LP.oanumber=o.oano
+left join ExcelEncLive.OrderAcceptDtls AS OA ON  LP.SubOA=OA.SubOANumber
+                WHERE LP.IsComplete IS NULL
+                AND LP.CustomerName LIKE '" + Customer + @"%'
                 ORDER BY CONVERT(DateTime, DeliveryDate, 103) ASC";
 
 
@@ -577,12 +707,18 @@ public partial class Admin_ProductionExcel : System.Web.UI.Page
         try
         {
             string query = string.Empty;
-            String Customer = ViewState["Customer"].ToString(); 
-            query = @"SELECT [CNCBendingId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
-                [DeliveryDate] As deliverydatereqbycust,[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],[UpdatedDate] 
-                FROM tblCNCBending
-                WHERE IsComplete IS NULL 
-                AND CustomerName LIKE '" + Customer + @"%'
+            String Customer = ViewState["Customer"].ToString();
+            query = @"SELECT [CNCBendingId],[OANumber],[SubOA],LP.[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
+                [DeliveryDate] As deliverydatereqbycust,[IsApprove],[IsPending],[IsCancel],LP.[CreatedBy],[CreatedDate],LP.[UpdatedBy],[UpdatedDate] ,
+             
+                 o.CreatedOn AS OACreationDate,
+	    (Try_CAST(OA.Qty AS DECIMAL(10, 2)) * Try_CAST(OA.Price AS DECIMAL(10, 2))) AS Basic
+
+FROM [dbo].tblCNCBending AS LP
+left join orderaccept AS O ON LP.oanumber=o.oano
+left join ExcelEncLive.OrderAcceptDtls AS OA ON  LP.SubOA=OA.SubOANumber
+                WHERE LP.IsComplete IS NULL 
+                AND LP.CustomerName LIKE '" + Customer + @"%'
                 ORDER BY CONVERT(DateTime, DeliveryDate, 103) ASC";
 
             SqlDataAdapter ad = new SqlDataAdapter(query, con);
@@ -620,11 +756,16 @@ public partial class Admin_ProductionExcel : System.Web.UI.Page
         {
             string query = string.Empty;
             String Customer = ViewState["Customer"].ToString();
-            query = @"SELECT [WeldingId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
-                [DeliveryDate] As deliverydatereqbycust,[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],[UpdatedDate] 
-                FROM tblWelding 
-                WHERE IsComplete IS NULL 
-                AND CustomerName LIKE '" + Customer + @"%'
+            query = @"SELECT [WeldingId],[OANumber],[SubOA], LP.[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
+                [DeliveryDate] As deliverydatereqbycust,[IsApprove],[IsPending],[IsCancel], LP.[CreatedBy],[CreatedDate], LP.[UpdatedBy],[UpdatedDate] ,
+                  o.CreatedOn AS OACreationDate,
+	    (Try_CAST(OA.Qty AS DECIMAL(10, 2)) * Try_CAST(OA.Price AS DECIMAL(10, 2))) AS Basic
+
+FROM [dbo].tblWelding AS LP
+left join orderaccept AS O ON LP.oanumber=o.oano
+left join ExcelEncLive.OrderAcceptDtls AS OA ON  LP.SubOA=OA.SubOANumber
+                WHERE LP.IsComplete IS NULL 
+                AND LP.CustomerName LIKE '" + Customer + @"%'
                 ORDER BY CONVERT(DateTime, DeliveryDate, 103) ASC";
 
 
@@ -663,10 +804,18 @@ public partial class Admin_ProductionExcel : System.Web.UI.Page
         {
             string query = string.Empty;
             String Customer = ViewState["Customer"].ToString();
-            query = @"SELECT [PowdercoatId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
-                [DeliveryDate] As deliverydatereqbycust,[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],[UpdatedDate] 
-                FROM tblPowderCoating
-                where IsComplete is null and customername like '" + Customer + "%'  order by CONVERT(DateTime, DeliveryDate,103) asc";
+            query = @"SELECT PowdercoatId,[OANumber],[SubOA],LP.[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
+                [DeliveryDate] As deliverydatereqbycust,[IsApprove],[IsPending],[IsCancel],LP.[CreatedBy],[CreatedDate],LP.[UpdatedBy],[UpdatedDate] ,
+             
+                 o.CreatedOn AS OACreationDate,
+	    (Try_CAST(OA.Qty AS DECIMAL(10, 2)) * Try_CAST(OA.Price AS DECIMAL(10, 2))) AS Basic
+
+FROM [dbo].tblPowderCoating AS LP
+left join orderaccept AS O ON LP.oanumber=o.oano
+left join ExcelEncLive.OrderAcceptDtls AS OA ON  LP.SubOA=OA.SubOANumber
+where IsApprove = 1
+      and LP.IsComplete is null 
+ AND LP.[CustomerName] like '" + Customer + "%'  order by CONVERT(DateTime, DeliveryDate,103) asc";
 
             SqlDataAdapter ad = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
@@ -703,12 +852,18 @@ public partial class Admin_ProductionExcel : System.Web.UI.Page
         {
             string query = string.Empty;
             String Customer = ViewState["Customer"].ToString();
-            query = @"SELECT [FinalAssemblyId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
-                [DeliveryDate] As deliverydatereqbycust,[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],[UpdatedDate] 
-                FROM tblFinalAssembly
-                WHERE IsComplete IS NULL 
-                AND CustomerName LIKE '" + Customer + @"%'
-                ORDER BY CONVERT(DateTime, DeliveryDate, 103) ASC";
+            query = @"SELECT FinalAssemblyId,[OANumber],[SubOA],LP.[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
+                [DeliveryDate] As deliverydatereqbycust,[IsApprove],[IsPending],[IsCancel], LP.[CreatedBy],[CreatedDate],LP.[UpdatedBy],[UpdatedDate] ,
+             
+                 o.CreatedOn AS OACreationDate,
+	    (Try_CAST(OA.Qty AS DECIMAL(10, 2)) * Try_CAST(OA.Price AS DECIMAL(10, 2))) AS Basic
+
+FROM[dbo].tblfinalassembly AS LP
+left join orderaccept AS O ON LP.oanumber = o.oano
+left join ExcelEncLive.OrderAcceptDtls AS OA ON  LP.SubOA = OA.SubOANumber
+where IsApprove = 1
+      and LP.IsComplete is null AND LP.Customername like '" + Customer + "%'order by CONVERT(DateTime, DeliveryDate, 103) asc";
+
 
 
             SqlDataAdapter ad = new SqlDataAdapter(query, con);
@@ -746,9 +901,17 @@ public partial class Admin_ProductionExcel : System.Web.UI.Page
         {
             string query = string.Empty;
             String Customer = ViewState["Customer"].ToString();
-            query = @"SELECT [StockId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],
-            [OutwardDtTime],[OutwardQty],[DeliveryDate] As deliverydatereqbycust,[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],
-            [UpdatedDate],[IsComplete] FROM tblStock where IsComplete is null and CustomerName like '" + Customer + "%' order by CONVERT(DateTime, DeliveryDate,103) asc";
+            query = @"SELECT StockId,[OANumber],[SubOA],LP.[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
+                [DeliveryDate] As deliverydatereqbycust,[IsApprove],[IsPending],[IsCancel],LP.[CreatedBy],[CreatedDate],LP.[UpdatedBy],[UpdatedDate] ,
+             
+                 o.CreatedOn AS OACreationDate,
+	    (Try_CAST(OA.Qty AS DECIMAL(10, 2)) * Try_CAST(OA.Price AS DECIMAL(10, 2))) AS Basic
+
+FROM [dbo].tblStock AS LP
+left join orderaccept AS O ON LP.oanumber=o.oano
+left join ExcelEncLive.OrderAcceptDtls AS OA ON  LP.SubOA=OA.SubOANumber
+where IsApprove = 1
+      and LP.IsComplete is null AND LP.Customername like '"+Customer+"%'order by CONVERT(DateTime, DeliveryDate, 103) asc";
 
             SqlDataAdapter ad = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();

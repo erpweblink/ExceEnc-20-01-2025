@@ -422,11 +422,16 @@
                                                                 <asp:Label ID="lblDeliveryDt" runat="server" Text='<%# Eval("deliverydatereqbycust","{0:dd/MM/yyyy}") %>'></asp:Label>
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
-                                                        <%--   <asp:TemplateField HeaderText="InQty" ItemStyle-Width="100" ItemStyle-HorizontalAlign="Center">
+                                                        <asp:TemplateField HeaderText="OA Creation Date" ItemStyle-Width="150" ItemStyle-HorizontalAlign="Center" Visible="true">
                                                             <ItemTemplate>
-                                                                <asp:TextBox runat="server" ID="txtInwardQty" Width="60" ReadOnly="true" CssClass="form-control" Text='<%# Eval("TotalQty") %>'></asp:TextBox>
+                                                                <asp:Label ID="lblOAcreationDate" runat="server" Text='<%# Eval("OACreationDate","{0:dd/MM/yyyy}")%>'></asp:Label>
                                                             </ItemTemplate>
-                                                        </asp:TemplateField>--%>
+                                                        </asp:TemplateField>
+                                                        <asp:TemplateField HeaderText="Basic" ItemStyle-Width="100" ItemStyle-HorizontalAlign="Center">
+                                                            <ItemTemplate>
+                                                                <asp:TextBox runat="server" ID="txtBasic" Width="60" ReadOnly="true" CssClass="form-control" Text='<%# Eval("Basic") %>'></asp:TextBox>
+                                                            </ItemTemplate>
+                                                        </asp:TemplateField>
                                                         <asp:TemplateField HeaderText="InQty">
                                                             <ItemTemplate>
                                                                 <asp:Label ID="linksname" runat="server" Text='<%# Eval("TotalQty") %>'></asp:Label>
