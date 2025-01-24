@@ -1,229 +1,259 @@
-﻿using iTextSharp.text;
-using iTextSharp.text.pdf;
-using iTextSharp.text.html.simpleparser;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Security.Cryptography;
-using System.Text;
-using System.Web;
-using System.Web.Services;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Font = iTextSharp.text.Font;
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMaster.master" AutoEventWireup="true" CodeFile="UserAuthoration.aspx.cs" Inherits="Admin_UserAuthoration" %>
 
-public partial class PDFShow : System.Web.UI.Page
-{
-    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-    protected void Page_Load(object sender, EventArgs e)
-    {
-        if (!IsPostBack)
-        {
-            if (Request.QueryString["Name"] != null)
-            {
-                Pdf(Request.QueryString["Name"].ToString());
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="http://code.jquery.com/ui/1.11.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css">
+        .reqcls {
+            color: red;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .lbl {
+            font-weight: 600;
+        }
+
+        .imagepic {
+            width: 50px;
+            height: 150px;
+            border-radius: 60%;
+        }
+
+        .grid {
+            width: 98% !important;
+            margin: 0 auto;
+        }
+
+            .grid td {
+                padding: 1px !important;
+                text-align: center !important;
+                font-size: 12px;
+                font-weight: 600;
             }
+
+            .grid th {
+                background: #868e96 !important;
+                height: 30px;
+                color: #fff;
+            }
+
+        .errspan {
+            float: right;
+            margin-right: 6px;
+            margin-top: -25px;
+            position: relative;
+            z-index: 2;
+            color: black;
         }
-    }
 
-    private void Pdf(string Name)
-    {
-        DataTable Dt = new DataTable();
-        SqlCommand cmd = new SqlCommand();
-        cmd.Connection = con;
-        if (Name == "Drawing")
-        {
-            cmd.CommandText = "SELECT [OANumber],[Size],[TotalQty],[InwardQty],[deliverydatereqbycust],[customername] FROM vwDrawerCreation where IsComplete is null order by deliverydatereqbycust asc";
+        #Role input[type="checkbox"] {
+            margin-right: 10px;
         }
-        else if (Name == "Laser Programming")
-        {
-            cmd.CommandText = "SELECT [OANumber],[CustomerName] as customername,[Size],[TotalQty],[InwardQty],[DeliveryDate] as deliverydatereqbycust FROM tblLaserPrograming where IsApprove = 1 and IsComplete is null order by CONVERT(DateTime, DeliveryDate,103) asc";
+
+        .GridPager a, .GridPager span {
+            display: block;
+            height: 25px;
+            width: 15px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
         }
-        else if (Name == "Laser Cutting")
-        {
-            cmd.CommandText = "SELECT [OANumber],[CustomerName] as customername,[Size],[TotalQty],[InwardQty],[DeliveryDate] as deliverydatereqbycust FROM tblLaserCutting where IsComplete is null order by CONVERT(DateTime, DeliveryDate,103) asc";
+
+        .GridPager a {
+            background-color: #f5f5f5;
+            color: #969696;
+            border: 1px solid #969696;
         }
-        else if (Name == "CNC Bending")
-        {
-            cmd.CommandText = "SELECT [OANumber],[CustomerName] as customername,[Size],[TotalQty],[InwardQty],[DeliveryDate] as deliverydatereqbycust FROM tblCNCBending where IsApprove = 1 and IsComplete is null order by CONVERT(DateTime, DeliveryDate,103) asc";
+
+        .GridPager span {
+            background-color: #A1DCF2;
+            color: #000;
+            border: 1px solid #3AC0F2;
         }
-        else if (Name == "Welding")
-        {
-            cmd.CommandText = "SELECT [OANumber],[CustomerName] as customername,[Size],[TotalQty],[InwardQty],[DeliveryDate] as deliverydatereqbycust FROM tblWelding where IsApprove = 1 and IsComplete is null order by CONVERT(DateTime, DeliveryDate,103) asc";
+
+        .ma {
+            margin-left: 29px;
         }
-        else if (Name == "Powder Coating")
-        {
-            cmd.CommandText = "SELECT [OANumber],[CustomerName] as customername,[Size],[TotalQty],[InwardQty],[DeliveryDate] as deliverydatereqbycust FROM tblPowderCoating where IsApprove = 1 and IsComplete is null order by CONVERT(DateTime, DeliveryDate,103) asc";
+
+        .lbluser {
+            margin-left: 27px;
         }
-        else if (Name == "Final Assembly")
-        {
-            cmd.CommandText = "SELECT [OANumber],[CustomerName] as customername,[Size],[TotalQty],[InwardQty],[DeliveryDate] as deliverydatereqbycust FROM tblFinalAssembly where IsApprove = 1 and IsComplete is null order by CONVERT(DateTime, DeliveryDate,103) asc";
+    </style>
+    <style>
+        .paging {
         }
-        else if (Name == "Stock")
-        {
-            cmd.CommandText = "SELECT [OANumber],[CustomerName] as customername,[Size],[TotalQty],[InwardQty],[DeliveryDate] as deliverydatereqbycust FROM tblStock where IsApprove = 1 and IsComplete is null order by CONVERT(DateTime, DeliveryDate,103) asc";
-        }
-        SqlDataAdapter Da = new SqlDataAdapter();
-        Da.SelectCommand = cmd;
-        Da.Fill(Dt);
 
-        StringWriter sw = new StringWriter();
-        StringReader sr = new StringReader(sw.ToString());
+            .paging a {
+                background-color: #0755A1;
+                padding: 1px 7px;
+                text-decoration: none;
+                border: 1px solid #0755A1;
+            }
 
-        string empFilename = Name + ".pdf";
-
-        Document doc = new Document(PageSize.A4, 10f, 10f, 55f, 0f);
-
-        PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(Server.MapPath("~/files/") + empFilename, FileMode.Create));
-        //PdfWriter writer = PdfWriter.GetInstance(doc, Response.OutputStream);
-        iTextSharp.tool.xml.XMLWorkerHelper.GetInstance().ParseXHtml(writer, doc, sr);
-
-        doc.Open();
-
-        //string imageURL = Server.MapPath("~") + "/img/ExcelEncLogo.png";
-        string imageStamp = Server.MapPath("~") + "/img/AdminSign.png";
-
-        //iTextSharp.text.Image png = iTextSharp.text.Image.GetInstance(imageURL);
-
-        ////Resize image depend upon your need
-
-        //png.ScaleToFit(70, 100);
-
-        ////For Image Position
-        //png.SetAbsolutePosition(40, 718);
-
-        //png.SpacingBefore = 50f;
-
-        ////Give some space after the image
-
-        //png.SpacingAfter = 1f;
-
-        //png.Alignment = Element.ALIGN_LEFT;
-
-
-        //doc.Add(png);
-
-
-        PdfContentByte cb = writer.DirectContent;
-        cb.Rectangle(0f, 0f, 0f, 0f);
-        cb.Stroke();
-        // Header 
-        cb.BeginText();
-        cb.SetFontAndSize(BaseFont.CreateFont(@"C:\Windows\Fonts\Calibrib.ttf", "Identity-H", BaseFont.EMBEDDED), 25);
-        cb.ShowTextAligned(PdfContentByte.ALIGN_LEFT, "Excel Enclosures", 200, 815, 0);
-        //cb.SetFontAndSize(BaseFont.CreateFont(@"C:\Windows\Fonts\Calibrib.ttf", "Identity-H", BaseFont.EMBEDDED), 11);
-        //cb.ShowTextAligned(PdfContentByte.ALIGN_LEFT, "Gat No. 1567, Shelar Vasti, Dehu-Alandi Road, Chikhali, Pune - 411062", 145, 728, 0);
-        //cb.SetFontAndSize(BaseFont.CreateFont(@"C:\Windows\Fonts\Calibrib.ttf", "Identity-H", BaseFont.EMBEDDED), 11);
-        //cb.ShowTextAligned(PdfContentByte.ALIGN_LEFT, "", 227, 740, 0);
-        cb.EndText();
-
-        PdfContentByte cbbb = writer.DirectContent;
-        cbbb.Rectangle(0f, 0f, 0f, 0f);
-        cbbb.Stroke();
-        //// Header 
-        //cbbb.BeginText();
-        //cbbb.SetFontAndSize(BaseFont.CreateFont(@"C:\Windows\Fonts\Calibrib.ttf", "Identity-H", BaseFont.EMBEDDED), 10);
-        //cbbb.ShowTextAligned(PdfContentByte.ALIGN_LEFT, "GSTIN : 27ATFPS1959J1Z4", 30, 695, 0);
-        //cbbb.SetFontAndSize(BaseFont.CreateFont(@"C:\Windows\Fonts\Calibrib.ttf", "Identity-H", BaseFont.EMBEDDED), 10);
-        //cbbb.ShowTextAligned(PdfContentByte.ALIGN_LEFT, "PAN NO: ATFPS1959J", 160, 695, 0);
-        //cbbb.SetFontAndSize(BaseFont.CreateFont(@"C:\Windows\Fonts\Calibrib.ttf", "Identity-H", BaseFont.EMBEDDED), 10);
-        //cbbb.ShowTextAligned(PdfContentByte.ALIGN_LEFT, "EMAIL : mktg@excelenclosures.com", 270, 695, 0);
-        //cbbb.SetFontAndSize(BaseFont.CreateFont(@"C:\Windows\Fonts\Calibrib.ttf", "Identity-H", BaseFont.EMBEDDED), 10);
-        //cbbb.ShowTextAligned(PdfContentByte.ALIGN_LEFT, "CONTACT : 9225658662", 440, 695, 0);
-        //cbbb.EndText();
-
-        PdfContentByte cdd = writer.DirectContent;
-        cdd.Rectangle(0f, 0f, 0f, 0f);
-        cdd.Stroke();
-        // Header 
-        cdd.BeginText();
-        cdd.SetFontAndSize(BaseFont.CreateFont(@"C:\Windows\Fonts\Calibrib.ttf", "Identity-H", BaseFont.EMBEDDED), 17);
-        cdd.ShowTextAligned(PdfContentByte.ALIGN_LEFT, Name, 250, 795, 0);
-        cdd.EndText();
-
-        if (Dt.Rows.Count > 0)
-        {
-            PdfPTable table = new PdfPTable(1);
-
-            Paragraph paragraphTable2 = new Paragraph();
-            paragraphTable2.SpacingAfter = 0f;
-            paragraphTable2.SpacingBefore = 111f;
-            table = new PdfPTable(5);
-            float[] widths3 = new float[] { 4f, 40f, 50f, 10f, 8f };
-            table.SetWidths(widths3);
-            PdfPCell cell = null;
-            if (Dt.Rows.Count > 0)
-            {
-                table.TotalWidth = 560f;
-                table.LockedWidth = true;
-                cell = new PdfPCell(new Phrase("SN", FontFactory.GetFont("Arial", 10, Font.BOLD)));
-                cell.HorizontalAlignment = 1;
-                table.AddCell(cell);
-                cell = new PdfPCell(new Phrase("Customer Name", FontFactory.GetFont("Arial", 10, Font.BOLD)));
-                cell.HorizontalAlignment = 1;
-                table.AddCell(cell);
-                cell = new PdfPCell(new Phrase("Size", FontFactory.GetFont("Arial", 10, Font.BOLD)));
-                cell.HorizontalAlignment = 1;
-                table.AddCell(cell);
-                cell = new PdfPCell(new Phrase("Delivery Date", FontFactory.GetFont("Arial", 10, Font.BOLD)));
-                cell.HorizontalAlignment = 1;
-                table.AddCell(cell);
-                cell = new PdfPCell(new Phrase("Qty", FontFactory.GetFont("Arial", 10, Font.BOLD)));
-                cell.HorizontalAlignment = 1;
-                table.AddCell(cell);
-
-                int rowid = 1;
-                foreach (DataRow dr in Dt.Rows)
-                {
-                    table.TotalWidth = 560f;
-                    table.LockedWidth = true;
-                    table.AddCell(new Phrase(rowid.ToString(), FontFactory.GetFont("Arial", 9)));
-                    table.AddCell(new Phrase(dr["customername"].ToString(), FontFactory.GetFont("Arial", 9)));
-                    table.AddCell(new Phrase(dr["Size"].ToString(), FontFactory.GetFont("Arial", 9)));
-                    table.AddCell(new Phrase(dr["deliverydatereqbycust"].ToString().TrimEnd("0:0".ToCharArray()), FontFactory.GetFont("Arial", 9)));
-                    cell = new PdfPCell(new Phrase(dr["InwardQty"].ToString(), FontFactory.GetFont("Arial", 9)));
-                    cell.HorizontalAlignment = 1;
-                    table.AddCell(cell);
-                    rowid++;
+                .paging a:hover {
+                    background-color: #E1FFEF;
+                    color: white;
+                    border: 1px solid #47417c;
                 }
+
+            .paging span {
+                background-color: #0755A1;
+                padding: 1px 7px;
+                color: white;
+                border: 1px solid #0755A1;
             }
 
-            paragraphTable2.Add(table);
-            doc.Add(paragraphTable2);
-            doc.Close();
+        tr.paging {
+            background: none !important;
+        }
+
+            tr.paging tr {
+                background: none !important;
+            }
+
+            tr.paging td {
+                border: none;
+            }
+    </style>
+
+    <script>
+        function HideLabel(msg) {
+            Swal.fire({
+                icon: 'success',
+                text: msg,
+                timer: 3000,
+                showCancelButton: false,
+                showConfirmButton: false
+            }).then(function () {
+                window.location.href = "../Admin/UserAuthoration.aspx";
+            })
+        };
+    </script>
+    <script>
+        function selectAll(checked) {
+
+            var isChecked = $("#<%= gvUserAuthorization.ClientID %> input[id*='chkselectall']").prop('checked') ? true : false;
+            if (isChecked) {
+                $('input:checkbox[name$=chkCreate] tr').each(
+                    function () {
+                        $(this).attr('checked', 'checked');
+                    });
+            }
+            else {
+                //$('input:checkbox[name$=chkEmployee]').each(
+                //    function () {
+                //        $(this).removeAttr('checked');
+                //    });
+            }
+        }
+    </script>
 
 
 
-            Byte[] FileBuffer = File.ReadAllBytes(Server.MapPath("~/files/") + empFilename);
+    <script language="javascript" type="text/javascript">
+        function MakeStaticHeader(gridId, height, width, headerHeight, isFooter) {
+            var tbl = document.getElementById(gridId);
+            if (tbl) {
+                var DivHR = document.getElementById('DivHeaderRow');
+                var DivMC = document.getElementById('DivMainContent');
+                var DivFR = document.getElementById('DivFooterRow');
 
-            Font blackFont = FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK);
-            using (MemoryStream stream = new MemoryStream())
-            {
-                PdfReader reader = new PdfReader(FileBuffer);
-                using (PdfStamper stamper = new PdfStamper(reader, stream))
-                {
-                    int pages = reader.NumberOfPages;
-                    for (int i = 1; i <= pages; i++)
-                    {
-                        if (i == 1)
-                        {
+                //*** Set divheaderRow Properties ****
+                DivHR.style.height = headerHeight + 'px';
+                DivHR.style.width = (parseInt(width) - 16) + 'px';
+                DivHR.style.position = 'relative';
+                DivHR.style.top = '0px';
+                DivHR.style.zIndex = '10';
+                DivHR.style.verticalAlign = 'top';
 
-                        }
-                        else
-                        {
-                            var pdfbyte = stamper.GetOverContent(i);
-                            //iTextSharp.text.Image image = iTextSharp.text.Image.GetInstance(imageURL);
-                            //image.ScaleToFit(70, 100);
-                            //image.SetAbsolutePosition(40, 792);
-                            //image.SpacingBefore = 50f;
-                            //image.SpacingAfter = 1f;
-                            //image.Alignment = Element.ALIGN_LEFT;
-                
+                //*** Set divMainContent Properties ****
+                DivMC.style.width = width + 'px';
+                DivMC.style.height = height + 'px';
+                DivMC.style.position = 'relative';
+                DivMC.style.top = -headerHeight + 'px';
+                DivMC.style.zIndex = '1';
+
+                //*** Set divFooterRow Properties ****
+                DivFR.style.width = (parseInt(width) - 16) + 'px';
+                DivFR.style.position = 'relative';
+                DivFR.style.top = -headerHeight + 'px';
+                DivFR.style.verticalAlign = 'top';
+                DivFR.style.paddingtop = '2px';
+
+                //****Copy Header in divHeaderRow****
+                DivHR.appendChild(tbl.cloneNode(true));
+            }
+        }
+        function OnScrollDiv(Scrollablediv) {
+            document.getElementById('DivHeaderRow').scrollLeft = Scrollablediv.scrollLeft;
+            document.getElementById('DivFooterRow').scrollLeft = Scrollablediv.scrollLeft;
+        }
+    </script>
+
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <form runat="server">
+
+        <asp:ScriptManager runat="server" ID="ScriptManager1"></asp:ScriptManager>
+        <div class="col-lg-12">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h5 class="m-0 font-weight-bold text-primary">User Authorization</h5>
+                </div>
+                <div class="card-body">
+                    <%--  <asp:UpdatePanel runat="server" ID="update">
+                        <ContentTemplate>--%>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="row">
+                                <asp:Label ID="lblrolename" runat="server" Text="Role Name" CssClass="control-label ma"></asp:Label>&nbsp;&nbsp;&nbsp;
+           
+                <asp:DropDownList ID="ddlRole" runat="server" AutoPostBack="true" class="form-control active1 " Width="170px" AppendDataBoundItems="true" OnSelectedIndexChanged="ddlRole_SelectedIndexChanged">
+                    <asp:ListItem Value="" Text="Select Role"></asp:ListItem>
+                </asp:DropDownList>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <asp:Label ID="lbluserlist" runat="server" Text="User Name" CssClass="control-label lbluser "></asp:Label>
+                                &nbsp;&nbsp;&nbsp;
+                <asp:DropDownList ID="ddlUser" runat="server" class="form-control active1 " Width="170px" OnSelectedIndexChanged="ddlUser_SelectedIndexChanged" AutoPostBack="true" AppendDataBoundItems="true">
+                    <asp:ListItem Value="" Text="Select User"></asp:ListItem>
+
+                </asp:DropDownList>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="GridDiv" runat="server">
+                        <div class="col-lg-12">
+                            <div class="table-responsive">
+                            <div class="card shadow-sm mb-4">
+                                <div class="row" style="width: 100%;">
+                                    <div id="DivRoot">
+                                        <div style="overflow: hidden;" id="DivHeaderRow">
+                                        </div>
+                                        <div style="overflow: scroll; width: 100%;" class="dt-responsive " onscroll="OnScrollDiv(this)" id="DivMainContent">
+                                            <asp:GridView ID="gvUserAuthorization" runat="server" AutoGenerateColumns="False"
+                                                EmptyDataText="No records found" DataKeyNames="ID"
+                                                CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" HorizontalAlign="Center" BackColor="#0755a1" OnRowDataBound="gvUserAuthorization_RowDataBound" OnRowCommand="gvUserAuthorization_RowCommand" AllowPaging="false" PagerStyle-CssClass="paging" PageSize="10">
+                                                <AlternatingRowStyle BackColor="White" VerticalAlign="Middle" />
+                                                <Columns>
+                                                    <asp:TemplateField HeaderText="Sr. No." HeaderStyle-Width="50px" HeaderStyle-CssClass="text-center">
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="lblsno" runat="server" Text='<%# Container.DataItemIndex+1 %>'></asp:Label>
+                                                        </ItemTemplate>
+                                                        <HeaderStyle CssClass="text-center" Width="50px" />
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Menu Name" HeaderStyle-CssClass="text-center">
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="lblMenuName" runat="server" Text='<%# Eval("MenuName") %>'></asp:Label>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Menu Name" HeaderStyle-CssClass="text-center" Visible="false">
+
+                                                        <ItemTemplate>
+                                    

@@ -11137,7 +11137,6 @@ public partial class Admin_Quotation : System.Web.UI.Page
     {
         System.Web.UI.WebControls.CheckBox chkBox = sender as System.Web.UI.WebControls.CheckBox;
 
-
         switch (chkBox.ID)
         {
             // 1. JB Box 
@@ -11179,12 +11178,46 @@ public partial class Admin_Quotation : System.Web.UI.Page
                 HandleDropDownListVisibility(null, null, null, null, txtjbAnyadditionalcomponentcat1, chkBox.Checked);
                 break;
 
+                HandleDropDownListVisibility(ddlJbweldedmainbodycat1, ddlJbweldedmainbodycat2, null, chkBox.Checked);
+                break;
 
+            case "chkjbGlandplat":
+                HandleDropDownListVisibility(ddljbGlandplatcat1, ddljbGlandplatcat2, null, chkBox.Checked);
+                break;
+
+            case "Checckboxfor3DD":
+                HandleDropDownListVisibility(ddljbComponetmtgplt, ddljbComponetmtgpltcat1, ddljbComponetmtgpltcat2, chkBox.Checked);
+                break;
+
+            case "chkjbfrontscrewcover":
+                HandleDropDownListVisibility(ddljbfrontscrewcovercat1, null, null, chkBox.Checked);
+                break;
+
+            case "Chkjblock":
+                HandleDropDownListVisibility(ddljbLockcat1, null, null, chkBox.Checked);
+                break;
+
+            case "chkjbTransparentdoor":
+                HandleDropDownListVisibility(ddljbTransparentdoorcat1, ddljbTransparentdoorcat2, ddljbTransparentdoorcat3, chkBox.Checked);
+                break;
+
+            case "ChkjbPowercoatingshade":
+                HandleDropDownListVisibility(ddljbPowercoatingshadecat1, null, null, chkBox.Checked);
+                break;
+
+            case "ChkjbFan":
+                HandleDropDownListVisibility(ddljbfancat1, null, null, chkBox.Checked);
+                break;
+
+            case "ChkjbAnyadditionalcomponent":
+                txtjbAnyadditionalcomponentcat1.Enabled = chkBox.Checked;
+                break;
             // End Jb Box
 
 
             //  2. WMM-23.5 (AE Box)
             case "chkWMM23WeldedMainBody":
+
                 HandleDropDownListVisibility1(ddlWMM23WeldedMainBodycat1, ddlWMM23WeldedMainBodycat2, null, null, null, RequiredFieldValidatorWM1, RequiredFieldValidatorWM2, null, null, chkBox.Checked);
                 break;
 
@@ -12593,5 +12626,65 @@ public partial class Admin_Quotation : System.Web.UI.Page
         }
 
     }
+
+                HandleDropDownListVisibility(ddlWMM23WeldedMainBodycat1, ddlWMM23WeldedMainBodycat2, null, chkBox.Checked);
+                break;
+
+            case "ChkWMM23GlandPlate":
+                HandleDropDownListVisibility(ddlWMM23GlandPlatecat1, ddlWMM23GlandPlatecat2, null, chkBox.Checked);
+                break;
+
+            case "ChkWMM23Canopy":
+                HandleDropDownListVisibility(ddlWMM23Canopycat1, ddlWMM23Canopycat2, null, chkBox.Checked);
+                break;
+
+            case "ChkWMM23ComponentMtgPlate":
+                HandleDropDownListVisibility(ddlWMM23ComponentMtgPlatecat1, ddlWMM23ComponentMtgPlatecat2, ddlWMM23ComponentMtgPlatecat3, chkBox.Checked);
+                break;
+
+            case "ChkWMM23SideCPlate":
+                HandleDropDownListVisibility(ddlWMM23SideCPlatecat1, ddlWMM23SideCPlatecat2, ddlWMM23SideCPlatecat3, chkBox.Checked);
+                break;
+
+            case "ChkWMM23DoorCPlate":
+                HandleDropDownListVisibility(ddlWMM23DoorCPlatecat1, ddlWMM23DoorCPlatecat2, ddlWMM23DoorCPlatecat3, chkBox.Checked);
+                break;
+
+            case "ChkWMM23WallMtgBracket":
+                HandleDropDownListVisibility(ddlWMM23WallMtgBracketcat1, null, null, chkBox.Checked);
+                break;
+
+            case "ChkWMM23FrontDoor":
+                HandleDropDownListVisibility(ddlWMM23FrontDoorcat1, ddlWMM23FrontDoorcat2, null, chkBox.Checked);
+                break;
+
+
+
+
+        }
+        this.modelprofile.Show();
+
+    }
+
+
+    // Helper method to enable/disable dropdown lists based on checkbox checked state
+    private void HandleDropDownListVisibility(DropDownList ddl1, DropDownList ddl2, DropDownList ddl3, bool isChecked)
+    {
+        if (ddl1 != null)
+        {
+            ddl1.Enabled = isChecked;
+        }
+        if (ddl2 != null)
+        {
+            ddl2.Enabled = isChecked;
+        }
+        if (ddl3 != null)
+        {
+            ddl3.Enabled = isChecked;
+        }
+    }
+
+}
+
 
 }

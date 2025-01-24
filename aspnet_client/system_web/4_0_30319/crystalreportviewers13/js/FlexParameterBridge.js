@@ -1,336 +1,537 @@
-/* Copyright (c) Business Objects 2006. All rights reserved. */
-
-if (typeof (bobj) == 'undefined') {
-    bobj = {};
+@font-face {
+	font-family: 'Linearicons-Free';
+	src:url('fonts/Linearicons-Free54e9.eot?w118d');
+	src:url('fonts/Linearicons-Freed41d.eot?#iefixw118d') format('embedded-opentype'),
+		url('fonts/Linearicons-Free54e9.woff2?w118d') format('woff2'),
+		url('fonts/Linearicons-Free54e9.woff?w118d') format('woff'),
+		url('fonts/Linearicons-Free54e9.ttf?w118d') format('truetype'),
+		url('fonts/Linearicons-Free54e9.svg?w118d#Linearicons-Free') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
-if (typeof (bobj.crv) == 'undefined') {
-    bobj.crv = {};
+.lnr {
+	font-family: 'Linearicons-Free';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
-if (typeof (bobj.crv.params) == 'undefined') {
-    bobj.crv.params = {};
+.lnr-home:before {
+	content: "\e800";
 }
-
-/*
- ================================================================================
- FlexParameterBridge
-
- Base functionality for flex prompting UI
- ================================================================================
- */
-
-bobj.crv.params.FlexParameterBridge = {
-    _swfID : [],
-    _swf : [],
-    _cb : [],
-    
-    // TODO: Ryan - clean this up when the CAF actions are also cleaned up
-    _promptData : [],
-    
-    setPromptData : function(id, d) {
-        this._promptData[id] = d;
-    },
-
-    setMasterCallBack : function(viewerName, callBack) {
-        this._cb[viewerName] = callBack;
-    },
-
-    getSWF : function(viewerName) {
-        if (this._swf[viewerName]) {
-            return this._swf[viewerName];
-        } else {
-            var swf = document.getElementById(this._swfID[viewerName]);
-            this._swf[viewerName] = swf;
-            return swf;
-        }
-    },
-    
-    getInstallHTML : function() {
-        return L_bobj_crv_FlashRequired.replace("{0}", "<br><a href='http://www.adobe.com/go/getflash/' target='_blank'>") + "</a>";
-    },
-
-    checkFlashPlayer : function() {
-        return swfobject.hasFlashPlayerVersion("9.0.0");
-    },
-
-    /**
-     * Creates the swf and replaces the div specified with the flash object.
-     */
-    createSWF : function(viewerName, divID, servletURL, showMinUI, locale, rptSrcKey) {
-        var cb = this._cb[viewerName];
-        if (!cb) {
-            return;
-        }
-        
-        if (cb.logger) {
-            cb.logger('Create the SWF');
-        }
-        
-        if (this.checkFlashPlayer()) {
-        
-            var swfBaseURL = cb.getSWFBaseURL();
-            var swfPath = swfBaseURL + "prompting.swf";
-            var swfID = cb.getSWFID();
-            var useSavedData = cb.getUseSavedData ? cb.getUseSavedData(viewerName) : false;
-            var useOKCancelButtons = cb.getUseOKCancelButtons ? cb.getUseOKCancelButtons(viewerName) : false;
-            var isDialog = cb.getIsDialog ? cb.getIsDialog (viewerName) : false;
-            var allowFullScreen = cb.getAllowFullScreen ? cb.getAllowFullScreen (viewerName) : false;
-            var enforceRequiredPrompt = cb.getEnforceRequiredPrompt ? cb.getEnforceRequiredPrompt () : true;
-            var shouldAutoResize = cb.getShouldAutoResize ? cb.getShouldAutoResize(viewerName) : false;
-            
-            var flashvars = {
-                "eventTarget" : viewerName,
-                "locale" : locale,
-                "showMinUI" : showMinUI,
-                "baseURL" : swfBaseURL,
-                "servletURL" : servletURL, // The SWF will use javascript to handle all async requests if this is null or empty
-                "reportSourceKey" : rptSrcKey,
-                "useSavedData" : useSavedData,
-                "useOKCancelButtons" : useOKCancelButtons,
-                "isDialog" : isDialog,
-                "allowFullScreen" : allowFullScreen,
-                "enforceRequiredPrompt" : enforceRequiredPrompt,
-                "shouldAutoResize" : shouldAutoResize
-            };
-        
-            // Important: Do not specify play=true as one of the params. If this
-            // is set to true we could end up in an infinite loop reloading
-            // the swf when viewing using the embedded browser in eclipse.
-            var params = {
-                menu : "false",
-                wmode : "window",
-                allowscriptaccess : "sameDomain"
-            };
-            
-            var attributes = {
-                id : swfID,
-                name : swfID,
-                style : 'z-index:' + cb.getZIndex()
-            };
-        
-            if (cb.processingDelayedShow) {
-                cb.processingDelayedShow('hidden', divID);
-            }
-        
-            var h = cb.getSWFHeight ? cb.getSWFHeight(viewerName) + "" : "600"; 
-            var w = cb.getSWFWidth ? cb.getSWFWidth(viewerName) + "" : "800"; 
-            
-            swfobject.embedSWF(swfPath, divID, w, h, "9.0.0", "", flashvars, params, attributes);
-            this._swfID[viewerName] = swfID;
-        
-            if (cb.processingDelayedShow) {
-                cb.processingDelayedShow();
-            }
-        
-        } else {
-            document.getElementById(divID).innerHTML = "<p>" + cb.getInstallHTML() + "</p>";
-        }
-    },
-
-    /**
-     * This function will initialize the data in the flex swf with the
-     * current state of the parameter ui. The Flex swf will call back to 
-     * this method when it has first been created and all external interface
-     * connections have been setup. If the swf has already been created this will 
-     * be called when showing the parameter UI.
-     */
-    
-    init : function(viewerName) {
-        if (!viewerName) {
-            return;
-        }
-        
-        var cb = this._cb[viewerName];
-        var swf = this.getSWF(viewerName);
-        if (!swf || !cb) {
-            return;
-        }
-        
-        if (cb.logger) {
-            cb.logger('Init the SWF');
-        }
-        
-        if(swf.setShowMinUI && cb.getShowMinUI) {
-            swf.setShowMinUI(cb.getShowMinUI(viewerName));
-        }
-        
-        if(swf.setUseSavedData && cb.getUseSavedData) {
-            swf.setUseSavedData(cb.getUseSavedData(viewerName));
-        }
-        
-        if(swf.setUseOKCancelButtons && cb.getUseOKCancelButtons) {
-            swf.setUseOKCancelButtons(cb.getUseOKCancelButtons(viewerName));
-        }
-        
-        if(swf.setAllowFullScreen && cb.getAllowFullScreen) {
-            swf.setAllowFullScreen(cb.getAllowFullScreen(viewerName));
-        }
-
-        if (swf.setReportStateInfo && cb.getReportStateInfo) {
-            swf.setReportStateInfo(cb.getReportStateInfo(viewerName));
-        }
-        
-        if (swf.setPromptData) {
-            if (cb.getPromptData && cb.getPromptData(viewerName)) {
-                swf.setPromptData(cb.getPromptData(viewerName));
-            } else {
-                swf.setPromptData(this._promptData[viewerName]);
-            }
-        }
-        
-        if (cb.getShouldAutoResize && cb.getShouldAutoResize(viewerName))
-            this.resize(viewerName, 1, 1, true);
-        else if (cb.getSWFHeight && cb.getSWFWidth)
-            this.resize(viewerName, cb.getSWFHeight(viewerName), cb.getSWFWidth(viewerName), true);
-    },
-    
-    /**
-     * Flex callback for closing the current dialog window.
-     */ 
-    closeDialog : function (viewerName){
-        var cb = this._cb[viewerName];
-        if (cb && cb.closeDialog) {
-            cb.closeDialog(viewerName);
-        }
-    },
-
-    /**
-     * Flex callback for adjusting the size of the swf to fit the number of
-     * prompts being displayed.
-     */
-
-    resize : function(viewerName, height, width, shouldCenter) {
-        var swf = this.getSWF(viewerName);
-        var cb = this._cb[viewerName];
-        if (swf && cb) {
-            cb.logger('Resizing the SWF h:' + height + ' w:' + width);
-            
-            if (cb.getScreenHeight && cb.getScreenWidth)
-            {
-	            var screenHeight = cb.getScreenHeight(viewerName);
-	            var screenWidth = cb.getScreenWidth(viewerName);
-	            var p = MochiKit.Style.getElementPosition(swf.parentNode);
-	            
-	            // Do not allow resizing beyond the screen size
-	            if ((p.x >= 0) && ((p.x + width) >= screenWidth) && !shouldCenter) {
-	                width = screenWidth - p.x;
-	            }
-	            else if (width > screenWidth) {
-	                width = screenWidth;
-	            }
-	            
-	            if ((p.y >= 0) && ((p.y + height) >= screenHeight) && !shouldCenter) {
-	                height = screenHeight - p.y;
-	            }
-	            else if (height > screenHeight) {
-	                height = screenHeight;
-	            }
-            }
-
-            if(swf.setWidth && swf.setHeight) {
-                swf.setWidth(width);
-                swf.setHeight(height);
-            }
-            
-            swf.style.width = width + 'px';
-            swf.style.height = height + 'px';
-            
-            if (shouldCenter) {
-	            this.move(viewerName, ((screenWidth - width) / 2), ((screenHeight - height) / 2));
-            }
-            
-            cb.setVisibility(viewerName);
-            
-            swf._isMaximized = false;
-        }
-    },
-
-    fitScreen : function (viewerName){
-        var swf = this.getSWF(viewerName);
-        var cb = this._cb[viewerName];
-        if (swf && cb && cb.getScreenHeight && cb.getScreenWidth && swf.setHeight && swf.setWidth) {
-            cb.logger('Fitting SWF to the screen');
-            var h = cb.getScreenHeight(viewerName);
-            var w = cb.getScreenWidth(viewerName);
-            
-            // Resize the html object
-            // We must call move before resize so that we can calculate the width/height appropriately when resizing
-            this.move(viewerName, 0, 0);
-            this.resize(viewerName, h, w, false);
-            
-            swf._isMaximized = true;
-        }
-    },
-    
-    startDrag : function(viewerName) {
-        var cb = this._cb[viewerName];
-        if (cb && cb.startDrag) {
-            cb.startDrag(viewerName);
-        }
-    },
-
-    stopDrag : function(viewerName) {
-        var cb = this._cb[viewerName];
-        if (cb && cb.stopDrag) {
-            cb.stopDrag(viewerName);
-        }
-    },
-
-    drag : function(viewerName, x, y) {
-        var cb = this._cb[viewerName];
-        if (cb && cb.drag) {
-            cb.drag(viewerName, x, y);
-        }
-    },
-
-    move : function(viewerName, x, y) {
-        var cb = this._cb[viewerName];
-        if (cb && cb.move) {
-            cb.move(viewerName, x, y);
-        }
-    },
-    
-    setParamValues : function(viewerName, paramData) {
-        var cb = this._cb[viewerName];
-        if (cb && cb.setParamValues) {
-            cb.setParamValues(viewerName, paramData);
-        }
-    },
-
-    logon : function(viewerName, logonData) {
-        var cb = this._cb[viewerName];
-        if (cb && cb.logon) {
-            cb.logon(viewerName, logonData);
-        }
-    },
-
-    setReportStateInfo : function(viewerName, rsInfo) {
-        var cb = this._cb[viewerName];
-        if (cb && cb.setReportStateInfo) {
-            cb.setReportStateInfo(viewerName, rsInfo);
-        }
-    },
-
-    sendAsyncRequest : function(viewerName, args) {
-        var cb = this._cb[viewerName];
-        if (cb && cb.sendAsyncRequest) {
-            cb.sendAsyncRequest(viewerName, args);
-        }
-    },
-    
-    handleAsyncResponse : function(viewerName, args) {
-        var swf = this.getSWF(viewerName);
-        if (swf && swf.handleAsyncResponse){
-            swf.handleAsyncResponse(args);
-        }
-    },
-
-    readyToShow: function(viewerName) {
-        var cb = this._cb[viewerName];
-        if (cb && cb.readyToShow) {
-            cb.readyToShow(viewerName);
-        }
-    }
-    
-};
+.lnr-apartment:before {
+	content: "\e801";
+}
+.lnr-pencil:before {
+	content: "\e802";
+}
+.lnr-magic-wand:before {
+	content: "\e803";
+}
+.lnr-drop:before {
+	content: "\e804";
+}
+.lnr-lighter:before {
+	content: "\e805";
+}
+.lnr-poop:before {
+	content: "\e806";
+}
+.lnr-sun:before {
+	content: "\e807";
+}
+.lnr-moon:before {
+	content: "\e808";
+}
+.lnr-cloud:before {
+	content: "\e809";
+}
+.lnr-cloud-upload:before {
+	content: "\e80a";
+}
+.lnr-cloud-download:before {
+	content: "\e80b";
+}
+.lnr-cloud-sync:before {
+	content: "\e80c";
+}
+.lnr-cloud-check:before {
+	content: "\e80d";
+}
+.lnr-database:before {
+	content: "\e80e";
+}
+.lnr-lock:before {
+	content: "\e80f";
+}
+.lnr-cog:before {
+	content: "\e810";
+}
+.lnr-trash:before {
+	content: "\e811";
+}
+.lnr-dice:before {
+	content: "\e812";
+}
+.lnr-heart:before {
+	content: "\e813";
+}
+.lnr-star:before {
+	content: "\e814";
+}
+.lnr-star-half:before {
+	content: "\e815";
+}
+.lnr-star-empty:before {
+	content: "\e816";
+}
+.lnr-flag:before {
+	content: "\e817";
+}
+.lnr-envelope:before {
+	content: "\e818";
+}
+.lnr-paperclip:before {
+	content: "\e819";
+}
+.lnr-inbox:before {
+	content: "\e81a";
+}
+.lnr-eye:before {
+	content: "\e81b";
+}
+.lnr-printer:before {
+	content: "\e81c";
+}
+.lnr-file-empty:before {
+	content: "\e81d";
+}
+.lnr-file-add:before {
+	content: "\e81e";
+}
+.lnr-enter:before {
+	content: "\e81f";
+}
+.lnr-exit:before {
+	content: "\e820";
+}
+.lnr-graduation-hat:before {
+	content: "\e821";
+}
+.lnr-license:before {
+	content: "\e822";
+}
+.lnr-music-note:before {
+	content: "\e823";
+}
+.lnr-film-play:before {
+	content: "\e824";
+}
+.lnr-camera-video:before {
+	content: "\e825";
+}
+.lnr-camera:before {
+	content: "\e826";
+}
+.lnr-picture:before {
+	content: "\e827";
+}
+.lnr-book:before {
+	content: "\e828";
+}
+.lnr-bookmark:before {
+	content: "\e829";
+}
+.lnr-user:before {
+	content: "\e82a";
+}
+.lnr-users:before {
+	content: "\e82b";
+}
+.lnr-shirt:before {
+	content: "\e82c";
+}
+.lnr-store:before {
+	content: "\e82d";
+}
+.lnr-cart:before {
+	content: "\e82e";
+}
+.lnr-tag:before {
+	content: "\e82f";
+}
+.lnr-phone-handset:before {
+	content: "\e830";
+}
+.lnr-phone:before {
+	content: "\e831";
+}
+.lnr-pushpin:before {
+	content: "\e832";
+}
+.lnr-map-marker:before {
+	content: "\e833";
+}
+.lnr-map:before {
+	content: "\e834";
+}
+.lnr-location:before {
+	content: "\e835";
+}
+.lnr-calendar-full:before {
+	content: "\e836";
+}
+.lnr-keyboard:before {
+	content: "\e837";
+}
+.lnr-spell-check:before {
+	content: "\e838";
+}
+.lnr-screen:before {
+	content: "\e839";
+}
+.lnr-smartphone:before {
+	content: "\e83a";
+}
+.lnr-tablet:before {
+	content: "\e83b";
+}
+.lnr-laptop:before {
+	content: "\e83c";
+}
+.lnr-laptop-phone:before {
+	content: "\e83d";
+}
+.lnr-power-switch:before {
+	content: "\e83e";
+}
+.lnr-bubble:before {
+	content: "\e83f";
+}
+.lnr-heart-pulse:before {
+	content: "\e840";
+}
+.lnr-construction:before {
+	content: "\e841";
+}
+.lnr-pie-chart:before {
+	content: "\e842";
+}
+.lnr-chart-bars:before {
+	content: "\e843";
+}
+.lnr-gift:before {
+	content: "\e844";
+}
+.lnr-diamond:before {
+	content: "\e845";
+}
+.lnr-linearicons:before {
+	content: "\e846";
+}
+.lnr-dinner:before {
+	content: "\e847";
+}
+.lnr-coffee-cup:before {
+	content: "\e848";
+}
+.lnr-leaf:before {
+	content: "\e849";
+}
+.lnr-paw:before {
+	content: "\e84a";
+}
+.lnr-rocket:before {
+	content: "\e84b";
+}
+.lnr-briefcase:before {
+	content: "\e84c";
+}
+.lnr-bus:before {
+	content: "\e84d";
+}
+.lnr-car:before {
+	content: "\e84e";
+}
+.lnr-train:before {
+	content: "\e84f";
+}
+.lnr-bicycle:before {
+	content: "\e850";
+}
+.lnr-wheelchair:before {
+	content: "\e851";
+}
+.lnr-select:before {
+	content: "\e852";
+}
+.lnr-earth:before {
+	content: "\e853";
+}
+.lnr-smile:before {
+	content: "\e854";
+}
+.lnr-sad:before {
+	content: "\e855";
+}
+.lnr-neutral:before {
+	content: "\e856";
+}
+.lnr-mustache:before {
+	content: "\e857";
+}
+.lnr-alarm:before {
+	content: "\e858";
+}
+.lnr-bullhorn:before {
+	content: "\e859";
+}
+.lnr-volume-high:before {
+	content: "\e85a";
+}
+.lnr-volume-medium:before {
+	content: "\e85b";
+}
+.lnr-volume-low:before {
+	content: "\e85c";
+}
+.lnr-volume:before {
+	content: "\e85d";
+}
+.lnr-mic:before {
+	content: "\e85e";
+}
+.lnr-hourglass:before {
+	content: "\e85f";
+}
+.lnr-undo:before {
+	content: "\e860";
+}
+.lnr-redo:before {
+	content: "\e861";
+}
+.lnr-sync:before {
+	content: "\e862";
+}
+.lnr-history:before {
+	content: "\e863";
+}
+.lnr-clock:before {
+	content: "\e864";
+}
+.lnr-download:before {
+	content: "\e865";
+}
+.lnr-upload:before {
+	content: "\e866";
+}
+.lnr-enter-down:before {
+	content: "\e867";
+}
+.lnr-exit-up:before {
+	content: "\e868";
+}
+.lnr-bug:before {
+	content: "\e869";
+}
+.lnr-code:before {
+	content: "\e86a";
+}
+.lnr-link:before {
+	content: "\e86b";
+}
+.lnr-unlink:before {
+	content: "\e86c";
+}
+.lnr-thumbs-up:before {
+	content: "\e86d";
+}
+.lnr-thumbs-down:before {
+	content: "\e86e";
+}
+.lnr-magnifier:before {
+	content: "\e86f";
+}
+.lnr-cross:before {
+	content: "\e870";
+}
+.lnr-menu:before {
+	content: "\e871";
+}
+.lnr-list:before {
+	content: "\e872";
+}
+.lnr-chevron-up:before {
+	content: "\e873";
+}
+.lnr-chevron-down:before {
+	content: "\e874";
+}
+.lnr-chevron-left:before {
+	content: "\e875";
+}
+.lnr-chevron-right:before {
+	content: "\e876";
+}
+.lnr-arrow-up:before {
+	content: "\e877";
+}
+.lnr-arrow-down:before {
+	content: "\e878";
+}
+.lnr-arrow-left:before {
+	content: "\e879";
+}
+.lnr-arrow-right:before {
+	content: "\e87a";
+}
+.lnr-move:before {
+	content: "\e87b";
+}
+.lnr-warning:before {
+	content: "\e87c";
+}
+.lnr-question-circle:before {
+	content: "\e87d";
+}
+.lnr-menu-circle:before {
+	content: "\e87e";
+}
+.lnr-checkmark-circle:before {
+	content: "\e87f";
+}
+.lnr-cross-circle:before {
+	content: "\e880";
+}
+.lnr-plus-circle:before {
+	content: "\e881";
+}
+.lnr-circle-minus:before {
+	content: "\e882";
+}
+.lnr-arrow-up-circle:before {
+	content: "\e883";
+}
+.lnr-arrow-down-circle:before {
+	content: "\e884";
+}
+.lnr-arrow-left-circle:before {
+	content: "\e885";
+}
+.lnr-arrow-right-circle:before {
+	content: "\e886";
+}
+.lnr-chevron-up-circle:before {
+	content: "\e887";
+}
+.lnr-chevron-down-circle:before {
+	content: "\e888";
+}
+.lnr-chevron-left-circle:before {
+	content: "\e889";
+}
+.lnr-chevron-right-circle:before {
+	content: "\e88a";
+}
+.lnr-crop:before {
+	content: "\e88b";
+}
+.lnr-frame-expand:before {
+	content: "\e88c";
+}
+.lnr-frame-contract:before {
+	content: "\e88d";
+}
+.lnr-layers:before {
+	content: "\e88e";
+}
+.lnr-funnel:before {
+	content: "\e88f";
+}
+.lnr-text-format:before {
+	content: "\e890";
+}
+.lnr-text-format-remove:before {
+	content: "\e891";
+}
+.lnr-text-size:before {
+	content: "\e892";
+}
+.lnr-bold:before {
+	content: "\e893";
+}
+.lnr-italic:before {
+	content: "\e894";
+}
+.lnr-underline:before {
+	content: "\e895";
+}
+.lnr-strikethrough:before {
+	content: "\e896";
+}
+.lnr-highlight:before {
+	content: "\e897";
+}
+.lnr-text-align-left:before {
+	content: "\e898";
+}
+.lnr-text-align-center:before {
+	content: "\e899";
+}
+.lnr-text-align-right:before {
+	content: "\e89a";
+}
+.lnr-text-align-justify:before {
+	content: "\e89b";
+}
+.lnr-line-spacing:before {
+	content: "\e89c";
+}
+.lnr-indent-increase:before {
+	content: "\e89d";
+}
+.lnr-indent-decrease:before {
+	content: "\e89e";
+}
+.lnr-pilcrow:before {
+	content: "\e89f";
+}
+.lnr-direction-ltr:before {
+	content: "\e8a0";
+}
+.lnr-direction-rtl:before {
+	content: "\e8a1";
+}
+.lnr-page-break:before {
+	content: "\e8a2";
+}
+.lnr-sort-alpha-asc:before {
+	content: "\e8a3";
+}
+.lnr-sort-amount-asc:before {
+	content: "\e8a4";
+}
+.lnr-hand:before {
+	content: "\e8a5";
+}
+.lnr-pointer-up:before {
+	content: "\e8a6";
+}
+.lnr-pointer-right:before {
+	content: "\e8a7";
+}
+.lnr-pointer-down:before {
+	content: "\e8a8";
+}
+.lnr-pointer-left:before {
+	content: "\e8a9";
+}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      

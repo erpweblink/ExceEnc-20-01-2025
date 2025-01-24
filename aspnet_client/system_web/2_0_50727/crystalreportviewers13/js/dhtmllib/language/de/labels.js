@@ -1,176 +1,115 @@
-// <script>
-/*
-=============================================================
-WebIntelligence(r) Report Panel
-Copyright(c) 2001-2003 Business Objects S.A.
-All rights reserved
+﻿#pragma checksum "E:\Ashish\User Autorization Excel Enc 21-11-22\Admin\CDNotePDF.aspx.cs" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "AD85D3B4B77C20F32E90C3D6698F7937AC7DC798"
 
-Use and support of this software is governed by the terms
-and conditions of the software license agreement and support
-policy of Business Objects S.A. and/or its subsidiaries. 
-The Business Objects products and technology are protected
-by the US patent number 5,555,403 and 6,247,008
+#line 1 "E:\Ashish\User Autorization Excel Enc 21-11-22\Admin\CDNotePDF.aspx.cs"
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Data;
+using System.IO;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading;
+using System.Net.Mail;
+using iTextSharp.text.pdf;
+using System.Globalization;
+using System.Threading.Tasks;
+using iTextSharp.text;
+using System.Collections;
+using System.Net;
+using iTextSharp.text.html.simpleparser;
+using Image = iTextSharp.text.Image;
+using iTextSharp.text.pdf.parser;
 
-File: labels.js
+public partial class Admin_TaxInvoicePDF : System.Web.UI.Page
+{
+    //string id;
+    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
 
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            if (Request.QueryString["Id"] != null)
+            {
+                //id = Session["PDFID"].ToString();// Decrypt(Request.QueryString["Id"].ToString());
+                Pdf("Original");
+            }
+        }
+    }
 
-=============================================================
-*/
+    public string Decrypt(string cipherText)
+    {
+        string EncryptionKey = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        cipherText = cipherText.Replace(" ", "+");
+        byte[] cipherBytes = Convert.FromBase64String(cipherText);
+        using (Aes encryptor = Aes.Create())
+        {
+            Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] {
+            0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76
+        });
+            encryptor.Key = pdb.GetBytes(32);
+            encryptor.IV = pdb.GetBytes(16);
+            using (MemoryStream ms = new MemoryStream())
+            {
+                using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateDecryptor(), CryptoStreamMode.Write))
+                {
+                    cs.Write(cipherBytes, 0, cipherBytes.Length);
+                    cs.Close();
+                }
+                cipherText = Encoding.Unicode.GetString(ms.ToArray());
+            }
+        }
+        return cipherText;
+    }
 
-_default="Standard"
-_black="Schwarz"
-_brown="Braun"
-_oliveGreen="Olivgrün"
-_darkGreen="Dunkelgrün"
-_darkTeal="Dunkelblaugrün"
-_navyBlue="Marineblau"
-_indigo="Indigoblau"
-_darkGray="Dunkelgrau"
-_darkRed="Dunkelrot"
-_orange="Orange"
-_darkYellow="Dunkelgelb"
-_green="Grün"
-_teal="Blaugrün"
-_blue="Blau"
-_blueGray="Blaugrau"
-_mediumGray="Mittelgrau"
-_red="Rot"
-_lightOrange="Hellorange"
-_lime="Gelbgrün"
-_seaGreen="Meergrün"
-_aqua="Aquamarin"
-_lightBlue="Hellblau"
-_violet="Violett"
-_gray="Grau"
-_magenta="Magenta"
-_gold="Gold"
-_yellow="Gelb"
-_brightGreen="Hellgrün"
-_cyan="Zyan"
-_skyBlue="Himmelblau"
-_plum="Pflaume"
-_lightGray="Hellgrau"
-_pink="Pink"
-_tan="Gelbbraun"
-_lightYellow="Hellgelb"
-_lightGreen="Hellgrün"
-_lightTurquoise="Helltürkis"
-_paleBlue="Blassblau"
-_lavender="Flieder"
-_white="Weiß"
-_lastUsed="Zuletzt verwendet:"
-_moreColors="Mehr Farben..."
+    public static string stringBetween(string Source, string Start, string End)
+    {
+        string result = "";
+        if (Source.Contains(Start) && Source.Contains(End))
+        {
+            int StartIndex = Source.IndexOf(Start, 0) + Start.Length;
+            int EndIndex = Source.IndexOf(End, StartIndex);
+            result = Source.Substring(StartIndex, EndIndex - StartIndex);
+            return result;
+        }
+        return result;
+    }
 
-_month=new Array
+    protected void Pdf(string flg)
+    {
+        string id = Session["PDFID"].ToString();
 
-_month[0]="JANUAR"
-_month[1]="FEBRUAR"
-_month[2]="MÄRZ"
-_month[3]="APRIL"
-_month[4]="MAI"
-_month[5]="JUNI"
-_month[6]="JULI"
-_month[7]="AUGUST"
-_month[8]="SEPTEMBER"
-_month[9]="OKTOBER"
-_month[10]="NOVEMBER"
-_month[11]="DEZEMBER"
+        DataTable Dt = new DataTable();
+        SqlDataAdapter Da = new SqlDataAdapter("select * from vw_CreditDebitNote where Id = '" + id + "'", con);
 
-_day=new Array
-_day[0]="S"
-_day[1]="M"
-_day[2]="D"
-_day[3]="M"
-_day[4]="D"
-_day[5]="F"
-_day[6]="S"
+        Da.Fill(Dt);
 
-_today="Heute"
+        StringWriter sw = new StringWriter();
+        StringReader sr = new StringReader(sw.ToString());
+        string billingsupplier = Dt.Rows[0]["SupplierName"].ToString();
+        string BillNumber = Dt.Rows[0]["BillNumber"].ToString();
+        string NoteType = Dt.Rows[0]["NoteType"].ToString();
+        string Remark = Dt.Rows[0]["Remarks"].ToString();
 
-_AM="AM"
-_PM="PM"
+        Document doc = new Document(PageSize.A4, 30f, 10f, -25f, 0f);
+        //Document doc = new Document(PageSize.A4, 10f,);
+        //string Path = ;
+        string Docname = billingsupplier + "_" + NoteType + "Note.pdf";
+        iTextSharp.text.pdf.PdfWriter writer = iTextSharp.text.pdf.PdfWriter.GetInstance(doc, new FileStream(Server.MapPath("~/files/") + Docname, FileMode.Create));
+        //PdfWriter writer = PdfWriter.GetInstance(doc, Response.OutputStream);
+        iTextSharp.tool.xml.XMLWorkerHelper.GetInstance().ParseXHtml(writer, doc, sr);
 
-_closeDialog="Fenster schließen"
+        doc.Open();
+        string imageURL = Server.MapPath("~") + "/img/ExcelEncLogo.png";
 
-_lstMoveUpLab="Nach oben"
-_lstMoveDownLab="Nach unten"
-_lstMoveLeftLab="Nach links" 
-_lstMoveRightLab="Nach rechts"
-_lstNewNodeLab="Verschachtelten Filter hinzufügen"
-_lstAndLabel="UND"
-_lstOrLabel="ODER"
-_lstSelectedLabel="Ausgewählt"
-_lstQuickFilterLab="Quick-Filter hinzufügen"
+        //Price Format
+        System.Globalization.CultureInfo info = System.Globalization.CultureInfo.GetCultureInfo("en-IN");
 
-_openMenu="Klicken Sie hier, um auf die Optionen von {0} zuzugreifen"
-_openCalendarLab="Kalender öffnen"
+        iTextSharp.text.Image png = iTextSharp.text.Image.GetInstance(imageURL);
 
-_scroll_first_tab="Bildlauf zur ersten Registerkarte"
-_scroll_previous_tab="Bildlauf zur vorherigen Registerkarte"
-_scroll_next_tab="Bildlauf zur nächsten Registerkarte"
-_scroll_last_tab="Bildlauf zur letzten Registerkarte"
-
-_expandedLab="Erweitert"
-_collapsedLab="Zugeklappt"
-_selectedLab="Ausgewählt"
-
-_expandNode="Knoten %1 aufklappen"
-_collapseNode="Knoten %1 zuklappen"
-
-_checkedPromptLab="Festgelegt"
-_nocheckedPromptLab="Nicht festgelegt"
-_selectionPromptLab="Werte gleich"
-_noselectionPromptLab="keine Werte"
-
-_lovTextFieldLab="Hier Werte eingeben"
-_lovCalendarLab="Hier das Datum eingeben"
-_lovPrevChunkLab="Zum vorherigem Segment wechseln"
-_lovNextChunkLab="Zum nächsten Segment wechseln"
-_lovComboChunkLab="Segment"
-_lovRefreshLab="Regenerieren"
-_lovSearchFieldLab="Geben Sie hier den zu suchenden Text ein"
-_lovSearchLab="Suchen"
-_lovNormalLab="Normal"
-_lovMatchCase="Groß-/Kleinschreibung beachten"
-_lovRefreshValuesLab="Werte regenerieren"
-
-_calendarNextMonthLab="Zum nächsten Monat wechseln"
-_calendarPrevMonthLab="Zum vorherigen Monat wechseln"
-_calendarNextYearLab="Zum nächsten Jahr wechseln"
-_calendarPrevYearLab="Zum vorherigen Jahr wechseln"
-_calendarSelectionLab="Ausgewählter Tag"
-
-_menuCheckLab="Aktiviert"
-_menuDisableLab="Deaktiviert"
-	
-_level="Ebene"
-_closeTab="Registerkarte schließen"
-_of=" von "
-
-_RGBTxtBegin= "RGB("
-_RGBTxtEnd= ")"
-
-_helpLab="Hilfe"
-
-_waitTitleLab="Bitte warten"
-_cancelButtonLab="Abbrechen"
-
-_modifiers= new Array
-_modifiers[0]="Strg+"
-_modifiers[1]="Umschalt+"
-_modifiers[2]="Alt+"
-
-_bordersMoreColorsLabel="Weitere Rahmen..."
-_bordersTooltip=new Array
-_bordersTooltip[0]="Kein Rahmen"
-_bordersTooltip[1]="Rahmen links"
-_bordersTooltip[2]="Rahmen rechts"
-_bordersTooltip[3]="Rahmen unten"
-_bordersTooltip[4]="Rahmen unten mittel"
-_bordersTooltip[5]="Rahmen unten stark"
-_bordersTooltip[6]="Rahmen oben und unten"
-_bordersTooltip[7]="Rahmen unten, oben und mittel"
-_bordersTooltip[8]="Rahmen unten, oben und stark"
-_bordersTooltip[9]="Alle Rahmen"
-_bordersTooltip[10]="Alle mittleren Rahmen"
-_bordersTooltip[11]="Alle starken Rahmen"
+        //Resi

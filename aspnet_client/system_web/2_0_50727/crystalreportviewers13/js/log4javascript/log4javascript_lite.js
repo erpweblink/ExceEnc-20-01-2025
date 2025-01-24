@@ -1,55 +1,273 @@
-/**
- * Copyright 2009 Tim Down.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Data;
+using System.IO;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading;
+using System.Net.Mail;
+using iTextSharp.text.pdf;
+using System.Globalization;
+using System.Threading.Tasks;
+using iTextSharp.text;
+using System.Collections;
+using System.Net;
+using iTextSharp.text.html.simpleparser;
+using Image = iTextSharp.text.Image;
+using iTextSharp.text.pdf.parser;
+
+public partial class Admin_TaxInvoicePDF : System.Web.UI.Page
+{
+    //string id;
+    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            if (Request.QueryString["Id"] != null)
+            {
+                //id = Session["PDFID"].ToString();// Decrypt(Request.QueryString["Id"].ToString());
+                Pdf("Original");
+            }
+        }
+    }
+
+    public string Decrypt(string cipherText)
+    {
+        string EncryptionKey = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        cipherText = cipherText.Replace(" ", "+");
+        byte[] cipherBytes = Convert.FromBase64String(cipherText);
+        using (Aes encryptor = Aes.Create())
+        {
+            Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] {
+            0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76
+        });
+            encryptor.Key = pdb.GetBytes(32);
+            encryptor.IV = pdb.GetBytes(16);
+            using (MemoryStream ms = new MemoryStream())
+            {
+                using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateDecryptor(), CryptoStreamMode.Write))
+                {
+                    cs.Write(cipherBytes, 0, cipherBytes.Length);
+                    cs.Close();
+                }
+                cipherText = Encoding.Unicode.GetString(ms.ToArray());
+            }
+        }
+        return cipherText;
+    }
+
+    public static string stringBetween(string Source, string Start, string End)
+    {
+        string result = "";
+        if (Source.Contains(Start) && Source.Contains(End))
+        {
+            int StartIndex = Source.IndexOf(Start, 0) + Start.Length;
+            int EndIndex = Source.IndexOf(End, StartIndex);
+            result = Source.Substring(StartIndex, EndIndex - StartIndex);
+            return result;
+        }
+        return result;
+    }
+
+    protected void Pdf(string flg)
+    {
+        string id = Session["PDFID"].ToString();
+
+        DataTable Dt = new DataTable();
+        SqlDataAdapter Da = new SqlDataAdapter("select * from vw_CreditDebitNote where Id = '" + id + "'", con);
+
+        Da.Fill(Dt);
+
+        StringWriter sw = new StringWriter();
+        StringReader sr = new StringReader(sw.ToString());
+        string billingsupplier = Dt.Rows[0]["SupplierName"].ToString();
+        string BillNumber = Dt.Rows[0]["BillNumber"].ToString();
+        string NoteType = Dt.Rows[0]["NoteType"].ToString();
+        string Remark = Dt.Rows[0]["Remarks"].ToString();
+        
+        if (BillNumber == "" || BillNumber == "--Select Invoice Number--")
+        {
+            BillNumber = "";
+        }
+        else
+        {
+           BillNumber = Dt.Rows[0]["BillNumber"].ToString();
+        }
+
+        Document doc = new Document(PageSize.A4, 30f, 10f, -25f, 0f);
+        //Document doc = new Document(PageSize.A4, 10f,);
+        //string Path = ;
+
+        if (NoteType == "Credit_Sale")
+        {
+            NoteType = "Credit";
+        }
+        if (NoteType == "Debit_Sale")
+        {
+            NoteType = "Debit";
+        }
+      
+        string Docname = billingsupplier + "_" + NoteType + "Note.pdf";
+  
+        iTextSharp.text.pdf.PdfWriter writer = iTextSharp.text.pdf.PdfWriter.GetInstance(doc, new FileStream(Server.MapPath("~/files/") + Docname, FileMode.Create));
+        //PdfWriter writer = PdfWriter.GetInstance(doc, Response.OutputStream);
+        iTextSharp.tool.xml.XMLWorkerHelper.GetInstance().ParseXHtml(writer, doc, sr);
+
+        doc.Open();
+        string imageURL = Server.MapPath("~") + "/img/ExcelEncLogo.png";
+
+        //Price Format
+        System.Globalization.CultureInfo info = System.Globalization.CultureInfo.GetCultureInfo("en-IN");
+
+        iTextSharp.text.Image png = iTextSharp.text.Image.GetInstance(imageURL);
 
 
-if(!Array.prototype.shift){Array.prototype.shift=function(){if(this.length>0){var firstItem=this[0];for(var i=0,len=this.length-1;i<len;i++){this[i]=this[i+1];}
-this.length=this.length-1;return firstItem;}};}
-var log4javascript;(function(){var newLine="\r\n";function Log4JavaScript(){}
-log4javascript=new Log4JavaScript();log4javascript.version="1.4.2";log4javascript.edition="log4javascript_lite";function getExceptionMessage(ex){if(ex.message){return ex.message;}else if(ex.description){return ex.description;}else{return String(ex);}}
-function getUrlFileName(url){var lastSlashIndex=Math.max(url.lastIndexOf("/"),url.lastIndexOf("\\"));return url.substr(lastSlashIndex+1);}
-function getExceptionStringRep(ex){if(ex){var exStr="Exception: "+getExceptionMessage(ex);try{if(ex.lineNumber){exStr+=" on line number "+ex.lineNumber;}
-if(ex.fileName){exStr+=" in file "+getUrlFileName(ex.fileName);}}catch(localEx){}
-if(showStackTraces&&ex.stack){exStr+=newLine+"Stack trace:"+newLine+ex.stack;}
-return exStr;}
-return null;}
-function isError(err){return(err instanceof Error);}
-function bool(obj){return Boolean(obj);}
-var enabled=(typeof log4javascript_disabled!="undefined")&&log4javascript_disabled?false:true;log4javascript.setEnabled=function(enable){enabled=bool(enable);};log4javascript.isEnabled=function(){return enabled;};var showStackTraces=false;log4javascript.setShowStackTraces=function(show){showStackTraces=bool(show);};var Level=function(level,name){this.level=level;this.name=name;};Level.prototype={toString:function(){return this.name;},equals:function(level){return this.level==level.level;},isGreaterOrEqual:function(level){return this.level>=level.level;}};Level.ALL=new Level(Number.MIN_VALUE,"ALL");Level.TRACE=new Level(10000,"TRACE");Level.DEBUG=new Level(20000,"DEBUG");Level.INFO=new Level(30000,"INFO");Level.WARN=new Level(40000,"WARN");Level.ERROR=new Level(50000,"ERROR");Level.FATAL=new Level(60000,"FATAL");Level.OFF=new Level(Number.MAX_VALUE,"OFF");log4javascript.Level=Level;function Appender(){var getConsoleHtmlLines=function(){return['<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">','<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">','<head>','<title>log4javascript</title>','<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />','<!-- Make IE8 behave like IE7, having gone to all the trouble of making IE work -->','<meta http-equiv="X-UA-Compatible" content="IE=7" />','<script type="text/javascript">','//<![CDATA[','var loggingEnabled=true;var messagesBeforeDocLoaded=[];function toggleLoggingEnabled(){setLoggingEnabled($("enableLogging").checked);}','function setLoggingEnabled(enable){loggingEnabled=enable;}','function scrollToLatestEntry(){var l=getLogContainer();if(typeof l.scrollTop!="undefined"){var latestLogEntry=l.lastChild;if(latestLogEntry){l.scrollTop=l.scrollHeight;}}}','function log(logLevel,formattedMessage){if(loggingEnabled){if(loaded){doLog(logLevel,formattedMessage);}else{messagesBeforeDocLoaded.push([logLevel,formattedMessage]);}}}','function doLog(logLevel,formattedMessage){var logEntry=document.createElement("div");logEntry.appendChild(document.createTextNode(formattedMessage));logEntry.className="logentry "+logLevel.name;getLogContainer().appendChild(logEntry);scrollToLatestEntry();}','function mainPageReloaded(){var separator=document.createElement("div");separator.className="separator";separator.innerHTML="&nbsp;";getLogContainer().appendChild(separator);}','var loaded=false;var logLevels=["DEBUG","INFO","WARN","ERROR","FATAL"];window.onload=function(){setLogContainerHeight();toggleLoggingEnabled();for(var i=0;i<messagesBeforeDocLoaded.length;i++){doLog(messagesBeforeDocLoaded[i][0],messagesBeforeDocLoaded[i][1]);}','messagesBeforeDocLoaded=[];loaded=true;setTimeout(setLogContainerHeight,20);};function getLogContainer(){return $("log");}','function clearLog(){getLogContainer().innerHTML="";}','function $(id){return document.getElementById(id);}','function getWindowHeight(){if(window.innerHeight){return window.innerHeight;}else if(document.documentElement&&document.documentElement.clientHeight){return document.documentElement.clientHeight;}else if(document.body){return document.body.clientHeight;}','return 0;}','function getChromeHeight(){return $("toolbar").offsetHeight;}','function setLogContainerHeight(){var windowHeight=getWindowHeight();$("body").style.height=getWindowHeight()+"px";getLogContainer().style.height=""+','Math.max(0,windowHeight-getChromeHeight())+"px";}','window.onresize=function(){setLogContainerHeight();};','//]]>','</script>','<style type="text/css">','body{background-color:white;color:black;padding:0;margin:0;font-family:tahoma,verdana,arial,helvetica,sans-serif;overflow:hidden}div#toolbar{border-top:solid #ffffff 1px;border-bottom:solid #aca899 1px;background-color:#f1efe7;padding:3px 5px;font-size:68.75%}div#toolbar input.button{padding:0 5px;font-size:100%}div#log{font-family:Courier New,Courier;font-size:75%;width:100%;overflow:auto;clear:both}*.logentry{overflow:visible;white-space:pre}*.TRACE{color:#666666}*.DEBUG{color:green}*.INFO{color:#000099}*.WARN{color:#999900}*.ERROR{color:red}*.FATAL{color:#660066}div#log div.separator{background-color:#cccccc;margin:5px 0;line-height:1px}','</style>','</head>','<body id="body">','<div id="toolbar">','Options:','<input type="checkbox" id="enableLogging" onclick="toggleLoggingEnabled()" class="stateful" checked="checked" title="Enable/disable logging" /><label for="enableLogging" id="enableLoggingLabel">Enable logging</label>','<input type="button" id="clearButton" value="Clear" onclick="clearLog()" class="stateful button" title="Clear all log messages"  />','<input type="button" id="closeButton" value="Close" onclick="closeWindow()" class="stateful button" title="Close the window" />','</div>','<div id="log" class="TRACE DEBUG INFO WARN ERROR FATAL"></div>','</body>','</html>'];};var popUp=null;var popUpsBlocked=false;var popUpClosed=false;var popUpLoaded=false;var complainAboutPopUpBlocking=true;var initialized=false;var isSupported=true;var width=600;var height=400;var focusPopUp=false;var queuedLoggingEvents=new Array();function isLoaded(win){try{return bool(win.loaded);}catch(ex){return false;}}
-function finalInit(){popUpLoaded=true;appendQueuedLoggingEvents();}
-function writeHtml(doc){var lines=getConsoleHtmlLines();doc.open();for(var i=0,len=lines.length;i<len;i++){doc.writeln(lines[i]);}
-doc.close();}
-function pollConsoleWindow(){function pollConsoleWindowLoaded(){if(popUpLoaded){clearInterval(poll);}else if(bool(popUp)&&isLoaded(popUp)){clearInterval(poll);finalInit();}}
-var poll=setInterval(pollConsoleWindowLoaded,100);}
-function init(){var windowProperties="width="+width+",height="+height+",status,resizable";var windowName="log4javascriptLitePopUp"+location.host.replace(/[^a-z0-9]/gi,"_");popUp=window.open("",windowName,windowProperties);popUpClosed=false;if(popUp){if(isLoaded(popUp)){popUp.mainPageReloaded();finalInit();}else{writeHtml(popUp.document);if(isLoaded(popUp)){finalInit();}else{pollConsoleWindow();}}}else{isSupported=false;if(complainAboutPopUpBlocking){alert("log4javascript: pop-up windows appear to be blocked. Please unblock them to use pop-up logging.");}}
-initialized=true;}
-function safeToAppend(){if(!popUpsBlocked&&!popUpClosed){if(popUp.closed){popUpClosed=true;return false;}
-if(!popUpLoaded&&popUp.loaded){popUpLoaded=true;}}
-return!popUpsBlocked&&popUpLoaded&&!popUpClosed;}
-function padWithZeroes(num,len){var str=""+num;while(str.length<len){str="0"+str;}
-return str;}
-function padWithSpaces(str,len){while(str.length<len){str+=" ";}
-return str;}
-this.append=function(loggingEvent){if(!initialized){init();}
-queuedLoggingEvents.push(loggingEvent);if(safeToAppend()){appendQueuedLoggingEvents();}};function appendQueuedLoggingEvents(){if(safeToAppend()){while(queuedLoggingEvents.length>0){var currentLoggingEvent=queuedLoggingEvents.shift();var date=currentLoggingEvent.timeStamp;var formattedDate=padWithZeroes(date.getHours(),2)+":"+
-padWithZeroes(date.getMinutes(),2)+":"+padWithZeroes(date.getSeconds(),2);var formattedMessage=formattedDate+" "+padWithSpaces(currentLoggingEvent.level.name,5)+" - "+currentLoggingEvent.getCombinedMessages();var throwableStringRep=currentLoggingEvent.getThrowableStrRep();if(throwableStringRep){formattedMessage+=newLine+throwableStringRep;}
-popUp.log(currentLoggingEvent.level,formattedMessage);}
-if(focusPopUp){popUp.focus();}}}}
-log4javascript.Appender=Appender;function Logger(){var appender=new Appender();var loggerLevel=Level.ALL;this.log=function(level,params){if(level.isGreaterOrEqual(this.getLevel())){var exception;var finalParamIndex=params.length-1;var lastParam=params[params.length-1];if(params.length>1&&isError(lastParam)){exception=lastParam;finalParamIndex--;}
-var messages=[];for(var i=0;i<=finalParamIndex;i++){messages[i]=params[i];}
-var loggingEvent=new LoggingEvent(this,new Date(),level,messages,exception);appender.append(loggingEvent);}};this.setLevel=function(level){loggerLevel=level;};this.getLevel=function(){return loggerLevel;};}
-Logger.prototype={trace:function(){this.log(Level.TRACE,arguments);},debug:function(){this.log(Level.DEBUG,arguments);},info:function(){this.log(Level.INFO,arguments);},warn:function(){this.log(Level.WARN,arguments);},error:function(){this.log(Level.ERROR,arguments);},fatal:function(){this.log(Level.FATAL,arguments);},isEnabledFor:function(level){return level.isGreaterOrEqual(this.getLevel());},isTraceEnabled:function(){return this.isEnabledFor(Level.TRACE);},isDebugEnabled:function(){return this.isEnabledFor(Level.DEBUG);},isInfoEnabled:function(){return this.isEnabledFor(Level.INFO);},isWarnEnabled:function(){return this.isEnabledFor(Level.WARN);},isErrorEnabled:function(){return this.isEnabledFor(Level.ERROR);},isFatalEnabled:function(){return this.isEnabledFor(Level.FATAL);}};var defaultLogger=null;log4javascript.getDefaultLogger=function(){if(!defaultLogger){defaultLogger=new Logger();}
-return defaultLogger;};log4javascript.getLogger=log4javascript.getDefaultLogger;var nullLogger=null;log4javascript.getNullLogger=function(){if(!nullLogger){nullLogger=new Logger();nullLogger.setLevel(Level.OFF);}
-return nullLogger;};var LoggingEvent=function(logger,timeStamp,level,messages,exception){this.logger=logger;this.timeStamp=timeStamp;this.level=level;this.messages=messages;this.exception=exception;};LoggingEvent.prototype={getThrowableStrRep:function(){return this.exception?getExceptionStringRep(this.exception):"";},getCombinedMessages:function(){return(this.messages.length===1)?this.messages[0]:this.messages.join(newLine);}};log4javascript.LoggingEvent=LoggingEvent;window.log4javascript=log4javascript;})();
+        //Resize image depend upon your need
+        png.ScaleToFit(100, 100);
+
+        //For Image Position
+        png.SetAbsolutePosition(40, 779);
+        //var document = new Document();
+
+        //Give space before image
+        //png.ScaleToFit(document.PageSize.Width - (document.RightMargin * 100), 50);
+        png.SpacingBefore = 50f;
+
+        //Give some space after the image
+
+        png.SpacingAfter = 1f;
+
+        png.Alignment = Element.ALIGN_LEFT;
+
+
+        doc.Add(png);
+
+
+        if (Dt.Rows.Count > 0)
+        {
+            var CreateDate = DateTime.Now.ToString("yyyy-MM-dd");
+
+            string BillDate = Dt.Rows[0]["BillDate"].ToString().TrimEnd("0:0".ToCharArray());
+
+            string CategoryName = Dt.Rows[0]["CategoryName"].ToString();
+            string DocNo = Dt.Rows[0]["DocNo"].ToString();
+            string DocDate = Dt.Rows[0]["DocDate"].ToString().TrimEnd("0:0".ToCharArray());
+
+            //string ShippingCustomer = Dt.Rows[0]["CustomerName"].ToString();
+            //string ShippingAddress = Dt.Rows[0]["ShippingAddress"].ToString();
+            //string BillingAddress = Dt.Rows[0]["ShippingAddress"].ToString();
+            string grandtotal = Dt.Rows[0]["Grandtotal"].ToString();
+
+            string GSTNo = "";
+            string ShippingAddress = "";
+            string BillingAddress = "";
+
+            DataTable dtgstno = new DataTable();
+            //SqlDataAdapter sadgst = new SqlDataAdapter("select * from tblSupplierMaster where SupplierName='" + billingsupplier + "'", con);
+            SqlDataAdapter sadgst = new SqlDataAdapter("select * from Company where cname='" + billingsupplier + "'", con);
+            sadgst.Fill(dtgstno);
+            if (dtgstno.Rows.Count > 0)
+            {
+                GSTNo = dtgstno.Rows[0]["GSTNo"].ToString();
+                ShippingAddress = dtgstno.Rows[0]["shippingaddress"].ToString();
+                BillingAddress = dtgstno.Rows[0]["billingaddress"].ToString();
+            }
+
+            string PanNo = "";
+            if (GSTNo == "")
+            {
+                PanNo = "NA";
+                GSTNo = "NA";
+            }
+            else
+            {
+                string MyString = GSTNo;
+                string res = MyString.Substring(0, 2);
+                string word1 = res;
+                string word2 = "1Z";
+                PanNo = stringBetween(MyString, word1, word2);
+            }
+
+            PdfContentByte cb = writer.DirectContent;
+            cb.Rectangle(28f, 756f, 560f, 80f);
+
+            cb.Stroke();
+            // Header 
+            cb.BeginText();
+
+            cb.SetFontAndSize(BaseFont.CreateFont(@"C:\Windows\Fonts\Calibrib.ttf", "Identity-H", BaseFont.EMBEDDED), 25);
+            cb.ShowTextAligned(PdfContentByte.ALIGN_LEFT, "Excel Enclosures", 250, 815, 0);
+            cb.SetFontAndSize(BaseFont.CreateFont(@"C:\Windows\Fonts\Calibrib.ttf", "Identity-H", BaseFont.EMBEDDED), 11);
+            cb.ShowTextAligned(PdfContentByte.ALIGN_LEFT, "Gat No. 1567, Shelar Vasti, Dehu-Alandi Road, Chikhali, Pune - 411062", 150, 800, 0);
+            cb.SetFontAndSize(BaseFont.CreateFont(@"C:\Windows\Fonts\Calibrib.ttf", "Identity-H", BaseFont.EMBEDDED), 11);
+            cb.ShowTextAligned(PdfContentByte.ALIGN_LEFT, "EMAIL : purchase@excelenclosures.com", 250, 785, 0);
+            cb.SetFontAndSize(BaseFont.CreateFont(@"C:\Windows\Fonts\Calibrib.ttf", "Identity-H", BaseFont.EMBEDDED), 11);
+            cb.ShowTextAligned(PdfContentByte.ALIGN_LEFT, "", 227, 740, 0);
+            cb.EndText();
+
+
+            PdfContentByte cbbb = writer.DirectContent;
+            cbbb.Rectangle(28f, 756f, 560f, 25f);
+            cbbb.Stroke();
+            //Header
+            cbbb.BeginText();
+            cbbb.SetFontAndSize(BaseFont.CreateFont(@"C:\Windows\Fonts\Calibrib.ttf", "Identity-H", BaseFont.EMBEDDED), 10);
+            cbbb.ShowTextAligned(PdfContentByte.ALIGN_LEFT, "GSTIN :27ATFPS1959J1Z4" + "", 48, 765, 0);
+            cbbb.SetFontAndSize(BaseFont.CreateFont(@"C:\Windows\Fonts\Calibrib.ttf", "Identity-H", BaseFont.EMBEDDED), 10);
+            cbbb.ShowTextAligned(PdfContentByte.ALIGN_LEFT, "PAN NO: ATFPS1959J" + "", 170, 765, 0);
+            cbbb.SetFontAndSize(BaseFont.CreateFont(@"C:\Windows\Fonts\Calibrib.ttf", "Identity-H", BaseFont.EMBEDDED), 10);
+            cbbb.ShowTextAligned(PdfContentByte.ALIGN_LEFT, "MAHARASHTRA STATE GST CODE : 27" + "", 280, 765, 0);
+            cbbb.SetFontAndSize(BaseFont.CreateFont(@"C:\Windows\Fonts\Calibrib.ttf", "Identity-H", BaseFont.EMBEDDED), 10);
+            cbbb.ShowTextAligned(PdfContentByte.ALIGN_LEFT, "CONTACT : 9225658662", 455, 765, 0);
+            cbbb.EndText();
+
+            PdfContentByte cd = writer.DirectContent;
+            cd.Rectangle(28f, 731f, 560f, 25f);
+            cd.Stroke();
+            // Header 
+            cd.BeginText();
+
+            if (flg == "Original")
+            {
+                //cb.SetFontAndSize(BaseFont.CreateFont(@"C:\Windows\Fonts\Calibrib.ttf", "Identity-H", BaseFont.EMBEDDED), 10);
+                //cb.ShowTextAligned(PdfContentByte.ALIGN_LEFT, "ORIGINAL FOR BUYER", 480, 739, 0);
+            }
+            else if (flg == "Duplicate")
+            {
+                cb.SetFontAndSize(BaseFont.CreateFont(@"C:\Windows\Fonts\Calibrib.ttf", "Identity-H", BaseFont.EMBEDDED), 10);
+                cb.ShowTextAligned(PdfContentByte.ALIGN_LEFT, "DUPLICATE FOR TRANSPORTER", 450, 739, 0);
+            }
+            else if (flg == "Triplicate")
+            {
+                cb.SetFontAndSize(BaseFont.CreateFont(@"C:\Windows\Fonts\Calibrib.ttf", "Identity-H", BaseFont.EMBEDDED), 10);
+                cb.ShowTextAligned(PdfContentByte.ALIGN_LEFT, "TRIPLICATE FOR SUPPLIER", 470, 739, 0);
+            }
+            else if (flg == "Extra")
+            {
+                cb.SetFontAndSize(BaseFont.CreateFont(@"C:\Windows\Fonts\Calibrib.ttf", "Identity-H", BaseFont.EMBEDDED), 10);
+                cb.ShowTextAligned(PdfContentByte.ALIGN_LEFT, "EXTRA COPY", 480, 739, 0);
+            }
+            cd.SetFontAndSize(BaseFont.CreateFont(@"C:\Windows\Fonts\Calibrib.ttf", "Identity-H", BaseFont.EMBEDDED), 14);
+            cd.ShowTextAligned(PdfContentByte.ALIGN_LEFT, NoteType + " Note", 270, 739, 0);
+            cd.EndText();
+
+
+            //DetailCustomer
+
+            Paragraph paragraphTable1 = new Paragraph();
+            paragraphTable1.SpacingBefore = 120f;
+            paragraphTable1.SpacingAfter = 0f;
+
+            PdfPTable table = new PdfPTable(6);
+
+            float[] widths2 = new float[] { 100, 100, 100, 100, 0, 0 };
+            table.SetWidths(widths2);
+            table.TotalWidth = 560f;
