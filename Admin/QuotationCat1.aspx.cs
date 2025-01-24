@@ -12329,6 +12329,7 @@ public partial class Admin_Quotation : System.Web.UI.Page
                 }
                 break;
 
+
             case "ChkSpecify2":
                 HandleDropDownListVisibility(null, null, null, null, null, chkBox.Checked);
                 bool check12 = chkBox.Checked;

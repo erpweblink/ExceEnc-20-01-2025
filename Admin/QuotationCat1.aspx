@@ -12,6 +12,7 @@
             display: none;
         }
     </style>
+
     <style>
         .spancls {
             color: #5d5656 !important;
