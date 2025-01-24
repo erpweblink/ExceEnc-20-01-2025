@@ -1598,7 +1598,7 @@
                                                     <asp:ListItem>200.00mm</asp:ListItem>
                                                 </asp:DropDownList>
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorWM27" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
-                                                    ControlToValidate="txtWMM23Basecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Height" Enabled="false"></asp:RequiredFieldValidator>
+                                                    ControlToValidate="ddlheight" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Height" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%-- 16--%>
@@ -2278,6 +2278,8 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS10" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSSideCPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlMFSSideCPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select colour</asp:ListItem>
@@ -2285,6 +2287,8 @@
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS11" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSSideCPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select colour" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlMFSSideCPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -2292,6 +2296,9 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS12" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSSideCPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtMFSSideCPlatecat4" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -2307,6 +2314,8 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS13" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSDoorCPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlMFSDoorCPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select colour</asp:ListItem>
@@ -2314,6 +2323,8 @@
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS14" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSDoorCPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select colour" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlMFSDoorCPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -2321,6 +2332,9 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS15" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSDoorCPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtMFSDoorCPlatecat4" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -2336,6 +2350,8 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS16" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSPartialMountingPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlMFSPartialMountingPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select colour</asp:ListItem>
@@ -2343,6 +2359,8 @@
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS17" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSPartialMountingPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select colour" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlMFSPartialMountingPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -2350,6 +2368,9 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS18" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSPartialMountingPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtMFSPartialMountingPlatecat4" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -2364,6 +2385,8 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS19" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSFillerTraycat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlMFSFillerTraycat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select colour</asp:ListItem>
@@ -2371,6 +2394,8 @@
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS20" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSFillerTraycat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select colour" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlMFSFillerTraycat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -2378,6 +2403,9 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS21" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSFillerTraycat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtMFSFillerTraycat4" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -2393,12 +2421,16 @@
                                                     <asp:ListItem>Single</asp:ListItem>
                                                     <asp:ListItem>Split</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS22" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSFrontDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlMFSFrontDoorcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS23" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSFrontDoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--10--%>
@@ -2413,12 +2445,16 @@
                                                     <asp:ListItem>Single</asp:ListItem>
                                                     <asp:ListItem>Split</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS24" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSRearDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlMFSRearDoorcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS25" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSRearDoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--11--%>
@@ -2435,6 +2471,8 @@
                                                     <asp:ListItem>3-point Handle Lock</asp:ListItem>
                                                     <asp:ListItem>IMP Lock</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS26" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSLockcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:TextBox ID="txtmsfqty" runat="server" Height="23px" Placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
@@ -2451,6 +2489,8 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS27" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSRearCovercat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--13--%>
@@ -2465,6 +2505,8 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS28" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSSideCovercat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--14--%>
@@ -2478,6 +2520,8 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS29" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSTopCovercat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--15--%>
@@ -2491,6 +2535,9 @@
                                                     <asp:ListItem>RAL-7032</asp:ListItem>
                                                     <asp:ListItem>RAL-7035</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS30" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSPowerCoatingShadecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtMFSPowerCoatingShadecat2" runat="server" placeholder="Specify" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -2509,11 +2556,16 @@
                                                     <asp:ListItem>Lifting Depth L</asp:ListItem>
                                                     <asp:ListItem>Both Lifting full length width and depth L</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS31" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSLiftingArrangementcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlMFSLiftingArrangementcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                     <asp:ListItem>5.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS32" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSLiftingArrangementcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%-- 17--%>
@@ -2528,12 +2580,18 @@
                                                     <asp:ListItem>50mm Angle frame</asp:ListItem>
                                                     <asp:ListItem>ISMC</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS33" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSBasecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlMFSBasecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                     <asp:ListItem>5.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS34" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSBasecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlMFSBasecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Height</asp:ListItem>
                                                     <asp:ListItem>75mm</asp:ListItem>
@@ -2543,12 +2601,18 @@
                                                     <asp:ListItem>300mm</asp:ListItem>
                                                     <asp:ListItem>400mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS35" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSBasecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Height" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddllistforshitMfs" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Glass</asp:ListItem>
                                                     <asp:ListItem>Acrylic</asp:ListItem>
                                                     <asp:ListItem>Polycarbonate Sheet</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS36" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddllistforshitMfs" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%-- 18--%>
@@ -2563,20 +2627,28 @@
                                                     <asp:ListItem>Acrylic</asp:ListItem>
                                                     <asp:ListItem>Polycarbonate</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS37" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23TransparentDoorcat1MFS1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlWMM23TransparentDoorcat2MFS" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                     <asp:ListItem>4.00mm</asp:ListItem>
                                                     <asp:ListItem>5.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS38" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23TransparentDoorcat2MFS" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlWMM23TransparentDoorcat3MFS" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>With bidding</asp:ListItem>
                                                     <asp:ListItem>biddingless technique</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS39" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23TransparentDoorcat3MFS" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
-
 
                                         <%-- 19--%>
                                         <br />
@@ -2591,6 +2663,9 @@
                                                     <asp:ListItem>15.00mm</asp:ListItem>
                                                     <asp:ListItem>25.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS40" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSAntivibrationpadcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%-- 20--%>
@@ -2606,12 +2681,17 @@
                                                     <asp:ListItem>Standard</asp:ListItem>
                                                     <asp:ListItem>Extra Deep</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS41" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSDrawingPocketcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlMFSDrawingPocketcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>7032</asp:ListItem>
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>Orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS42" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSDrawingPocketcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%-- 21--%>
@@ -2641,6 +2721,9 @@
                                                     <asp:ListItem>Full Size</asp:ListItem>
                                                     <asp:ListItem>Part Size</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS43" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSCanopycat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlMFSCanopycat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Perforation Hole</asp:ListItem>
@@ -2649,12 +2732,18 @@
                                                     <asp:ListItem>6.00mm</asp:ListItem>
                                                     <asp:ListItem>Slotted</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS44" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSCanopycat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlMFSCanopycat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.2mm</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS45" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSCanopycat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%-- 24--%>
@@ -2668,6 +2757,9 @@
                                                     <asp:ListItem>4</asp:ListItem>
                                                     <asp:ListItem>6</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorMFS46" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlMFSfancat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtMFSfancat2" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -2722,6 +2814,9 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco1" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCMainframeStructureWeldedcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--2--%>
@@ -2735,11 +2830,16 @@
                                                     <asp:ListItem>Bottom Side</asp:ListItem>
                                                     <asp:ListItem>Top Side</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco2" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCGlandPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlEcoMCCGlandPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco3" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCGlandPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
 
@@ -2755,6 +2855,8 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco4" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCComponentMtgPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlEcoMCCComponentMtgPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
@@ -2762,6 +2864,8 @@
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>Orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco5" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCComponentMtgPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlEcoMCCComponentMtgPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -2769,6 +2873,9 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco6" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCComponentMtgPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtEcoMCCComponentMtgPlatecat4" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
 
 
@@ -2786,6 +2893,8 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco7" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCSideCPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlEcoMCCSideCPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
@@ -2793,6 +2902,8 @@
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco8" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCSideCPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlEcoMCCSideCPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -2800,6 +2911,9 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco9" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCSideCPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtEcoMCCSideCPlatecat4" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -2815,6 +2929,8 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco10" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCDoorCPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlEcoMCCDoorCPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
@@ -2822,6 +2938,8 @@
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco11" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCDoorCPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlEcoMCCDoorCPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -2829,6 +2947,9 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco12" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCDoorCPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtEcoMCCDoorCPlatecat4" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -2845,12 +2966,16 @@
                                                     <asp:ListItem>Single</asp:ListItem>
                                                     <asp:ListItem>Split</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco13" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCFrontDoorca1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlEcoMCCFrontDoorca2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco14" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCFrontDoorca2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--7--%>
@@ -2865,12 +2990,17 @@
                                                     <asp:ListItem>Single</asp:ListItem>
                                                     <asp:ListItem>Split</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco15" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCRearDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlEcoMCCRearDoorcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco16" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCRearDoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--8--%>
@@ -2885,12 +3015,17 @@
                                                     <asp:ListItem>Single</asp:ListItem>
                                                     <asp:ListItem>Split</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco17" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlmat" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlthicknessforinnerdoor" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco18" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlthicknessforinnerdoor" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
 
@@ -2907,6 +3042,8 @@
                                                     <asp:ListItem>1.5 mm</asp:ListItem>
                                                     <asp:ListItem>2.00 mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco19" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCRearCovercat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--10--%>
@@ -2921,6 +3058,8 @@
                                                     <asp:ListItem>1.5 mm</asp:ListItem>
                                                     <asp:ListItem>2.00 mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco20" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCSideCovercat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--11--%>
@@ -2938,6 +3077,9 @@
                                                     <asp:ListItem>IMP Lock</asp:ListItem>
                                                     <asp:ListItem>Mini Lock</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco21" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCLockcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--12--%>
@@ -2951,6 +3093,9 @@
                                                     <asp:ListItem>RAL-7032</asp:ListItem>
                                                     <asp:ListItem>RAL-7035</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco22" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCPowerCoatingShadecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtEcoMCCPowerCoatingShadecat2" placeholder="Specify" runat="server" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -2968,11 +3113,17 @@
                                                     <asp:ListItem>Lifting Depth L</asp:ListItem>
                                                     <asp:ListItem>Both Lifting full length width and depth L</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco23" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCLiftingArrangementcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlEcoMCCLiftingArrangementcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>3.00 mm</asp:ListItem>
                                                     <asp:ListItem>5.00 mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco24" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCLiftingArrangementcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%-- 14--%>
@@ -2989,12 +3140,18 @@
                                                     <asp:ListItem>50mm Angle frame</asp:ListItem>
                                                     <asp:ListItem>ISMC</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco25" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCBasecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlEcoMCCBasecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>2.00 mm</asp:ListItem>
                                                     <asp:ListItem>3.00 mm</asp:ListItem>
                                                     <asp:ListItem>5.00 mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco26" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCBasecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlEcoMCCBasecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Height</asp:ListItem>
                                                     <asp:ListItem>75 mm</asp:ListItem>
@@ -3004,12 +3161,18 @@
                                                     <asp:ListItem>300mm</asp:ListItem>
                                                     <asp:ListItem>400mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco27" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCBasecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Height" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlEcoMCCbaseshits" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Glass</asp:ListItem>
                                                     <asp:ListItem>Acrylic</asp:ListItem>
                                                     <asp:ListItem>Polycarbonate Sheet</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco28" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCbaseshits" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
 
@@ -3025,17 +3188,26 @@
                                                     <asp:ListItem>Acrylic</asp:ListItem>
                                                     <asp:ListItem>Polycarbonate</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco29" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23TransparentDoorcat1Ecoframe" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlWMM23TransparentDoorcat2Ecoframe" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                     <asp:ListItem>4.00mm</asp:ListItem>
                                                     <asp:ListItem>5.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco30" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23TransparentDoorcat2Ecoframe" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlWMM23TransparentDoorcat3Ecoframe" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>With bidding</asp:ListItem>
                                                     <asp:ListItem>biddingless technique</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco31" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23TransparentDoorcat3Ecoframe" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <br />
@@ -3053,6 +3225,8 @@
                                                     <asp:ListItem>15.00 mm</asp:ListItem>
                                                     <asp:ListItem>25.00 mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco32" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCAntivibrationpadcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%-- 17--%>
@@ -3068,12 +3242,18 @@
                                                     <asp:ListItem>Standard</asp:ListItem>
                                                     <asp:ListItem>Extra Deep</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco33" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCDrawingPocketcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlEcoMCCDrawingPocketcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>7032</asp:ListItem>
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>Orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco34" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCDrawingPocketcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%-- 18--%>
@@ -3104,19 +3284,29 @@
                                                     <asp:ListItem>Full Size</asp:ListItem>
                                                     <asp:ListItem>Part Size</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco35" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCCanopycat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlEcoMCCCanopycat2" runat="server" Enabled="false">
+                                                    <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Perforation Hole</asp:ListItem>
                                                     <asp:ListItem>1.00 mm</asp:ListItem>
                                                     <asp:ListItem>3.00 mm</asp:ListItem>
                                                     <asp:ListItem>6.00 mm</asp:ListItem>
                                                     <asp:ListItem>Slotted</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco36" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCCanopycat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlEcoMCCCanopycat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.2 mm</asp:ListItem>
                                                     <asp:ListItem>1.5 mm</asp:ListItem>
                                                     <asp:ListItem>2.00 mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco37" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCCanopycat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%-- 21--%>
@@ -3130,6 +3320,9 @@
                                                     <asp:ListItem>4</asp:ListItem>
                                                     <asp:ListItem>6</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEco38" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoMCCfancat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtEcoMCCfancat2" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -3159,7 +3352,7 @@
                         <div class="row">
                             <div class="col-md-12" style="display: inline;">
                                 <center>
-                                    <asp:Button ID="btnSubmitEcoMCC" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSubmitEcoMCC_Click" />
+                                    <asp:Button ID="btnSubmitEcoMCC" ValidationGroup="form2" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSubmitEcoMCC_Click" />
                                     &nbsp;<asp:Button ID="btnCancelEcoMCC" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btnCancelEcoMCC_Click" /></center>
                             </div>
                         </div>
@@ -3183,12 +3376,14 @@
                                                     <asp:ListItem>With Top and Bottom</asp:ListItem>
                                                     <asp:ListItem>With Sides</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig1" runat="server" Display="Dynamic" ErrorMessage="Please Select Value" ControlToValidate="ddlModularWeldedMainBodycat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
                                                 <asp:DropDownList ID="ddlModularWeldedMainBodycat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.2mm</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig2" runat="server" Display="Dynamic" ErrorMessage="Please Select Value" ControlToValidate="ddlModularWeldedMainBodycat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--2--%>
@@ -3204,12 +3399,14 @@
                                                     <asp:ListItem>LH</asp:ListItem>
                                                     <asp:ListItem>RH</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig3" runat="server" Display="Dynamic" ErrorMessage="Please Select Value" ControlToValidate="ddlModularGlandPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
                                                 <asp:DropDownList ID="ddlModularGlandPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig4" runat="server" Display="Dynamic" ErrorMessage="Please Select Value" ControlToValidate="ddlModularGlandPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
 
@@ -3224,20 +3421,21 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
-
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig5" runat="server" Display="Dynamic" ErrorMessage="Please Select Value" ControlToValidate="ddlModularComponentMtgPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
                                                 <asp:DropDownList ID="ddlModularComponentMtgPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>7032</asp:ListItem>
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>Orange</asp:ListItem>
                                                 </asp:DropDownList>
-
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig6" runat="server" Display="Dynamic" ErrorMessage="Please Select Value" ControlToValidate="ddlModularComponentMtgPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
                                                 <asp:DropDownList ID="ddlModularComponentMtgPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig7" runat="server" Display="Dynamic" ErrorMessage="Please Select Value" ControlToValidate="ddlModularComponentMtgPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--4--%>
@@ -3251,20 +3449,21 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
-
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig8" runat="server" Display="Dynamic" ErrorMessage="Please Select Value" ControlToValidate="ddlModularSideCPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
                                                 <asp:DropDownList ID="ddlModularSideCPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Color</asp:ListItem>
                                                     <asp:ListItem>7032</asp:ListItem>
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>orange</asp:ListItem>
                                                 </asp:DropDownList>
-
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig9" runat="server" Display="Dynamic" ErrorMessage="Please Select Value" ControlToValidate="ddlModularSideCPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Color" Enabled="false"></asp:RequiredFieldValidator>
                                                 <asp:DropDownList ID="ddlModularSideCPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig10" runat="server" Display="Dynamic" ErrorMessage="Please Select Value" ControlToValidate="ddlModularSideCPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--5--%>
@@ -3273,27 +3472,26 @@
                                             <div class="col-md-12" style="display: inline;">
                                                 <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">5.&nbsp;</h5>
                                                 <asp:CheckBox ID="ChkModularDoorCPlate" Text="Door C Plate" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
-
                                                 <asp:DropDownList ID="ddlModularDoorCPlatecat1" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Size</asp:ListItem>
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
-
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig11" runat="server" Display="Dynamic" ErrorMessage="Please Select Value" ControlToValidate="ddlModularDoorCPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
                                                 <asp:DropDownList ID="ddlModularDoorCPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Color</asp:ListItem>
                                                     <asp:ListItem>7032</asp:ListItem>
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>orange</asp:ListItem>
                                                 </asp:DropDownList>
-
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig12" runat="server" Display="Dynamic" ErrorMessage="Please Select Value" ControlToValidate="ddlModularDoorCPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Color" Enabled="false"></asp:RequiredFieldValidator>
                                                 <asp:DropDownList ID="ddlModularDoorCPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
-
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig13" runat="server" Display="Dynamic" ErrorMessage="Please Select Value" ControlToValidate="ddlModularDoorCPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
 
@@ -3308,6 +3506,7 @@
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                     <asp:ListItem>5.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig14" runat="server" Display="Dynamic" ErrorMessage="Please Select Value" ControlToValidate="ddlModularWallMtgBracketcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
 
@@ -3322,12 +3521,13 @@
                                                     <asp:ListItem>Single</asp:ListItem>
                                                     <asp:ListItem>Split</asp:ListItem>
                                                 </asp:DropDownList>
-
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig15" runat="server" Display="Dynamic" ErrorMessage="Please Select Value" ControlToValidate="ddlModularFrontDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
                                                 <asp:DropDownList ID="ddlModularFrontDoorcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig16" runat="server" Display="Dynamic" ErrorMessage="Please Select Value" ControlToValidate="ddlModularFrontDoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--8--%>
@@ -3341,12 +3541,14 @@
                                                     <asp:ListItem>Single</asp:ListItem>
                                                     <asp:ListItem>Split</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig17" runat="server" Display="Dynamic" ErrorMessage="Please Select Value" ControlToValidate="ddlModularRearDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
                                                 <asp:DropDownList ID="ddlthickmodularecord" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.2mm</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig18" runat="server" Display="Dynamic" ErrorMessage="Please Select Value" ControlToValidate="ddlthickmodularecord" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--9--%>
@@ -3360,6 +3562,7 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig19" runat="server" Display="Dynamic" ErrorMessage="Please Select Value" ControlToValidate="ddlModularRearCovercat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <%--10--%>
@@ -3386,6 +3589,8 @@
                                                     <asp:ListItem>Mini Lock </asp:ListItem>
                                                     <asp:ListItem>3-point Handle Lock</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig20" runat="server" Display="Dynamic" ErrorMessage="Please Select Value" ControlToValidate="ddlModularLockcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtlockQty" runat="server" Height="23px" Placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -3401,12 +3606,18 @@
                                                     <asp:ListItem>RAL-7035</asp:ListItem>
                                                     <asp:ListItem>Specify</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig21" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlModularPowerCoatingShadecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtModularPowerCoatingShadecat3" Visible="false" placeholder="Specify" runat="server" Enabled="false"></asp:TextBox>
                                                 <asp:DropDownList ID="ddlModularPowerCoatingShadecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                     <asp:ListItem>5.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig22" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlModularPowerCoatingShadecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%-- 13--%>
@@ -3423,11 +3634,19 @@
                                                     <asp:ListItem>Lifting Depth L</asp:ListItem>
                                                     <asp:ListItem>Both Lifting full length width and depth L</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig23" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlModularLiftingArrangementcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
+
                                                 <asp:DropDownList ID="ddlModularLiftingArrangementcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig24" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlModularLiftingArrangementcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
+
                                             </div>
                                         </div>
                                         <%-- 14--%>
@@ -3443,6 +3662,9 @@
                                                     <asp:ListItem>ISMC</asp:ListItem>
                                                     <asp:ListItem>5.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig25" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlModularBasecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlModularBasecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Height</asp:ListItem>
                                                     <asp:ListItem>75mm</asp:ListItem>
@@ -3452,12 +3674,18 @@
                                                     <asp:ListItem>300mm</asp:ListItem>
                                                     <asp:ListItem>400mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig26" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlModularBasecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Height" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddltype" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Glass</asp:ListItem>
                                                     <asp:ListItem>Acrylic</asp:ListItem>
                                                     <asp:ListItem>Polycarbonate</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig27" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddltype" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
 
@@ -3474,17 +3702,26 @@
                                                     <asp:ListItem>Acrylic</asp:ListItem>
                                                     <asp:ListItem>Polycarbonate</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig28" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23TransparentDoorcat1modular" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlWMM23TransparentDoorcat2Modualr" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                     <asp:ListItem>4.00mm</asp:ListItem>
                                                     <asp:ListItem>5.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig29" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23TransparentDoorcat2Modualr" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlWMM23TransparentDoorcat3modular" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>With bidding</asp:ListItem>
                                                     <asp:ListItem>biddingless technique</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig30" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlWMM23TransparentDoorcat3modular" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
 
@@ -3500,6 +3737,9 @@
                                                     <asp:ListItem>15.00 mm</asp:ListItem>
                                                     <asp:ListItem>25.00 mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig31" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlModularAntivibrationpadcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%-- 17--%>
@@ -3513,19 +3753,29 @@
                                                     <asp:ListItem>Full Size</asp:ListItem>
                                                     <asp:ListItem>Part Size</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig32" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlModularCanopycat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlModularCanopycat2" runat="server" Enabled="false">
+                                                    <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Perforation Hole</asp:ListItem>
                                                     <asp:ListItem>1.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                     <asp:ListItem>6.00mm</asp:ListItem>
                                                     <asp:ListItem>Slotted</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig33" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlModularCanopycat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlModularCanopycat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.0mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig34" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlModularCanopycat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%-- 18--%>
@@ -3540,6 +3790,9 @@
                                                     <asp:ListItem>4</asp:ListItem>
                                                     <asp:ListItem>6</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorWBig35" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlModularfancat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtModularfancat2" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -3569,7 +3822,7 @@
                         <div class="row">
                             <div class="col-md-12" style="display: inline;">
                                 <center>
-                                    <asp:Button ID="btnSubmitModular" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSubmitModular_Click" />
+                                    <asp:Button ID="btnSubmitModular" ValidationGroup="form2" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnSubmitModular_Click" />
                                     &nbsp;<asp:Button ID="btnCancelModular" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btnCancelModular_Click" /></center>
                             </div>
                         </div>
@@ -3593,6 +3846,9 @@
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame1" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoFrameMainFrameTopBottomWeldedStructurecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--2--%>
@@ -3609,6 +3865,9 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame2" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoFrameTopBottomGlandPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--3--%>
@@ -3622,18 +3881,27 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame3" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoFrameComponentMtgPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlEcoFrameComponentMtgPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>7032</asp:ListItem>
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>Orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame4" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoFrameComponentMtgPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlEcoFrameComponentMtgPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame5" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoFrameComponentMtgPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--4--%>
@@ -3647,18 +3915,27 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame6" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoFrameSideCPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlEcoFrameSideCPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Color</asp:ListItem>
                                                     <asp:ListItem>7032</asp:ListItem>
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame7" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoFrameSideCPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Color" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlEcoFrameSideCPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame8" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoFrameSideCPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--5--%>
@@ -3672,18 +3949,27 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame9" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoFrameDoorCPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlEcoFrameDoorCPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Color</asp:ListItem>
                                                     <asp:ListItem>7032</asp:ListItem>
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame10" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoFrameDoorCPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Color" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlEcoFrameDoorCPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame11" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoFrameDoorCPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <%--  <asp:TextBox ID="txtqty6" runat="server" Height="23px" Placeholder="Qty"></asp:TextBox>--%>
                                             </div>
                                         </div>
@@ -3698,11 +3984,17 @@
                                                     <asp:ListItem>Single</asp:ListItem>
                                                     <asp:ListItem>Split</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame12" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoFrameFrontDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlEcoFrameFrontDoorcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame13" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoFrameFrontDoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--7--%>
@@ -3716,11 +4008,17 @@
                                                     <asp:ListItem>Single</asp:ListItem>
                                                     <asp:ListItem>Split</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame14" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoFrameRearDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlthicknessecoframe" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame15" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlthicknessecoframe" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--8--%>
@@ -3734,6 +4032,9 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame16" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoFrameRearCovercat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--9--%>
@@ -3747,6 +4048,9 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame17" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoFrameSideCovercat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--10--%>
@@ -3764,6 +4068,9 @@
                                                     <asp:ListItem>IMP Lock</asp:ListItem>
                                                     <asp:ListItem>Mini LocK</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame18" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoFrameLockcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtecoframelockqty" runat="server" Height="23px" Placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -3779,6 +4086,9 @@
                                                     <asp:ListItem>RAL-7035</asp:ListItem>
                                                     <asp:ListItem>Specify</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame19" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoFramePowerCoatingShadecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtddlEcoFramePowerCoatingShadecat2" Visible="false" placeholder="Specify" runat="server" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -3796,11 +4106,17 @@
                                                     <asp:ListItem>Lifting Depth L</asp:ListItem>
                                                     <asp:ListItem>Both Lifting full length width and depth L</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame20" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoFrameLiftingArrangementcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlEcoFrameLiftingArrangementcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame21" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoFrameLiftingArrangementcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%-- 13--%>
@@ -3815,6 +4131,9 @@
                                                     <asp:ListItem>50mm Angle frame</asp:ListItem>
                                                     <asp:ListItem>ISMC</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame22" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoFrameBasecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlEcoFrameBasecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Height</asp:ListItem>
                                                     <asp:ListItem>75mm</asp:ListItem>
@@ -3824,12 +4143,18 @@
                                                     <asp:ListItem>300mm</asp:ListItem>
                                                     <asp:ListItem>400mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame23" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoFrameBasecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Height" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlecoframebasethickness" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                     <asp:ListItem>5.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame24" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlecoframebasethickness" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
 
@@ -3846,6 +4171,9 @@
                                                     <asp:ListItem>15.00mm</asp:ListItem>
                                                     <asp:ListItem>25.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame25" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlfibration" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%-- 14--%>
@@ -3859,19 +4187,29 @@
                                                     <asp:ListItem>Full Size</asp:ListItem>
                                                     <asp:ListItem>Part Size</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame26" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoFrameCanopycat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlEcoFrameCanopycat2" runat="server" Enabled="false">
+                                                    <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Perforation Hole</asp:ListItem>
                                                     <asp:ListItem>1.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                     <asp:ListItem>6.00mm</asp:ListItem>
                                                     <asp:ListItem>Slotted</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame27" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoFrameCanopycat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlEcoFrameCanopycat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame28" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoFrameCanopycat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%-- 15--%>
@@ -3886,6 +4224,9 @@
                                                     <asp:ListItem>4</asp:ListItem>
                                                     <asp:ListItem>6</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEFrame29" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlEcoFramefancat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtEcoFramefancat2" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -3915,7 +4256,7 @@
                         <div class="row">
                             <div class="col-md-12" style="display: inline;">
                                 <center>
-                                    <asp:Button ID="btnEcoFrame" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnEcoFrame_Click" />
+                                    <asp:Button ID="btnEcoFrame" ValidationGroup="form2" runat="server" Text="Add" CssClass="btn btn-info" OnClick="btnEcoFrame_Click" />
                                     &nbsp;<asp:Button ID="btnCancelEcoFrame" runat="server" CssClass="btn btn-danger" Text="Cancel" OnClick="btnCancelEcoFrame_Click" /></center>
                             </div>
                         </div>
@@ -3954,6 +4295,9 @@
                                                                 <asp:ListItem>2.00mm</asp:ListItem>
                                                                 <asp:ListItem>3.00mm</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop1" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingMainframestructurecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                         </div>
                                                     </div>
                                                     <%--2--%>
@@ -3967,11 +4311,17 @@
                                                                 <asp:ListItem>GPSP</asp:ListItem>
                                                                 <asp:ListItem>CRCA</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop2" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingBottomCovercat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingBottomCovercat2" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Thickness</asp:ListItem>
                                                                 <asp:ListItem>2.00mm</asp:ListItem>
                                                                 <asp:ListItem>3.00mm</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop3" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingBottomCovercat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                         </div>
                                                     </div>
                                                     <%--3--%>
@@ -3987,18 +4337,27 @@
                                                                 <asp:ListItem>GPSP</asp:ListItem>
                                                                 <asp:ListItem>CRCA</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop4" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingComponentMtgPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingComponentMtgPlatecat4" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Colour</asp:ListItem>
                                                                 <asp:ListItem>7032</asp:ListItem>
                                                                 <asp:ListItem>7035</asp:ListItem>
                                                                 <asp:ListItem>orange</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop5" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingComponentMtgPlatecat4" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingComponentMtgPlatecat5" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Thickness</asp:ListItem>
                                                                 <asp:ListItem>1.2mm</asp:ListItem>
                                                                 <asp:ListItem>2.00mm</asp:ListItem>
                                                                 <asp:ListItem>3.00mm</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop6" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingComponentMtgPlatecat5" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
 
                                                             <asp:Button ID="btnAddStandingComponentMtgPlate1" runat="server" Text="+Add" OnClick="btnAddStandingComponentMtgPlate1_Click" Enabled="false" />
                                                         </div>
@@ -4102,18 +4461,27 @@
                                                                 <asp:ListItem>CRCA</asp:ListItem>
                                                                 <asp:ListItem>GPSP</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop7" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingSidecPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingSidecPlatecat2" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Colour</asp:ListItem>
                                                                 <asp:ListItem>7032</asp:ListItem>
                                                                 <asp:ListItem>7035</asp:ListItem>
                                                                 <asp:ListItem>Orange</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop8" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingSidecPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingSidecPlatecat3" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Thickness</asp:ListItem>
                                                                 <asp:ListItem>1.5mm</asp:ListItem>
                                                                 <asp:ListItem>2.00mm</asp:ListItem>
                                                                 <asp:ListItem>3.00mm</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop9" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingSidecPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:Button ID="btnPCEncShopFloorStandingSidecPlate1" runat="server" Text="+Add" OnClick="btnPCEncShopFloorStandingSidecPlate1_Click" Enabled="false" />
                                                         </div>
                                                     </div>
@@ -4211,18 +4579,27 @@
                                                                 <asp:ListItem>CRCA</asp:ListItem>
                                                                 <asp:ListItem>GPSP</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop10" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingDoorCPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingDoorCPlatecat2" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Colour</asp:ListItem>
                                                                 <asp:ListItem>7032</asp:ListItem>
                                                                 <asp:ListItem>7035</asp:ListItem>
                                                                 <asp:ListItem>Orange</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop11" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingDoorCPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingDoorCPlatecat3" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Thickness</asp:ListItem>
                                                                 <asp:ListItem>1.5mm</asp:ListItem>
                                                                 <asp:ListItem>2.00mm</asp:ListItem>
                                                                 <asp:ListItem>3.00mm</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop12" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingDoorCPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:Button ID="btnPCEncShopFloorStandingDoorCPlate1" runat="server" Text="+Add" OnClick="btnPCEncShopFloorStandingDoorCPlate1_Click" Enabled="false" />
                                                         </div>
                                                     </div>
@@ -4322,11 +4699,17 @@
                                                                 <asp:ListItem>Split</asp:ListItem>
                                                                 <asp:ListItem>Partial</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop13" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingFrontDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingFrontDoorcat2" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Thickness</asp:ListItem>
                                                                 <asp:ListItem>1.5mm</asp:ListItem>
                                                                 <asp:ListItem>2.00mm</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop14" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingFrontDoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                         </div>
                                                     </div>
                                                     <%--7--%>
@@ -4341,11 +4724,17 @@
                                                                 <asp:ListItem>Split</asp:ListItem>
                                                                 <asp:ListItem>Partial</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop15" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingRearDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingRearDoorcat2" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Thickness</asp:ListItem>
                                                                 <asp:ListItem>1.5mm</asp:ListItem>
                                                                 <asp:ListItem>2.00mm</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop16" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingRearDoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                         </div>
                                                     </div>
 
@@ -4356,11 +4745,15 @@
                                                             <h5 style="font-size: 14px; font-weight: 700; color: black; display: inline;">8.&nbsp;</h5>
                                                             <asp:CheckBox ID="ChkPCEncShopFloorStandingLock" Text="Lock" CssClass="myClass" runat="server" OnCheckedChanged="chkJbweldedmainbody_CheckedChanged" AutoPostBack="true" />
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingLockcat1" runat="server" Enabled="false">
+                                                                <asp:ListItem>Select</asp:ListItem>
                                                                 <asp:ListItem>Cam Lock</asp:ListItem>
                                                                 <asp:ListItem>Mini lock</asp:ListItem>
                                                                 <asp:ListItem>3-point Handle Lock</asp:ListItem>
                                                                 <asp:ListItem>IMP LocK</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop17" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingLockcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:TextBox ID="txtPCEncShopFloorStandingLockcat2" Placeholder="Qty" runat="server" Enabled="false"></asp:TextBox>
                                                         </div>
                                                     </div>
@@ -4375,6 +4768,9 @@
                                                                 <asp:ListItem>1.5mm</asp:ListItem>
                                                                 <asp:ListItem>2.00mm</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop18" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingRearCovercat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                         </div>
                                                     </div>
 
@@ -4389,6 +4785,9 @@
                                                                 <asp:ListItem>1.5mm</asp:ListItem>
                                                                 <asp:ListItem>2.00mm</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop19" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingSideCovercat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                         </div>
                                                     </div>
 
@@ -4403,6 +4802,9 @@
                                                                 <asp:ListItem>1.5mm</asp:ListItem>
                                                                 <asp:ListItem>2.00mm</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop20" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingTopCovercat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                         </div>
                                                     </div>
 
@@ -4417,11 +4819,17 @@
                                                                 <asp:ListItem>1.5mm</asp:ListItem>
                                                                 <asp:ListItem>2.00mm</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop21" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingHorizontalPartitioncat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingHorizontalPartitioncat2" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Colour</asp:ListItem>
                                                                 <asp:ListItem>7032</asp:ListItem>
                                                                 <asp:ListItem>7035</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop22" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingHorizontalPartitioncat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                         </div>
                                                     </div>
 
@@ -4436,11 +4844,17 @@
                                                                 <asp:ListItem>1.5mm</asp:ListItem>
                                                                 <asp:ListItem>2.00mm</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop23" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingSlidingKeyboarddrawercat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingSlidingKeyboarddrawercat2" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Colour</asp:ListItem>
                                                                 <asp:ListItem>7032</asp:ListItem>
                                                                 <asp:ListItem>7035</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop24" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingSlidingKeyboarddrawercat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                         </div>
                                                     </div>
 
@@ -4456,6 +4870,9 @@
                                                                 <asp:ListItem>RAL-7035</asp:ListItem>
                                                                 <asp:ListItem>Specify</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop25" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingPowderCoatingShadecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:TextBox ID="txtPCEncShopFloorStandingPowderCoatingShadecat2" runat="server" Visible="false" placeholder="Specify" Enabled="false"></asp:TextBox>
                                                         </div>
                                                     </div>
@@ -4470,10 +4887,16 @@
                                                                 <asp:ListItem>Eye Bolt</asp:ListItem>
                                                                 <asp:ListItem>Lifting L</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop26" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingLiftingArrangementcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingLiftingArrangementcat2" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Thickness</asp:ListItem>
                                                                 <asp:ListItem>3.00mm</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop27" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingLiftingArrangementcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                         </div>
                                                     </div>
                                                     <%--16--%>
@@ -4487,11 +4910,17 @@
                                                                 <asp:ListItem>Standard</asp:ListItem>
                                                                 <asp:ListItem>50mm Angle frame</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop28" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingBasecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingBasecat2" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Thickness</asp:ListItem>
                                                                 <asp:ListItem>2.00mm</asp:ListItem>
                                                                 <asp:ListItem>3.00mm</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop29" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingBasecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:TextBox ID="txtddlPCEncShopFloorStandingBasecat3" runat="server" placeholder="Height" Enabled="false"></asp:TextBox>
                                                         </div>
                                                     </div>
@@ -4507,6 +4936,9 @@
                                                                 <asp:ListItem>15.00mm</asp:ListItem>
                                                                 <asp:ListItem>25.00mm</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop30" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingAntivibrationpadcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                         </div>
                                                     </div>
                                                     <%--18--%>
@@ -4533,12 +4965,18 @@
                                                                 <asp:ListItem>Standard</asp:ListItem>
                                                                 <asp:ListItem>Extra Deep</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop31" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlChkPCEncShopFloorStandingDrawingPocketcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlChkPCEncShopFloorStandingDrawingPocketcat2" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Colour</asp:ListItem>
                                                                 <asp:ListItem>7032</asp:ListItem>
                                                                 <asp:ListItem>7035</asp:ListItem>
                                                                 <asp:ListItem>Orange</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop32" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlChkPCEncShopFloorStandingDrawingPocketcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                         </div>
                                                     </div>
                                                     <%--20--%>
@@ -4569,17 +5007,26 @@
                                                                 <asp:ListItem>Acrylic</asp:ListItem>
                                                                 <asp:ListItem>PolyCarbonate Sheet </asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop33" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingTransparentDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingTransparentDoorcat2" AutoPostBack="true" OnSelectedIndexChanged="ddlPCEncShopFloorStandingTransparentDoorcat2_SelectedIndexChanged" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select</asp:ListItem>
                                                                 <asp:ListItem>Door</asp:ListItem>
                                                                 <asp:ListItem>Specify</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop34" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingTransparentDoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:TextBox ID="txtPCEncShopFloorStandingTransparentDoorcat3" Visible="false" runat="server" placeholder="Specify"></asp:TextBox>
                                                             <asp:DropDownList ID="ddlPCEncShopFloorStandingTransparentDoorcat4" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select</asp:ListItem>
                                                                 <asp:ListItem>With bidding</asp:ListItem>
                                                                 <asp:ListItem>Biddingless Technique</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop35" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingTransparentDoorcat4" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                         </div>
                                                     </div>
 
@@ -4595,6 +5042,9 @@
                                                                 <asp:ListItem>6</asp:ListItem>
                                                                 <asp:ListItem>8</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop36" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingFilterscat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Inches" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:TextBox ID="txtqtyenclouser" runat="server" Height="23px" Placeholder="Qty" Enabled="false"></asp:TextBox>
                                                         </div>
                                                     </div>
@@ -4633,6 +5083,9 @@
                                                                 <asp:ListItem>4</asp:ListItem>
                                                                 <asp:ListItem>6</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorShop37" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEncShopFloorStandingfancat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:TextBox ID="txtChkPCEncShopFloorStandingfancat2" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                                         </div>
                                                     </div>
@@ -4665,12 +5118,18 @@
                                                                 <asp:ListItem>with Top and bottom</asp:ListItem>
                                                                 <asp:ListItem>with Sides</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure1" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingWeldedMainBodycat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingWeldedMainBodycat2" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Thickness</asp:ListItem>
                                                                 <asp:ListItem>1.2mm</asp:ListItem>
                                                                 <asp:ListItem>1.5mm</asp:ListItem>
                                                                 <asp:ListItem>2.00mm</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure2" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingWeldedMainBodycat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                         </div>
                                                     </div>
                                                     <%--2--%>
@@ -4685,6 +5144,9 @@
                                                                 <asp:ListItem>LHS</asp:ListItem>
                                                                 <asp:ListItem>RHS</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure3" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingGlandPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:TextBox ID="txtPCEnclosureECOStandingGlandPlatecat2" runat="server" placeholder="size:" Enabled="false"></asp:TextBox>
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingGlandPlatecat3" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Thickness</asp:ListItem>
@@ -4692,6 +5154,9 @@
                                                                 <asp:ListItem>1.5mm</asp:ListItem>
                                                                 <asp:ListItem>2.00mm</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure4" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingGlandPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                         </div>
                                                     </div>
                                                     <%--3--%>
@@ -4706,6 +5171,9 @@
                                                                 <asp:ListItem>GPSP</asp:ListItem>
                                                                 <asp:ListItem>CRCA</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure5" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingComponentMtgPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingComponentMtgPlatecat3" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Colour</asp:ListItem>
                                                                 <asp:ListItem>No colour</asp:ListItem>
@@ -4713,12 +5181,18 @@
                                                                 <asp:ListItem>7035</asp:ListItem>
                                                                 <asp:ListItem>Orange</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure6" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingComponentMtgPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingComponentMtgPlatecat4" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Thickness</asp:ListItem>
                                                                 <asp:ListItem>1.5mm</asp:ListItem>
                                                                 <asp:ListItem>2.00mm</asp:ListItem>
                                                                 <asp:ListItem>3.00mm</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure7" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingComponentMtgPlatecat4" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                         </div>
                                                     </div>
                                                     <%--4--%>
@@ -4733,18 +5207,27 @@
                                                                 <asp:ListItem>GPSP</asp:ListItem>
                                                                 <asp:ListItem>CRCA</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure8" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingSideCPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingSideCPlatecat3" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Colour</asp:ListItem>
                                                                 <asp:ListItem>7032</asp:ListItem>
                                                                 <asp:ListItem>7035</asp:ListItem>
                                                                 <asp:ListItem>Orange</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure9" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingSideCPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingSideCPlatecat4" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Thickness</asp:ListItem>
                                                                 <asp:ListItem>1.5mm</asp:ListItem>
                                                                 <asp:ListItem>2.00mm</asp:ListItem>
                                                                 <asp:ListItem>3.00mm</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure10" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingSideCPlatecat4" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                         </div>
                                                     </div>
                                                     <%--5--%>
@@ -4759,18 +5242,27 @@
                                                                 <asp:ListItem>GPSP</asp:ListItem>
                                                                 <asp:ListItem>CRCA</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure11" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingDoorCPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingDoorCPlatecat3" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Colour</asp:ListItem>
                                                                 <asp:ListItem>7032</asp:ListItem>
                                                                 <asp:ListItem>7035</asp:ListItem>
                                                                 <asp:ListItem>Orange</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure12" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingDoorCPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingDoorCPlatecat4" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Thickness</asp:ListItem>
                                                                 <asp:ListItem>1.5mm</asp:ListItem>
                                                                 <asp:ListItem>2.00mm</asp:ListItem>
                                                                 <asp:ListItem>3.00mm</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure13" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingDoorCPlatecat4" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                         </div>
                                                     </div>
                                                     <%--6--%>
@@ -4784,12 +5276,18 @@
                                                                 <asp:ListItem>Single</asp:ListItem>
                                                                 <asp:ListItem>Split</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure14" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingFrontDoorwithstiffenerscat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingFrontDoorwithstiffenerscat2" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Thickness</asp:ListItem>
                                                                 <asp:ListItem>1.2mm</asp:ListItem>
                                                                 <asp:ListItem>1.5mm</asp:ListItem>
                                                                 <asp:ListItem>2.00mm</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure15" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingFrontDoorwithstiffenerscat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                         </div>
                                                     </div>
                                                     <%--7--%>
@@ -4811,6 +5309,9 @@
                                                                 <asp:ListItem>Select</asp:ListItem>
                                                                 <asp:ListItem>Cam Lock</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure16" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingLockcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:TextBox ID="txtPCEnclosureECOStandingLockcat2" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                                         </div>
                                                     </div>
@@ -4826,11 +5327,17 @@
                                                                 <asp:ListItem>1.5mm</asp:ListItem>
                                                                 <asp:ListItem>2.00mm</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure17" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingHorizontalPartitioncat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingHorizontalPartitioncat2" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Colour</asp:ListItem>
                                                                 <asp:ListItem>7032</asp:ListItem>
                                                                 <asp:ListItem>7035</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure18" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingHorizontalPartitioncat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                         </div>
                                                     </div>
                                                     <%--10--%>
@@ -4845,11 +5352,17 @@
                                                                 <asp:ListItem>1.5mm</asp:ListItem>
                                                                 <asp:ListItem>2.00mm</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure19" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingSlidingKeyboarddrawercat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingSlidingKeyboarddrawercat2" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Colour</asp:ListItem>
                                                                 <asp:ListItem>7032</asp:ListItem>
                                                                 <asp:ListItem>7035</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure20" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingSlidingKeyboarddrawercat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                         </div>
                                                     </div>
 
@@ -4875,12 +5388,18 @@
                                                                 <asp:ListItem>50mm Angle frame</asp:ListItem>
                                                                 <asp:ListItem>ISMC</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure21" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingBasecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingBasecat2" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Thickness</asp:ListItem>
                                                                 <asp:ListItem>2.00mm</asp:ListItem>
                                                                 <asp:ListItem>3.00mm</asp:ListItem>
                                                                 <asp:ListItem>5.00mm</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure22" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingBasecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingBasecat3" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlPCEnclosureECOStandingBasecat3_SelectedIndexChanged" Enabled="false">
                                                                 <asp:ListItem>Select Height</asp:ListItem>
                                                                 <asp:ListItem>75mm</asp:ListItem>
@@ -4889,6 +5408,9 @@
 
                                                                 <asp:ListItem>Specify</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure23" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingBasecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Height" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:TextBox ID="txtPCEnclosureECOStandingBasecat4" Visible="false" runat="server" placeholder="Specify Height" Enabled="false"></asp:TextBox>
                                                         </div>
                                                     </div>
@@ -4904,6 +5426,9 @@
                                                                 <asp:ListItem>15mm</asp:ListItem>
                                                                 <asp:ListItem>25mm</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure24" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingAntivibrationpadcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                         </div>
                                                     </div>
 
@@ -4919,17 +5444,26 @@
                                                                 <asp:ListItem>Acrylic</asp:ListItem>
                                                                 <asp:ListItem>PolyCarbonate Sheet</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure25" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingTransparentDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingTransparentDoor2" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select Thickness</asp:ListItem>
                                                                 <asp:ListItem>3.00mm</asp:ListItem>
                                                                 <asp:ListItem>4.00mm</asp:ListItem>
                                                                 <asp:ListItem>5.00mm</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure26" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingTransparentDoor2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:DropDownList ID="ddlPCEnclosureECOStandingTransparentDoor3" runat="server" Enabled="false">
                                                                 <asp:ListItem>Select</asp:ListItem>
                                                                 <asp:ListItem>With bidding</asp:ListItem>
                                                                 <asp:ListItem>biddingless technique</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure27" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingTransparentDoor3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                         </div>
                                                     </div>
 
@@ -4959,6 +5493,9 @@
                                                                 <asp:ListItem>6</asp:ListItem>
                                                                 <asp:ListItem>8</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure28" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingFilterscat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Inch" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:TextBox ID="txtPCEnclosureECOStandingFilterscat2" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                                         </div>
                                                     </div>
@@ -4993,6 +5530,9 @@
                                                                 <asp:ListItem>RAL-7035</asp:ListItem>
                                                                 <asp:ListItem>Specify</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure29" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingPowderCoatingcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:TextBox ID="txtPCEnclosureECOStandingPowderCoatingcat2" runat="server" Visible="false" placeholder="Specify colour" Enabled="false"></asp:TextBox>
                                                         </div>
                                                     </div>
@@ -5007,6 +5547,9 @@
                                                                 <asp:ListItem>4</asp:ListItem>
                                                                 <asp:ListItem>6</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorEnclosure30" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                                ControlToValidate="ddlPCEnclosureECOStandingfancat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
+
                                                             <asp:TextBox ID="txtPCEnclosureECOStandingfancat2" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                                         </div>
                                                     </div>
@@ -5059,11 +5602,17 @@
                                                     <asp:ListItem>with Top and bottom</asp:ListItem>
                                                     <asp:ListItem>with Sides</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE1" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableWeldedMainbodycat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlPcTableWeldedMainbodycat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE2" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableWeldedMainbodycat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--2--%>
@@ -5077,11 +5626,17 @@
                                                     <asp:ListItem>Bottom</asp:ListItem>
                                                     <asp:ListItem>Top</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE3" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableGlandPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlPcTableGlandPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE4" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableGlandPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--3--%>
@@ -5095,6 +5650,9 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE5" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableComponentMtgPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
 
                                                 <asp:DropDownList ID="ddlPcTableComponentMtgPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
@@ -5103,6 +5661,8 @@
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>Orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE6" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableComponentMtgPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlPcTableComponentMtgPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -5110,6 +5670,9 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE7" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableComponentMtgPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--4--%>
@@ -5123,6 +5686,9 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE8" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableSideCPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
 
                                                 <asp:DropDownList ID="ddlPcTableSideCPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select colour</asp:ListItem>
@@ -5130,6 +5696,8 @@
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE9" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableSideCPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select colour" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlPcTableSideCPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -5137,6 +5705,9 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE10" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableSideCPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--5--%>
@@ -5150,6 +5721,8 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE11" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableDoorCPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlPcTableDoorCPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
@@ -5157,6 +5730,8 @@
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE12" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableDoorCPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlPcTableDoorCPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -5164,6 +5739,9 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE13" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableDoorCPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <%--   <asp:TextBox ID="txtqty8" runat="server" Height="23px" Placeholder="Qty"></asp:TextBox>--%>
                                             </div>
                                         </div>
@@ -5178,12 +5756,18 @@
                                                     <asp:ListItem>Single</asp:ListItem>
                                                     <asp:ListItem>Split</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE14" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableFrontDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlPcTableFrontDoorcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.2mm</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE15" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableFrontDoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--7--%>
@@ -5197,12 +5781,18 @@
                                                     <asp:ListItem>Single</asp:ListItem>
                                                     <asp:ListItem>Split</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE16" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableRearDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlPcTableRearDoorcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.2mm</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE17" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableRearDoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--8--%>
@@ -5215,6 +5805,9 @@
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Cam Lock</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE18" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableLockcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtPcTableLockcat2" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -5239,11 +5832,17 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE19" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableHorizontalPartitioncat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlPcTableHorizontalPartitioncat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>7032</asp:ListItem>
                                                     <asp:ListItem>7035</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE20" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableHorizontalPartitioncat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--11--%>
@@ -5257,11 +5856,17 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE21" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableSlidingKeyboarddrawercat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlPcTableSlidingKeyboarddrawercat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>7032</asp:ListItem>
                                                     <asp:ListItem>7035</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE22" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableSlidingKeyboarddrawercat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--12--%>
@@ -5275,11 +5880,17 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE23" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableSlidingCPUdrawercat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlPcTableSlidingCPUdrawercat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>7032</asp:ListItem>
                                                     <asp:ListItem>7035</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE24" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableSlidingCPUdrawercat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--13--%>
@@ -5293,11 +5904,17 @@
                                                     <asp:ListItem>Single</asp:ListItem>
                                                     <asp:ListItem>double</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE25" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableMonitomountingbracketcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlPcTableMonitomountingbracketcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>7032</asp:ListItem>
                                                     <asp:ListItem>7035</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE26" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableMonitomountingbracketcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--14--%>
@@ -5321,11 +5938,17 @@
                                                     <asp:ListItem>50mm Angle frame</asp:ListItem>
                                                     <asp:ListItem>ISMC</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE27" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableBasecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlPcTableBasecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE28" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableBasecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlPcTableBasecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Height</asp:ListItem>
                                                     <asp:ListItem>75mm</asp:ListItem>
@@ -5335,6 +5958,9 @@
                                                     <asp:ListItem>300mm</asp:ListItem>
                                                     <asp:ListItem>400mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE29" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableBasecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Height" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%-- 16--%>
@@ -5349,6 +5975,9 @@
                                                     <asp:ListItem>15mm</asp:ListItem>
                                                     <asp:ListItem>25mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE30" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableAntivibrationpadcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%-- 17--%>
@@ -5363,17 +5992,26 @@
                                                     <asp:ListItem>Acrylic</asp:ListItem>
                                                     <asp:ListItem>Polycarbonate</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE31" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableTransparentDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlPcTableTransparentDoorcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                     <asp:ListItem>4.00mm</asp:ListItem>
                                                     <asp:ListItem>5.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE32" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableTransparentDoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlPcTableTransparentDoorcat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>With bidding</asp:ListItem>
                                                     <asp:ListItem>biddingless technique</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE33" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableTransparentDoorcat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%-- 18--%>
@@ -5400,6 +6038,9 @@
                                                     <asp:ListItem>6</asp:ListItem>
                                                     <asp:ListItem>8</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE34" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTableFilterscat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Inch" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtPcTableFilterscat2" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -5415,6 +6056,9 @@
                                                     <asp:ListItem>RAL-7035</asp:ListItem>
                                                     <asp:ListItem>Specify</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE35" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTablePowderCoatingShadecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtPcTablePowderCoatingShadecat2" runat="server" Visible="false" placeholder="Specify" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -5429,6 +6073,9 @@
                                                     <asp:ListItem>4</asp:ListItem>
                                                     <asp:ListItem>6</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorTABLE36" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPcTablefancat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtPcTablefancat2" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -5482,11 +6129,17 @@
                                                     <asp:ListItem>with Top and bottom</asp:ListItem>
                                                     <asp:ListItem>with Sides</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER1" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableWeldedMainBodycat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlPrinterTableWeldedMainBodycat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER2" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableWeldedMainBodycat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--2--%>
@@ -5502,11 +6155,17 @@
                                                     <asp:ListItem>TOP</asp:ListItem>
                                                     <asp:ListItem>BOTTOM</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER3" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterGlandPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlPrinterGlandPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER4" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterGlandPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--3--%>
@@ -5520,6 +6179,8 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER5" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableComponentMtgPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlPrinterTableComponentMtgPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
@@ -5528,6 +6189,8 @@
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>Orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER6" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableComponentMtgPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlPrinterTableComponentMtgPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -5535,6 +6198,9 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER7" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableComponentMtgPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
 
@@ -5549,6 +6215,9 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER8" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableSideCPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
 
                                                 <asp:DropDownList ID="ddlPrinterTableSideCPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select colour</asp:ListItem>
@@ -5556,6 +6225,8 @@
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER9" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableSideCPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select colour" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlPrinterTableSideCPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -5563,6 +6234,9 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER10" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableSideCPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--5--%>
@@ -5576,18 +6250,27 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER11" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableDoorCPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlPrinterTableDoorCPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>7032</asp:ListItem>
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER12" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableDoorCPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlPrinterTableDoorCPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER13" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableDoorCPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <%--          <asp:TextBox ID="txtqty9" runat="server" Height="23px" Placeholder="Qty"></asp:TextBox>--%>
                                             </div>
                                         </div>
@@ -5602,12 +6285,18 @@
                                                     <asp:ListItem>Single</asp:ListItem>
                                                     <asp:ListItem>Split</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER14" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableFrontDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlPrinterTableFrontDoorcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.2mm</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER15" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableFrontDoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--7--%>
@@ -5621,12 +6310,18 @@
                                                     <asp:ListItem>Single</asp:ListItem>
                                                     <asp:ListItem>Split</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER16" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableRearDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlPrinterTableRearDoorcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.2mm</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER17" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableRearDoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--8--%>
@@ -5647,6 +6342,9 @@
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Cam Lock</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER18" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableLockcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtPrinterTableLockcat2" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -5671,11 +6369,17 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER19" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableHorizontalPartitioncat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlPrinterTableHorizontalPartitioncat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>7032</asp:ListItem>
                                                     <asp:ListItem>7035</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER20" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableHorizontalPartitioncat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--12--%>
@@ -5689,11 +6393,17 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER21" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableSlidingdrawercat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlPrinterTableSlidingdrawercat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>7032</asp:ListItem>
                                                     <asp:ListItem>7035</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER22" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableSlidingdrawercat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--13--%>
@@ -5717,11 +6427,17 @@
                                                     <asp:ListItem>50mm Angle frame</asp:ListItem>
                                                     <asp:ListItem>ISMC</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER23" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableBasecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlPrinterTableBasecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER24" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableBasecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlPrinterTableBasecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Height</asp:ListItem>
                                                     <asp:ListItem>75mm</asp:ListItem>
@@ -5729,6 +6445,9 @@
                                                     <asp:ListItem>150mm</asp:ListItem>
                                                     <asp:ListItem>200mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER25" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableBasecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Height" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%-- 15--%>
@@ -5743,6 +6462,9 @@
                                                     <asp:ListItem>15mm</asp:ListItem>
                                                     <asp:ListItem>25mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER26" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableAntivibrationpadcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%-- 16--%>
@@ -5757,17 +6479,26 @@
                                                     <asp:ListItem>Acrylic</asp:ListItem>
                                                     <asp:ListItem>Polycarbonate</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER27" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableTransparentDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlPrinterTableTransparentDoorcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                     <asp:ListItem>4.00mm</asp:ListItem>
                                                     <asp:ListItem>5.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER28" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableTransparentDoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlPrinterTableTransparentDoorcat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>With bidding</asp:ListItem>
                                                     <asp:ListItem>biddingless technique</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER29" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableTransparentDoorcat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%-- 17--%>
@@ -5794,6 +6525,9 @@
                                                     <asp:ListItem>6</asp:ListItem>
                                                     <asp:ListItem>8</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER30" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTableFilterscat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Inch" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtPrinterTableFilterscat2" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -5809,6 +6543,9 @@
                                                     <asp:ListItem>RAL-7035</asp:ListItem>
                                                     <asp:ListItem>Specify</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER31" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTablePowderCoatingShadecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtPrinterTablePowderCoatingShadecat2" runat="server" Visible="false" placeholder="Specify" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -5823,6 +6560,9 @@
                                                     <asp:ListItem>4</asp:ListItem>
                                                     <asp:ListItem>6</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPRINTER32" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlPrinterTablefancat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtPrinterTablefancat2" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -5876,6 +6616,9 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle1" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceWeldedMainBodycat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--2--%>
@@ -5891,11 +6634,17 @@
                                                     <asp:ListItem>RH</asp:ListItem>
                                                     <asp:ListItem>LH/RH</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle2" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceGlandPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlSinglePieceGlandPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle3" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceGlandPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--3--%>
@@ -5909,6 +6658,9 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle4" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceComponentMtgPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlSinglePieceComponentMtgPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>No colour</asp:ListItem>
@@ -5916,12 +6668,18 @@
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>Orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle5" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceComponentMtgPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlSinglePieceComponentMtgPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle6" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceComponentMtgPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
 
@@ -5936,18 +6694,27 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle7" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceSideCPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlSinglePieceSideCPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select colour</asp:ListItem>
                                                     <asp:ListItem>7032</asp:ListItem>
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle8" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceSideCPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlSinglePieceSideCPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle9" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceSideCPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--5--%>
@@ -5961,18 +6728,27 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle10" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceDoorCPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlSinglePieceDoorCPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>7032</asp:ListItem>
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle11" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceDoorCPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlSinglePieceDoorCPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle12" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceDoorCPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--6--%>
@@ -5986,12 +6762,18 @@
                                                     <asp:ListItem>Single</asp:ListItem>
                                                     <asp:ListItem>Split</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle13" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceFrontDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlSinglePieceFrontDoorcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.2mm</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle14" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceFrontDoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--7--%>
@@ -6005,12 +6787,18 @@
                                                     <asp:ListItem>Single</asp:ListItem>
                                                     <asp:ListItem>Split</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle15" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceRearDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlSinglePieceRearDoorcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.2mm</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle16" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceRearDoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--8--%>
@@ -6031,6 +6819,9 @@
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Cam Lock</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle17" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceLockcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtSinglePieceLockcat2" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -6054,11 +6845,17 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle18" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceSlidingKeyboarddrawertelescopicrailscat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlSinglePieceSlidingKeyboarddrawertelescopicrailscat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>7032</asp:ListItem>
                                                     <asp:ListItem>7035</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle19" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceSlidingKeyboarddrawertelescopicrailscat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--12--%>
@@ -6072,11 +6869,17 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle20" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceSlidingdrawerwithtelescopicrailscat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlSinglePieceSlidingdrawerwithtelescopicrailscat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>7032</asp:ListItem>
                                                     <asp:ListItem>7035</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle21" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceSlidingdrawerwithtelescopicrailscat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--13--%>
@@ -6090,11 +6893,17 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle22" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceMonitormountingarrangementcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlSinglePieceMonitormountingarrangementcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>7032</asp:ListItem>
                                                     <asp:ListItem>7035</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle23" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceMonitormountingarrangementcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%-- 14--%>
@@ -6109,11 +6918,17 @@
                                                     <asp:ListItem>50mm Angle frame</asp:ListItem>
                                                     <asp:ListItem>ISMC</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle24" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceBasecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlSinglePieceBasecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle25" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceBasecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlSinglePieceBasecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Height</asp:ListItem>
                                                     <asp:ListItem>75mm</asp:ListItem>
@@ -6121,6 +6936,9 @@
                                                     <asp:ListItem>150mm</asp:ListItem>
                                                     <asp:ListItem>200mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle26" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceBasecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Height" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%-- 15--%>
@@ -6135,6 +6953,9 @@
                                                     <asp:ListItem>15mm</asp:ListItem>
                                                     <asp:ListItem>25mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle27" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceAntivibrationpadcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%-- 16--%>
@@ -6149,17 +6970,26 @@
                                                     <asp:ListItem>Acrylic</asp:ListItem>
                                                     <asp:ListItem>Polycarbonate</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle28" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceTransparentDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlSinglePieceTransparentDoorcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                     <asp:ListItem>4.00mm</asp:ListItem>
                                                     <asp:ListItem>5.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle29" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceTransparentDoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlSinglePieceTransparentDoorcat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>With bidding</asp:ListItem>
                                                     <asp:ListItem>biddingless technique</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle30" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceTransparentDoorcat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%-- 17--%>
@@ -6186,6 +7016,9 @@
                                                     <asp:ListItem>6</asp:ListItem>
                                                     <asp:ListItem>8</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle31" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePieceFilterscat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Inch" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtSinglePieceFilterscat2" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -6200,6 +7033,9 @@
                                                     <asp:ListItem>4</asp:ListItem>
                                                     <asp:ListItem>6</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle32" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePiecefancat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtSinglePiecefancat2" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -6215,6 +7051,9 @@
                                                     <asp:ListItem>RAL-7035</asp:ListItem>
                                                     <asp:ListItem>Specify</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingle33" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlSinglePiecePowderCoatingShadecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtSinglePiecePowderCoatingShadecat2" runat="server" Visible="false" placeholder="Specify" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -6268,6 +7107,9 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree1" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceWeldedMainBodycat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--2--%>
@@ -6280,11 +7122,17 @@
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Bottom Side</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree2" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceGlandPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlThreePieceGlandPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree3" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceGlandPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--3--%>
@@ -6298,6 +7146,9 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree4" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceComponentMtgPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlThreePieceComponentMtgPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>No colour</asp:ListItem>
@@ -6305,12 +7156,18 @@
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>Orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree5" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceComponentMtgPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlThreePieceComponentMtgPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree6" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceComponentMtgPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--4--%>
@@ -6324,6 +7181,8 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree7" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceSideCPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlThreePieceSideCPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select colour</asp:ListItem>
@@ -6331,6 +7190,8 @@
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree8" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceSideCPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select colour" Enabled="false"></asp:RequiredFieldValidator>
 
                                                 <asp:DropDownList ID="ddlThreePieceSideCPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
@@ -6338,6 +7199,9 @@
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree9" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceSideCPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--5--%>
@@ -6351,18 +7215,27 @@
                                                     <asp:ListItem>GPSP</asp:ListItem>
                                                     <asp:ListItem>CRCA</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree10" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceDoorCPlatecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlThreePieceDoorCPlatecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>7032</asp:ListItem>
                                                     <asp:ListItem>7035</asp:ListItem>
                                                     <asp:ListItem>orange</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree11" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceDoorCPlatecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlThreePieceDoorCPlatecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree12" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceDoorCPlatecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--6--%>
@@ -6376,12 +7249,18 @@
                                                     <asp:ListItem>Single</asp:ListItem>
                                                     <asp:ListItem>Split</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree13" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceFrontDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlThreePieceFrontDoorcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.2mm</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree14" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceFrontDoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--7--%>
@@ -6395,12 +7274,18 @@
                                                     <asp:ListItem>Single</asp:ListItem>
                                                     <asp:ListItem>Split</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree15" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceRearDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlThreePieceRearDoorcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>1.2mm</asp:ListItem>
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree16" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceRearDoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--8--%>
@@ -6421,6 +7306,9 @@
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>Cam Lock</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree17" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceLockcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtThreePieceLockcat2" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -6444,11 +7332,17 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree18" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceHorizontalPartitioncat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlThreePieceHorizontalPartitioncat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>7032</asp:ListItem>
                                                     <asp:ListItem>7035</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree19" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceHorizontalPartitioncat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--12--%>
@@ -6462,11 +7356,17 @@
                                                     <asp:ListItem>1.5mm</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree20" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceSlidingdrawerwithtelescopiccat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlThreePieceSlidingdrawerwithtelescopiccat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Colour</asp:ListItem>
                                                     <asp:ListItem>7032</asp:ListItem>
                                                     <asp:ListItem>7035</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree21" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceSlidingdrawerwithtelescopiccat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%--13--%>
@@ -6490,11 +7390,17 @@
                                                     <asp:ListItem>50mm Angle frame</asp:ListItem>
                                                     <asp:ListItem>ISMC</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree22" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceBasecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlThreePieceBasecat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>2.00mm</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree23" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceBasecat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlThreePieceBasecat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Height</asp:ListItem>
                                                     <asp:ListItem>75mm</asp:ListItem>
@@ -6502,6 +7408,9 @@
                                                     <asp:ListItem>150mm</asp:ListItem>
                                                     <asp:ListItem>200mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree24" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceBasecat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Height" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%-- 15--%>
@@ -6516,6 +7425,9 @@
                                                     <asp:ListItem>15mm</asp:ListItem>
                                                     <asp:ListItem>25mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree25" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceAntivibrationpadcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%-- 16--%>
@@ -6530,17 +7442,26 @@
                                                     <asp:ListItem>Acrylic</asp:ListItem>
                                                     <asp:ListItem>Polycarbonate</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree26" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceTransparentDoorcat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlThreePieceTransparentDoorcat2" runat="server" Enabled="false">
                                                     <asp:ListItem>Select Thickness</asp:ListItem>
                                                     <asp:ListItem>3.00mm</asp:ListItem>
                                                     <asp:ListItem>4.00mm</asp:ListItem>
                                                     <asp:ListItem>5.00mm</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree27" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceTransparentDoorcat2" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Thickness" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:DropDownList ID="ddlThreePieceTransparentDoorcat3" runat="server" Enabled="false">
                                                     <asp:ListItem>Select</asp:ListItem>
                                                     <asp:ListItem>With bidding</asp:ListItem>
                                                     <asp:ListItem>biddingless technique</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree28" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceTransparentDoorcat3" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select" Enabled="false"></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                         <%-- 17--%>
@@ -6567,6 +7488,9 @@
                                                     <asp:ListItem>6</asp:ListItem>
                                                     <asp:ListItem>8</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree29" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePieceFilterscat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Inch" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtThreePieceFilterscat2" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -6581,6 +7505,9 @@
                                                     <asp:ListItem>4</asp:ListItem>
                                                     <asp:ListItem>6</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree30" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePiecefancat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Size" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtThreePiecefancat2" runat="server" placeholder="Qty" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -6596,6 +7523,9 @@
                                                     <asp:ListItem>RAL-7035</asp:ListItem>
                                                     <asp:ListItem>Specify</asp:ListItem>
                                                 </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorThree31" runat="server" Display="Dynamic" ErrorMessage="Please Select Value"
+                                                    ControlToValidate="ddlThreePiecePowderCoatingShadecat1" ValidationGroup="form2" ForeColor="Red" SetFocusOnError="true" InitialValue="Select Colour" Enabled="false"></asp:RequiredFieldValidator>
+
                                                 <asp:TextBox ID="txtThreePiecePowderCoatingShadecat2" runat="server" Visible="false" placeholder="Specify" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
@@ -6961,9 +7891,6 @@
             $('.myDate').datepicker('setDate', new Date());
         }
     </script>
-
-
-
 
     <script type="text/javascript">
         function DisableButton() {
