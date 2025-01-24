@@ -63,10 +63,11 @@ public partial class Admin_Welding : System.Web.UI.Page
         {
             string query = string.Empty;
 
-            query = @"SELECT [WeldingId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
-                [DeliveryDate],[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],[UpdatedDate] 
-                FROM tblWelding where IsComplete is null
-                order by CONVERT(DateTime, DeliveryDate,103) asc"; /*where IsComplete is null*/
+            query = @"SELECT [WeldingId],[OANumber],[SubOA],LP.[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
+                [DeliveryDate],[IsApprove],[IsPending],[IsCancel],LP.[CreatedBy],[CreatedDate],LP.[UpdatedBy],[UpdatedDate] 
+                 , o.CreatedOn AS OACreationDate FROM tblWelding  AS LP
+left join orderaccept AS O ON LP.oanumber=o.oano
+                where IsComplete is null  order by CONVERT(DateTime, DeliveryDate,103) asc"; /*where IsComplete is null*/
 
 
             SqlDataAdapter ad = new SqlDataAdapter(query, con);
@@ -252,7 +253,7 @@ public partial class Admin_Welding : System.Web.UI.Page
                                     row["size"].ToString(),
                                     row["totalinward"].ToString(),
                                   DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture),
-												//DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"),
+                                    //DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"),
                                     row["outwardqty"].ToString(),
                                     //DateTime.Now,
                                     //row["outwardqty"].ToString(),
@@ -500,8 +501,8 @@ public partial class Admin_Welding : System.Web.UI.Page
 
                 if (OutwardQty == 0)
                 {
-                   // GetRecords();
-					String SubOa = hdnSubOANo.Value;
+                    // GetRecords();
+                    String SubOa = hdnSubOANo.Value;
                     GetRecords(SubOa);
                 }
 
@@ -681,12 +682,12 @@ public partial class Admin_Welding : System.Web.UI.Page
         {
             string query = string.Empty;
 
-            query = @"SELECT [WeldingId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
-                [DeliveryDate],[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],[UpdatedDate] 
-                FROM tblWelding 
-                WHERE IsComplete IS NULL 
-                AND CustomerName LIKE '" + TextxtCustomerNametNew.Text.Trim() + @"%'
-                ORDER BY CONVERT(DateTime, DeliveryDate, 103) ASC";
+            query = @"SELECT [WeldingId],[OANumber],[SubOA],LP.[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
+                [DeliveryDate],[IsApprove],[IsPending],[IsCancel],LP.[CreatedBy],[CreatedDate],LP.[UpdatedBy],[UpdatedDate] 
+                 , o.CreatedOn AS OACreationDate FROM tblWelding  AS LP
+left join orderaccept AS O ON LP.oanumber=o.oano
+                where IsComplete is null  AND LP.CustomerName LIKE '" + TextxtCustomerNametNew.Text.Trim() + @"%'
+order by CONVERT(DateTime, DeliveryDate,103) asc";
 
 
 
@@ -854,7 +855,7 @@ public partial class Admin_Welding : System.Web.UI.Page
             cmd.Parameters.AddWithValue("@Action", "Insert");
             cmd.Parameters.AddWithValue("@Currentstages", "tblWelding");
             cmd.Parameters.AddWithValue("@prevousStage", "tblCNCBending");
-			cmd.Parameters.AddWithValue("@SubOa", SubOa);
+            cmd.Parameters.AddWithValue("@SubOa", SubOa);
             cmd.ExecuteNonQuery();
         }
         catch (Exception Ex)

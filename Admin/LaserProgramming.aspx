@@ -233,7 +233,7 @@
             if (checkboxval == true) {
                 $('#btnshowhide').show();
 
-                  $.ajax({
+                $.ajax({
                     type: 'POST',
                     url: 'LaserProgramming.aspx/MakeSessionNull',
                     data: '{}',
@@ -373,9 +373,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-     <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
+    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
 
-   <%-- <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
+    <%-- <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
     </asp:ScriptManager>--%>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
@@ -390,7 +390,7 @@
                             </div>
                             <div class="row" style="padding: 10px;">
                                 <div class="col-md-4">
-                                    <asp:TextBox ID="txtCustName" runat="server" CssClass="form-control" placeholder="Customer Name" Width="100%"   OnTextChanged="txtCustName_TextChanged" AutoPostBack="true"></asp:TextBox>
+                                    <asp:TextBox ID="txtCustName" runat="server" CssClass="form-control" placeholder="Customer Name" Width="100%" OnTextChanged="txtCustName_TextChanged" AutoPostBack="true"></asp:TextBox>
                                     <asp:AutoCompleteExtender ID="AutoCompleteExtender3" runat="server" CompletionListCssClass="completionList"
                                         CompletionListHighlightedItemCssClass="itemHighlighted" CompletionListItemCssClass="listItem"
                                         CompletionInterval="10" MinimumPrefixLength="1" ServiceMethod="GetCustomerList"
@@ -405,7 +405,7 @@
                                     <asp:LinkButton ID="btnexcel" runat="server" CssClass="btn btn-small   btn-success " OnClick="btnexcel_Click" OnClientClick="aspnetForm.target ='_blank';"><i class="fa fa-download" aria-hidden="true"></i>&nbsp;Export Excel</asp:LinkButton>
                                 </div>
 
-                               
+
 
                                 <div class="col-md-6">
                                     <div class="row" runat="server" visible="false">
@@ -434,7 +434,7 @@
 
 
 
-                                    <asp:LinkButton ID="btnGetSelectedNew" runat="server" CssClass="btn btn-small btn-primary" OnClick="btnGetSelectedNew_Click"  OnClientClick="this.disabled=true; this.innerHTML='Processing...';"><i class="fa fa-angle-double-right"></i>&nbsp;Approve & Send</asp:LinkButton>
+                                    <asp:LinkButton ID="btnGetSelectedNew" runat="server" CssClass="btn btn-small btn-primary" OnClick="btnGetSelectedNew_Click" OnClientClick="this.disabled=true; this.innerHTML='Processing...';"><i class="fa fa-angle-double-right"></i>&nbsp;Approve & Send</asp:LinkButton>
 
                                     <%--<asp:Button ID="btnGetSelectedNew" runat="server" CssClass="btn btn-small btn-primary" OnClick="btnGetSelectedNew_Click" Text="Approve & Send" />--%>
                                     <%--fa fa-send-o--%>
@@ -503,6 +503,11 @@
                                                             <asp:Label ID="lblSubOANumberr" runat="server" Text='<%# Eval("SubOA") %>' Visible="false"></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="OA Creation Date" ItemStyle-Width="150" ItemStyle-HorizontalAlign="Center" Visible="true">
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="lblOAcreationDate" runat="server" Text='<%# Eval("OACreationDate","{0:dd/MM/yyyy}")%>'></asp:Label>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="Customer Name" ItemStyle-Width="150" ItemStyle-HorizontalAlign="Center" Visible="true">
                                                         <ItemTemplate>
                                                             <asp:Label ID="lblSubOANumber" CssClass="lblsuboa" runat="server" Text='<%# Eval("SubOA") %>' Visible="true"></asp:Label>
@@ -542,7 +547,7 @@
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="OutQty" ItemStyle-Width="150" ItemStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
-                                                            <asp:TextBox runat="server" Width="100%" ID="txtOutwardQty" onkeypress="return ValidNumeric()"  AutoPostBack="false" CssClass="form-control" Text='<%# Eval("InwardQty") %>'></asp:TextBox>
+                                                            <asp:TextBox runat="server" Width="100%" ID="txtOutwardQty" onkeypress="return ValidNumeric()" AutoPostBack="false" CssClass="form-control" Text='<%# Eval("InwardQty") %>'></asp:TextBox>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="Action" ItemStyle-Width="100" ItemStyle-HorizontalAlign="Center" Visible="false">
@@ -621,7 +626,7 @@
         <Triggers>
             <asp:PostBackTrigger ControlID="txtCustName" />
 
-             <asp:PostBackTrigger ControlID="dgvLaserprogram" />
+            <asp:PostBackTrigger ControlID="dgvLaserprogram" />
             <asp:PostBackTrigger ControlID="btnGetSelectedNew" />
 
 

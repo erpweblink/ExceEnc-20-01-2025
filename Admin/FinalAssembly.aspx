@@ -380,7 +380,7 @@
                                     <asp:LinkButton ID="btnexcel" runat="server" CssClass="btn btn-small   btn-success " OnClick="btnexcel_Click" OnClientClick="aspnetForm.target ='_blank';"><i class="fa fa-download" aria-hidden="true"></i>&nbsp;Export Excel</asp:LinkButton>
                                 </div>
 
-                                
+
                                 <div class="col-md-6">
                                     <div class="row" runat="server" visible="false">
                                         <div class="col-md-2 spancls">OA Number:</div>
@@ -473,6 +473,11 @@
                                                         <ItemTemplate>
                                                             <asp:Label ID="lblOANumber" runat="server" Text='<%# Eval("OANumber") %>'></asp:Label>
                                                             <asp:Label ID="lblSubOANumberr" runat="server" Text='<%# Eval("SubOA") %>' Visible="false"></asp:Label>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="OA Creation Date" ItemStyle-Width="150" ItemStyle-HorizontalAlign="Center" Visible="true">
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="lblOAcreationDate" runat="server" Text='<%# Eval("OACreationDate","{0:dd/MM/yyyy}")%>'></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="Customer Name" ItemStyle-Width="150" ItemStyle-HorizontalAlign="Center" Visible="true">

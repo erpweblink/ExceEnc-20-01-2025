@@ -63,9 +63,10 @@ public partial class Admin_CNCBending : System.Web.UI.Page
         {
             string query = string.Empty;
 
-            query = @"SELECT [CNCBendingId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
-                [DeliveryDate],[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],[UpdatedDate] 
-                FROM tblCNCBending
+            query = @"SELECT [CNCBendingId],[OANumber],[SubOA],LP.[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
+                [DeliveryDate],[IsApprove],[IsPending],[IsCancel],LP.[CreatedBy],[CreatedDate],LP.[UpdatedBy],[UpdatedDate] , o.CreatedOn AS OACreationDate
+                FROM tblCNCBending  AS LP
+left join orderaccept AS O ON LP.oanumber=o.oano
                 where IsComplete is null order by CONVERT(DateTime, DeliveryDate,103) asc";
 
             SqlDataAdapter ad = new SqlDataAdapter(query, con);
@@ -691,12 +692,11 @@ public partial class Admin_CNCBending : System.Web.UI.Page
         try
         {
             string query = string.Empty;
-            query = @"SELECT [CNCBendingId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
-                [DeliveryDate],[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],[UpdatedDate] 
-                FROM tblCNCBending
-                WHERE IsComplete IS NULL 
-                AND CustomerName LIKE '" + txtCustomerNameNew.Text.Trim() + @"%'
-                ORDER BY CONVERT(DateTime, DeliveryDate, 103) ASC";
+            query = @"SELECT [CNCBendingId],[OANumber],[SubOA],LP.[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
+                [DeliveryDate],[IsApprove],[IsPending],[IsCancel],LP.[CreatedBy],[CreatedDate],LP.[UpdatedBy],[UpdatedDate] , o.CreatedOn AS OACreationDate
+                FROM tblCNCBending  AS LP
+left join orderaccept AS O ON LP.oanumber=o.oano
+                where IsComplete is null AND LP.CustomerName LIKE '" + txtCustomerNameNew.Text.Trim() + @"%' order by CONVERT(DateTime, DeliveryDate,103) asc"      ;
 
 
             SqlDataAdapter ad = new SqlDataAdapter(query, con);

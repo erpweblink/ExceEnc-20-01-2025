@@ -60,10 +60,11 @@ public partial class Admin_FinalAssembly : System.Web.UI.Page
         {
             string query = string.Empty;
 
-            query = @"SELECT [FinalAssemblyId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
-                [DeliveryDate],[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],[UpdatedDate] 
-                FROM tblFinalAssembly
-                where IsComplete is null order by CONVERT(DateTime, DeliveryDate,103) asc";
+            query = @"SELECT [FinalAssemblyId],[OANumber],[SubOA],LP.[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
+                [DeliveryDate],[IsApprove],[IsPending],[IsCancel],LP.[CreatedBy],[CreatedDate],LP.[UpdatedBy],[UpdatedDate] 
+               , o.CreatedOn AS OACreationDate  FROM tblFinalAssembly AS LP
+left join orderaccept AS O ON LP.oanumber=o.oano
+ where IsComplete is null order by CONVERT(DateTime, DeliveryDate,103) asc";
 
 
             SqlDataAdapter ad = new SqlDataAdapter(query, con);
@@ -206,7 +207,7 @@ public partial class Admin_FinalAssembly : System.Web.UI.Page
                             {
                                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Alert!!!!!- Outward Quantity Is Greater Than Inward Quantity...!');window.location.href='FinalAssembly.aspx';", true);
                                 return;
-                            }                
+                            }
                         }
                     }
                 }
@@ -218,7 +219,7 @@ public partial class Admin_FinalAssembly : System.Web.UI.Page
                 {
                     cmd.CommandType = CommandType.Text;
                     bool IsApprove = true, IsPending = false, IsCancel = false, Iscomplete;
-                    string CreatedBy = Session["name"].ToString(), UpdatedBy = "", SubOA="";
+                    string CreatedBy = Session["name"].ToString(), UpdatedBy = "", SubOA = "";
                     //string UpdatedDate = DateTime.Now.ToShortDateString(), 
                     //    CreatedDate = DateTime.Now.ToShortDateString();
 
@@ -264,7 +265,7 @@ public partial class Admin_FinalAssembly : System.Web.UI.Page
                                 row["size"].ToString(),
                                 row["totalinward"].ToString(),
                                DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture),
-											//DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"),
+                                //DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"),
                                 row["outwardqty"].ToString(),
                                 //DateTime.Now,
                                 //row["outwardqty"].ToString(),
@@ -546,8 +547,8 @@ public partial class Admin_FinalAssembly : System.Web.UI.Page
 
                 if (OutwardQty == 0)
                 {
-                   // GetRecords();
-					String SubOa = hdnSubOANo.Value;
+                    // GetRecords();
+                    String SubOa = hdnSubOANo.Value;
                     GetRecords(SubOa);
                 }
 
@@ -578,7 +579,7 @@ public partial class Admin_FinalAssembly : System.Web.UI.Page
                     cmdupdate1.ExecuteNonQuery();
                     GetUpdateqty();
                 }
-                
+
                 //GetUpdateqty();
                 con.Close();
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Quantity has been Return Successfully..!');window.location.href='FinalAssembly.aspx';", true);
@@ -693,12 +694,11 @@ public partial class Admin_FinalAssembly : System.Web.UI.Page
         {
             string query = string.Empty;
 
-            query = @"SELECT [FinalAssemblyId],[OANumber],[SubOA],[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
-                [DeliveryDate],[IsApprove],[IsPending],[IsCancel],[CreatedBy],[CreatedDate],[UpdatedBy],[UpdatedDate] 
-                FROM tblFinalAssembly
-                WHERE IsComplete IS NULL 
-                AND CustomerName LIKE '" + txtCustomerNameNew.Text.Trim() + @"%'
-                ORDER BY CONVERT(DateTime, DeliveryDate, 103) ASC";
+            query = @"SELECT [FinalAssemblyId],[OANumber],[SubOA],LP.[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
+                [DeliveryDate],[IsApprove],[IsPending],[IsCancel],LP.[CreatedBy],[CreatedDate],LP.[UpdatedBy],[UpdatedDate] 
+               , o.CreatedOn AS OACreationDate  FROM tblFinalAssembly AS LP
+left join orderaccept AS O ON LP.oanumber=o.oano
+ where IsComplete is null   AND LP.CustomerName LIKE '" + txtCustomerNameNew.Text.Trim() + @"%' order by CONVERT(DateTime, DeliveryDate,103) asc";
 
             SqlDataAdapter ad = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
@@ -801,18 +801,18 @@ public partial class Admin_FinalAssembly : System.Web.UI.Page
     {
         object CNCInwardQty = 0;
 
-      
-            // Check tblStock
-            SqlCommand cmdselect7 = new SqlCommand("select InwardQty from tblstock WHERE SubOA='" + hdnSubOANo.Value + "'", con);
-            object result = cmdselect7.ExecuteScalar();
-            if (result != DBNull.Value && result != null)
-            {
-                CNCInwardQty = result;
-            }
-            else
-            {
-                CNCInwardQty = 0;
-            }
+
+        // Check tblStock
+        SqlCommand cmdselect7 = new SqlCommand("select InwardQty from tblstock WHERE SubOA='" + hdnSubOANo.Value + "'", con);
+        object result = cmdselect7.ExecuteScalar();
+        if (result != DBNull.Value && result != null)
+        {
+            CNCInwardQty = result;
+        }
+        else
+        {
+            CNCInwardQty = 0;
+        }
 
         // Now update the table with the determined CNCInwardQty
         SqlCommand cmdupdate = new SqlCommand("UPDATE [dbo].[tblFinalAssembly] SET [OutwardQty] = @OutwardQty WHERE SubOA='" + hdnSubOANo.Value + "'", con);
@@ -847,7 +847,7 @@ public partial class Admin_FinalAssembly : System.Web.UI.Page
             cmd.Parameters.AddWithValue("@Action", "Insert");
             cmd.Parameters.AddWithValue("@Currentstages", "tblFinalAssembly");
             cmd.Parameters.AddWithValue("@prevousStage", "tblPowderCoating");
-			cmd.Parameters.AddWithValue("@SubOa", SubOa);
+            cmd.Parameters.AddWithValue("@SubOa", SubOa);
             cmd.ExecuteNonQuery();
         }
         catch (Exception Ex)
@@ -876,20 +876,20 @@ public partial class Admin_FinalAssembly : System.Web.UI.Page
         else
         {
 
-                // Check tblStock
-                SqlCommand cmdselect7 = new SqlCommand("select InwardQty from tblStock WHERE SubOA=@SubOA", con);
-                cmdselect7.Parameters.AddWithValue("@SubOA", SubOA);
-                result = cmdselect7.ExecuteScalar();
-                if (result != DBNull.Value && result != null)
-                {
-                    CNCInwardQty = result;
-                }
-                else
-                {
-                    CNCInwardQty = 0;
-                }
+            // Check tblStock
+            SqlCommand cmdselect7 = new SqlCommand("select InwardQty from tblStock WHERE SubOA=@SubOA", con);
+            cmdselect7.Parameters.AddWithValue("@SubOA", SubOA);
+            result = cmdselect7.ExecuteScalar();
+            if (result != DBNull.Value && result != null)
+            {
+                CNCInwardQty = result;
             }
-        
+            else
+            {
+                CNCInwardQty = 0;
+            }
+        }
+
 
         // Now update the table with the determined CNCInwardQty
         //SqlCommand cmdupdate = new SqlCommand("UPDATE [dbo].[tblStock] SET [OutwardQty] = @OutwardQty WHERE SubOA=@SubOA", con);
