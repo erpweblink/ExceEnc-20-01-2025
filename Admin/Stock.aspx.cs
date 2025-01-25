@@ -29,13 +29,18 @@ public partial class Admin_Stock : System.Web.UI.Page
     DataTable tempdt = new DataTable();
     protected void Page_Load(object sender, EventArgs e)
     {
-        string name = Session["name"].ToString();
+        string name = "";
+        if (Session["name"] != null){
+             name = Session["name"].ToString();
+        }
+        
         if (Session["name"] == null)
         {
             Response.Redirect("../Login.aspx");
         }
         else
         {
+           
             if (!this.IsPostBack)
             {
                 GetStockData();
