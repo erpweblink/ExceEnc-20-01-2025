@@ -432,11 +432,11 @@
                                     <div id="DivRoot" align="left">
                                         <div style="overflow: hidden;" id="DivHeaderRow">
                                         </div>
-                                        <div style="overflow: scroll;" class="dt-responsive table-responsive" onscroll="OnScrollDiv(this)" id="DivMainContent">
+                                        <div style="overflow: auto; position: relative; top: 0px; vertical-align: top;"  class="dt-responsive table-responsive" onscroll="OnScrollDiv(this)" id="DivMainContent">
                                             <asp:GridView ID="dgvWelding" runat="server" CssClass="table table-striped table-bordered nowrap"
                                                 AutoGenerateColumns="false" DataKeyNames="SubOA" OnRowCommand="dgvWelding_RowCommand" OnRowDataBound="dgvWelding_RowDataBound">
                                                 <Columns>
-                                                    <asp:TemplateField HeaderStyle-Width="20">
+                                                    <asp:TemplateField>
                                                         <ItemTemplate>
                                                             <img alt="" style="cursor: pointer" src="../img/plus.png" />
                                                             <asp:Panel ID="pnlOrders" runat="server" Style="display: none">
@@ -454,7 +454,7 @@
                                                             </asp:Panel>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField HeaderStyle-Width="20" HeaderText="Select" ItemStyle-HorizontalAlign="Center">
+                                                    <asp:TemplateField HeaderText="Select" ItemStyle-HorizontalAlign="Center">
                                                         <%--<HeaderTemplate>
                                                         <asp:CheckBox ID="checkAll" runat="server" onclick="checkAll(this);" AutoPostBack="true" OnCheckedChanged="checkAll_CheckedChanged" />
                                                     </HeaderTemplate>--%>
@@ -462,74 +462,81 @@
                                                             <asp:CheckBox ID="chkRow" runat="server" AutoPostBack="false" onclick="CheckedCheckbox(this)" />
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="Sr.No" ItemStyle-Width="20" ItemStyle-HorizontalAlign="Center">
+                                                    <asp:TemplateField HeaderText="Sr.No" ItemStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
                                                             <asp:Label ID="lblsno" runat="server" Text='<%# Container.DataItemIndex+1 %>'></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="OA Number" ItemStyle-Width="150" ItemStyle-HorizontalAlign="Center" Visible="false">
+                                                    <asp:TemplateField HeaderText="OA Number" ItemStyle-HorizontalAlign="Center" Visible="false">
                                                         <ItemTemplate>
                                                             <asp:Label ID="lblOANumber" runat="server" Text='<%# Eval("OANumber") %>'></asp:Label>
                                                             <asp:Label ID="lblSubOANumberr" runat="server" Text='<%# Eval("SubOA") %>' Visible="false"></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="OA Creation Date" ItemStyle-Width="150" ItemStyle-HorizontalAlign="Center" Visible="true">
+                                                    <asp:TemplateField HeaderText="OA Creation Date" ItemStyle-HorizontalAlign="Center" Visible="true">
                                                         <ItemTemplate>
                                                             <asp:Label ID="lblOAcreationDate" runat="server" Text='<%# Eval("OACreationDate","{0:dd/MM/yyyy}")%>'></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="Customer Name" ItemStyle-Width="150" ItemStyle-HorizontalAlign="Center" Visible="true">
+                                                    <asp:TemplateField HeaderText="Customer Name" ItemStyle-HorizontalAlign="Center" Visible="true">
                                                         <ItemTemplate>
                                                             <asp:Label ID="lblSubOANumber" CssClass="lblsuboa" runat="server" Text='<%# Eval("SubOA") %>' Visible="true"></asp:Label>
-                                                            <asp:TextBox runat="server" ID="lblCustName" ReadOnly="true" TextMode="MultiLine" Rows="4" Width="100%" CssClass="form-control" Text='<%# Eval("CustomerName") %>'></asp:TextBox>
+                                                            <asp:TextBox runat="server" ID="lblCustName" ReadOnly="true" TextMode="MultiLine" Rows="4" CssClass="form-control" Text='<%# Eval("CustomerName") %>'></asp:TextBox>
 
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="Size" ItemStyle-Width="150" ItemStyle-HorizontalAlign="Center" Visible="true">
+                                                    <asp:TemplateField HeaderText="Size" ItemStyle-HorizontalAlign="Center" Visible="true">
                                                         <ItemTemplate>
-                                                            <asp:TextBox runat="server" ID="lblSize" ReadOnly="true" TextMode="MultiLine" Rows="5" Width="100%" CssClass="form-control" Text='<%# Eval("Size") %>'></asp:TextBox>
+                                                            <asp:TextBox runat="server" ID="lblSize" ReadOnly="true" TextMode="MultiLine" Rows="5" CssClass="form-control" Text='<%# Eval("Size") %>' Style="width: 150px; height: 87px;"></asp:TextBox>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="Total Quantity" ItemStyle-Width="150" ItemStyle-HorizontalAlign="Center" Visible="false">
+                                                    <asp:TemplateField HeaderText="Total Quantity" ItemStyle-HorizontalAlign="Center" Visible="false">
                                                         <ItemTemplate>
                                                             <asp:Label ID="lblTotalQty" runat="server" Text='<%# Eval("TotalQty") %>'></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="Delivery Date" ItemStyle-Width="150" ItemStyle-HorizontalAlign="Center" Visible="true">
+                                                    <asp:TemplateField HeaderText="Delivery Date" ItemStyle-HorizontalAlign="Center" Visible="true">
                                                         <ItemTemplate>
                                                             <asp:Label ID="lblDeliveryDt" runat="server" Text='<%# Eval("DeliveryDate","{0:dd/MM/yyyy}") %>'></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="Inward Date and Time" ItemStyle-Width="150" ItemStyle-HorizontalAlign="Center" Visible="false">
+                                                    <asp:TemplateField HeaderText="Inward Date and Time" ItemStyle-HorizontalAlign="Center" Visible="false">
                                                         <ItemTemplate>
                                                             <asp:Label ID="lblInwardDtTime" runat="server" Text='<%# Eval("InwardDtTime") %>'></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="In Qty" ItemStyle-Width="150" ItemStyle-HorizontalAlign="Center">
+                                                    <asp:TemplateField HeaderText="In Qty" ItemStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
-                                                            <asp:TextBox runat="server" Width="100%" ID="txtInwardQty" ReadOnly="true" CssClass="form-control" Text='<%# Eval("InwardQty") %>'></asp:TextBox>
+                                                            <asp:TextBox runat="server" Width="100%" ID="txtInwardQty" ReadOnly="true" CssClass="form-control" Text='<%# Eval("InwardQty") %>' Style="width: 70px;"></asp:TextBox>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
 
-                                                    <asp:TemplateField HeaderText="Outward DateTime" ItemStyle-Width="100" ItemStyle-HorizontalAlign="Center" Visible="false">
+                                                    <asp:TemplateField HeaderText="Outward DateTime" ItemStyle-HorizontalAlign="Center" Visible="false">
                                                         <ItemTemplate>
-                                                            <asp:TextBox ID="txtOutwardDtTime" runat="server" Width="100" ReadOnly="false" CssClass="form-control myDate"></asp:TextBox>
+                                                            <asp:TextBox ID="txtOutwardDtTime" runat="server" ReadOnly="false" CssClass="form-control myDate"></asp:TextBox>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="Out Qty" ItemStyle-Width="150" ItemStyle-HorizontalAlign="Center">
+                                                    <asp:TemplateField HeaderText="Out Qty" ItemStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
-                                                            <asp:TextBox runat="server" ID="txtOutwardQty" Width="100%" onkeypress="return ValidNumeric()" AutoPostBack="false" CssClass="form-control" Text='<%# Eval("InwardQty") %>'></asp:TextBox>
+                                                            <asp:TextBox runat="server" ID="txtOutwardQty" onkeypress="return ValidNumeric()" AutoPostBack="false" CssClass="form-control" Text='<%# Eval("InwardQty") %>' Style="width: 70px;"></asp:TextBox>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="Action" ItemStyle-Width="100" ItemStyle-HorizontalAlign="Center" Visible="false">
+                                                    <asp:TemplateField HeaderText="Remark" ItemStyle-HorizontalAlign="Center">
+                                                        <ItemTemplate>
+                                                            <asp:TextBox ID="lblRemark" runat="server" ReadOnly="true" TextMode="MultiLine" CssClass="form-control" Text='<%# Eval("Remark") %>' Style="width: 150px; height: 87px;"></asp:TextBox>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Action" ItemStyle-HorizontalAlign="Center" Visible="false">
                                                         <ItemTemplate>
                                                             <a href="<%#string.Format("../Reports/ReportPDF.aspx?Dept="+encrypt("Welding")+"&OANumberWise={0}", encrypt(Eval("OANumber").ToString())) %>" target="_blank">
                                                                 <asp:Image ID="ImgPrint" runat="server" CssClass="img1" ImageUrl="../img/Print.png" Height="29px" ToolTip="Print" /></a>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="Return Qty" ItemStyle-Width="100" ItemStyle-HorizontalAlign="Center">
+                                                    <asp:TemplateField HeaderText="Return Qty" ItemStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
                                                             <asp:LinkButton ID="lnkdetail" OnClick="Linkclicked(this)"><i class="fa fa-undo" style="font-size: 25px!important" title="Return Quantity"></i></asp:LinkButton>
+                                                            &nbsp;&nbsp;
+                                                            <asp:LinkButton ID="btnRemark" runat="server" CommandName="RowComment" CommandArgument='<%# Eval("WeldingId") %>' ToolTip="Add Remark"><i class="fa fa-comment" style="font-size: 25px!important" aria-hidden="true"></i></asp:LinkButton>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                 </Columns>
@@ -546,6 +553,48 @@
                     </div>
                 </div>
             </div>
+
+
+
+            <%-- PopUP added by Nikhil on 25-01-2025  --%>
+
+
+            <asp:Button ID="btnCreateQuat" runat="server" Style="display: none" />
+            <asp:ModalPopupExtender ID="modalCreateQuat" runat="server" TargetControlID="btnCreateQuat"
+                PopupControlID="PnlCreateQuot" OkControlID="CloseCreatedetail" />
+
+            <asp:Panel ID="PnlCreateQuot" runat="server" CssClass="modelprofile1">
+                <div class="row container">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-7">
+                        <div class="profilemodel2">
+                            <div class="headingcls">
+                                <h4 class="modal-title">Add Remark 
+                     <button type="button" id="CloseCreatedetail" class="btnclose" style="display: inline-block;" data-dismiss="modal" onclick="window.location='Welding.aspx';">CANCEL</button></h4>
+                            </div>
+                            <br />
+                            <asp:HiddenField ID="LaserProgID" runat="server" />
+                            <br />
+                            <div class="row" style="margin-left: 2%">
+                                <div class="col-md-2">
+                                </div>
+                                <div class="col-md-2">
+                                    <asp:Label ID="lblAddRemark" runat="server" Text="Remark :" Font-Bold="true"></asp:Label>
+                                </div>
+                                <br />
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="txtRemark" runat="server" TextMode="MultiLine"></asp:TextBox>
+                                </div>
+                            </div>
+                            <br />
+                            <asp:Button ID="BtnEnclosure" runat="server" CssClass="btn btn-primary" Text="Add" OnClick="BtnEnclosure_Click" Style="margin-left: 41%; font-size: 18px; padding: 5px 39px; padding: 2px 20px !important;" />
+                            <br />
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                </div>
+            </asp:Panel>
 
         </ContentTemplate>
 

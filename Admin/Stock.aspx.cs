@@ -67,7 +67,7 @@ public partial class Admin_Stock : System.Web.UI.Page
 
             query = @"SELECT [StockId],[OANumber],[SubOA],LP.[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],
             [OutwardDtTime],[OutwardQty],[DeliveryDate],[IsApprove],[IsPending],[IsCancel],LP.[CreatedBy],[CreatedDate],LP.[UpdatedBy],
-            [UpdatedDate],[IsComplete], o.CreatedOn AS OACreationDate FROM tblStock AS LP
+            [UpdatedDate],[IsComplete], o.CreatedOn AS OACreationDate,[Remark] FROM tblStock AS LP
 left join orderaccept AS O ON LP.oanumber=o.oano
 where IsComplete is null order by CONVERT(DateTime, DeliveryDate,103) asc";
 
@@ -957,8 +957,34 @@ where IsComplete is null order by CONVERT(DateTime, DeliveryDate,103) asc";
         // Clear the session value
         HttpContext.Current.Session["OneTimeFlag"] = null;
     }
+    protected void BtnEnclosure_Click(object sender, EventArgs e)
+    {
+        string val = LaserProgID.Value.ToString();
+        string remark = txtRemark.Text.ToString();
+        con.Open();
+        SqlCommand cmd = new SqlCommand("UPDATE tblStock SET Remark = '" + remark + "' WHERE StockId = '" + val + "'", con);
+        cmd.ExecuteNonQuery();
+        con.Close();
+        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Remark Added Successfully');window.location='Stock.aspx';", true);
+    }
 
 
+
+
+    protected void dgvStock_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        if (e.CommandName == "RowComment")
+        {
+            GridViewRow row = (GridViewRow)((LinkButton)e.CommandSource).NamingContainer;
+            string rem = ((TextBox)row.FindControl("lblRemark")).Text;
+
+            string value = e.CommandArgument.ToString();
+            LaserProgID.Value = value;
+            txtRemark.Text = rem;
+            btnGetSelected.Style["display"] = "none";
+            this.modalCreateQuat.Show();
+        }
+    }
 }
 
 

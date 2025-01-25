@@ -2,19 +2,16 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
-using System.Data.OleDb;
 using System.Data.SqlClient;
-using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading;
 using System.Web;
 using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Globalization;
 
 
 public partial class Admin_LaserProgramming : System.Web.UI.Page
@@ -82,6 +79,7 @@ public partial class Admin_LaserProgramming : System.Web.UI.Page
        [CreatedDate],
        LP.[UpdatedBy],
        [UpdatedDate],
+       [Remark],
 	   o.CreatedOn AS OACreationDate
 FROM [dbo].[tblLaserPrograming] AS LP
 left join orderaccept AS O ON LP.oanumber=o.oano
@@ -251,7 +249,7 @@ order by CONVERT(DateTime, DeliveryDate, 103) asc";
                                 row["size"].ToString(),
                                 row["totalinward"].ToString(),
                                 DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture),
-											//DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"),
+                                //DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"),
                                 row["outwardqty"].ToString(),
                                 //DateTime.Now,                      // no need to insert (Wrong Input)
                                 //row["outwardqty"].ToString(),      // no need to insert (Wrong Input)
@@ -517,6 +515,17 @@ order by CONVERT(DateTime, DeliveryDate, 103) asc";
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('OA number Does not exsist..!')", true);
             }
         }
+        if(e.CommandName == "RowComment")
+        {
+            GridViewRow row = (GridViewRow)((LinkButton)e.CommandSource).NamingContainer;
+            string rem = ((TextBox)row.FindControl("lblRemark")).Text;
+
+            string value = e.CommandArgument.ToString();
+            LaserProgID.Value = value;
+            txtRemark.Text = rem;
+            btnGetSelectedNew.Style["display"] = "none";
+            this.modalCreateQuat.Show();
+        }
     }
 
     protected void lnkbtnReturn_Click(object sender, EventArgs e)
@@ -543,7 +552,7 @@ order by CONVERT(DateTime, DeliveryDate, 103) asc";
                 if (OutwardQty == 0)
                 {
                     //GetRecords();
-					String SubOa = hdnSubOANo.Value;
+                    String SubOa = hdnSubOANo.Value;
                     GetRecords(SubOa);
                 }
 
@@ -615,7 +624,7 @@ order by CONVERT(DateTime, DeliveryDate, 103) asc";
         if (e.Row.RowType == DataControlRowType.DataRow)
         {
             TextBox txtOutwardQty = e.Row.FindControl("txtOutwardQty") as TextBox;
-
+          
             string empcode = Session["empcode"].ToString();
             DataTable Dt = new DataTable();
             SqlDataAdapter Sd = new SqlDataAdapter("Select id from [employees] where [empcode]='" + empcode + "'", con);
@@ -634,6 +643,26 @@ order by CONVERT(DateTime, DeliveryDate, 103) asc";
                     btnPrintData.Visible = false;
                 }
             }
+
+            // To take lable and make it properly set in the table by Nikhil 25-01-2025
+            //Label size = e.Row.FindControl("lblSizes") as Label;
+            //// Process the "Size" field to insert <br> tags after every 40 words
+            //string sizeText = DataBinder.Eval(e.Row.DataItem, "Size").ToString(); // Get the "Size" text
+            //string[] words = sizeText.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            //StringBuilder formattedSize = new StringBuilder();
+            //for (int i = 0; i < words.Length; i++)
+            //{
+            //    formattedSize.Append(words[i] + " ");
+            //    if ((i + 1) % 3 == 0) // After every 40 words
+            //    {
+            //        formattedSize.Append("<br><br>");
+            //    }
+            //}
+
+            //// Set the formatted text to the label
+            //size.Text = formattedSize.ToString().Trim();
+
+
 
             string Id = dgvLaserprogram.DataKeys[e.Row.RowIndex].Value.ToString();
             GridView gvDetails = e.Row.FindControl("gvDetails") as GridView;
@@ -1164,7 +1193,7 @@ AND LP.[CustomerName] LIKE '" + txtCustName.Text.Trim() + @"%' order by CONVERT(
             cmd.Parameters.AddWithValue("@Action", "Insert");
             cmd.Parameters.AddWithValue("@Currentstages", "tblLaserPrograming");
             cmd.Parameters.AddWithValue("@prevousStage", "tblDrawing");
-			cmd.Parameters.AddWithValue("@SubOa", SubOa);
+            cmd.Parameters.AddWithValue("@SubOa", SubOa);
             cmd.ExecuteNonQuery();
         }
         catch (Exception Ex)
@@ -1563,4 +1592,20 @@ AND LP.[CustomerName] LIKE '" + txtCustName.Text.Trim() + @"%' order by CONVERT(
         HttpContext.Current.Session["OneTimeFlag"] = null;
     }
 
+
+    protected void btnRemark_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void BtnEnclosure_Click(object sender, EventArgs e)
+    {
+        string val = LaserProgID.Value.ToString();
+        string remark = txtRemark.Text.ToString();
+        con.Open();
+        SqlCommand cmd = new SqlCommand("UPDATE tblLaserPrograming SET Remark = '"+remark+ "' WHERE LaserProgId = '"+val+"'",con);
+        cmd.ExecuteNonQuery();
+        con.Close();
+        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Remark Added Successfully');window.location='LaserProgramming.aspx';", true);
+    }
 }

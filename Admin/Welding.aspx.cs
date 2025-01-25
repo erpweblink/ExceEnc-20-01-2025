@@ -65,7 +65,7 @@ public partial class Admin_Welding : System.Web.UI.Page
 
             query = @"SELECT [WeldingId],[OANumber],[SubOA],LP.[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
                 [DeliveryDate],[IsApprove],[IsPending],[IsCancel],LP.[CreatedBy],[CreatedDate],LP.[UpdatedBy],[UpdatedDate] 
-                 , o.CreatedOn AS OACreationDate FROM tblWelding  AS LP
+                 , o.CreatedOn AS OACreationDate, [Remark] FROM tblWelding  AS LP
 left join orderaccept AS O ON LP.oanumber=o.oano
                 where IsComplete is null  order by CONVERT(DateTime, DeliveryDate,103) asc"; /*where IsComplete is null*/
 
@@ -578,6 +578,17 @@ left join orderaccept AS O ON LP.oanumber=o.oano
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('OA number Does not exsist..!')", true);
             }
         }
+        if (e.CommandName == "RowComment")
+        {
+            GridViewRow row = (GridViewRow)((LinkButton)e.CommandSource).NamingContainer;
+            string rem = ((TextBox)row.FindControl("lblRemark")).Text;
+
+            string value = e.CommandArgument.ToString();
+            LaserProgID.Value = value;
+            txtRemark.Text = rem;
+            btnGetSelected.Style["display"] = "none";
+            this.modalCreateQuat.Show();
+        }
     }
 
     protected void dgvWelding_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -942,6 +953,17 @@ order by CONVERT(DateTime, DeliveryDate,103) asc";
     {
         // Clear the session value
         HttpContext.Current.Session["OneTimeFlag"] = null;
+    }
+
+    protected void BtnEnclosure_Click(object sender, EventArgs e)
+    {
+        string val = LaserProgID.Value.ToString();
+        string remark = txtRemark.Text.ToString();
+        con.Open();
+        SqlCommand cmd = new SqlCommand("UPDATE tblWelding SET Remark = '" + remark + "' WHERE WeldingId = '" + val + "'", con);
+        cmd.ExecuteNonQuery();
+        con.Close();
+        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Remark Added Successfully');window.location='Welding.aspx';", true);
     }
 
 
