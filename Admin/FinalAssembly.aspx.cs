@@ -62,7 +62,7 @@ public partial class Admin_FinalAssembly : System.Web.UI.Page
 
             query = @"SELECT [FinalAssemblyId],[OANumber],[SubOA],LP.[CustomerName],[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
                 [DeliveryDate],[IsApprove],[IsPending],[IsCancel],LP.[CreatedBy],[CreatedDate],LP.[UpdatedBy],[UpdatedDate] 
-               , o.CreatedOn AS OACreationDate  FROM tblFinalAssembly AS LP
+               , o.CreatedOn AS OACreationDate,[Remark]  FROM tblFinalAssembly AS LP
 left join orderaccept AS O ON LP.oanumber=o.oano
  where IsComplete is null order by CONVERT(DateTime, DeliveryDate,103) asc";
 
@@ -520,6 +520,17 @@ left join orderaccept AS O ON LP.oanumber=o.oano
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('OA number Does not exsist..!')", true);
             }
         }
+        if (e.CommandName == "RowComment")
+        {
+            GridViewRow row = (GridViewRow)((LinkButton)e.CommandSource).NamingContainer;
+            string rem = ((TextBox)row.FindControl("lblRemark")).Text;
+
+            string value = e.CommandArgument.ToString();
+            LaserProgID.Value = value;
+            txtRemark.Text = rem;
+            btnGetSelected.Style["display"] = "none";
+            this.modalCreateQuat.Show();
+        }
     }
 
     protected void lnkbtnReturn_Click(object sender, EventArgs e)
@@ -956,6 +967,17 @@ left join orderaccept AS O ON LP.oanumber=o.oano
         }
 
 
+    }
+
+    protected void BtnEnclosure_Click(object sender, EventArgs e)
+    {
+        string val = LaserProgID.Value.ToString();
+        string remark = txtRemark.Text.ToString();
+        con.Open();
+        SqlCommand cmd = new SqlCommand("UPDATE tblFinalAssembly SET Remark = '" + remark + "' WHERE FinalAssemblyId = '" + val + "'", con);
+        cmd.ExecuteNonQuery();
+        con.Close();
+        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Remark Added Successfully');window.location='FinalAssembly.aspx';", true);
     }
 
 

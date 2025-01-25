@@ -580,7 +580,7 @@ public partial class Admin_QuotationList : System.Web.UI.Page
                 {
                     string id = Dt.Rows[0]["id"].ToString();
                     DataTable Dtt = new DataTable();
-                    SqlDataAdapter Sdd = new SqlDataAdapter("Select * FROM tblUserRoleAuthorization where UserID = '" + id + "' AND PageName = 'QuotationList.aspx' AND PagesView = '1'", con);
+                    SqlDataAdapter Sdd = new SqlDataAdapter("Select * FROM [ExcelEncLive].tblUserRoleAuthorization where UserID = '" + id + "' AND PageName = 'QuotationList.aspx' AND PagesView = '1'", con);
                     Sdd.Fill(Dtt);
                     if (Dtt.Rows.Count > 0)
                     {

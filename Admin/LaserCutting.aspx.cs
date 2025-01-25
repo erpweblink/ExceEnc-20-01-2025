@@ -63,7 +63,7 @@ public partial class Admin_LaserCutting : System.Web.UI.Page
             string query = string.Empty;
 
             query = @"SELECT [LaserCutId],[OANumber],[SubOA],LC.[CustomerName],o.CreatedOn AS OACreationDate,[Size],[TotalQty],[InwardDtTime],[InwardQty],[OutwardDtTime],[OutwardQty],
-                [DeliveryDate],[IsApprove],[IsPending],[IsCancel],LC.[CreatedBy],[CreatedDate],LC.[UpdatedBy],[UpdatedDate] 
+                [DeliveryDate],[IsApprove],[IsPending],[IsCancel],LC.[CreatedBy],[CreatedDate],LC.[UpdatedBy],[UpdatedDate],[Remark] 
                 FROM tblLaserCutting AS LC
 				left join orderaccept AS O ON LC.oanumber=o.oano
                 where IsComplete is null order by CONVERT(DateTime, DeliveryDate,103) asc";
@@ -578,6 +578,17 @@ public partial class Admin_LaserCutting : System.Web.UI.Page
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('OA number Does not exsist..!')", true);
             }
         }
+        if (e.CommandName == "RowComment")
+        {
+            GridViewRow row = (GridViewRow)((LinkButton)e.CommandSource).NamingContainer;
+            string rem = ((TextBox)row.FindControl("lblRemark")).Text;
+
+            string value = e.CommandArgument.ToString();
+            LaserProgID.Value = value;
+            txtRemark.Text = rem;
+            btnGetSelected.Style["display"] = "none";
+            this.modalCreateQuat.Show();
+        }
     }
 
     protected void dgvLaserCutting_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -988,5 +999,14 @@ order by CONVERT(DateTime, DeliveryDate,103) asc";
         HttpContext.Current.Session["OneTimeFlag"] = null;
     }
 
-
+    protected void BtnEnclosure_Click(object sender, EventArgs e)
+    {
+        string val = LaserProgID.Value.ToString();
+        string remark = txtRemark.Text.ToString();
+        con.Open();
+        SqlCommand cmd = new SqlCommand("UPDATE tblLaserCutting SET Remark = '" + remark + "' WHERE LaserCutId = '" + val + "'", con);
+        cmd.ExecuteNonQuery();
+        con.Close();
+        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Remark Added Successfully');window.location='LaserCutting.aspx';", true);
+    }
 }
