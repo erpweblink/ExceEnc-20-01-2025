@@ -507,7 +507,7 @@
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="In Qty" ItemStyle-Width="150" ItemStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
-                                                            <asp:TextBox runat="server" Width="100%" ID="txtInwardQty" ReadOnly="true" CssClass="form-control" Text='<%# Eval("InwardQty") %>' Style="width: 70px;"></asp:TextBox>
+                                                            <asp:TextBox runat="server" Width="100%" ID="txtInwardQty" ReadOnly="true" CssClass="form-control" Text='<%# Eval("InwardQty") %>' style="width: 57px;"></asp:TextBox>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
 
@@ -518,7 +518,7 @@
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="Out Qty" ItemStyle-Width="150" ItemStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
-                                                            <asp:TextBox runat="server" Width="100%" ID="txtOutwardQty" onkeypress="return ValidNumeric()" AutoPostBack="false" CssClass="form-control" Text='<%# Eval("InwardQty") %>' Style="width: 70px;"></asp:TextBox>
+                                                            <asp:TextBox runat="server" Width="100%" ID="txtOutwardQty" onkeypress="return ValidNumeric()" AutoPostBack="false" CssClass="form-control" Text='<%# Eval("InwardQty") %>' style="width: 57px;"></asp:TextBox>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="Remark" ItemStyle-HorizontalAlign="Center">

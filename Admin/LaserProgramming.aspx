@@ -302,6 +302,7 @@
         function openModal() {
             $('[id*=myModal]').modal('show');
         }
+
     </script>
 
     <script language="javascript" type="text/javascript">
@@ -538,7 +539,7 @@
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="InQty" ItemStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
-                                                            <asp:TextBox runat="server" ID="txtInwardQty" Width="100%" ReadOnly="true" CssClass="form-control" Text='<%# Eval("InwardQty") %>' style="width: 70px;"></asp:TextBox>
+                                                            <asp:TextBox runat="server" ID="txtInwardQty" Width="100%" ReadOnly="true" CssClass="form-control" Text='<%# Eval("InwardQty") %>' style="width: 57px;"></asp:TextBox>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
 
@@ -549,7 +550,7 @@
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="OutQty" ItemStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
-                                                            <asp:TextBox runat="server" Width="100%" ID="txtOutwardQty" onkeypress="return ValidNumeric()" AutoPostBack="false" CssClass="form-control" Text='<%# Eval("InwardQty") %>' style="width: 70px;"></asp:TextBox>
+                                                            <asp:TextBox runat="server" Width="100%" ID="txtOutwardQty" onkeypress="return ValidNumeric()" AutoPostBack="false" CssClass="form-control" Text='<%# Eval("InwardQty") %>' style="width: 57px;" ></asp:TextBox>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="Remark" ItemStyle-HorizontalAlign="Center">
@@ -568,7 +569,7 @@
                                                             <asp:LinkButton ID="lnkdetail" OnClick="Linkclicked(this)"><i class="fa fa-undo" style="font-size: 25px!important" title="Return Quantity"></i></asp:LinkButton>
                                                             &nbsp;&nbsp;
                                                        <asp:LinkButton ID="btnRemark" runat="server" CommandName="RowComment" CommandArgument='<%# Eval("LaserProgId") %>' ToolTip="Add Remark" ><i class="fa fa-comment" style="font-size: 25px!important" aria-hidden="true"></i></asp:LinkButton>
-                                                        </ItemTemplate>
+                                                       </ItemTemplate>
                                                     </asp:TemplateField>
                                                 </Columns>
                                             </asp:GridView>
